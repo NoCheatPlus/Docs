@@ -1,0 +1,184 @@
+This page page provides information about the latest development versions configuration and permissions and changes in general. It might show features that the official versions do not have.
+
+A list by build number is found at the bottom of the page, this page mostly describes the result of the latest dev build(s), for a commit/changes list, see: \\https://github.com/NeatMonster/NoCheatPlus/commits/master
+
+For quick overview over recent builds, see: \\[[build-infos.creole|Important Changes By Build Number]]
+
+If you have an issue create a ticket or ask on the BukkitDev overview page to get this updated or explained.
+\\Mind the [[issues.creole|issues page]] for information on some typical incompatibilities.
+
+This page will be kept more simple in order to be able to fill in changes quickly.
+
+**under review right now!**
+@maintainance: keep this site simple to read in edit mode :)
+----
+==Version naming==
+Scheme: GENERATION.MAJOR.MINOR-INTENTION-sSERIES-bBUILD
+\\//Example: 3.10.1-sMD5NET-b599//
+* GENERATION: Likely to not to change ever, unless we switch to a fundamentally different architecture.
+* MAJOR: Should increment with Minecraft releases or bigger feature incompatibilities.
+* MINOR: Should increment with releases (currently only on BukkitDev).
+* INTENTION: Should be "SNAPSHOT" for development builds and RC or RC1... for release candidates. Note that release candidates can be rejected by the release authorities, so check the build information as explained below.
+* SERIES: Indicate build location or purpose. Might enable us to run several Jenkins with differing quality in mind. Added around build 600, custom builds usually show 's?'.
+* BUILD: The build number, increasing with every build on a Jenkins instance. Custom builds usually show 'b?'.
+
+In addition we label development builds with "promotion" symbols only for official releases and with additional information, usually stating the build "bXYZ:" and additional information, typically like:
+* "release on BukkitDev": The build has been uploaded to BukkitDev and approved by staff, you can download it from there.
+* "planned release": The release has been uploaded to BukkitDev and approval is pending. If the build is older, it might be a rejected build.
+* "mostly stable": Builds that seem to have been running stable for a while and either do not contain too many experimental additions or seem to be consolidated.
+* "(deficient)": Problematic build, some features are not working correctly or need to be deactivated to run the build. Not bad enough to get deleted, left over for testing against other builds.
+* "MC X.Y.Z": Indicate that support for the Minecraft version as specified has been added to this build, and should be in for later builds unless stated otherwise with later builds.
+
+==NMS/OBC Access==
+This plugin accesses net.minecraft.server and org.bukkit.craftbukkit classes, due to missing features or performance reasons. The design of NoCheatPlus hides this access in modules set up extra for each package-naming-change. NoCheatPlus has a compatibility module for Bukkit-API only, which means not using OBC/NMS access, however some features will work with reduced effect, more impact on performance.
+
+==General settings==
+* Update checking (removed in beta):
+** You can disable the version checking with the checkforupdates flag. 
+** miscellaneous.readtimeout allows to set max milliseconds for the update check. 
+* The data section allows you to specify an expiration duration for players data in minutes. If set to something greater than 0, this will periodically remove players data if the players have been logged out for longer than the specified amount of minutes. If you set data.expiration.history  to true, it will also delete the players violation history. Later it might be possible to specify individual intervals or let entries with a lot of violations be logged to file before removing. It should not be set to a too small value because some checks might need the data within a couple of minutes. Minimal should be like 3.
+* Expert setting (107): savebackconfig - If set to false the defaults will not be added to the config and it will not be saved back to disk. This is useful for keeping minimal per world config files. Not recommended to be set to false for the global config file.
+* Some check groups like moving or fight allow setting a debug flag (true/false), some checks allow it for individual use. Effect will either be extensive output to the console (moving) or mirroring back of some data to players who have the permission "nocheatplus.admin.debug". It is not available for all check groups.
+* Since somewhere around build 310, check groups also allow control over lag-adaption with a lag flag (true/false). By default it is set to true, in order to use less tight bounds in case of server side lag.
+==Flying and speed settings==
+The main moving checks are survivalfly and creativefly, nofall is a sub check of survivalfly.
+* survivalfly is for preventing flying and similar hacks by players that should not fly. 
+* nofall tries to deal fall damage if players try to avoid it by hacking. 
+* creativefly controls flying for those that are allowed to bypass the survivalfly check in order to control the flying speed. Giving bypass permission for creativefly lets player fly at any speed , which leaves them to the built in speed checks of CraftBukkit, potentially dangerous if those are disabled somehow.
+
+Latest builds (660 and up) contain a compatibility option (checks.moving.assumesprint). Set it to true to let NCP assume that players are always sprinting if their food bar allows it, e.g. if the ctrl-sprint in MC1.7.X feature poses problems.
+
+//(For experts there is a setting for the "on-ground" given the "seek for ground" distance for underneath the player, for the estimation for all moving checks except for nofall which has its extra setting. It defaults to 0.001 for normal checks: moving.yonground )//
+===survivalfly===
+Often requested: Allow some bypasses for speeding but not flying.\\
+This section attempts to clarify the possibilities.
+
+Monitored speeds: walking, sprinting, sneaking, blocking, swimming
+
+It is possible to set the default speeds with hidden config settngs (you have to ad them manually), they include the monitored speeds in the section checks.moving.survivalfly : walkingpseed, sprintingspeed, sneakingspeed, blockingspeed, swimmingspeed\\There also is a speedingspeed, which allows to modify speeds if a player has the speeding permission, the normal speeds are presets for all players, work with world configs.
+
+All speeds are ar normal pace with 100, setting to 200 means twice the normally allowed speed. The speedingspeed is a //modifier// that gets applied on walking and sprinting speed only. Walking and sprinting speed also apply if a player is blocking or sneaking and has the corresponding bypass permission, then speeding modifier would be active, given the speeding permission. In build 64 the default speeding modifier is set to 100 so it must be set to achieve an effect with the speeding permission - since build 65 it will be 200.
+
+Bypass permissions:
+* nocheatplus.checks.moving.survivalfly.sneaking\\Allow players to move at walking or sprinting spead while sneaking.
+* nocheatplus.checks.moving.survivalfly.blocking\\Allow players to move at walking or sprinting spead while blocking.
+* //nocheatplus.checks.moving.survivalfly.sprinting//\\Allow players to sprint backwards [subject to change].
+* nocheatplus.checks.moving.survivalfly.speeding\\
+===nofall===
+* Hidden config setting: nofall.yonground states how far down the ground is allowed to be to jude the player to be "on ground". Defaults to 0.3, which seems necessary to prevent players generating nofall violations when moving down stair like setups made of solid blocks. Should not affect the other flying checks.
+* The latest versions do not generate any vls anymore (because hack clients can simply avoid fall damage until in water, unless NCP just deals damage. This results in NCP not knowing if a player has avoided fall damage or not once NCP detects a player to be on ground, because CB/MC might come a little later than NCP on some occasions. A workaround that would delay the delay the dealing of damage to really find out if someone avoided fall damage is thinkable but would be more complex and error prone, subject to future tests.)
+==Chat checks==
+===chat.text===
+This check replaces nopwnage and globalchat. Most of the configuration is the same as with globalchat, just weights for indivdual parts have been added, also for some things that nopwnage did add. For the fast spamming protection the shortterm section under frequency allows adjusting.
+
+This check gives every chat message a weight and accumulates those weights with a balance factor for its age over 30 seconds. Each of the 10 3-second buckets is weighted with a factor so older message weights count in less.\\
+The check aims at annyoing chat and also spam that is not as abvious as what nopwnage can catch.
+Standard monitor:
+* Chat frequency counts in for the accumulation of weights.
+* Upper case counts in.
+* Long messages with few letters. Long messages with too many letters. Very short messages.
+* Word lengths.
+* (Special characters.)
+
+The extended analysis ("engine") are more thought of as for "experts" but we will later add examples for standard parameters:\\
+The extended checks are sorted into a global and a player section. The global section checks are fed by all palyers messages, the player section checks are processed for each player individually and exclusively. So depending on trouble with chat you can activate either.\\
+The available extended checks assign an extra weight to a message:
+* words - Keeps track of recently spoken words as a whole.
+* prefixes - Keeps track of recently spoken words, but arranges them to also count in if prefixes of a word are repeated, such as "hello" and "helloccc". Words that just have been used are more "expensive" than old ones.
+* smilarity - Keeps track of recently spoken words and assigns a higher score with recently spoken words being repeated similarly. It is not 200% accurate and works similar to nopwnage message similarity checks, just with many more words counted in.
+\\All these checks allow for some configuration (see below) and also will get extended or changed with time to allow some more filtering.
+====**Configure chat.text**====
+* hidden setting: "debug: true" - Let scoring information be displayed in the console for each chat message.
+* hidden setting: "maximum: false" - If set to false the extended checks scores will get added up, instead of their maximum result being used.
+
+The player and global sections both allow:
+* weight - A multiplier to allow balancing the score result of all extended checks in that section at once. 1.0 means no change.
+* active - Flags that can be used with the global and per world configuration files, to turn off the whole global or player section at once, overriding the individual active flags.
+
+\\All extended check sections (words, prefixes, similarity) have the following basic mostly hidden settings:
+* active - To enable/disable.
+* weight - To assign a weight multiplier, 1.0 is no change.
+* split: true|false - If true, normal letters, digits and other will be processed individually, per word.
+* compress true|false - If true, each character will only appear once in the word passed to the check, in order of appearance.
+* sort: If true, letters will be sorted in the word passedto the checking routine.
+* minwordsize - Words of smaller length will be ignored.
+* maxwordsize - Longer words will be ignored. 0 to turn it off.
+\\//(The checks have default settings, usually having compress on and split.)//
+There are individual extra settings:
+* words
+** size - Number of words held maximally at a time. Can be thousands for a global check, should probably be several dozens to few hundreds for individual players, depending on memory.
+** buckets - The number of buckets or intervals in which the age of words is kept. (See time)
+** time - Duration per bucket in seconds, fractions possible. So the total time covered for an entry is buckets*time in seconds.
+** factor - This is the factor with which each bucket will be counted less in comparison to the less old one. 1.0 would mean all entries are counted in the same way over all time intervals, default will be somewhere near 0.9 or 0.8. With fewer buckets a lower factor makes sense.
+* prefixes
+** size - Maximum number of character nodes held at a time. So "hello" would take up 5 nodes. Usually a couple of thousands possible for a global check, depending on chat frequency, several hundreds for a player check rather.
+** time - duration in seconds for which an entry is valid. A weight applies similar to (time-age)/time, so with default time of 30.0 seconds you would have half the weight ig the message is 15 seconds old, fractiopns possible. Further nodes are scored with how early in the word they appear (earlier = lower score).
+* Similarity
+** size - Maximm number of entries held.
+** time - Same as with prefixes, time in seconds till expiration of an entry.
+** range - The maximum changes (Levenshtein disatance) for which to look for. Should not be taken too high, defaults to 2, probably 3 is possible, depending on cpu/size. [experts, not yet in build 74]
+** seek - Maximum number of words found within range changes of input, to justify an abort - "Cheat" parameter making the check more inaccurate, allows to abort once some entries are found - at the cost of missing more recent or exact hits this might be used to reduce the time spent checking alot. (not used by default).
+
+//The extended sections can only be set in the global configuration.//
+===Chat Channels Problems===
+Chat channels pose a problem for spam detection, due to the fact that NoCheatPlus can not know that players are in a certain chat channel or party chat. If you experience problems with globalchat you could disable the global sections features, because NoCheatPlus can not (yet) distinguish if a player is talking in party chat, in private or in a global chat channel.
+
+The normal globalchat checks can be adjusted using weight and factor to still have some extended medium term chat frequency checking on a per player basis (30 seconds covered, nopwnage covers roughly 6 seconds).
+
+//We will probably address that problem by allowing hooks to state a maximum number of recipients that receive the chat of a player, such that a weighting can be done. Subject to review.//
+===chat.warning===
+This is the warning displayed if a player reaches a certain percentage of the score that triggers a violation, the level setting is to be understood as a percentage.
+==combined section==
+This section contains checks and functionality that is used or fed by several other checks or just by multiple sources, such as fighting and moving and block placing.
+===yawrate===
+This component monitors where the player is looking for moving and fighting (possibly other), all are counted in in order of processing, the change in the loooking-direction are accumulated for a certain time, and if beyond threshold trigger a penalty mechanism. The penalty is dealt in milliseconds and affects attacking for instance. If a player turns 180 degrees instantly to attack another player this check is likely to prevent that, also multiple other players or mobs can not easily be attacked with hacks having this active. This component also feeds the "improbable" check if violations occur.
+===improbable===
+This check is fed by multiple other checks and used along side with others such as attacking, throwing potions, block placing at long distance, some violations and actions frequencies count in here as well. It is meant to detect "improbable" behavior which often does not only include attacking only but also turning a lot and possibly clicking the inventory all in a relatively fast sequence. This fills the gap that on the one hand players can reach 15 attacks per second for a short while theoretically or with lag, but you would not be able to keep that up for several seconds, realistically.
+===invulnerable===
+This section allows to remove the damage invulnerability which is given to players at login. You can alter it or deactivate it completely. It is possible to adjust the invulnerability for different sources of damage individually. By default only fall damage is dealt, also only if the player has been falling before logging in.
+\\Technically the invulnerability ticks are set to 0, and if a player is to be dealt damage while invulnerability still would be valid, the damage would get cancelled.
+\\You can strictly prevent exploits by setting it to trigger always, instead of only with fall distance, to avoid a player that logged in quickly to exploit immunity to jump down somewhere.
+==Compatibility section==
+In the list under blocks.ignorepassable you can add Bukkit names of blocks or ids to let the passable check treat these as air, in case there is problems. This section might get moved to another file later on.
+===Blocks===
+Compatibility for properties of blocks.
+====ignorepassable====
+Deprecated ! Will be removed for overrideflags.
+====allowinstabreak====
+This is a list of block ids or bukkit material names of blocks for which to allow instant breaking. This is meant as a last resort for compatibility in case of bugs or blocks added by mods.
+====overrideflags====
+This is a mapping of blocks ids or bukkit material names to a block-flag definition. These flags allow control over various aspects of block-collision handling like shapes or passability.
+
+For simple shaped blocks you might not need to change anything, but if the server does not tell the actual bounds of the block, or the block is more complex shaped (like a cauldron), overriding flags would be inevitable.
+
+Setting an entry overrides the present flags unless you add //default// (snow: default|ign_passable). Separate flags by '|' or '+', removing flags is not (yet) possible, one has to override fully for that purpose.
+
+A typical entry to make a new not fully solid block "playable" would be to allow standing on any place inside of the block including allowing to pass through:\\
+154: GROUND|GROUND_HEIGHT|IGN_PASSABLE|XZ100|HEIGHT100
+
+\\The GROUND_HEIGHT flag allows to stand on any y-level inside of blocks that have IGN_PASSABLE set, it can be used with complex shaped blocks or blocks for which the server returns unusable bounds, in which case one would set GROUND|IGN_PASSABLE|XZ100|HEIGHT100|GROUND_HEIGHT.
+\\To use the shape the server tells, set to: GROUND|GROUND_HEIGHT|IGN_PASSABLE
+
+Do mind that with complex-shaped blocks IGN_PASSABLE allows players to pass and interact through the block, but even if GROUND is set, you might have to add GROUND_HIGHT to allow standing on any level of the block, because NCP does not count being inside of a block as being on ground by default.
+
+Available flags:
+STAIRS|LIQUID|SOLID|IGN_PASSABLE|WATER|LAVA|HEIGHT150|GROUND|HEIGHT100|CLIMBABLE|VARIABLE|XZ100|GROUND_HEIGHT|HEIGHT_8SIM_DEC|HEIGHT_8SIM_INC|HEIGHT_8_INC|RAILS
+\\TODO: Explain flags.
+
+A way to compare flags is to set blockbreak.debug to true, NCP will dump the default block properties to the console (should work with /ncp reload). This allows to set the same flags as other blocks of similar nature. However at present there are distinct workarounds for certain type of blocks so this might not work out on every sort of block.
+
+A way to obtain information about block shapes is to set moving.debug to true and walk over blocks. It is necessary to have a development build for this or to edit BuildParameters.properties in the jar, setting DEBUG_LEVEL to something big like 10000. There might be better methods of analysis available at a later point of time, but for some blocks one can't get the actual shape without knowing the blocks around it, e.g. fences.
+
+==Items==
+This is a hotfix check to remove enchantments from signed books, it is very aggressive in removing the enchantments (using or clicking or changing to an enchanted book is enough to trigger removal), but it does not generate any violations.\\
+This also prevents right clicking mobs with spawn eggs. Since build 282 you can disable spawn-egg-dupe prevention with disabling the items check.
+This check is likely to be removed soon, because CraftBukkit contains fixes.
+==Global config vs. world configs==
+Build 90+ will automatically warn if you use global settings in world configs, and also only add world specific defaults.
+
+The following settings are global only and can not be overriden by world configs:
+* The exclusions and commands lists from the chat checks.
+* //Other standard settings such as nomovedtooquickly [ask if in doubt]//
+* //Future: chat engine enable and cache size settings.//
+==Important Changes by Build Number==
+See: [[build-infos.creole|Important Changes By Build Number]]

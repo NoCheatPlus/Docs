@@ -1,0 +1,53 @@
+This section of the configuration file provides you with additional settings to improve overall compatibility stuff.
+|managelisteners||
+|bukkitapionly|Setting this to true will force NoCheatPlus to only run with the BukkitAPI instead of also using internals.|
+
+=Blocks=
+|ignorepassable|The Passable check will ignore every block you put on this list and allow to noclip thought it.|
+|allowinstabreak|The Fastbreak check will ignore every block you put on this list which means that players can mine them faster then possible.|
+
+**Notes**
+* For ignorepassable and allowinstabreak you need to use the proper Material name from here: https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Material.html
+
+==Overrideflags==
+This section allows you to tell NCP how to interpret blocks, concerning shape, if you can walk on them, walk through them and the like. The section represents a mapping from blocks to "flags". Blocks can be input by id (if it doesn't recognize numbers, use strings, e.g. "49" instead of 49) or by the Bukkit name (TODO: java doc link to bukkit + maybe latest spigot?).
+
+Typical settings would be:\\
+Air: TODO\\
+Full blocks like stone: TODO\\
+Blocks to both walk on and through (e.g. with complex yet unseen shape): TODO\\
+
+There is one flag called "default", which you can use for using the already set flags, which NCP might already have initialized, e.g. if you want to just add a flag. (Only use where you know what it means, set checks.blockbreak.debug to true, in order to dump the flags that NCP is using internally to the log-file).
+
+TODO: Better descriptions, stress the useful ones, more on the actual mechanics, more on workarounds (if still present. Also shuffle the entries in the table below.
+|**Flag**|**Meaning**|
+|stairs|Stair blocks.|
+|liquid|General liquid|
+|solid|Minecraft isSolid result. Used for setting ground flag - Subject to change / rename.|
+|ign_passable|Compatibility flag: regard this block as passable always.|
+|water|Like water.|
+|lava|Like lava.|
+|height150|Override bounding box: 1.5 blocks high, like fences. NOTE: This might have relevance for passable later.|
+|ground|The player can stand on these, sneaking or not.|
+|height100|Override bounding box: 1 block height. NOTE: This should later be ignored by passable, rather.|
+|climbable|Climbable like ladder and vine (allow to land on without taking damage).|
+|f_variable|The block can change shape, like fences. This is most likely not 100% accurate...|
+|f_full|The block has full bounds (0..1), inaccurate!|
+|f_xz100|Block has full xz-bounds.|
+|f_ground_height|This flag indicates that even though a passable workaround, everything above passable height is still ground.|
+|f_height_8sim_dec|The height is assumed to decrease from 1.0 with increasing data value from 0 to 0x7, with 0x7 being the lowest. (repeating till 0x15)). 0x8 means falling/full block. This is meant to model flowing water/lava. However the hit-box for collision checks  will be set to 0.5 height or 1.0 height only.|
+|f_height_8sim_inc|The height is assumed to increase with data value up to 0x7, repeating up to 0x15. However the hit-box for collision checks  will be set to 0.5 height or 1.0 height only, as with the 1.4.x snow levels.|
+|f_height_8_inc|The height increases with data value (8 heights). This is for MC 1.5 snow levels.|
+|rails|All rail types a minecart can move on.|
+|ice|Ice - for sliding on it.|
+|leaves|LEAVES|
+|thin_fence|THIN FENCE (glass panes, iron fence)|
+|thick_fence|Thick fence (default wooden fence).|
+|passable_x4|Fence gate style with 0x04 being fully passable.|
+|collide_edges|Meta-flag to indicate that the (max.-) edges should mean a collision, can be passed to collidesBlock.|
+
+**References**\\
+Passable\\
+Fastbreak\\
+Internals\\
+BukkitAPI\\

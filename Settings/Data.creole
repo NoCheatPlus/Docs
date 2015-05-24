@@ -1,0 +1,17 @@
+=Expiration=
+
+The data section allows you to specify a data expiration duration for players data in minutes. If set to something greater than 0, this will periodically remove players data if the players have been logged out for longer than the specified duration in minutes. At present this would also delete set-back locations and current violation levels, if activated, so it should not be set to a too short duration.
+
+|Duration|Time in minutes after which NoCheatPlus will start cleaning the data of players that have been offline this long|
+|History|Setting this to true will also clean away the violation history of those players|
+
+=Consistency Checks=
+**EDIT THIS:** it's doing consistency checks for some internal mappings and also might release some memory
+|interval|Interval in seconds at which NC+ will check for consistency|
+|maxtime|The maximal limit given in milliseconds that NoCheatPlus can take for a consistency check. If it exceed it will get aborted. Value has to be in range of 1 to 50.|
+|suppresswarnings|Setting this to true will not print any alerts in the console or nocheatplus.log|
+
+
+**References**\\ 
+[[Active|Global#active]]\\
+[[Violations|Backgrounds#violations]]

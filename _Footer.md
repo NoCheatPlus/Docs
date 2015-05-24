@@ -1,0 +1,1 @@
+[Home](Home) | [Permissions](Permissions) | [Commands](Commands) | [Backgrounds](Backgrounds)

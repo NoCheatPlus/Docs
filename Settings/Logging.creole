@@ -1,0 +1,22 @@
+|debug|NoCheatPlus will print additional debug information in your console and log file if you set this to true.|
+|maxqueuesize|Maximal amount of debug info that can get queued before NoCheatPlus starts to drop them.|
+
+**Notes**:\\
+* The queues are used if its scheduled for the primary thread or for an asynchronous task
+
+=Backend=
+Here you can configure the different logging aspects of NoCheatPlus.\\
+|prefix|Allows you to set the prefix of the logging messages.|
+|asynchronous|NoCheatPlus will log asynchronously if this is set to true.|
+|filename|Specify an existing folder or a name without extension (must not exist as file), and NCP will create a log file for each run and reload, named by date, all within that folder.|
+|subscriptions|Enabling subscriptions will allow other things (IRC, plugins etc.) but players to receive ingame notifications (permission subscriptions).|
+
+**Notes**\\
+* Prefixes can be blank if you only want to see the messages
+* Color codes are supported in prefixes using &
+* NoCheatPlus will log in a folder if you change {{{filename: nocheatplus}}} (a new folder "nocheatplus" will be created and logs will be stored in there instead of the single nocheatplus.log file)
+
+**References**\\ 
+* [[Active|Global#active]]\\
+* [[Asynchronous|Backgrounds#asynchronous]]\\
+* Color codes

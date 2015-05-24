@@ -1,0 +1,27 @@
+=Plugins=
+Here you can hide your plugins from being sniffed out using some simple tricks.
+==No permission==
+
+|message|| 
+|commands||
+
+==Unknown Command==
+|message|
+|commands|
+
+=Commands=
+
+==Console only==
+|message|| 
+|commands|| 
+
+=Clients=
+==Motd==
+|allowall| If you set this to true it will allow all client sided mods to work on your server (check Permissions page for fine tuning client modifications). | 
+
+**Note**:
+* Use the protection bypass permission if you want curtain players/groups to bypass your plugin protection.
+
+**References**\\
+* [[Permissions|Permissions]] 
+* [[Client Modifications|Client-Modifications]]

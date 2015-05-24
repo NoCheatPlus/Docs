@@ -1,0 +1,434 @@
+Older builds are kept here to keep build-infos smaller.
+
+----
+===3.8.11-RC-b467(**release**)===
+* Release on BukkitDev. 
+===3.8.11-b466(cumulative)===
+* Add "blind" MC 1.5 block support. This is an attempt to make 1.5 playable with the bukkit-api-only compatibility module in use. Block breaking times are not adjusted, but the blocks are initialized with some flags for moving over them etc. If a block poses a problem flags can still be overridden using the configuration of NCP.
+* Add "ncp unkick *" option to remove all players from the deny-login list.
+* Fight.reach distances (survival) are configurable now.
+* Add "default" flag option for overriding block flags, for conveniently adding few flags without having to guess the others. More tolerant flag parsing (whitespace), allow '+' for flag-separation as well.
+* Consistency fixes for data removal (affects chat.logins for instance).
+* Fix godmode being checked for dead players.
+* Fix for survivalfly/swimup and stairs.
+* Fix "downstream" judgment for horizontal speed not taken into account on second check (after failure).
+* Horizontal veloctiy handling:
+** Fix wrong counter being used once activated.
+** Add maximum tick age for activation. This prevents waiting for a long time without moving before using velocity.
+* Use of more exact bounding boxes for the player (mainly survivalfly).
+** Reduced the number of blocks visited and deeper checking.
+** Various changes to workarounds and other. Could reduce some false positives, could also create new.
+** Fixes falling through narrow spots and taking fall damage on some occasions.
+* General fixes to block collision logic. Includes changing some flags and workarounds.
+* Fixes for block flags with "bukkit-api-only".
+* Fixes for MCAccess modules (data cleanup, can't stand on minecarts)
+* More performance related changes (moving/survivalfly).
+** A little less object creation.
+** Re-group some checking and distribute to several methods.
+** Collect flags for a smaller bounding box.
+** Don't check everything twice if a player does not move.
+* Fix: Set the correct potion-effect strength in data.
+* Only set velocity flag if velocity is actually being processed (sfDirty).
+* Attempt to catch more "lost-ground" cases with block edges.
+* Add more detailed tags to lost-ground workarounds (survivalfly) for better debugging.
+* Let NoFall look for ground within a slightly extended margin for the case of taking fall damage unexpectedly.
+===3.8.11-b452("mostly stable", cumulative)===
+* New method of velocity handling for horizontal velocity. The new method uses velocity on demand and allows delayed "activation" to account better for latency.
+* Add "strict" option to the fight.direction check. Takes into account not only the distance to the estimated target but also the angle.
+* Reduce amount fight.reach can contribute to combined.improbable.
+* Fix for non-exact vanilla-respawn.
+* Attempt to catch more moved too quickly / moved wrongly teleports in order to prevent resetting of fly-data.
+* Further changes and fixes to on-ground judgment.
+** More exact judgement if a player can actually stand on/in a block.
+** Survivalfly workarounds adjusted to catch more fish.
+* Consistency: remove some more data on players leaving.
+* Performance related changes (mostly moving / on-ground checks).
+===3.8.11-b442(cumulative)===
+* Changes to on-ground judgement (ongoing), seems consolidated. Aiming at consistency, performance, spiders. [//amining at//, not yet done/finished!]
+* Adaption to debugging messages.
+----
+===3.8.10-RC-b438(**release**)===
+* Release on BukkitDev.
+* Last minute fix: revert removing shortcut on-ground check, but fix it, instead.
+===3.8.10-RC-b436(planned release)===
+* Scheduled release on BukkitDev [unless for last-minute fixes.]
+===3.8.10-b435(release phase, cumulative)===
+* Fixes and more safety guards for ray-tracing (general, passable).
+* Reduce false positives with SurvivalFly (jumping onto edges, lost-ground, sprint+jump+attack, sneak/block+velocity, jump+sprint+touch-water).
+* Add step option to survivalfly/hover, in order to reduce load by only checking every //step// ticks and a loginticks option to allow giving players a little longer hover time after login.
+* Adjust some caching for moving checking and remove a --dubious shortcut-- check.
+* Fix zombe/noclip permission flipped.
+* Fixes for consistency (data removal for chat data, logins data removal in case of "ncp remove *").
+* Ensure some blocks like glass or leaves are not ignored by the passable check for bukkit-api-only.
+* Added dev-url.
+* Add support for the checks.debug flag, as a possibility to set a preset for all checks debug flags.
+* Added build-parameter support.
+* Several debug outputs adjusted.
+* Adjust and correct messages for MCAccess setup failures/problems.
+* Set internal module structure for 1.4.7 in stone, finally.
+
+
+===3.8.10-b418 (release phase, cumulative)===
+* Start of release phase: "mostly stable".
+
+===3.8.10-ALPHA-b417 (cumulative)===
+* Add ray-tracing to the passable check.
+* Fix passable preventing to jump upwards if stuck but with free head.
+* Add blockinteract.speed.
+* Add blockinteract.visible (also raytracing for visible blocks, slightly different method).
+* Optimize and fix blockinteract checks.
+* Add fastheal check.
+* Fix direction checks [might need more tweaks against false positives].
+* Fixes for survivalfly: standing on sand below cactus, false positives with block edges [not all yet], fix hover check alerting for players who should not get checked after join (flying), false positives with jumping out of water near steps.
+* Change configuration of data-expiration: adds an active-flag.
+* Add compatibility-option to override any block-flags.
+* Add ability to exempt from silent blockplace and blockbreak checks (liquid/air).
+* Fix/adjust some messages and preset permissions, debug outputs.
+* Fixes for consistency.
+* Remove Metrics timeouts (should be ok in an extra thread), since it is more fair to our stats.
+* Optimizations.
+
+
+===3.8.10-ALPHA-b387 (cumulative)===
+* Re-code god-mode check [still false positives in b391].
+* Survivalfly: change accounting method to something more sharp and less/not influenced by lag.
+* Adjustments to velocity-handling. More precise counting + configurable grace-count, invalidate velocity after grace period under certain circumstances.
+* Fix for on-ground judgement.
+* Fixes for survivalfly: prevent fast moving up water, ladders, etc., reduce some false positives (including cactus), prevent moving on signs.
+* Survivalfly: More strict jumping limits also depending on the medium the player jumped from.
+* Survivalfly: fall-damage config option added.
+* Fix for fastbreak: Higher haste-modifiers.
+* Lag adaption for inventory.fastclick.
+* All noswing actions were adjusted to not alert for lower levels.
+* Adjust some debug messages.
+* Bigger internal changes to reduce some dependencies (not affecting normal API use or function).
+----
+===3.8.9-b353 (alpha release, cumulative)===
+* Alpha release on BukkitDev.
+* Fix false positives of flying/hover for fences, thin glass and similar.
+* Attempt to fix occasional false positives when logging in in water (survivalfly).
+* Fixes and performance optimization for the hover check.
+* Only add to improbable for normal fighting if target(s) are moving or are apart from each other by a certain distance.
+* Attempt to fix backwards-sprinting false positives on survivalfly for the case of taking damage while sprinting+jumping.
+* Fix Munchhausen not being enabled ever, even if wanted to.
+* Various fixes for internals concerning consistency and cleanup, for instance for reloading the configuration.
+===3.8.9-b344(cumulative)===
+* Add command "/ncp version" for convenient display of server version, ncp version and MCAccess module in use.
+* Fix jumping on boats for a part.
+* Attempt to fix issues with exiting boats or boats  being destroyed.
+* Fix axes + vines (fastbreak).
+* Improve morepackets(vehicle) to actually set back players (also fro pigs) and to only use the earliest set-back in case of many violations within one server tick.
+* Fix for dead-people-fighting prevention.
+* Fixes for consistency (internal components, TickTask, hover check)
+* Fix NoFall bypass - partly revert/renew nofall logic for players receiving fall damage though not being on ground.
+* Add more ways to let MCAccess implementations fail (class member checks). Prevents the wrong MCAccess loading for some server mods, future purpose.
+===3.8.9-b335 (cumulative)===
+* Fixes and "safeguards" for bad inputs for TickTask.getLag and for system time running backwards. Account for the possibility of the TickTask getting reset (not yet a realistic scenario).
+* Fix for "bukkitapionly".
+===3.8.9-b329 (cumulative)===
+* Check morepackets(vehicle) for players riding on pigs.
+* Adding compatibility block list to be able to allow "instant breaking" for those blocks, in case a block type poses trouble with fastbreak.
+* Add a "bukkit-api-only" compatibility module - it is likely to have all sorts of issues, but prevents complete absence of NCP in case of "accidental updating". [Does have issues, fixes in build 335.]
+* Fix for fastbreak: penalty factors for under-water and off-ground.
+* Fixes for the hover check (survivalfly).
+* Bigger portions of code moved internally + refactoring (preparations for bukkit-api-only support and for future changes).
+===3.8.9-b320===
+* Add fine grained permissions for Rei's Minimap's radar.
+===3.8.9-b319 (cumulative)===
+* **Support for Minecraft 1.4.7.**
+* Fix issue with chat.logins: Already kicked players will not count for logins anymore (checked at priority level "normal", though), specifically players denied to login by NCP itself should not count in anymore.
+* Should have fixed issues with fall damage dealt and death-message plugins.
+===3.8.9-b316 (cumulative)===
+* Add a "hover" check (survivalfly). It might cause trouble with sleeping/dead players on some conditions, but it can be disabled.
+* Slight changes to NoFall: Remove "double damage", also having in mind the case of Minecraft dealing false damage.
+* Add// /ncp unexempt *//
+* Update Metrics.
+* Remove old LagMeasureTask in favor of the new TickTask.
+===3.8.9-b312===
+* Fixes for "System time ran backwards". 
+===3.8.9-b311 (cumulative)===
+* **Seems to have fixed or worked around issues with /spawn and Essentials.**
+* Internal changes to keep set-backs "firewalled" against locations coming from outside (//Still not sure what the actual cause was, suspicion is other plugins messing with special objects that behave strangely on cloning and are kept as references somehow, but that is more like an uneducated guess.//). Leads to less object creation from moving checks (unless for set-backs).
+===3.8.8-b310 (cumulative)===
+* **Incompatibility with Essentials, MultiVerse, MobArena**\\Their spawn locations //seems// to change after some time, does not appear to happen with simple plugins that use the worlds spawn.
+* Adjustments to set-backs for moving checks. \\//(See incompatibility note above)//\\Setting the set backs will use less object creation, getting them will create objects rather.
+* Add some lag-awareness, i.e. counting in lag durations or skipping short term checks.
+* Adjustments to debug output for moving.
+----
+===3.8.8-b301 (beta release, cumulative )===
+* Beta release on BukkitDev.
+* Adaptions and fixes to combined.yawrate and combined.improbable.
+* Add "strict" flag to the configuration of blockbreak.fastbreak. Similar to inventory.instantbow, setting this to false will lead to taking the time between two block break actions, not from interaction to breaking.
+* The chat.logins data gets erased with reloading the configuration.
+* Updated some permissions in the plugin.yml.
+* Some internals, like using a logging utility where appropriate.
+----
+===3.8.7-beta-b294 (cumulative)===
+* Beta release on BukkitDev.
+===3.8.7-b293 (cumulative)===
+* 1.4.6 support.
+* Fix for yawrate.
+* Fix walking on brewing stands.
+* Better precise lag spike counting.
+----
+===3.8.6-beta-b285 (cumulative)===
+* Beta release on BukkitDev.
+===3.8.6-b284 (cumulative)===
+* Compatibility series (beta) for 1.4 (CB2511 -> CB 2512).
+* Might work with all builds 1.4.2 ... 1.4.5.
+* Various bug fixes since the x1 build (survivalfly, bed-leave, lag, other).
+* Disable managelisteners option, needs to manually reset the flag, or regenerate the entry/config.
+* Spawn-egg dupe-prevention is bound to the inventory.items check being active, to allow turning it off.
+* Munchhausen check added, could be activated if you have trouble with players using a fishing rod for flying. (Now official tribute to BergerKiller, deactivated by default.)
+----
+===--Bridge-MC_1_4-y2-DEV--===
+* <<color red>>This build contains bugs! It's not recommended to use it anymore.<</color>>
+* Compatibility release (beta) for 1.4 (CB2511 -> CB 2512).
+* Might work with all builds 1.4.2 ... 1.4.5.
+* <<color RED>>This build can not be found on our Jenkins site.<</color>>
+----
+===--Bridge-CB2411_CB2412-x1--===
+* <<color red>>This build contains bugs! It's not recommended to use it anymore.<</color>>
+* Compatibility release (beta) for 1.4 (CB2511 -> CB 2512).
+* Might work with all builds 1.4.2 ... 1.4.5.
+* <<color RED>>This build can not be found on our Jenkins site.<</color>>
+===3.8.5-b274 (cumulative)===
+* Fix aspects of NoFall.
+* Add command to display lag.
+----
+===3.8.4-RC-b271===
+* Release on BukkitDev.
+===3.8.4-b270 (cumulative)===
+* More sharp no-fall check.
+* Remove undoing command changes on disabling (caused issues with permissions).
+* Using a block-cache for ground checks with block breaking too.
+----
+===3.8.3-RC-b267===
+* Release on BukkitDev. //Accidentally deleted.//
+===3.8.3-b266 (**Release phase**, cumulative)===
+* To be verified (bleeding):
+** Fix survivalfly violations for being stuck in sand and similar.
+** Attempt to improve performance with collecting some blocks properties beforehand to be able to check for quick returns.
+* Alterations to cleanup on disabling the plugin.
+* Changed synchronization of TickTask.
+* Added debug messages during disabling of the plugin (logging.debug).
+===3.8.3-b261 (cumulative)===
+* CraftBukkit dependency: 1.4.5 (..., should be backwards compatible to 1.4.2).
+* Split off a bed-leave  check.
+* Switch blockplace.fastplace to shortterm + 2 secs.
+* More kick actions for higher vls (delayed for moving!).
+* Revised and corrected parts of moving set-backs and the passable check.
+* **Fix crash exploit.**
+===3.8.3-b253 (cumulative)===
+* CraftBukkit dependency: 1.4.4-R0.1
+* Adapt to 1.4.4.
+* Compatibility with 1.4.2.
+* Fix for custom snow heights.
+* Add safeguards for MC API access.
+* Spawn-egg dupe prevention.
+----
+===3.8.1-RC-b244===
+* Release on BukkitDev.
+===3.8.1-b243 (cumulative)===
+* Instantbow has a "strict" flag now. For laggy servers should be better set to false.
+* Fight.angle: now yawrate checking for fight is bound to this, so it can be disabled with fight.angle.
+* Sharpened survivalfly and nofall.
+* Changed "protectplugins" to alter permission defaults.
+* Added tab completion for ncp-commands, for convenience.
+* Bugfixes
+** Fastbreak.
+** More blocks to be walked on (flower pot, cocoa beans, ...).
+** Adjustments to the set-back logic for moving checks.
+** Vertical accounting for survivalfly.
+** Various others.
+* A range of performance optimizations.
+** Check some permissions for moving checks only if the player is moving faster than expected.
+** Use internal caching for most moving checks, get rid of bounding box creation mostly.
+** Create optimized action lists for internal use (not containing actions that never get executed anyway).
+** Caching results from checking block ids and data.
+** Create slightly less history entries.
+* API extended. Managed listeners option for future compatibility improvements (not sure it wins any performance though).
+----
+===3.8.0-RC-b207 (**Release**)
+* Release for 1.4(.2) on BukkitDev.
+===3.8.0-b206 (**Release phase**, cumulative)===
+* Dependency set to CraftBukkit 1.4.2-R0.1 to match the beta release of CraftBukkit.
+* Use slightly bigger bounding box for stairs. (Attempts to reduce false positives).
+* Adapt instanbow default settings (**configuration change**).
+
+===3.8.0-b204 (cumulative)===
+* Developement for 1.4(.2) CraftBukkit snapshots.
+* Fix jump boost.
+* Avoid resetting set back in case of a workaround (few to none effect).
+
+----
+===3.7.10-RC-MC1.3.2-b201===
+* **1.3.2 BACKPORT RELEASE (InventoryClick).**
+* Hotfix inventory click.
+
+===3.7.10-b200 (cumulative)===
+* Adaption to CraftBukkit development builds for 1.4(.2).
+\\(Mainly new block types with their breaking and bounding box properties.)
+* FastClick: Added Option to spare players in creative mode from the fastclick check.
+* Several adaptions to attempt to reduce false positives in survivalfly.
+
+----
+===3.7.9-RC-b191 (Release)===
+* Release on BukkitDev (**critical hotfix for enchanted books**).
+===3.7.9-b190 (cumulative)===
+* Critical hotfix for enchanted books.
+* Instanteat and Instantbow: Make these actually work, instantbow does have false positives still.
+----
+===3.7.8-RC-b182 (Release)===
+* Release on BukkitDev (finally).
+----
+===3.7.7-RC-b178 (Release)===
+* --Release on BukkitDev.--
+----
+===3.7.7-RC-MC1.3.1-b177 (Release)===
+* Last "backport" release for MC1.3.1 on jenkins only.
+===3.7.7-b176 (Release phase, cumulative)===
+* NoFall: Set fall distance on logout, remove actions from default config.
+* Fixes for godmode: check permission + active, remove use of old obfuscated method, changed since. [Parts of this check might get removed: obsolete.]
+===3.7.6-b174===
+* --Release on BukkitDev.-- //(cancelled due to long present problem with godmode demanding adaptions)//\\No reason to become nervous :) - just approval takes > 5-10 hours, so i will re-upload.
+===3.7.6-b173 (Release phase, cumulative)===
+* FastBreak: Reduce vl by factor 1000.
+* FastBreak: Workarounds for wood and stone tools.
+* **Configuration changes!**
+===3.7.5-RC-b171
+* --Release on BukkitDev.-- //(cancelled due to bugs found + approval not done until then)//
+* Users of CompatNoCheatPlus should update to the latest release of cncp.
+----
+===3.7.5-RC-1.3.1-b170===
+* "Backport" release for 1.3.1 (only on jenkins).
+* Users of CompaNoCheatPlus should update to the backport release of cncp.
+===3.7.5-b169 (**Release phase**, cumulative)===
+* Fix for survivalfly (repeaters).
+* Fix NPE (teleport).
+* Passable: Ignore ladders be default.
+* API adjustments and additions to make some things accessible.
+* Adjustments to position resetting for moving checks.
+===3.7.5-b164 (**Release phase**, cumulative)===
+* Set dependency to CraftBukkit 1.3.2-R2.0
+* chat.text: some of the weights will now be weighted by time passed as well to make it slightly less aggressive (mainly message repetition).
+* survivalfly: Prevent VL reduction if violations are less tan 2 seconds ago (aims at certain bypass attempts to make them violate higher vls).
+* nofall: consistently reset nofall data on fall damage events.
+* Fixes for survivalfly (stairs).
+* Fixes for yawrate (maximum penalty, use the yaw that the player is moving towards).
+* Fixes for passable (allow moving if head is free).
+* Slight API extension (changes if not using AbstractNCPHook). **cncp needs updating!**
+* Completely remove nomovedtooquickly remainders (NetServerHandler).
+* Configuration changes !
+----
+===3.7.4-RC-b156 (**Release**)===
+* Release on BukkitDev
+===3.7.4-b155 (Release phase, cumulative)===
+* Passable + cactus.
+* Ladder + efficiency-axes.
+* Only alert for outdated config if needed.
+* Reduce false positives i survivalfly.
+* Account for fences with the on-ground judgements.
+===3.7.4-b153 (cumulative)===
+* Passable check has more safeguards against moving inside of blocks.
+* On-ground checking has an anti-spider feature now (ignore blocks that have colliding solid blocks above).
+* Performance improvements for moving checks, but also features added (accounting, anti spider).
+* Fixes.
+===3.7.4-b145===
+* Adjust survivalfly, fighting checks...
+* Delete all data and history if the system time ran backwards.
+* No more teleporting of players: instead remove the invulnerability after login and check the damage events to decide if to apply certain kinds of damage.
+* Fixes and optimizations. Config changes...
+===3.7.4-b127===
+* **Big change:** Chat section re-organized, merged nopwnage+globalchat into "text". Added checks to treat commands, relog and global logins individually.
+===3.7.4-b124 (cumulative)===
+* Various minor fixes.
+* Begin to re-structure chat section,
+----
+===3.7.3-b111 (**beta release on bukkitdev**,cumulative)===
+* (111) Fix wrong speed check vl being added to history.
+* Cleanup flying permissions: creativefly bypass now also bypasses survivalfly by default. Slight optimization.
+* Fixes to fastbreak (enderchest), adapt logging output for fastbreak to show used and expected times for each block as well.
+* Adapt checks to be more effective against forcefields, include a distance-penalty for hitting at long distances and a time-penalty for turning too much.
+* Make configurable if to ignor creative mode or the allowFlight setting for using the creativefly check.
+* Add data expiration management to enable you to release some memory.
+* Add savebackconfig setting to allow minimal per-world configs.
+* Various adjustments and optimizations.
+===3.7.2-beta-b96 (**beta release on bukkitdev**)===
+* Minor adjustments, world config fixed for a part.
+===3.7.1-beta-b95 (**beta release on bukkitdev**, cumulative)===
+* Setting version to 3.7.1... to not risk mix ups with the earliest builds (it happens!).
+* Small adjustments and fixes.
+* Cleanup command usage output a bit, add commands for exemption.
+* Remove checkforupdates for the moment.
+
+\\//From here on only bug fixes and configuraton changes will make it into the beta release.//
+===3.7.0-b92===
+* Internal API changes: cncp must be updated**!
+* Disable captcha by default. instead deny to login for some time. Rearm nopwnage slightly (vl is kept now and decreases with normal messages).
+* Adjust configuration in some places.
+* Change config path: chat.globalchat.commands -> chat.handleaschat
+* Add kicklist and unkick commands.
+===3.7.0-b91 (cumulative)===
+* Only add defaults to world configs, that belong there, warn if entries are present that only should or only can be set in the global configuration file.
+* Fix world configs not being recognized.
+===3.7.0-b88 (cumulative)===
+* Mostly fixes for fastbreak (important).
+* Add level to wrong block check, and let it trigger much less often.
+* Improvements for commands (remove removes also history, works for data of players that went offline).
+===--3.7.0-b86-- (cumulative, feature complete)===
+* (b86) Important fixes for fastbreak.
+* Reorganize fast breaking: fastbreak will be the new check, blockbreak.frequency will be the check limiting the breaking frequency even for insta breaking.
+* Allow creative to insta break.
+* Allow insta break leaves with efficiency>1, adjust durationfor leaves for efficiency 1.
+* Contains a more exact fast break check, taking into account individual blocks and enchantments. Needs further testing.
+* Improvement for wrong-blobk check.
+* Might need more balancing, reports about blocks/tools/enhantments combinations conflicting with fastbreak most welcome (//only if oldcheck is set to false...//)!
+===3.7.0-b82 (**beta candidate**)===
+* Violation level of wrong-block check decreases with time now.
+* Added internals for better fast break checks (few difference).
+===--3.7.0-b81--===
+* Simplify and optimize violation handling and actions execution (small bug probability).
+* Adjust KnockBack check to only count start of sprinting, not end of sprinting.
+===--3.7.0-b80-- (cumulative)===
+* Add command "ncp removeplayer", to remove player violation data. The globalchat engine datas (holding typed words etc.) will not be reset by this, but that expires after about 30 seconds anyway.
+* Add "wrong block" check (block break).
+* Add "improbable" check (combined: several indications of improbable behavior, like speeds, hitting on max distance, other violations).
+* Add "ncp tempkick [player] [minutes]..."\\//(Denies login, does not save kicked players.)//
+===--3.7.0-b78-- ===
+* Fix check type not displaying correctly on ncp info.
+===--3.7.0-b77-- (cumulative)===
+**Consider --Builds 73 to 76 broken!-- use 77 up.**
+* Critical fix over --73 to 76--: Actions endless repetition.
+* Important fix: blockbreak / fastbreak.
+* Fix: range for globalchat/similarity is now read from the config.
+* Chat updates players permission states on world changes.
+* Rework asynchronous actions execution handling - demands of hooks for chat to allow processing in another thread than the main thread.
+* Tweak nofall (less extra on-ground checking).
+* Make tolerance for step check configurable, defaulting to 0.1: checks.moving.survivalfly.ystep  -  maximally close to below 0.5, players moving up for 1 +- tolerance get reset (in short).
+===--3.7.0-b72--===
+* Update permissions in plugin.yml
+===--3.7.0-b71-- (cumulative)===
+* Add: selfhit check.
+* Fix: Global config does not overwrite on reading errors.
+* nomovedtooquickly settings are hidden now (too much confusion with versions / 1.3.1 servers with 1.3.2 clients etc.)
+* globalchat: add hidden active flags for global and player sections (work in per world configs).
+* Remove ban/ip actions from nopwnage checks default actions.
+* All kick commands done from chat checks should use delayed kicks (dafaults adjusted: ncp delay ...).
+===--3.7.0-b68--===
+* globalchat
+** Renaming of the engine config section. global/player: words, prefixes.\\**Removes the engine section, and engine.active setting**\\The extended checks have to be activated individually , global and per player method sections can have a weight to be multiplied with the results, further settings available. By default all are turned off.
+** nopwnage.debug/globlachat.debug: true outputs scoring info to the console.
+** globalchat.maximum: false Will sum up engine scores instead of using the maximum.
+** Adding a similarity check.
+* Fixes. Nopwnage vl accumulates now correctly.
+* captcha: Removed some letters from the defaults.
+===--3.7.0-b67--===
+* Important fix for glcompressedwords (only relevant if enabled).
+* Potential fixes for startup issues.
+===--3.7.0-b66--===
+* nopwnage.speed.weight: 100
+* globalchat.level: 80
+* globalchat.engine.active: false
+* globalchat.engine.glcompressedwords.active: false
+\\//Reloading resets chat violation data, now.//

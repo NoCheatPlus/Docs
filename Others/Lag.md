@@ -1,0 +1,1 @@
+This page will explain to you all diffrent kids of lag and such.

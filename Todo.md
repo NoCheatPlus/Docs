@@ -1,0 +1,3 @@
+- [ ] Import over development.creole from https://github.com/asofold/NCPDocs/blob/master/wiki/development/development.creole
+- [ ] Take some stuff from https://github.com/asofold/NCPDocs/blob/master/wiki/development/issues.creole
+- [ ] Port over and update tickets.creole from (should actually be directly in source) https://github.com/asofold/NCPDocs/blob/master/wiki/development/tickets.creole
