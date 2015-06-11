@@ -55,7 +55,7 @@ These provide problems to make compatible, though it is not impossible technical
 * Weapons such as wands from Thaumcraft that use special fighting ability's will trigger some fight checks of NoCheatPlus since NCP doesn't know this kind of fighting style.
 * Going trough TwilightForest portals will trigger SurvivalFly because of this mode having strange movement while the player is teleported to the other world.
 * NoCheatPlus will most likely block FakePlayers because of the bukkit superperms not supporting any "offline players". To make them compatible with NoCheatPlus you need to set "FakeJoin" to true so FakePlayers send fake login events to the server (might cause other issues).
-* Placing blocks without any at*tachment on the ground such as cables or similar will trigger the "AgainstAir" check of NoCheatPlus. To workaround this issue give your default users group the "nocheatplus.checks.blockplace.against.air" permission.
+* Placing blocks without any attachment on the ground such as cables or similar will trigger the "AgainstAir" check of NoCheatPlus. To workaround this issue give your default users group the "nocheatplus.checks.blockplace.against.air" permission.
 * Jet packs and other "fly" tools are most likely incompatible with the SurvivalFly check.
 
 ### Spout and CompatNoCheatPlus
