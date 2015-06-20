@@ -36,8 +36,8 @@ As you may know in order to create a moving picture you need to quickly display 
 * If your GPU fails to keep up with the game renderer (too many particles, too much chunks loaded at once and much more...) you will feel latency.
 * VSync or VerticalSync tries to synchronise your GPU with the monitor by making the GPU only process as much FPS as the monitor can handle.
 
-[Monitor & TV Refresh Rates as Fast As Possible]  
-[FreeSync and VSync explanation]
+* [Monitor & TV Refresh Rates as Fast As Possible]
+* [FreeSync and VSync explanation]
 
 ## Network
 Latency can also occur if the client:
