@@ -1,4 +1,3 @@
-## Configuration
 * [Multiworld](Multiworld)
 * [Data](Data)
 * [Logging](Logging)
