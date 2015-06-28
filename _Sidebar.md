@@ -13,7 +13,7 @@
 * [Logging](Logging)
 * [Protection](Protection)
 * [Checks](Checks)
- * [Global](Global)
+ * [General](General)
  * [Strings] (Strings)
  * [Miscellaneous](Miscellaneous)
 * [Compatibility](Compatibility)
