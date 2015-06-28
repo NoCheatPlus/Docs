@@ -7,7 +7,7 @@
 * [Commands](Commands)
 * [Permissions](Permissions)
 
-## Configuartion
+## [Configuration](Configuration)
 * [Multiworld](Multiworld)
 * [Data](Data)
 * [Logging](Logging)
