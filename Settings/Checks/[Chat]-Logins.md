@@ -14,5 +14,5 @@ This check limits the amount of players that can join in a short time.
 
 
 **Related**   
-* [Active](Global#Active)
-* [Actions](Global#Actions)
+* [Active](General#Active)
+* [Actions](General#Actions)

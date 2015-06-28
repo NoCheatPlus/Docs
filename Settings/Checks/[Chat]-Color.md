@@ -6,5 +6,5 @@ Color is an obsolete check that was designed to stop players from using color in
 
 
 **Related**
-* [Active](Global#Active)
-* [Actions](Global#Actions)
+* [Active](General#Active)
+* [Actions](General#Actions)

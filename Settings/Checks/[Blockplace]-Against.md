@@ -9,5 +9,5 @@ This check prevents players to place blocks against liquids or air.
 * Some mods such as IC2 (via Forge) might allow placing blocks such as cables in/against air, so this feature might conflict there.
 
 **Related**
-* [Active](Global#Active)
-* [Actions](Global#Actions)
+* [Active](General#Active)
+* [Actions](General#Actions)

@@ -14,5 +14,5 @@ The speed check limits the amount of interactions a player can do within a given
 * Trying to constantly break grass in a protected area (WorldGuard) can create about 35-45 interactions in 2 seconds.
 
 **Related**
-* [Active](Global#Active)
-* [Actions](Global#Actions)
+* [Active](General#Active)
+* [Actions](General#Actions)

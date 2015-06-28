@@ -5,5 +5,5 @@ Exemption: `INVENTORY_GUTENBERG`
 Gutenberg prevents players from writing books that have more then 50 pages using a weakness in Minecraft.
 
 **Related**  
-* [Active](Global#Active)
-* [Actions](Global#Actions)
+* [Active](General#Active)
+* [Actions](General#Actions)

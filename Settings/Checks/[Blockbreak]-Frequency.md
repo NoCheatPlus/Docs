@@ -16,5 +16,5 @@ Preventing players from breaking too many blocks in no time is the job of our Fr
 * In addition it has a short term setting, also counting the blocks within the last n ticks and limiting the short term amount. This way players cannot break 80 blocks at once and then pause for two seconds.
 
 **Related**  
-* [Active](Global#Active)
-* [Actions](Global#Actions)
+* [Active](General#Active)
+* [Actions](General#Actions)

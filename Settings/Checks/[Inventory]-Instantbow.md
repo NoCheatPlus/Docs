@@ -10,5 +10,5 @@ This check will make sure that your players use the proper fire speed to shoot a
 | delay               | |
 
 **Related**  
-* [Active](Global#Active)
-* [Actions](Global#Actions)
+* [Active](General#Active)
+* [Actions](General#Actions)

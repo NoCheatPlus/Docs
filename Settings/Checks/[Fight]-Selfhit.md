@@ -8,5 +8,5 @@ This check was designed to prevent hackers from hitting themselves, abusing that
 * Leaving selfhit enabled wont conflict with Mojangs or Spigots fix on this exploit
 
 **Related**  
-* [Active](Global#Active)
-* [Actions](Global#Actions)
+* [Active](General#Active)
+* [Actions](General#Actions)

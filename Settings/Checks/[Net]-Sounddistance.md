@@ -10,5 +10,5 @@ This check prevents hackers from tracking far away players by abusing the weathe
 | maxdistance         | Limit the distance (in blocks) at which weather can be heard for each player. |
 
 **Related**  
-* [Active](Global#Active)
-* [Actions](Global#Actions)
+* [Active](General#Active)
+* [Actions](General#Actions)

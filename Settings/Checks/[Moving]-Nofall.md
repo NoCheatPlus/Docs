@@ -19,7 +19,7 @@ This is a sub check of survivalfly, it makes sure that the player gets the damag
 
 
 **Related**  
-* [Active](Global#Active)
-* [Actions](Global#Actions)
+* [Active](General#Active)
+* [Actions](General#Actions)
 * [[Moving] Survivalfly](%5BMoving%5D-Survivalfly)
 * [[Fight] Criticals](%5BFight%5D-Criticals)

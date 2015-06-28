@@ -15,5 +15,5 @@ This check prevents players from generating healthy faster then possible.
 * You want to only adjust the interval if your server heals your players faster/slower for some reason (mods?)
 
 **Related**  
-* [Active](Global#Active)
-* [Actions](Global#Actions)
+* [Active](General#Active)
+* [Actions](General#Actions)

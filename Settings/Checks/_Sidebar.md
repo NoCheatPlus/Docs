@@ -49,7 +49,7 @@
 * [Criticals]([Fight]-Criticals)
 * [Direction]([Fight]-Direction)
 * [Fastheal]([Fight]-Fastheal)
-* [Global]([Fight]-Global)
+* [General]([Fight]-General)
 * [Godmode]([Fight]-Godmode)
 * [Noswing]([Fight]-Noswing)
 * [Reach]([Fight]-Reach)
@@ -73,7 +73,7 @@
 * [Morepacketsvehicle]([Moving]-Morepacketsvehicle)
 * [Nofall]([Moving]-Nofall)
 * [Passable]([Moving]-Passable)
-* [Global]([Moving]-Global)
+* [General]([Moving]-General)
 
 ## [Net]
 * [Flyingfrequency]([Net]-Flyingfrequency)

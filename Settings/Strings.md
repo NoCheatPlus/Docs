@@ -7,4 +7,4 @@ For this to execute you would adjust your actions like this:
 cancel vl>1500 log:flylong:2:5:cif **cmd:baybay**
 
 **Related**  
-* [Actions](Global#actions)
+* [Actions](General#actions)

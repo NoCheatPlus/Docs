@@ -5,5 +5,5 @@ Exemption: `BLOCKPLACE_DIRECTION`
 The Direction check demands players to look where they place blocks.
 
 **Related**  
-* [Active](Global#Active)
-* [Actions](Global#Actions)
+* [Active](General#Active)
+* [Actions](General#Actions)

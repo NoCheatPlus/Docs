@@ -16,5 +16,5 @@ Players may slightly increase the distance at which they can attack enemy creatu
 * Because of lag the reach distance isn't a fixed value and may increase/decrease, reach is for that reason designed to be dynamic and adapt to server lag if needed.
 
 **Related**  
-* [Active](Global#Active)
-* [Actions](Global#Actions)
+* [Active](General#Active)
+* [Actions](General#Actions)

@@ -12,5 +12,5 @@ Prevents players from throwing projectiles (experience bottles, eggs, monster eg
 * We set the default value to something lower then 150 ms in order to smooth out false positives that occur with latency
 
 **Related**  
-* [Active](Global#Active)
-* [Actions](Global#Actions)
+* [Active](General#Active)
+* [Actions](General#Actions)

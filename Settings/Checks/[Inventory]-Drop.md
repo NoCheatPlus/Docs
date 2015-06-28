@@ -13,5 +13,5 @@ Hackers can drop their entire inventory with 1 click to lag and crash your serve
 * If (for example) your limit is set to 100 and your timeframe to 20, will allow your players to drop 100 items in 20 milliseconds
 
 **Related**  
-* [Active](Global#Active)
-* [Actions](Global#Actions)
+* [Active](General#Active)
+* [Actions](General#Actions)

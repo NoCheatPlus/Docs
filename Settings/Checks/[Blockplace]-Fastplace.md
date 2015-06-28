@@ -12,5 +12,5 @@ Fastplace will prevent players from placing blocks too quickly by checking the i
 
 
 **Related**
-* [Active](Global#Active)
-* [Actions](Global#Actions)
+* [Active](General#Active)
+* [Actions](General#Actions)

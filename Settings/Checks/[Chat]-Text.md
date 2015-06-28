@@ -66,7 +66,7 @@ This section allows to alter message-specific weights.
 | similarity _active_ |  |
 
 **Related**   
-* [Active](Global#Active)
-* [Actions](Global#Actions)
+* [Active](General#Active)
+* [Actions](General#Actions)
 * [[Chat] Captcha](%5BChat%5D-Captcha)
 * [Long-term and Short-term](Backgrounds#long-term-and-short-term)

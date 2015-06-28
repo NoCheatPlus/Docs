@@ -16,6 +16,6 @@ To prevent chest stealer's or auto armor hacks we simple limit the click speed a
 * This check will also prevent mods such as InvTweaks and similar ones from working right (because they give advantage compared to vanilla players), if you want your players to be able to use those mods then disable this check or give them the right exempt permission.
 
 **Related**  
-* [Active](Global#Active)
-* [Actions](Global#Actions)
+* [Active](General#Active)
+* [Actions](General#Actions)
 * [Long-term and Short-term](Backgrounds#long-term-and-short-term)

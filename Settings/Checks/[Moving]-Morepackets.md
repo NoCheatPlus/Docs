@@ -18,5 +18,5 @@ The Morepackets check is complementary to the Survivalfly and Creativefly checks
 * A normal value is 20 steps per second.
 
 **Related**  
-* [Active](Global#Active)
-* [Actions](Global#Actions)
+* [Active](General#Active)
+* [Actions](General#Actions)

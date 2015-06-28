@@ -11,5 +11,5 @@ Exemption: `COMBINED_INVULNERABLE`
 | modifiers _all_         | |
 
 **Related**
-* [Active](Global#Active)
-* [Actions](Global#Actions)
+* [Active](General#Active)
+* [Actions](General#Actions)

@@ -19,7 +19,7 @@ SurvivalFly aims to control pretty much everything related to moving such as fly
 * Hover is a sub-check of SurvivalFly which prevents players from hovering around in mid-air.
 
 **Related**  
-* [Active](Global#Active)
-* [Actions](Global#Actions)
+* [Active](General#Active)
+* [Actions](General#Actions)
 * [[Moving] Nofall](%5BMoving%5D-Nofall)
 * [[Moving] Creativefly](%5BMoving%5D-Creativefly)

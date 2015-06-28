@@ -5,5 +5,5 @@ Exemption: `BLOCKINTERACT_REACH`
 This check makes sure that the distance from block to player is legit before that player can interact with it (open a door for example).
 
 **Related**  
-* [Active](Global#Active)
-* [Actions](Global#Actions)
+* [Active](General#Active)
+* [Actions](General#Actions)

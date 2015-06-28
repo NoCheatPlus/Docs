@@ -8,6 +8,6 @@ Visible uses a simplified method of ray-tracing to prevent players from interact
 * This check does not cover interaction with entities such as item frames, paintings, mobs in general.
 
 **Related**
-* [Active](Global#Active)
-* [Actions](Global#Actions)
+* [Active](General#Active)
+* [Actions](General#Actions)
 * [Ray tracing](Backgrounds#ray-tracing)

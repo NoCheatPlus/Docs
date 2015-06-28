@@ -15,6 +15,6 @@ Fastconsume replaces the former Instanteat check and extends it by forcing vanil
 * Setting duration higher will require players more time to consume the item while setting it lower allows them to consume it quicker
 
 **Related**  
-* [Active](Global#Active)
-* [Actions](Global#Actions)
+* [Active](General#Active)
+* [Actions](General#Actions)
 * [[Inventory] Instanteat](%5BInventory%5D-Instanteat)

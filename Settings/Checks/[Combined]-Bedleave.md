@@ -9,6 +9,6 @@ This check makes sure that there has been a bed near the player if he/she tries 
 * Exploit opens up the possibility to create a client sided god-mode (invincible player)
 
 **Related**
-* [Active](Global#Active)
-* [Actions](Global#Actions)
+* [Active](General#Active)
+* [Actions](General#Actions)
 * [[Moving] SurvivalFly](%5BMoving%5D-Survivalfly)

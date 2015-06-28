@@ -10,5 +10,5 @@ Godmode combines a couple of mechanisms to prevent players from abusing weakness
 | maxage              | Maximal delay to count it as lagging. |
 
 **Related**  
-* [Active](Global#Active)
-* [Actions](Global#Actions)
+* [Active](General#Active)
+* [Actions](General#Actions)

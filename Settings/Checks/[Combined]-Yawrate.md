@@ -14,6 +14,6 @@ Yawrate will prevent players from attacking for a configurable penalty value (in
 | improbable         | Yawrate will integrate with improbable check if this is set to true. |
 
 **Related**
-* [Active](Global#Active)
-* [Actions](Global#Actions)
+* [Active](General#Active)
+* [Actions](General#Actions)
 * [[Combined] Improbable](%5BCombined%5D-Improbable)

@@ -8,5 +8,5 @@ The Direction check forces players to look (eye location) at the block they want
 * The BukkitAPI throws a interaction event before the place/break events come, so the BLOCKINTERACT_DIRECTION check will pretty much always catch the cheat attempt first before the other 2 do. If you wish to only check Direction on placing/breaking then disable the interaction one first.
 
 **Related**  
-* [Active](Global#Active)
-* [Actions](Global#Actions)
+* [Active](General#Active)
+* [Actions](General#Actions)

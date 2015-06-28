@@ -13,5 +13,5 @@ This check prevents players from doing more damage to players and creatures by f
 * In MC you need to hit someone while falling to get a critical hit.
 
 **Related**  
-* [Active](Global#Active)
-* [Actions](Global#Actions)
+* [Active](General#Active)
+* [Actions](General#Actions)

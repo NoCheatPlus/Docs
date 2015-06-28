@@ -14,8 +14,8 @@ The captcha feature can be used together with our text or commands spam check to
 | tries            | How many attempts will a player have to give the correct answer. A failed attempt will display the question again. Be generous here, as players may not be fast enough to read the question the first few times or be otherwise distracted. |
 
 **Related**  
-* [Active](Global#Active)
-* [Actions](Global#Actions)
+* [Active](General#Active)
+* [Actions](General#Actions)
 * [[Chat] Text](%5BChat%5D-Text)
 * [[Chat] Commands](%5BChat%5D-Commands)
 * [Formatting codes](http://minecraft.gamepedia.com/Formatting_codes)

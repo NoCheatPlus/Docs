@@ -13,5 +13,5 @@ This check forces players to look (eye location) at creatures/players they want 
 * Disabling this would allow players to fight entities while having their back turned on them.
 
 **Related**  
-* [Active](Global#Active)
-* [Actions](Global#Actions)
+* [Active](General#Active)
+* [Actions](General#Actions)

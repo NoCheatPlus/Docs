@@ -9,7 +9,7 @@ The Improbable check combines a couple of fight checks to ensure a more precise 
 | level              | The required level before Improbable takes actions against those kind of hacks. |
 
 **Related**
-* [Active](Global#Active)
-* [Actions](Global#Actions)
+* [Active](General#Active)
+* [Actions](General#Actions)
 * [[Fight] Reach](%5BFight%5D-Reach)
 * [[Fight] Speed](%5BFight%5D-Speed)

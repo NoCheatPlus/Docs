@@ -6,5 +6,5 @@ This check ensures that players spend a minimum amount of time per written line,
 
 
 **Related**
-* [Active](Global#Active)
-* [Actions](Global#Actions)
+* [Active](General#Active)
+* [Actions](General#Actions)

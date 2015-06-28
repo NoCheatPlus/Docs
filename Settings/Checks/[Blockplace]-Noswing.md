@@ -12,5 +12,5 @@ Ensures that the players swing their arm before they can place a block.
 * We put exemptions in here because of some strange Minecraft/Craftbukkit bugs where a legit player wouldn't swing his arm when placing a lily pad or trying to use a flint and steel.
 
 **Related**  
-* [Active](Global#Active)
-* [Actions](Global#Actions)
+* [Active](General#Active)
+* [Actions](General#Actions)

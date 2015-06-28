@@ -15,6 +15,6 @@ Allows you to warn the player of the chat.text and chat.commands weight levels, 
 * If for example your CHAT_TEXT_SHORTTERM check has level set to 160 you calculate: (160 / 100) * level you set here in warning. Result= The level at which warning will trigger for CHAT_TEXT_SHORTTERM
 
 **Related**
-* [Active](Global#Active)
+* [Active](General#Active)
 * [[Chat] Text](%5BChat%5D-Text)
 * [[Chat] Commands](%5BChat%5D-Commands)

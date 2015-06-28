@@ -16,5 +16,5 @@ Relog prevents players from re-logging too fast.
 * Warning message supports [color codes](http://minecraft.gamepedia.com/Formatting_codes)
 
 **Related**
-* [Active](Global#Active)
-* [Actions](Global#Actions)
+* [Active](General#Active)
+* [Actions](General#Actions)

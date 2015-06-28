@@ -17,6 +17,6 @@ Fastbreak forces players to break blocks with realistic speed when being in surv
 * Do not set intervalsurvival to something higher then 100% or all block breaking is likely to become violations.
 
 **Related**  
-* [Active](Global#Active)
-* [Actions](Global#Actions)
+* [Active](General#Active)
+* [Actions](General#Actions)
 * [[Blockbreak] Frequency](%5BBlockbreak%5D-Frequency)

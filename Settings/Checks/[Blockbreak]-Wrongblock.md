@@ -9,5 +9,5 @@ This check forces your players to interact with the block first before they can 
 | level  | Accumulated value after which to trigger a violation. |
 
 **Referneces**  
-* [Active](Global#Active)
-* [Actions](Global#Actions)
+* [Active](General#Active)
+* [Actions](General#Actions)

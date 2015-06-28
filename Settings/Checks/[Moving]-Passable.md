@@ -17,5 +17,5 @@ Passable prevents moving into or inside of blocks (noclip).
 - It might also trigger if players teleport or join and start sending moving events while not having received or rendered the chunk they stand on. Yet the player assumes to be falling and communicates that to the server, NCP will see them moving into blocks - so no quick banning on these!
 
 **Related**  
-* [Active](Global#Active)
-* [Actions](Global#Actions)
+* [Active](General#Active)
+* [Actions](General#Actions)

@@ -9,6 +9,6 @@ This check aims to prevent no-clipping by abusing the teleportation of ender pea
 | preventclickblock  | Prevent players from throwing a ender pearl if their client has a solid block in front of them. |
 
 **Related**
-* [Active](Global#Active)
-* [Actions](Global#Actions)
+* [Active](General#Active)
+* [Actions](General#Actions)
 * [[Moving] Passable](%5BMoving%5D-Passable)

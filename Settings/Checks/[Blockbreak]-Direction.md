@@ -5,5 +5,5 @@ Exemption: `BLOCKBREAK_DIRECTION`
 The Direction check forces players to look (eye location) at the block they want to break.
 
 **Related**  
-* [Active](Global#Active)
-* [Actions](Global#Actions)
+* [Active](General#Active)
+* [Actions](General#Actions)

@@ -11,6 +11,6 @@ Minecraft doesn't restrict the amount of hits a player can do in each second so 
 | shortterm _limit_   | |
 
 **Related**  
-* [Active](Global#Active)
-* [Actions](Global#Actions)
+* [Active](General#Active)
+* [Actions](General#Actions)
 * [Long-term and Short-term](Backgrounds#long-term-and-short-term)

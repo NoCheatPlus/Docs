@@ -13,8 +13,8 @@ This check aim to prevent command spamming (player chat only).
 | shortterm _level_ | Level for which to generate an exception. |
 
 **Related**
-* [Active](Global#Active)
-* [Actions](Global#Actions)
+* [Active](General#Active)
+* [Actions](General#Actions)
 * [[Chat] Text](%5BChat%5D-Text)
 * [[Chat] Captcha](%5BChat%5D-Captcha)
 * [Long-term and Short-term](Backgrounds#long-term-and-short-term)

@@ -14,6 +14,6 @@ This check limits the flying speed for players that are playing in creative and 
 | verticalspeed       | Modifier for the maximally allowed vertical speed. 100 means "normal" creative mode speed. 200 would be twice the speed. |
 
 **Related**  
-* [Active](Global#Active)
-* [Actions](Global#Actions)
+* [Active](General#Active)
+* [Actions](General#Actions)
 * [[Moving] Survivalfly](%5BMoving%5D-Survivalfly)

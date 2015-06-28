@@ -12,5 +12,5 @@ This check hooks into ProcolLib to prevent players from spamming packets in orde
 | cancelredundant     | |
 
 **Related**  
-* [Active](Global#Active)
-* [Actions](Global#Actions)
+* [Active](General#Active)
+* [Actions](General#Actions)
