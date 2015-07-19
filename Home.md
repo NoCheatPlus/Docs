@@ -7,3 +7,7 @@ NoCheatPlus is a CraftBukkit plugin which tries to distinguish improper or impos
 Allowing you to have a more stable and safe server for everyone.
 
 To get started follow those instructions: [Getting Started](Getting-Started)
+
+If you need a full index search on this wiki then try [GitHub Wiki Search]
+
+[Github Wiki Search]: https://github.com/linyows/github-wiki-search 
