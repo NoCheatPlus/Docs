@@ -12,7 +12,7 @@
 2. Install ProtocolLib to enable the NET checks
 3. [Setup permissions](Permissions)
 4. [Learn what YAML is and how to edit it](YAML)
-5. [Configure NoCheatPlus](Home)
+5. [Configure NoCheatPlus](Configuration)
 6. [Study the Commands](Commands)
 
 [DBO]:http://dev.bukkit.org/bukkit-plugins/nocheatplus/files/
