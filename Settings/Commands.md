@@ -12,8 +12,7 @@ You can give a player access to a specific command by giving them the sub-node w
 For further information about permissions in NoCheatPlus, we recommend looking at the [Permissions](https://github.com/MyPictures/NoCheatPlus/wiki/Permissions#commands).
 
 # Administrative commands
-Those commands are used to basically manage NoCheatPlus on your server.
-**Arguments in () are needed, while arguments in [] are optional.**
+Those commands are used to basically manage NoCheatPlus on your server. Arguments in **()** are needed, while arguments in **[]** are optional.
 
 | Command                 | Explanation |
 | :---------------------- | :---------- |
@@ -30,7 +29,7 @@ Those commands are used to basically manage NoCheatPlus on your server.
 
 # Auxiliary commands
 Those commands are mainly used by NoCheatPlut itself to execute strings or commands over actions on violating players but you can also make use of them if you wish to do so. Most of them have no difference compared to the vanilla commands apart from the delay otion.
-**Arguments in () are needed, while arguments in [] are optional.**
+Arguments in **()** are needed, while arguments in **[]** are optional.
 
 | Command                 | Explanation |
 | :---------------------- | :---------- |
