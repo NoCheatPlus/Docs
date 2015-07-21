@@ -13,5 +13,5 @@ The data section allows you to specify a data expiration duration for players da
 
 
 **References**\\ 
-[[Active|Global#active]]\\
+[[Active|General#active]]\\
 [[Violations|Backgrounds#violations]]
