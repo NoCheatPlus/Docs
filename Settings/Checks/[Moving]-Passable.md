@@ -7,7 +7,7 @@ Passable prevents moving into or inside of blocks (noclip).
 
 | Option                                    | Description |
 | :---------------------------------------- | :---------- |
-| raytracing _acrive_                       | Activate ray-tracing to prevent to move past/through blocks. |
+| raytracing _active_                       | Activate ray-tracing to prevent to move past/through blocks. |
 | raytracing blockchangeonly_               | Only perform ray-tracing for moving past block borders. More inaccurate, but faster in average. |
 | actions _active_                          | |
 | actions _tryteleport_                     | |
