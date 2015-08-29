@@ -16,7 +16,7 @@ Passable prevents moving into or inside of blocks (noclip).
 
 **Notes**
 - It might also trigger if players teleport or join and start moving while not having received or rendered the chunk they stand on. This causes the client to think that there are only air blocks around so it "falls down" and accidently clips a little into the solid blocks on your server. So please DO NOT quickly ban on Passable violations! Also enable untracked teleportation to smooth out false positives on teleports.
-- The more lag, the more time it takes for the world to load up and the more likely it is for Passable to thorw a false positive on join/teleport
+- The more lag, the more time it takes for the world to load up and the more likely it is for Passable to thorw a false positive on join/teleport.
 
 **Related**  
 * [Active](General#Active)
