@@ -1,4 +1,4 @@
-_nDcos 0.4 for NoCheatPlus 813_
+_nDcos 0.5 for NoCheatPlus 853_
 ![Title](https://raw.githubusercontent.com/asofold/NCPDocs/master/wiki/resources/sNCPBanner.gif)
 
 Welcome to the wiki! This page will explain everything that you need to know about NoCheatPlus.
