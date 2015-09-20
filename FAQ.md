@@ -18,7 +18,7 @@ NoCheatPlus covers a large potion of pvp (player versus player) and pve (player 
 **Weakpoints of NC+:** Currently we can not properly detect attacking frequency because our old method broke with the Minecraft 1.8 release, we are working on a new solution at the moment.
 
 ### Why does NoCheatPlus not detect NoKnockback?
-Currently we have not found a good solution to track it down without using up a lot of resources and create a lot of false positives. One of the key issue to why this has not been fixed yet is the fact that velocity is done client-side, so the server doesn't not really have much control over it.
+Key issues are that the client side decides on responding to velocity, the latency between client and server makes workarounds complicated for the general case, given that the players path can be blocked. We don't deem it impossible to detect simple to check or extreme cases.
 
 ### Why use NoCheatPlus instead of plugin X?
 It is up to you! NoCheatPlus puts emphasis on configurability allowing you to choose when to kick, ban, log, do anything at all, also allowing to adjust a lot of parameters to tweak checks for your needs. Other plugins may put emphasis on simplicity of configuration. All plugins strive to work fine "out of the box" without need to adapt much. Of course every plugin might have strengths and weaknesses on different fields - we suggest you match your needs against the [features](Features) of the plugins, and ask if in doubt.
