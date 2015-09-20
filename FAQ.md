@@ -1,4 +1,6 @@
 **Table of Contents**
+* [Why is aimbot/killaura not detected by NoCheatPlus?](FAQ#why-is-aimbot/killaura-not-detected-by-nocheatplus)
+* [Why does NoCheatPlus not detect NoKnockback?](FAQ#why-does-nocheatplus-not-detect-nokncokback)
 * [Why use NoCheatPlus instead of plugin X?](FAQ#why-use-nocheatplus-instead-of-plugin-x)
 * [NoCheatPlus does not block any hacks on my server, I can login with any hack client and grief as much as I want without getting blocked?](FAQ#nocheatplus-does-not-block-any-hacks-on-my-server-i-can-login-with-any-hack-client-and-grief-as-much-as-i-want-without-getting-blocked)
 * [I gave my friend permissions for a mod but he stills get blocked by NoCheatPlus?](FAQ#i-gave-my-friend-permissions-for-a-mod-but-he-stills-get-blocked-by-nocheatplus)
@@ -8,6 +10,15 @@
 * [Why do you have commands like /ncp ban, /ncp kick and other?](FAQ#why-use-nocheatplus-instead-of-plugin-x)
 * [Is banning based on check alerts encouraged?](FAQ#is-banning-based-on-check-alerts-encouraged)
 * [Where is the "donate" button?](FAQ#where-is-the-donate-button)
+
+### Why is aimbot/killaura not detected by NoCheatPlus?
+NoCheatPlus covers a large potion of pvp (player versus player) and pve (player vs enviorment) cheats (see [Features](Features#fight)) but there are invisible problems now.
+*The client sided hacks* Since NoCheatPlus can only use the ressources which are controled and aviable on the server we are in that case limited to what we can detect. Aimbot for example is besically a hack that just looks at another player/entity and hits it, so there is no way telling if that action was done by a real player with his mouse or by an aimbot. Most up to date aimbots are actually really smart and do random "errors" or even a view motion (do not turn around too quickly) to simulate a real computer mouse.
+*The big mouth but nothing behind* Some hack clients have a GUI which over advertise the clients hacks by doing big flashy red large buttons and a description such as "*This OP hack bypasses NC+ and lets you win every game!*" . However what such hack clients mostly do is just look at the player and hit him with a reasonable hit speed that just stays under the radar of NC+ (If we would increase that limit there would be more false positives).
+*The weakpoints of NC+* Currently we can not properly detect fight.speed because our old method broke with the Minecraft 1.8 release, we are working on a new solution at the moment.
+
+### Why does NoCheatPlus not detect NoKnockback?
+Currently we have not found a good solution to track it down without using up a lot of ressources and create a lot of false positives. One of the key issue to why this has not been fixed yet is the fact that velocity is done client-side, so the server doesnt not really have much control over it.
 
 ### Why use NoCheatPlus instead of plugin X?
 It is up to you! NoCheatPlus puts emphasis on configurability allowing you to choose when to kick, ban, log, do anything at all, also allowing to adjust a lot of parameters to tweak checks for your needs. Other plugins may put emphasis on simplicity of configuration. All plugins strive to work fine "out of the box" without need to adapt much. Of course every plugin might have strengths and weaknesses on different fields - we suggest you match your needs against the [features](Features) of the plugins, and ask if in doubt.
