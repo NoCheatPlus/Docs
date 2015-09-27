@@ -1,5 +1,5 @@
 # Plugin Compatibility
-## Plugins that we officially support with compatNoCheatPlus
+## Officially supported by compatNoCheatPlus
 * [mcMMO]
 * [Citizens 2]
 
