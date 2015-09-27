@@ -3,6 +3,9 @@
 * [Permissions](Permissions)
 
 ## [Checks](Checks)
+ * [General](General)
+ * [Strings] (Strings)
+ * [Miscellaneous](Miscellaneous)
 
 ## [Blockbreak]
 * [Direction]([Blockbreak]-Direction)
