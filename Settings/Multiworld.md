@@ -1,9 +1,9 @@
 # How to create a world specific configuration file ?
 
-1. Create a empty .yml file according to a world name on your server or download the example empty one from [here](Resources/world_nether_config.zip) (unzip and rename it). Example: world_config.yml (the _ is required! and everything is case sensitive!).
-2. Start-up your server or just run /ncp reload or /nocheatplus reload if your server is already running.
-3. NoCheatPlus should now write every setting available for world specific configuration in that/those empty yaml files.
-4. If you rather prefer to use some settings of your global config.yml then set "savebackconfig" to false and remove them from your world specific configuration file.  
+1. Create an empty .yml file according to a world name on your server or download the example empty one from [here](Resources/world_nether_config.zip) (unzip and rename it). Example: world_config.yml (the _ is required! and everything is case sensitive!).
+2. Start-up your server or just run `/ncp reload` or `/nocheatplus reload` if your server is already running.
+3. NoCheatPlus should now write every settings available for world specific configuration in that/those empty yaml files.
+4. If you rather prefer to use some settings of your global config.yml then set "savebackconfig" to false and remove the settings from your world specific configuration file.  
 
 * Example end result: ![Multiworld](Resources/Multiworld.gif)  
 * Other examples: WorldName_config.yml, world_nether_config.yml, world_the_end_config.yml, HungerGames_config.yml or BackupWorld_config.yml  
