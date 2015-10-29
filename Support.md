@@ -4,9 +4,8 @@
 * [Citizens 2]
 
 ## Plugins that support NoCheatPlus
-* [DoubleJump4NCP]
 * [BungeeNCPNotify]
-
+* [DoubleJump4NCP]
 
 [mcMMO]:http://dev.bukkit.org/bukkit-plugins/mcmmo/
 [Citizens 2]:http://dev.bukkit.org/bukkit-plugins/citizens/
