@@ -6,7 +6,7 @@ Here we list all plugins that use cncp (CompatNoCheatPlus) to support other plug
 * [Citizens 2]
 
 ## Plugins that support NoCheatPlus
-Here are all plugins which either use the NC+ API or specially account for NC+ to create a smooth game exprince.
+Here are all plugins which either use the NC+ API or specially account for NC+ to create a smooth game experience.
 * [BungeeNCPNotify] hooks into NoCheatPlus and reports violations (configurable) of certain checks to staff members on other servers.
 * [DoubleJump4NCP] Lets you double jump.
 
