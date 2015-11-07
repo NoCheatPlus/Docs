@@ -16,7 +16,6 @@
 * Forces to look at the entity before hitting
 * Prevents fast health regeneration
 * Prevents invulnerability
-* Prevents faked knockback
 * Enforces arm swing on fight
 * Prevents hits that have gone out of reach
 * Prevents too many hits in a row
