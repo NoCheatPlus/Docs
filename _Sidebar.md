@@ -2,7 +2,7 @@
 * [Getting Started](Getting-Started)
 * [FAQ](FAQ)
 * [Known Issues](Known-Issues)
-* [Support](Support)
+* [Compatibility](Compatibility)
 * [Features](Features)
 * [Commands](Commands)
 * [Permissions](Permissions)
