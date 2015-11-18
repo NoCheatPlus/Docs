@@ -2,18 +2,18 @@
 
 **Most of these options are not really meant to be used on (big) live/production servers, they can cause extreme amounts of console output and result in performance issues.**
 
-NoCheatPlus allows you to generate debug logs in various ways. With this you can help us tracking issues or cheats, by generating debug output selectively and providing us a paste link.
+NoCheatPlus allows you to generate debug logs in various ways. With this you can help us tracking issues or cheats, by generating debug output selectively and providing us a paste link, or link/send a compressed file. 
 
 Mostly console output will be interesting, but also the in-game chat might be useful, check the output-client.log file to not need to use screenshots, unless for showing map/block setups.
 
 If you try to report a false positive and want to help finding the causes faster this can be very helpful. Rather send a little longer log not to miss out parts, so unless familiar with it you should add a little before and after the violation message of TestNCP for instance. For moving always at least from jumpphase=0 until the violation and "set back to..." a couple of lines below. If possible or not sure it is a singular issue, include a couple of violations.
 
-**Please use a paste or send as a file attachment by mail if the output is a little bit longer.**
+**Please use a paste or send as a (compressed) file attachment by mail if the output is a little bit longer.**
 
 If sending a server log, you might want to ensure to not expose any sensitive data, such as logged session keys, ips or whatever your log may contain.
 
 ### Debug flags in the configuration
-You can manually enable permanent debugging with setting a/the check-group debug flag, like //checks.moving.debug// to true. Debugging all checks can be done with setting checks.debug to true. Additional output can be generated with enabling logging.extended.status.
+You can manually enable permanent debugging with setting a/the check-group debug flag, like _checks.moving.debug_ to true. Debugging all checks can be done with setting _checks.debug_ to true. Additional output can be generated with enabling logging.extended.status.
 
 NoCheatPlus allows to set debug flags for almost all check groups. The flag in the logging section can also be set, but it will not lead to more check-related output. Some debugging output is only generated, if the configuration flags are set, e.g. with ProtocolLib.
 
