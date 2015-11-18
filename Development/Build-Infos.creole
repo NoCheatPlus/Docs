@@ -16,53 +16,63 @@ Pretty hard targets, but too far off the schedule to give any ETA.
 * Better mod support for arbitrary blocks and tools. Includes cleanup of block-properties-handling.
 * Ingame configuration management (convenience, comparison, suggestions, hot-fixes).
 * Allow making doors safe (e.g. enable ray-tracing by keeping track of redstone changes).
-* Keep track of pistons moving blocks in order to reduce false positives.
 * Add check/notification for players not using any velocity (mostly sf), at least start to log it for testing.
-* Velocity handling: Add concept to merge / invalidate queued entries better (flying plugins).
 * Velocity handling: Switch to 3d-entries with "exact" per-axis/direction counting.
 * Moving/morepackets: Further invalidate past intervals to be more precise. Maybe include latency estimates.
+* Concentrate data and configs in DataManager (+WorldData + WorldConfig?) and PlayerData. Lazy and aggregated data removal (for COWs).
+* Refine debug logging: Allow per-player or group files. Consider triggers to auto-start debug logging. Consider hooking into the debug stream in-game (!), possibly with reduced data. Might add a binary format, replay? Post-violation debug log - keep in memory and log on trigger/demand.
+* Event/pattern engine: Allow pattern detection and/or automata-based configurable meta checks. 
+* Refine logging options in general (rolling files, manual entries, backups).
 ====Planned (soon-ish)====
 Big topics, short- to medium-term.
-* Moving/morepackets+survialfly: Attempt to prevent speeding better, probably relate packets and travel-distance.
-* SurvivalFly: More adjustments based on so-far-experience (e.g. buffer redesign, ground modifiers).
-* Concentrate data and configs in DataManager (+WorldData + WorldConfig?) and PlayerData.
+* //"Full" UUID compatibility//. Better handling of data with UUIDs.
+* Data expiration - add minimized offline data, to be able to remove lots of stored data on logout.
+* Better horizontal velocity handling.
+* Moving checks data refinement. Keep track of edge data for 3 or more moves (better for special case false positives).
+* More packet level checks (tab-complete, nasty data, strip content from books, items).
 ====Scheduled (fixed)====
 Topics that are in focus right now.
-* //NCPDocs overhaul (does not concern the plugin).//
-* //"Full" UUID compatibility//.
-* Fight checks refinement.
-** Direction + Reach: implement refined methods.
-** Speed (and maybe other frequency-related checks): New skipping mechanisms (e.g. probability).
-* On-the-fly debug trace
-** Allow tracing any player at any moment with commands (asynchronous logging, extra files).
-** Allow triggering temporary debug traces automatically, e.g. if players are moving into/inside blocks.
-* Packet level checks and PlayerData
-** Tab-complete: Prevent spamming. Might allow to disable '/', all commands, all.
-** Add a config for the net checks for efficient access.
-** Might integrate config or individual data into PlayerData and config/s into DataManager right away.
-* Logging (some might get postponed)
-** Add TestNCP core functionality to NCP (log all violations to trace file + ingame, if configured so).
-** Allow ingame also to be asynchronous (In-game remains problematic, still consider relaying to a primary thread task).
-** Allow to store past logs, e.g. with every restart of the plugin or even reload (!)..
-** Might provide a command to directly log to a log target (use with actions or as admin for reference).
-** Option to log all commands that are executed.
-** Rolling files, split by size or timing. Backup option (move).
-** On the fly debug logging.
-*** Start tracing automatically (e.g. a selection of criteria based on what we can't detect directly).
-*** Post-violation trace: Write debug information when a violation happens (e.g. recorded moves).
-*** Many more possibilities...
+* Keep track of pistons moving blocks in order to reduce false positives.
+* Horizontal speeding.
+* 1.9 support (mostly allow creativefly model configs to confine ascend/descend and allow fall-damage, let it handle levitation and elytra, off-hand to mcAccess). 
 ===Milestones now in focus===
-* Release for MC 1.8 [3.12.x ... likely split into two or three]
-** Planned:
-*** Basic repair of fight checks.
-*** Provide NCP over a maven repository.
-*** Various fixes.
-** Should bring in long waiting points:
-*** Attribute support: speed.
-** Might postpone complex to mend issues:
-*** Slime block + pistons (means: pistons in general).
+* Refine fight checks (false positives, precision): 2015-11-28
+* Recommended Release for MC 1.8 (3.13.0): 2015-11-21
 
 ----
+===3.13.0-SNAPSHOT-sMD5NET-b876(cumulative)===
+* Candidate(s) for a recommended release for 1.8.x.
+* Hot
+** 1.8.x support.
+** Reworked y-axis handling.
+** With ProtocolLib: net.attackfrequency (compensates for the inoperable fight.speed).
+** Add ability to skip captcha for commands.
+* Fixes
+** Indirect fixes by stricter y-axis handling (use-velocity-once, friction, pretty strict envelopes). Fast fall, glide-by-velocity, other.
+** Farmland block shape.
+** Prefixes are moved to loggers (ensured them to work).
+** Consistency fixes (e.g. when depth strider applies, when all speed modifiers apply).
+** Reduce false positives with passable.
+** Reduce false positives with survivalfly (though different new ones might have been added).
+* Removed
+** Remove cancelling redundant packets for now.
+** Prefix for console no longer available.
+* Internals
+** Optimizations for asynchronous logging/stats.
+** Moving checks: split checking into two moves when confronted with micro moves.
+** Various optimizations and consistency fixes, preparations for future changes.
+
+===3.12.1-SNAPSHOT-sMD5NET-b853("mostly stable", cumulative)===
+* Recommended release for "classic" y-axis handling.
+* Hot
+** 1.8.x support.
+** Many fixes, changes, optimizations, deoptimizations.
+** Represents the last build with the "classic" y-axis handling, having removed a lot of false positives.
+* Big issues.
+** Vulnerable to glide-by-velocity.
+** The fight.speed check is mostly inoperable on 1.7.10/1.8.x.
+
+
 ===3.12.0-BETA2-sASO-b813(cumulative)===
 * Planned beta release on BukkitDev (not built on Jenkins!).
 * New
