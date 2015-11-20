@@ -1,6 +1,6 @@
 # Create Debug Output
 
-**Most of these options are not really meant to be used on (big) live/production servers, they can cause extreme amounts of console output and result in performance issues.**
+**Most of these options are not really meant to be used on (big) live/production servers, they can cause extreme amounts of log file output and result in performance issues.**
 
 NoCheatPlus allows you to generate debug logs in various ways. With this you can help us tracking issues or cheats, by generating debug output selectively and providing us a paste link, or link/send a compressed file. 
 
