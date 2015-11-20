@@ -144,8 +144,8 @@ Tracking the average speed mid-term seems quite promising, because it allows che
 Technicalities:
 * It would probably need tracking the allowed "normal" speed vs. the used speed.
 * Friction envelopes after receiving velocity or switching state from somewhere (elytra, flying, whatever) need to be distinguishable from speeding.
-** Probably already useful if we confine it only to the rough bunny envelopes (where we allow to move faster than normal without velocity).
-** Tracking mid-term speed change by regarding shorter intervals will help to distinguish.
+ * Probably already useful if we confine it only to the rough bunny envelopes (where we allow to move faster than normal without velocity).
+ * Tracking mid-term speed change by regarding shorter intervals will help to distinguish.
 * Hard to tell where to set back to. Possibly needs keeping an extra mid-term set-back location like for morepakets, or we freeze the player in-place more or less.
 
 ## Packet exploits (frequency)
@@ -176,9 +176,9 @@ Basic motivation:
 Future motivation:
 * Detect certain cheats and clients by use of pattern recognition. Comparably easy to bypass, but disabling certain versions of cheats or even cheat clients, just by altering the configuration.
 * Self-learning.
-** Train NCP to distinguish cheating from legit play.
-** Use NCP to isolate patterns. Have NCP show for whom these patterns apply and when.
-** Create interesting drawings from analyzing events for a cheat training session.
+ * Train NCP to distinguish cheating from legit play.
+ * Use NCP to isolate patterns. Have NCP show for whom these patterns apply and when.
+ * Create interesting drawings from analyzing events for a cheat training session.
 * Apart from in-game tools, also diagrams (of some type) could be translated into checks.
 * Compile checks into (highly optimized) java code, at build time or even at runtime.
 
