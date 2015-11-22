@@ -12,8 +12,11 @@ For a changes history see: http://ci.md-5.net/job/NoCheatPlus/changes
 TODO: Link roadmap.
 
 ----
-===3.13.0-SNAPSHOT-sMD5NET-b876(cumulative)===
-* Candidate(s) for a recommended release for 1.8.x.
+===3.13.0-BETA-sMD5NET-b878(cumulative)===
+* BETA release for 1.8.x.
+** MD5: e064ed398b8034c1ae4b2b699aceb17b
+** SHA512: 1682ab66e33327a263b39f2962be554be46d4efaea2cfda0d534d4d36068432d2473c713b6605705e445e1fccfeff152ea0f0fad9fcc876462577ac38763a9b5
+** File size: 980163 bytes
 * Hot
 ** 1.8.x support.
 ** Reworked y-axis handling.
@@ -24,6 +27,7 @@ TODO: Link roadmap.
 ** Farmland block shape.
 ** Prefixes are moved to loggers (ensured them to work).
 ** Consistency fixes (e.g. when depth strider applies, when all speed modifiers apply).
+** Reduce false positives with creativefly (fly speed upwards, transition to survivalfly).
 ** Reduce false positives with passable.
 ** Reduce false positives with survivalfly (though different new ones might have been added).
 * Removed
