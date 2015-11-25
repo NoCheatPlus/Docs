@@ -12,7 +12,7 @@ For a changes history see: http://ci.md-5.net/job/NoCheatPlus/changes
 TODO: Link roadmap.
 
 ----
-===3.13.1-BETA-sMD5NET-b882(cumulative)===
+===3.13.1-SNAPSHOT-sMD5NET-b882(cumulative)===
 * Fixes
 ** Fix logging backend activation flags being ignored.
 ** ProtocolLib: Build against the current version. Only enable for 1.8.x.
