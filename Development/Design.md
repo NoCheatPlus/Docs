@@ -7,6 +7,50 @@ Possibly top headlines should be ordered alphabetically?
 
 # Mostly decided
 
+## Fix ProtocolLib for 1.7.10
+
+At least need 1.7.10 support still. ProtocolLib for 1.9 might also be incompatible to 1.8.x.
+
+Thus we need to have multiple modules for ProtocolLib/packet-level-access and build vs. the appropriate versions of external plugins.
+
+Suggested changes:
+* Split off as much abstracted stuff as possible and move to NCPCore. Checks are mostly done, some chunks of code would profit from having some sort of abstract CheckPipeline, to be registered with the NCP API, possibly as a unique generic instance.
+* Elaborate/add the registry mechanism to auto add the checks to the CheckPipeline (plugin enable -> add pipeline -> queue pipeline populate ~ event -> populate the pipeline with the abstract checks, AND possibly add a registration context thing to fire the population automatically, containing the abstract checks and the pipeline interface to populate and so on).
+* Add ProtocolLib module for 1.7.10 (and possibly for past versions), and alter the current one, to provide the registry for the checks. 
+* Improve registry aspect: remove packet listeners, if ProtocolLib disables. Re-check factory if it enables. Possibly have some registry added for that.
+
+## 1.9 support
+
+### Let CreativeFly handle ELYTRA and LEVITATION
+
+Alter CreativeFly to have more fine grained model configurations and triggers for when to use those.
+
+New models configs will be referenced by name (currently the game mode is the key, which then will be the name).
+* Key is just the name.
+* Add an activation flag.
+* Add a trigger entry.
+* Distinguish h/v speed.
+* Distinguish ascend and descend speeds.
+* Add sprint modifiers for h/v.
+* Flag for fall damage (levitation).
+* Uncertain: Add a/the distance per move extra to or instead of the speed modifiers? Could relate all modifiers within a model node to the absolute reference speed within that node, or make the horizontal speed the absolute reference.
+
+Conditions for triggers:
+* Game mode.
+* Potion effect.
+* Armor item.
+* Item in hand.
+* (Item in inventory. For random jet pack support.)
+
+Configuration/combination of triggers:
+* Defined in one line.
+* Conditions can be combined with 'and' and 'or', using '+' and ','.
+* Example: iteminhand=END_ROD+chestplate=ELYTRA
+
+### The usual stuff (block shape and breaking time support).
+
+Start with something rough.
+
 ## Fight checks
 
 ### Criticals (Bukkit API)
