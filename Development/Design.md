@@ -7,6 +7,14 @@ Possibly top headlines should be ordered alphabetically?
 
 # Mostly decided
 
+## InteractRayTracing (blocinteract.visible)
+
+* Switch to extend PassableRayTracing + maybe slight alterations.
+* Possibly alter per-block ray check to use a real ray.
+* Remove default exemption by flags configuration entries.
+* Add examples to wiki.
+* May add a named sets configuration for  (name -> active, flags, blocks) for doors and the like, disabled by default.
+
 ## Fix ProtocolLib for 1.7.10
 
 At least need 1.7.10 support still. ProtocolLib for 1.9 might also be incompatible to 1.8.x.
