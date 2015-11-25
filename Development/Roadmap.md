@@ -5,11 +5,13 @@ This page provides a short and likely not entirely accurate selection of topics 
 For a more detailed explanation or discussion of future design issues see the Design (TODO: link) page.
 
 # Current focus 
-* Milestone: Recommended release for MC 1.8 (3.13.0): 2015-11-21
+* Bug fix release for latest beta (very soon).
+* Milestone: Recommended release for MC 1.8 (3.13.0): [Postponed or split into several iterations due to bugs, possibly 1.9.]
 * Milestone: Refine fight checks (false positives, precision): 2015-11-28
 
 # Scheduled
 Topics that will be tackled soon, no guarantee on order.
+* Add a simple abstraction layer for packet level checks and add a module for ProtocolLib support for MC 1.7.10 at least.
 * Keep track of pistons moving blocks in order to reduce false positives.
 * Horizontal speeding.
 * 1.9 support (mostly allow creativefly model configs to confine ascend/descend and allow fall-damage, let it handle levitation and elytra, off-hand to mcAccess). 

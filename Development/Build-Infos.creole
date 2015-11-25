@@ -12,6 +12,12 @@ For a changes history see: http://ci.md-5.net/job/NoCheatPlus/changes
 TODO: Link roadmap.
 
 ----
+===3.13.1-BETA-sMD5NET-b882(cumulative)===
+* Fixes
+** Fix logging backend activation flags being ignored.
+** ProtocolLib: Build against the current version. Only enable for 1.8.x.
+* Internals
+** Use scope 'provided' for all external dependencies.
 ===3.13.0-BETA-sMD5NET-b878(cumulative)===
 * BETA release for 1.8.x.
 ** MD5: e064ed398b8034c1ae4b2b699aceb17b
