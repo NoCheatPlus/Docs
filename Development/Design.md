@@ -7,9 +7,15 @@ Possibly top headlines should be ordered alphabetically?
 
 # Mostly decided
 
-## More sensible penalties for fight checks
+## Fight checks
 
-Having penalty time cancel all attacks clearly is problematic with false positives. It's been a technique to make auto-fighting less effective, e.g. after turning very fast, but it interferes too much with legit players.
+### Criticals (Bukkit API)
+
+The existing check should reduce the damage (1.5), instead cancelling. Possibly configurable.
+
+### More sensible generic penalties for fight checks
+
+Having penalty time hard-cancel all attacks clearly is problematic with false positives. It's been a technique to make auto-fighting less effective, e.g. after turning very fast, but it interferes too much with legit players.
 
 More promising might be other approaches that don't necessarily prevent all fighting at once.
 * Maintain some kind of "probability to cancel". Increase probability with violations.
@@ -18,13 +24,86 @@ More promising might be other approaches that don't necessarily prevent all figh
 * Use a latency estimate and maintain a latency window for the location trace.
 * Some pattern based detection might be interesting, later.
 
-## Location trace with bounding box
+Penalties could consist of several types of penalties, which maintain a probability to apply with a maximum duration of validity.
+* Types could be:
+** Cancel.
+** Cancel on keeping the target.
+** Cancel on switching the target.
+** Reduce resulting damage (somehow / depending on check specific settings).
+** Reduce nodamageticks (not sure this is such a good option for general penalties, but could be interesting on combined checks, considering players hitting a lot but not getting hit, despite pvp or what not).
+** Selective modifiers. E.g. some indicator to increase strictness for some other checks.
+* Side conditions  / data / other conditions:
+** Time of expiration and creation time (the latter for tracking time running backwards).
+** Probability to apply (if the validity interval is extended, the resulting probability is somehow calculated, with remaining duration for previous expiration time and previous probability.).
+** Number of events to maximally apply the penalty for (until expiration, this might need being able to store multiple penalties per type).
+** Combined judgment + escalation mechanics. This could also be made "meta triggers", like increasing another probability thing if several others reach a certain level (planned in a generic way for later, but could be useful here too).
+** Could allow increasing probability for penalty type chosen at random.
+
+Configuration complexity (penalties).
+* Hard to imagine an elegant way to define all these things.
+* Penalties could have ids likes strings and be defined in a special section or even a special configuration file (global only).
+* Checks reference the penalty ids where appropriate (hard coded config path, or actions, like penalty:ridiculouspenalty). 
+
+### Latency window
+
+Fully implement maintaining a (possibly global/shared) latency window, making use of the full location trace, confining the timing window to consider further, shifting it by a maximum amount per attack (/tick?).
+
+Having other inputs feed/alter the latency window might increase effectiveness.
+
+Maintaining (short lived) location traces for other entities could be interesting too (reducing false positives, less coarse checking). Updating their traces would be done lazily on hitting (and then on tick, provided it's imperative to keep checking)
+
+### More complex difficulty/targeting check
+
+Estimate the difficulty of fighting/targeting and penalize too much success :p. Preferably be more accurate than the angle check.
+
+Thinkable criteria:
+* All that angle is using (switching looking direction, number of targets, moving).
+* Make use of the moving traces of both attacker and attacked players/entities. Allows judging difficulty of targeting better.
+
+### Detect type of fight
+
+Detect types of fighting situations.
+* Many entities around.
+* Many entities within a small confined space.
+* Players chasing each other. Might track allowed base-speeds vs. how the distances vary.)
+* (Camping. The angle check penalizes camping).
+* (Add real time comments, like with football manager games. Let mods vote on penalties.)
+
+Initial focus would be detecting grinders and similar, in order to reduce false positives.
+
+### Detect criticals on/with packet level
+
+Monitor jumping/patterns and tip off the fight checks, so they can guess stuff (not entirely straight forward to get something better than just the pattern detection, because moving and fight events might be totally out of order or queued still, and the craftbukkit moving event threshold will also complicated things, could use mid-term probabilities).
+
+### Location trace with bounding box
 
 The location traces (don't mix up with on-ground data stored for several moves) are meant for abuse tracking with targeting, and are also meant to be merged in some cases, in order to cover all time, distance, abuse. Due to that, it's probably best to also store the bounding box and keep extending the bounding box for an entry in case of merging.
+
+### More coarse location trace
+
+A location trace with lower resolution could be interesting, in order to track mid-term moving behavior. Could also be generated/updated on-demand, using the default trace as input. 
+
+## Event frequency tracking, independent of an interval of time or buckets.
+
+Add a data structure capable of detecting phases of similar frequency, having entries merged for similar frequency or if time to last event is within the merge interval, creating new entries for deviations. This way frequency tracking can have a custom resolution for time and amounts of tracked values, e.g. detecting low, mid, high, extreme amounts and (in theory) having an arbitrary span of time covered, capable of detecting low-frequency phases. Of course there should be some maximum amount of entries and a a merging policy (similar frequency of events, or event arriving within x milliseconds).
+
+Thinkable variations: 
+* Base: Add count/amount/1 to the latest entry, if arriving within so and so milliseconds. Otherwise leave a gap between (not sure if to add a gap entry to explicitly cover the count of zero, or to keep it implicit (or to add some field to an entry to cover the gap size to the previously added entry).
+* Frequency: short-term track frequency (some time interval, some resolution), add the short term frequency every so and so.
+* Multi-level: linking entries to another level of entries of more coarse resolution  (2d, time and resolution of merging entries).
+
+Applications:
+* Track mid to long term frequencies of events, check violations, other... for better judgment. 
+* Detect phases of sending too few packets, e.g. for moving.
+* Detect abuse of leniency towards client-side packet bursts.
+* More precise counting in of server-side lag thinkable.
+* Detect phases of similar speed. Helps with detecting speeding, judging pvp/chasing, other.
 
 ## Passable (moving): adjust to client side
 
 Y collision first, then x or z, then the remaining one (currently a workaround checks for y first, then xz in one go). Using the exact order which the client is also using, should reduce false positives further, be it configurable or not.
+
+In addition we could/should check that way using the full bounding box of the player, which is more simple due to regarding the move along one axis at a time.
 
 ## Vertical friction issues
 
