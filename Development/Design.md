@@ -84,6 +84,8 @@ Monitor jumping/patterns and tip off the fight checks, so they can guess stuff (
 
 The location traces (don't mix up with on-ground data stored for several moves) are meant for abuse tracking with targeting, and are also meant to be merged in some cases, in order to cover all time, distance, abuse. Due to that, it's probably best to also store the bounding box and keep extending the bounding box for an entry in case of merging.
 
+An entry should probably always contain the creation time. The latest one always includes "now", and the following one shows the duration covered by its creation time. With iteration potentially going random directions with a latency window to maintain, one might also just store both creation and last update time.
+
 ### More coarse location trace
 
 A location trace with lower resolution could be interesting, in order to track mid-term moving behavior. Could also be generated/updated on-demand, using the default trace as input. 
