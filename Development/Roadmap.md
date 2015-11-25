@@ -4,16 +4,17 @@ This page provides a short and likely not entirely accurate selection of topics 
 
 For a more detailed explanation or discussion of future design issues see the Design (TODO: link) page.
 
-# Current focus 
-* Milestone: Recommended release for MC 1.8 (3.13.0): [Postponed or split into several iterations due to bugs, possibly 1.9.]
-* Milestone: Refine fight checks (false positives, precision): 2015-11-28
+# Current focus
+* Planning and preparation (fight checks, ProtocolLib, 1.9).
+* Milestone: Refine fight checks (false positives, precision): 2015-11-28 [Postponed or split into several iterations due to bugs, possibly 1.9.]
 
 # Scheduled
 Topics that will be tackled soon, no guarantee on order.
 * Add a simple abstraction layer for packet level checks and add a module for ProtocolLib support for MC 1.7.10 at least. Might include a simple registry and dependency mechanism to cover dependencies/plugins enabling/disabling.
 * Keep track of pistons moving blocks in order to reduce false positives.
 * Horizontal speeding.
-* 1.9 support (mostly allow creativefly model configs to confine ascend/descend and allow fall-damage, let it handle levitation and elytra, off-hand to mcAccess). 
+* 1.9 support (mostly allow creativefly model configs to confine ascend/descend and allow fall-damage, let it handle levitation and elytra, off-hand to mcAccess).
+* (Stabilize changes vs. features for a fully recommended release.) 
 
 ## Planned
 Topics that likely will follow up, no guarantee on order, might slip further away.
@@ -25,6 +26,7 @@ Topics that likely will follow up, no guarantee on order, might slip further awa
 * Checks against unwanted content exposure (prevent sending content of books, item names, other).
 * Detect "more inventory".
 * Detect sending too few packets.
+* More long term event frequency tracking.
 
 ## Planned (at some distance)
 Pretty hard targets, but too far off the schedule to give any ETA.
