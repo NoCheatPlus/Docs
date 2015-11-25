@@ -59,6 +59,11 @@ Estimate the difficulty of fighting/targeting and penalize too much success :p. 
 Thinkable criteria:
 * All that angle is using (switching looking direction, number of targets, moving).
 * Make use of the moving traces of both attacker and attacked players/entities. Allows judging difficulty of targeting better.
+* Balance false positives with detecting mobs confined into a narrow space (type of fight).
+* Relate (average) moving speed to difficulty in general (mostly if the target is moving).
+* Turning makes hitting harder in general (turning average amount and/or frequency...).
+* Turning (rather quick) against the previous turning direction.
+* Certain criteria rather from groups that multiply, as opposed to adding up.
 
 ### Detect type of fight
 
