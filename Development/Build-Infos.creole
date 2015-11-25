@@ -12,17 +12,25 @@ For a changes history see: http://ci.md-5.net/job/NoCheatPlus/changes
 TODO: Link roadmap.
 
 ----
-===3.13.1-SNAPSHOT-sMD5NET-b882(cumulative)===
+===3.13.1-BETA-sMD5NET-b883(cumulative)===
+* Bug fix BETA release. Prefer this one over the last one (build 878).
+** MD5: e726c6faa32d5d8fbd80b46306cdb57d
+** SHA512: 6efa148a81a02a7f419ee2fed26a9cbfb5ac2c211b6321150b175476fd0ad39aa5eb87d9dbbc949bb56c2a2781a16030b012f0b058b27dd798caebf6bf70a8ba
+** File size: 984969
 * Fixes
 ** Fix logging backend activation flags being ignored.
 ** ProtocolLib: Build against the current version. Only enable for 1.8.x.
 * Internals
+** API change: ActionFrequency and ActionAccumulator moved to a sub-package.
 ** Use scope 'provided' for all external dependencies.
 ===3.13.0-BETA-sMD5NET-b878(cumulative)===
 * BETA release for 1.8.x.
 ** MD5: e064ed398b8034c1ae4b2b699aceb17b
 ** SHA512: 1682ab66e33327a263b39f2962be554be46d4efaea2cfda0d534d4d36068432d2473c713b6605705e445e1fccfeff152ea0f0fad9fcc876462577ac38763a9b5
 ** File size: 980163 bytes
+* BUGS:
+** ProtocolLib incompatibilities.
+** Logging backend activation flags ignored.
 * Hot
 ** 1.8.x support.
 ** Reworked y-axis handling.
