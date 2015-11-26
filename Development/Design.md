@@ -15,18 +15,6 @@ Possibly top headlines should be ordered alphabetically?
 * Add examples to wiki.
 * May add a named sets configuration for  (name -> active, flags, blocks) for doors and the like, disabled by default.
 
-## Fix ProtocolLib for 1.7.10
-
-At least need 1.7.10 support still. ProtocolLib for 1.9 might also be incompatible to 1.8.x.
-
-Thus we need to have multiple modules for ProtocolLib/packet-level-access and build vs. the appropriate versions of external plugins.
-
-Suggested changes:
-* Split off as much abstracted stuff as possible and move to NCPCore. Checks are mostly done, some chunks of code would profit from having some sort of abstract CheckPipeline, to be registered with the NCP API, possibly as a unique generic instance.
-* Elaborate/add the registry mechanism to auto add the checks to the CheckPipeline (plugin enable -> add pipeline -> queue pipeline populate ~ event -> populate the pipeline with the abstract checks, AND possibly add a registration context thing to fire the population automatically, containing the abstract checks and the pipeline interface to populate and so on).
-* Add ProtocolLib module for 1.7.10 (and possibly for past versions), and alter the current one, to provide the registry for the checks. 
-* Improve registry aspect: remove packet listeners, if ProtocolLib disables. Re-check factory if it enables. Possibly have some registry added for that.
-
 ## 1.9 support
 
 ### Let CreativeFly handle ELYTRA and LEVITATION
@@ -325,3 +313,44 @@ Future motivation:
 Examples:
 * A meta check that combines several inputs to detect kill auras (e.g. fight checks vl, latency window shift events, lowjump events, pvp hit statistics).
 * The "Toggle item/armor/sneak/block while moving" type of cheat.
+
+## Cross plugin compatibility framework.
+
+At least a generic thing should be built into NCP directly, without letting the build depend on other plugins. Allow other plugins to temporarily or permanently exempt players and other entities from checks, without having them buiild vs. NCP.
+
+Could involve:
+* Allow exempting players by means of attached metadata.
+** skipnocheat could be the key to start with.
+** Uncertain what is needed. The simple way is to just check if there is anything and exempt. More complex options might be to just exempt the next event of a certain type, or the duration of validity (tick, time, once, n times).
+* Allow generic compatibility behavior for predefined event types (and other classes types, possibly players?).
+** Basic would be to define which check types to skip for that very event.
+** Advanced mechanics involve events that are induced by other events (e.g. a generic melee attack event will fire on damaging an entity with an attacker set, or a generic block break event will follow BlockDamageEvent.setInstaBreak).
+** Special cases might need reflection.
+** Confine by versions of other plugins (plugin-compatibility-behavior with id 123: using versions x...y of plugin Xyz).
+* Allow to define behavior for Player instances that extend the NPC interface or have "npc" metadata set.
+* Allow other generic (permanent/selective?) exemption methods (name of a player or UUIDs). 
+
+## More developer friendly.
+
+Big aim: get more devs on board.
+
+High level aims:
+* Make NCP more inviting towards developers.
+* Make it possible to register a new check with one class.
+* Make it possible to replace check implementations, add and remove listeners at runtime.
+* Add a cross plugin compatibility framework to NCP.
+
+Means:
+* Add basic subsystems for a check broker framework. 
+* More mod independent design. 
+* More complex registry subsystem with dependency handling, auto registration once available, auto unregister once dependencies got removed.
+* Dynamic check types (not an enum), generic config paths (and files) for checks.
+* More flexible and more clear configuration system. Allow merge config and defaults into existing files, allow split into multiple files, allow folders for worlds, allow defining validity for multiple worlds within files, possibly more...
+* Add basic providers for all sorts of core listeners/check pipelines, at least for Bukkit/Spigot.
+* On the fly check adding and removal.
+** Needs internal listener registries, to allow reliably removing listener, also to allow reliable order of listeners.
+
+
+## Generic Mod support
+
+Long term aim is to make NCP much more, if not completely mod-independent. Generic registries, generic data handling, generic config handling and dependency management (auto register once available) will allow us to add checks when necessary, replace checks where necessary. The upside also is, that we can easily replace subsystems for the case of some breaking changes. We don't need to support all versions of Minecraft, but usually many people stay on the previous version of Minecraft for a long time and we don't like to add branches for that.
