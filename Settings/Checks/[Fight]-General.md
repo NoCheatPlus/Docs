@@ -9,6 +9,7 @@ This page lists miscellaneous config options regarding fighting.
 
 **Notes**
 * pvp _knockbackvelocity_ has nothing to do with the already removed fight.knockback check.
+
 **Related**
 * Violations
 * [Combined] Yawrate
