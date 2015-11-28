@@ -11,13 +11,13 @@ This page explains configuration options which affect or support multiple moving
 | velocity _strictinvalidation_   | More strict invalidation of queued velocity. Might get removed.|
 | ignorestance | Ignore the bounding box check for players. This can be used to prevent compatibility issues on legacy setups. Set to default, it will disable from 1.8 on. Force set with true/false. |
 | tempkickillegal                 | Setting this to false will just kick a player that does a illegal movement instead of actually tempbanning him for 24 hours. Technically NCP uses its deny login feature, only counting until next restart, not the ban command.|
-| loadchunks _join_               | Setting this to true will load up chunks around the player while he/she is logging in. |
+| loadchunks _join_               | Setting this to true will load up chunks around the player while they are logging in. |
 | sprintinggrace                  | Grace-period in seconds for sprinting. Due to latency, there are often still moves incoming, after ther server-side has caused sprinting to expire/toggle.|
 | assumesprint                    | Setting this to true will assume that the player is always sprinting. The server-side state does not always match what the client does.|
 | speedgrace                      | Grace-period in seconds for speed potion. Same as with sprintinggrace, the server might remove the potion effect and there are still moves incoming due to latency.|
 | enforcelocation                 | Track if the player has somehow managed to get to ridiculous places without a moving event firing. Fixed the vehicle-teleport exploit. Legacy option for some time before Spigot 1.7.10. Setting to default will activate/deactivate based on the detected Minecraft version. Force set with true/false.|
 
 **Notes**
-* Players could do a illegal movements which would crash the server, so we made a check against it that would tempban a player for 24 hours if he/she exploits that. However some users wanted to just kick such players and for that reason we put boolean to activate/deactivate temporary banning called `tempkickillegal`.
+* Players could do a illegal movements which would crash the server, so we made a check against it that would tempban a player for 24 hours if they exploit that. However some users wanted to just kick such players and for that reason we put boolean to activate/deactivate temporary banning called `tempkickillegal`.
 * Minecraft fixed the "destroyown vehicle" bug so vehicles preventdestroyown option is just here for legacy servers. Leaving it enabled won't conflict with anything either.
 * The Minecraft client moves (well more falls) even if no chunks are loaded up which could trigger a tiny Passable false positive. We tried to smooth this further out by loading up the chuncks on join as fast as possible with `loadchuncks _join_`. It seems that Mojang allows the client to move inside unloaded chunks, for the vanilla fly check because it would prevent false positives with it.
