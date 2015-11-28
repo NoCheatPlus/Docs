@@ -278,6 +278,43 @@ With high latency, players may have a couple of moves on a block just removed by
 
 To keep the map size more confined, one could confine tracking to be near players, e.g. maintain tracked chunks, relate to if/how the player is moving.
 
+### Initial minimum or pistons.
+
+For starters we do need to make ordinary pistons work with survivalfly, at least vertically, because the new y-axis handling should prevent any move with pistons.
+
+"Quick" approach:
+* Implement per-world block change tracking for pistons only at first.
+** Track time+direction+id for the position of the end-block for extending pistons.
+** The id is an always increasing counter, player data contains a counter (and possibly a time), to be able to prevent using past entries.
+** Invalidation mechanics by time, use the LinkedCoordMap, use a mixture of lazy + TickTask.
+** Block Change entries contain a list with each extension for the piston (at least). Possibly the change direction is enough to know it's been a piston, the state of the block before extending needs to be present too.
+** Use the oldest block change entry for the player, preferably.
+* For pistons: Allow moving to the edge of the block, at least vertically upwards.
+** Might want to check other conditions, full bounding box available.
+** Locations to check cover the whole bounding box (for the from location at least).
+* Configurability if to use this feature at all, plus maybe max. age and number of entries.
+* Not yet:
+** Maybe not yet horizontal, though that could be possible as well.
+** Full on-ground compatibility (jumping on shifty piston setups, no fall edge cases, possibly other).
+** Latency estimates.
+
+### Initial minimum for non-pistons.
+
+Maybe a quick thing for passable can be done here after doing the minimum for survivalfly.
+
+* Trigger block change entries:
+** Moving onto a block or even having (to be added) flags present in the bounding box entries or along the move.
+** Maybe: Interaction with said types of blocks.
+** Maybe: redstone changing blocks (performance questions).
+* Use the same block change infrastructure as for pistons, create entries with no direction (player is not going to get pushed).
+* Add exemption for passable checking (passing block tracker as extra argument), possibly need a different return type there (AlmostBoolean?), or just risk some other tests for passability not using the block change tracking.
+** Passable ~ opportunistic version of the test: assume passing through is wanted, so look for states that allow it.
+* Do remove config workarounds.
+* Configurability if to use this sub-feature.
+* Not yet:
+** Full NoFall compatibility.
+** Latency estimates.
+
 ## Global latency estimate
 
 While this is somewhat difficult with networking and other congestion, not to mention server-side and client-side lag, it could be quite rewarding to track rough latency globally. 

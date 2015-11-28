@@ -17,6 +17,8 @@ TODO: Link roadmap.
 * Fixes
 ** Allow ProtocolLib 3.6.4 for all supported versions of Minecraft.
 ** Fix legacy compatibility (THORNS, PacketFlying interpretation, disable net.attackfrequency on 1.6.4 and before).
+* Other changes
+** Remove (some) deprecated configuration.
 * Internals
 ** API change: move some things from ServerVersion to GenericVersion.
 ** Set more internal Maven dependencies to 'provided' scope. 
