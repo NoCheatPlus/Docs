@@ -161,6 +161,35 @@ With vertical friction, moving out of water, usually the next move still has wat
 Solution:
 * Track more fine grained on-ground/resetcond/etc. states with objects. Keep 3 moves at least. Such will allow simpler workarounds for a range of oddities and transitions. Uncertain: could track more than three, even on-demand.
 
+## Track sequences of (continuous) violations.
+
+Reduce false positives by tracking continuous violations.
+
+* Mostly thought of for the survivalfly check, could also be useful for passable.
+* Just set-back silently, without increasing the violation level, and without running all the violation handling. (Problematic might be that compatibility hooks can't help anymore in this case. Future design could do something about it.)
+* Configuration:
+** Maximum number of subsequent violations to skip (including all and none, later possibly try a mixture of 'long' for teleport/login and latency estimate.).
+** Warning message for staff with a player being stuck in violations (message, count to activation, count/timing to repeat).
+
+
+## Horizontal speeding
+
+Counter measures:
+* Confine bunny hop further. Find side conditions that can be (re-) added.
+* Track the average speed per so and so seconds.
+* Track bunny hop frequency.
+* Might attempt to detect sprint speed without sprinting. While server side sprint state can be inconsistent, there might be conditions with which to detect players, who should send a sprint start but don't. [Only useful, if that does something to the hunger level.]
+
+Tracking the average speed mid-term seems quite promising, because it allows checking typical medium speed for ground+air and water+air and the like, limiting speeding for any medium[+air combination].
+
+Technicalities:
+* It would probably need tracking the allowed "normal" speed vs. the used speed. Recording the ratio and number of events may be best, using ActionAccumulator. Resetting and skipping conditions might be intricate, thinking of the player sending small moves in-between [could give rise to using another data structure]. Tracking distance vs. real time is problematic, due to congestion/lag considerations. Having morepackets for that, we should have a good start on chases with going per-packet.
+* Tracking the speed above average might be prone to false positives under some curcumstances, so some care is necessary (velocity, cascading in generic cases).
+* Preventing the impact of false positives with tracking sequences of (continuous) violations, see above.
+* Friction envelopes after receiving velocity or switching state from somewhere (elytra, flying, whatever) need to be distinguishable from speeding.
+ * Probably already useful if we confine it only to the rough bunny envelopes (where we allow to move faster than normal without velocity).
+ * Tracking mid-term speed change by regarding shorter intervals will help to distinguish.
+* Hard to tell where to set back to. Possibly needs keeping an extra mid-term set-back location like for morepakets, or we freeze the player in-place more or less.
 
 # Uncertain
 
@@ -259,36 +288,6 @@ While this is somewhat difficult with networking and other congestion, not to me
 * With ANY latency window some sequences of actions can be checked for oddities, such as using velocity with odd delays , e.g. using glide-by-velocity.
 
 Not sure if cheating with pistons will be popular soon, neither if they'll have pvp arenas with lots of pistons. Perhaps the cross-check usefulness is over-rated here (other than being updated by more sources)?
-
-## Track sequences of (continuous) violations.
-
-Reduce false positives by tracking continuous violations.
-
-* Mostly thought of for the survivalfly check, could also be useful for passable.
-* Just set-back silently, without increasing the violation level, and without running all the violation handling. (Problematic might be that compatibility hooks can't help anymore in this case. Future design could do something about it.)
-* Configuration:
-** Maximum number of subsequent violations to skip (including all and none, later possibly try a mixture of 'long' for teleport/login and latency estimate.).
-** Warning message for staff with a player being stuck in violations (message, count to activation, count/timing to repeat).
-
-
-## Horizontal speeding
-
-Counter measures:
-* Confine bunny hop further. Find side conditions that can be (re-) added.
-* Track the average speed per so and so seconds.
-* Track bunny hop frequency.
-* Might attempt to detect sprint speed without sprinting. While server side sprint state can be inconsistent, there might be conditions with which to detect players, who should send a sprint start but don't. [Only useful, if that does something to the hunger level.]
-
-Tracking the average speed mid-term seems quite promising, because it allows checking typical medium speed for ground+air and water+air and the like, limiting speeding for any medium[+air combination].
-
-Technicalities:
-* It would probably need tracking the allowed "normal" speed vs. the used speed. Recording the ratio and number of events may be best, using ActionAccumulator.
-* Tracking the speed above average might be prone to false positives under some curcumstances, so some care is necessary (velocity, cascading in generic cases).
-* Preventing the impact of false positives with tracking sequences of (continuous) violations, see above.
-* Friction envelopes after receiving velocity or switching state from somewhere (elytra, flying, whatever) need to be distinguishable from speeding.
- * Probably already useful if we confine it only to the rough bunny envelopes (where we allow to move faster than normal without velocity).
- * Tracking mid-term speed change by regarding shorter intervals will help to distinguish.
-* Hard to tell where to set back to. Possibly needs keeping an extra mid-term set-back location like for morepakets, or we freeze the player in-place more or less.
 
 ## Packet exploits (frequency)
 
