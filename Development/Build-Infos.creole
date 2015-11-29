@@ -12,12 +12,15 @@ For a changes history see: http://ci.md-5.net/job/NoCheatPlus/changes
 TODO: Link roadmap.
 
 ----
-===3.13.2-SNAPSHOT-sMD5NET-b884(cumulative)===
+===3.13.2-SNAPSHOT-sMD5NET-b888(cumulative)===
 
 * Fixes
 ** Allow ProtocolLib 3.6.4 for all supported versions of Minecraft.
-** Fix legacy compatibility (THORNS, PacketFlying interpretation, disable net.attackfrequency on 1.6.4 and before).
+** Fix extreme speeding.
+** Fix moving on ENDER_PORTAL_FRAME.
+** Fix legacy compatibility (THORNS, PacketFlying interpretation for 1.7.10 and before, disable net.attackfrequency on 1.6.4 and before, allviolations hook).
 * Other changes
+** Let the allviolations hook log for players who have debug set.
 ** Remove (some) deprecated configuration.
 * Internals
 ** API change: move some things from ServerVersion to GenericVersion.
