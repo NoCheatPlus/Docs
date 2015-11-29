@@ -66,3 +66,4 @@
 ## Other
 * Forces commands like /op and /deop to be ran in the console only
 * Can send MOTDs to control some client mods that support it (Reis minimap etc.)
+* Prevents creating books with unlimited pages
