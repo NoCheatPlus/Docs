@@ -17,7 +17,7 @@ This topic keeps popping up, thus we need to clarify our position on this kind o
 
 ## Contra Pro
 
-* Things last until you have one capable cheat client developer interested in bypassing "shit". They're as forced to be legit as they're forced to use a vanilla client for a vanilla server.
+* Things last until you have one capable cheat client developer interested in "bypassing shit". They're as forced to be legit as they're forced to use a vanilla client for a vanilla server.
 * Checksums don't really help, they can be found, faked and will finally be forgotten.
 * Obfuscation doesn't prevent people altering the Minecraft server into a system capable of running plugins, why would it scare off a cheat client developer who is used to dealing with obfuscated client code in the first place?
 * Nodus can still be updated.
