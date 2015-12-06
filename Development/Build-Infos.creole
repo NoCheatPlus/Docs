@@ -12,7 +12,7 @@ For a changes history see: http://ci.md-5.net/job/NoCheatPlus/changes
 TODO: Link roadmap.
 
 ----
-===3.13.2-SNAPSHOT-sMD5NET-b891(cumulative)===
+===3.13.2-SNAPSHOT-sMD5NET-b892(cumulative)===
 
 * Fixes
 ** Allow ProtocolLib 3.6.4 for all supported versions of Minecraft.
