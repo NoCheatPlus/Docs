@@ -401,6 +401,30 @@ Means:
 ** Needs internal listener registries, to allow reliably removing listener, also to allow reliable order of listeners.
 
 
-## Generic Mod support
+## Generic mod support
 
 Long term aim is to make NCP much more, if not completely mod-independent. Generic registries, generic data handling, generic config handling and dependency management (auto register once available) will allow us to add checks when necessary, replace checks where necessary. The upside also is, that we can easily replace subsystems for the case of some breaking changes. We don't need to support all versions of Minecraft, but usually many people stay on the previous version of Minecraft for a long time and we don't like to add branches for that.
+
+## Towards side-effect-free check design
+
+Especially complex checks like SurvivalFly keep altering all sorts of player data during checking. This is a problem, if we need to perform more heavy after-failure checks, complicating implementation of workarounds.
+
+Pro:
+* Checks can test various branches easily, without creating inconsistent data states.
+** Test with/without permissions.
+** On-ground judgment after failure: Standing on boats is rare, no need to always check, whenever a player is not standing on blocks.
+** On-ground judgment after failure: Test with accounting for recent map changes (pistons, building, explosions, etc.).
+** Test branches for assumptions made in the past (are we still within some assumed envelope, considering past N moves, if not continue like with resetting to now/some-time-then).
+* Parts of the check are easier to exchange for alternate implementations.
+* Data is altered on base of the actually used path of decision.
+* Code might be easier to understand, having special case decisions queued as such, rather than handled implicitly.
+* Potential for less programming errors (less side effects = easier predictability of code).
+
+Con:
+* Such is best decided before starting to implement the check. Could be complex/expensive to change to.
+* Will lead to more object creation (not sure short living objects can be detected as such for such a complex check, though some objects can simply be stored and re-used).
+
+Technically:
+* More object oriented, at least more struct-like pieces of data, rather than endless amounts of flags in MovingData.
+* Objects fit for remembering checking edge data for several moves.
+* Objects for decisions: allowed speed, violation detected, workarounds applied. These allow keeping track of what workarounds are possible, having some type-like qualification for data, instead of a mere "distance above limit". This way after-failure checks can be much more streamlined for specific cases.
