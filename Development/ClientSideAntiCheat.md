@@ -40,6 +40,19 @@ This topic keeps popping up, thus we need to clarify our position on this kind o
 * People want more... what will it do next?
 * Client side stuff can virtually always be bypassed in a generic way.
 
+## To be fair
+
+To be fair, there is one thing a client side checker can do.
+
+Requirements:
+* The software is hardly used by anyone.
+* Your players can be tricked into using it.
+
+Pro:
+* Cheat consumers can't just download a random cheat client and use it on your server. Job done.
+
+It could still happen that someone pays someone else (or is someone else) who then bypasses that client. In essence you probably don't really need a highly complex client side thing just for this use case, as nobody will even try to make a specialized client.
+
 # Suggestions
 
 Where could this possibly lead to?
