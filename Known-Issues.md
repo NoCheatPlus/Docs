@@ -27,6 +27,7 @@ Additional informations:
 * The checks "fight.reach" and "fight.direction" seem to make the most trouble.
 * If you encounter problems with the fight.direction check then set "strict" to false in your configuration file.
 * Turning down the "penalty" value for fight.direction and fight.reach check could help also.
+* Time penalties in general might be interesting to balance out (search for penalty, also toolchangepenalty). 
 
 ### Moving/Passable
 * If a certain block type poses problems, be it a bug or just client mods or server mods or plugins "optimizing" things, you can tweak it by configuration: [Compatibility Section](Dev-Pinboard#compatibility-section)
