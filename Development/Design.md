@@ -66,18 +66,18 @@ More promising might be other approaches that don't necessarily prevent all figh
 
 Penalties could consist of several types of penalties, which maintain a probability to apply with a maximum duration of validity.
 * Types could be:
-** Cancel.
-** Cancel on keeping the target.
-** Cancel on switching the target.
-** Reduce resulting damage (somehow / depending on check specific settings).
-** Reduce nodamageticks (not sure this is such a good option for general penalties, but could be interesting on combined checks, considering players hitting a lot but not getting hit, despite pvp or what not).
-** Selective modifiers. E.g. some indicator to increase strictness for some other checks.
+ * Cancel.
+ * Cancel on keeping the target.
+ * Cancel on switching the target.
+ * Reduce resulting damage (somehow / depending on check specific settings).
+ * Reduce nodamageticks (not sure this is such a good option for general penalties, but could be interesting on combined checks, considering players hitting a lot but not getting hit, despite pvp or what not).
+ * Selective modifiers. E.g. some indicator to increase strictness for some other checks.
 * Side conditions  / data / other conditions:
-** Time of expiration and creation time (the latter for tracking time running backwards).
-** Probability to apply (if the validity interval is extended, the resulting probability is somehow calculated, with remaining duration for previous expiration time and previous probability.).
-** Number of events to maximally apply the penalty for (until expiration, this might need being able to store multiple penalties per type).
-** Combined judgment + escalation mechanics. This could also be made "meta triggers", like increasing another probability thing if several others reach a certain level (planned in a generic way for later, but could be useful here too).
-** Could allow increasing probability for penalty type chosen at random.
+ * Time of expiration and creation time (the latter for tracking time running backwards).
+ * Probability to apply (if the validity interval is extended, the resulting probability is somehow calculated, with remaining duration for previous expiration time and previous probability.).
+ * Number of events to maximally apply the penalty for (until expiration, this might need being able to store multiple penalties per type).
+ * Combined judgment + escalation mechanics. This could also be made "meta triggers", like increasing another probability thing if several others reach a certain level (planned in a generic way for later, but could be useful here too).
+ * Could allow increasing probability for penalty type chosen at random.
 
 Configuration complexity (penalties).
 * Hard to imagine an elegant way to define all these things.
@@ -168,8 +168,8 @@ Reduce false positives by tracking continuous violations.
 * Mostly thought of for the survivalfly check, could also be useful for passable.
 * Just set-back silently, without increasing the violation level, and without running all the violation handling. (Problematic might be that compatibility hooks can't help anymore in this case. Future design could do something about it.)
 * Configuration:
-** Maximum number of subsequent violations to skip (including all and none, later possibly try a mixture of 'long' for teleport/login and latency estimate.).
-** Warning message for staff with a player being stuck in violations (message, count to activation, count/timing to repeat).
+ * Maximum number of subsequent violations to skip (including all and none, later possibly try a mixture of 'long' for teleport/login and latency estimate.).
+ * Warning message for staff with a player being stuck in violations (message, count to activation, count/timing to repeat).
 
 
 ## Horizontal speeding
@@ -284,36 +284,36 @@ For starters we do need to make ordinary pistons work with survivalfly, at least
 
 "Quick" approach:
 * Implement per-world block change tracking for pistons only at first.
-** Track time+direction+id for the position of the end-block for extending pistons.
-** The id is an always increasing counter, player data contains a counter (and possibly a time), to be able to prevent using past entries.
-** Invalidation mechanics by time, use the LinkedCoordMap, use a mixture of lazy + TickTask.
-** Block Change entries contain a list with each extension for the piston (at least). Possibly the change direction is enough to know it's been a piston, the state of the block before extending needs to be present too.
-** Use the oldest block change entry for the player, preferably.
+ * Track time+direction+id for the position of the end-block for extending pistons.
+ * The id is an always increasing counter, player data contains a counter (and possibly a time), to be able to prevent using past entries.
+ * Invalidation mechanics by time, use the LinkedCoordMap, use a mixture of lazy + TickTask.
+ * Block Change entries contain a list with each extension for the piston (at least). Possibly the change direction is enough to know it's been a piston, the state of the block before extending needs to be present too.
+ * Use the oldest block change entry for the player, preferably.
 * For pistons: Allow moving to the edge of the block, at least vertically upwards.
-** Might want to check other conditions, full bounding box available.
-** Locations to check cover the whole bounding box (for the from location at least).
+ * Might want to check other conditions, full bounding box available.
+ * Locations to check cover the whole bounding box (for the from location at least).
 * Configurability if to use this feature at all, plus maybe max. age and number of entries.
 * Not yet:
-** Maybe not yet horizontal, though that could be possible as well.
-** Full on-ground compatibility (jumping on shifty piston setups, no fall edge cases, possibly other).
-** Latency estimates.
+ * Maybe not yet horizontal, though that could be possible as well.
+ * Full on-ground compatibility (jumping on shifty piston setups, no fall edge cases, possibly other).
+ * Latency estimates.
 
 ### Initial minimum for non-pistons.
 
 Maybe a quick thing for passable can be done here after doing the minimum for survivalfly.
 
 * Trigger block change entries:
-** Moving onto a block or even having (to be added) flags present in the bounding box entries or along the move.
-** Maybe: Interaction with said types of blocks.
-** Maybe: redstone changing blocks (performance questions).
+ * Moving onto a block or even having (to be added) flags present in the bounding box entries or along the move.
+ * Maybe: Interaction with said types of blocks.
+ * Maybe: redstone changing blocks (performance questions).
 * Use the same block change infrastructure as for pistons, create entries with no direction (player is not going to get pushed).
 * Add exemption for passable checking (passing block tracker as extra argument), possibly need a different return type there (AlmostBoolean?), or just risk some other tests for passability not using the block change tracking.
-** Passable ~ opportunistic version of the test: assume passing through is wanted, so look for states that allow it.
+ * Passable ~ opportunistic version of the test: assume passing through is wanted, so look for states that allow it.
 * Do remove config workarounds.
 * Configurability if to use this sub-feature.
 * Not yet:
-** Full NoFall compatibility.
-** Latency estimates.
+ * Full NoFall compatibility.
+ * Latency estimates.
 
 ## Global latency estimate
 
@@ -370,13 +370,13 @@ At least a generic thing should be built into NCP directly, without letting the 
 
 Could involve:
 * Allow exempting players by means of attached metadata.
-** skipnocheat could be the key to start with.
-** Uncertain what is needed. The simple way is to just check if there is anything and exempt. More complex options might be to just exempt the next event of a certain type, or the duration of validity (tick, time, once, n times).
+ * skipnocheat could be the key to start with.
+ * Uncertain what is needed. The simple way is to just check if there is anything and exempt. More complex options might be to just exempt the next event of a certain type, or the duration of validity (tick, time, once, n times).
 * Allow generic compatibility behavior for predefined event types (and other classes types, possibly players?).
-** Basic would be to define which check types to skip for that very event.
-** Advanced mechanics involve events that are induced by other events (e.g. a generic melee attack event will fire on damaging an entity with an attacker set, or a generic block break event will follow BlockDamageEvent.setInstaBreak).
-** Special cases might need reflection.
-** Confine by versions of other plugins (plugin-compatibility-behavior with id 123: using versions x...y of plugin Xyz).
+ * Basic would be to define which check types to skip for that very event.
+ * Advanced mechanics involve events that are induced by other events (e.g. a generic melee attack event will fire on damaging an entity with an attacker set, or a generic block break event will follow BlockDamageEvent.setInstaBreak).
+ * Special cases might need reflection.
+ * Confine by versions of other plugins (plugin-compatibility-behavior with id 123: using versions x...y of plugin Xyz).
 * Allow to define behavior for Player instances that extend the NPC interface or have "npc" metadata set.
 * Allow other generic (permanent/selective?) exemption methods (name of a player or UUIDs). 
 
@@ -398,7 +398,7 @@ Means:
 * More flexible and more clear configuration system. Allow merge config and defaults into existing files, allow split into multiple files, allow folders for worlds, allow defining validity for multiple worlds within files, possibly more...
 * Add basic providers for all sorts of core listeners/check pipelines, at least for Bukkit/Spigot.
 * On the fly check adding and removal.
-** Needs internal listener registries, to allow reliably removing listener, also to allow reliable order of listeners.
+ * Needs internal listener registries, to allow reliably removing listener, also to allow reliable order of listeners.
 
 
 ## Generic mod support
@@ -411,10 +411,10 @@ Especially complex checks like SurvivalFly keep altering all sorts of player dat
 
 Pro:
 * Checks can test various branches easily, without creating inconsistent data states.
-** Test with/without permissions.
-** On-ground judgment after failure: Standing on boats is rare, no need to always check, whenever a player is not standing on blocks.
-** On-ground judgment after failure: Test with accounting for recent map changes (pistons, building, explosions, etc.).
-** Test branches for assumptions made in the past (are we still within some assumed envelope, considering past N moves, if not continue like with resetting to now/some-time-then).
+ * Test with/without permissions.
+ * On-ground judgment after failure: Standing on boats is rare, no need to always check, whenever a player is not standing on blocks.
+ * On-ground judgment after failure: Test with accounting for recent map changes (pistons, building, explosions, etc.).
+ * Test branches for assumptions made in the past (are we still within some assumed envelope, considering past N moves, if not continue like with resetting to now/some-time-then).
 * Parts of the check are easier to exchange for alternate implementations.
 * Data is altered on base of the actually used path of decision.
 * Code might be easier to understand, having special case decisions queued as such, rather than handled implicitly.

@@ -30,11 +30,11 @@ This topic keeps popping up, thus we need to clarify our position on this kind o
 
 * Having to install an extra client just for certain servers is a nuisance in general.
 * How trustworthy is such a software, be it a binary installer or just altered obfuscated jar files?
-* The more intrusive a software is and the more special things it can do,
-** the more likely security holes will open.
-** the more likely it'll be an actual risk to your data (privacy, passwords, pictures).
-** the more likely no one will have a clue what the software actually is doing.
-** the more likely you'll bungle the EULA for users from Tonga and might even get dragged to court for distributing malware.
+* The more intrusive a software is and the more special things it can do...
+ * ...the more likely security holes will open.
+ * ...the more likely it'll be an actual risk to your data (privacy, passwords, pictures).
+ * ...the more likely no one will have a clue what the software actually is doing.
+ * ...the more likely you'll bungle the EULA for users from Tonga and might even get dragged to court for distributing malware.
 * The more such is used, the more cheat client developers will have a look.
 * The less such is used, the more likely it'll contain bugs and pose a security or privacy risk.
 * People want more... what will it do next?
