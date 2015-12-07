@@ -12,11 +12,11 @@ For a changes history see: http://ci.md-5.net/job/NoCheatPlus/changes
 TODO: Link roadmap.
 
 ----
-===3.13.3-BETA-sMD5NET-b894(cumulative)===
+===3.13.3-BETA-sMD5NET-b895(cumulative)===
 * BETA release (bug fix release).
-** MD5: 9c9208cbdb4d4e90406769bd9e0b5229
-** SHA512: 8dffa45d452806c7fc92bdfdcf46eedd9510016a3b125ddf619a0152e97e79e5bad0ad123c916d3eea866afc28505efa95e8c193a72be87290513c90f36e4445
-** File size: 996485
+** MD5: 79364b259d35a19904ec69d29f6e817c
+** SHA512: 8440feda6944a98f635121276450eddf439ba1c83212ed07858b4aff1114e706cce1b2102e58e45a0fc72bec514a1738a268002c38a43c70d39995e2d0188c19
+** File size: 996682
 * Fixes
 ** Allow ProtocolLib 3.6.4 for all supported versions of Minecraft.
 ** Fix extreme speeding.
