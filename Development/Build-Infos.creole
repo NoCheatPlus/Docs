@@ -16,6 +16,7 @@ TODO: Link roadmap.
 
 * Fixes
 ** Special case for a set-back loop with teleport to in-air (PaperSpigot 1.7.10).
+** Detect teleport ACK better, potentially reduces false positives with FlyingFrequency.
 
 ===3.13.3-BETA-sMD5NET-b895(cumulative)===
 * BETA release (bug fix release).
