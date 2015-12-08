@@ -1,8 +1,8 @@
 Somewhat digested version of a changes history.
 
-This section is probably not complete ever, but it can give a quick overview what parts to adapt or regenerate. The builds marked with //(**mostly stable**)// Are considered very stable and should be preferred over all previous dev/beta builds.
+This section is probably not complete ever, but it can give a quick overview what parts to adapt or regenerate.
 
-The //(cumulative)// note is meant to indicate that that build should be preferred over the lower numbers since the last entry.
+The builds marked with //(**mostly stable**)// are considered very stable and should be preferred over all previous development builds. Usually development builds get marked with "mostly stable" after having been around for a while, and possibly before a more shifty phase with new additions or changes with uncertain stability. Some builds marked "mostly stable" are also marked as 'recommended' (star) on Jenkins, which means something like they're actually pretty good and can be considered worth a beta release at least. 
 
 Broken builds usually are marked as broken or deficient or removed from Jenkins, they should not appear in this list.
 
@@ -12,6 +12,11 @@ For a changes history see: http://ci.md-5.net/job/NoCheatPlus/changes
 TODO: Link roadmap.
 
 ----
+===3.13.4-SNAPSHOT-sMD5NET-b896(cumulative)===
+
+* Fixes
+** Special case for a set-back loop with teleport to in-air (PaperSpigot 1.7.10).
+
 ===3.13.3-BETA-sMD5NET-b895(cumulative)===
 * BETA release (bug fix release).
 ** MD5: 79364b259d35a19904ec69d29f6e817c
