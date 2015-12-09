@@ -232,6 +232,25 @@ Key issues are:
 * Prevent abuse of timing bounds.
 * Prevent false positives with timing bounds.
 
+### Already Implemented/Tested
+
+#### Still simple: push entries up/down.
+
+Pistons moving one time up might already be "ok", can't call that "playable" yet.
+
+Pointers: 
+* Even on a local test server the player would stand in-air on top of an already retracted block.
+
+Conclusions:
+* We do need on-ground tracking as well. Following problems:
+ * Need to keep track of block shapes and data.
+ * The state after having moved the block can't be known at the time of the piston event.
+  * Queuing an update request for TickTask might be ok, as packets have to travel to the client anyway (could blow up on server side lag spikes).
+  * Otherwise the state resulting of the piston event will be the one checked against first (it's 'actual'). Possibly no entries are needed, just states of all involved blocks at the time of the event.
+ * The methods in BlockProperties that determine on-ground properties will lazily query data from BlockCache, thus we might need to implement BlockCache using the tracker, also considering the policy for a specific query (prefer blocks to be there or not, latency estimate).
+  * Solution could be to always query data, thus add it as argument to all the methods. This will be simple but change many places.
+  * Another Solution could be to change BlockCache to have one node-like entry per block, the node entry has access methods and keeps a reference of the block cache (...). Advantage being any past-state can be encapsulated somehow, this block state object will be passed to all the methods in BlockProperties instead of id/shape/data.
+
 ### Core data structures
 A linked CoordMap variation will likely be used, in order to sort entries to front/back once updated, so periodic checking for expiration will be easy.
 
