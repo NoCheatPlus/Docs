@@ -13,7 +13,6 @@ TODO: Link roadmap.
 
 ----
 ===3.13.4-BETA-sMD5NET-b901(cumulative)===
-
 * BETA release (bug fix release).
 ** MD5: 38ae82e1374e5c965460cec2ced93f48
 ** SHA512: f49ebc1037b8b09f35dd9c5ebf246a58f4a67ef1c60d3a9225ba124bf6c44853541b3853ed60edb0d32481829c86ce5d0b9275f534844121b50f264a6e04f0df
