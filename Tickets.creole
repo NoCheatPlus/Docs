@@ -1,42 +1,4 @@
-===False positives===
-* [[http://dev.bukkit.org/bukkit-plugins/nocheatplus/tickets/364-improve-movement-checks-on-pistons/|[Ticket 364] Improve movement checks on pistons]]
-* [[http://dev.bukkit.org/bukkit-plugins/nocheatplus/tickets/378-sprint-hack-work-ca-30/|[Ticket 378] Sprint hack work (ca. 30%)]]
-* [[http://dev.bukkit.org/bukkit-plugins/nocheatplus/tickets/484-hits-get-cancelled/|[Ticket 484] Hits get cancelled]]
-* [[http://dev.bukkit.org/bukkit-plugins/nocheatplus/tickets/525-noswing-triggered-in-snow/|[Ticket 525] noswing triggered in snow]] - Needs to be reproduced
-* [[http://dev.bukkit.org/bukkit-plugins/nocheatplus/tickets/551-add-option-to-allow-sprint-jumping-in-two-block-high/|[Ticket 551] Add option to allow sprint-jumping in two-block high area/corridor without triggering moving.survivalfly]]
-* [[http://dev.bukkit.org/bukkit-plugins/nocheatplus/tickets/563-boats-survivalfly/|[Ticket 563] Boats + survivalfly]] - Needs more testing
-* [[http://dev.bukkit.org/bukkit-plugins/nocheatplus/tickets/581-rail-seen-as-an-obstruction/|[Ticket 581] Rail seen as an obstruction]] - Needs to be reproduced
 
-===Enhancements==
-* [[http://dev.bukkit.org/bukkit-plugins/nocheatplus/tickets/283-movement-checks-should-be-stricter-with-water-and-lava/#comments|[Ticket 283] Movement checks should be stricter with water and lava]]
-* [[http://dev.bukkit.org/bukkit-plugins/nocheatplus/tickets/376-improve-chat-filtering-ip-caps-words-repetition/|[Ticket 376] Improve chat filtering (IP, CAPS, WORDS, REPETITION)]]
-* [[http://dev.bukkit.org/bukkit-plugins/nocheatplus/tickets/469-moving-morepackets-count-in-server-side-lag/|[Ticket 469] moving.morepackets - count in server side lag]]
-* [[http://dev.bukkit.org/bukkit-plugins/nocheatplus/tickets/286-players-hit-by-anything-can-fly-shortly/|[Ticket 286] Players hit by anything can fly shortly.]]
-* [[http://dev.bukkit.org/bukkit-plugins/nocheatplus/tickets/403-players-can-consume-items-shoot-bows-etc-while-sprinting/|[Ticket 403] Players can consume items / shoot bows etc. while sprinting.]]
+[[https://github.com/NoCheatPlus/Issues/issues|Tickets are now hosted on GitHub.]]
 
-===Features===
-* [[http://dev.bukkit.org/bukkit-plugins/nocheatplus/tickets/51-improve-fight-checks-aimbot-reach/|[Ticket 51] Improve Fight checks (+aimbot, +reach)]]
-* [[http://dev.bukkit.org/bukkit-plugins/nocheatplus/tickets/254-add-inventory-opened-check/|[Ticket 254] Add inventory opened check]]
-* [[http://dev.bukkit.org/bukkit-plugins/nocheatplus/tickets/560-creative-mode-exploits-items-enchant/|[Ticket 560] Creative mode exploits (items, enchant)]]
-* [[http://dev.bukkit.org/bukkit-plugins/nocheatplus/tickets/577-new-hack-noslow-down/|[Ticket 577] New Hack - NoSlowDown]]
-
-===Postponed (Not before NCP4)===
-These tickets are declined because they are too far out of scope right now, but might get back to focus later.
-* [[http://dev.bukkit.org/bukkit-plugins/nocheatplus/tickets/213-integrate-anti-xray-features/|[Ticket 213] Integrate anti xray features]]
-* [[http://dev.bukkit.org/bukkit-plugins/nocheatplus/tickets/259-block-login-bots/|[Ticket 259] Block Login-Bots]]
-* [[http://dev.bukkit.org/bukkit-plugins/nocheatplus/tickets/315-feature-detect-certain-client-mods/|[Ticket 315] Feature: Detect certain client mods.]]
-* [[http://dev.bukkit.org/bukkit-plugins/nocheatplus/tickets/341-extend-api-to-enable-disable-checks/|[Ticket 341] Extend API to enable/disable checks]]
-* [[http://dev.bukkit.org/bukkit-plugins/nocheatplus/tickets/403-players-can-consume-items-shoot-bows-etc-while-sprinting/|[Ticket 403] Players can consume items / shoot bows etc. while sprinting.]]
-* [[http://dev.bukkit.org/bukkit-plugins/nocheatplus/tickets/464-violation-level-system/|[Ticket 464] Violation level system.]]
-* [[http://dev.bukkit.org/bukkit-plugins/nocheatplus/tickets/497-nocheat-plus-not-working-select-biomes-o-plenty-terrains/|[Ticket 497] NoCheatPlus not working select Biomes O Plenty terrains]]
-
-=== Halted ===
-* [[http://dev.bukkit.org/bukkit-plugins/nocheatplus/tickets/266-false-positives-for-fast-break-check-protected-areas/|[Ticket 266] False positives for FastBreakCheck (Protected Areas)]] - Needs reproduction with latest CB
-* [[http://dev.bukkit.org/bukkit-plugins/nocheatplus/tickets/283-movement-checks-should-be-stricter-with-water-and-lava/|[Ticket 283] Movement checks should be stricter with water and lava]] - Needs update with current NCP version
-* [[http://dev.bukkit.org/bukkit-plugins/nocheatplus/tickets/398-permission-check-doesnt-update-on-world-travel/|[Ticket 398] Permission check doesn't update on world travel]] - Needs testing with the latest NC+ and the mod itself
-* [[http://dev.bukkit.org/bukkit-plugins/nocheatplus/tickets/527-issue-with-increased-velocity-and-stamina-hunger-changes/|[Ticket 527] Issue with increased velocity and stamina/hunger changes]]
-* [[http://dev.bukkit.org/bukkit-plugins/nocheatplus/tickets/592-reload-ncp-with-plugin-manager/|[Ticket 592] Reload NCP with PluginManager]] - Need to be tested with latest NC+ version again
-* [[http://dev.bukkit.org/bukkit-plugins/nocheatplus/tickets/609-new-godmode-hack-s/|[Ticket 609] New Godmode Hack(s)]] - Needs more informations
-
-=== Other ===
-* [[http://dev.bukkit.org/bukkit-plugins/nocheatplus/tickets/589-provide-nocheat-plus-over-a-maven-repo/|[Ticket 589] Provide NoCheatPlus over a maven repo.]]
+TODO: Enjoy the search features. Might add direct links for typical searches here or elsewhere.

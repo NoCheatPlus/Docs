@@ -10,4 +10,6 @@ To get started follow those instructions: [Getting Started](Getting-Started)
 
 If you need a full index search on this wiki then try [GitHub Wiki Search]
 
+[Issues - missing an explanation or having an issue with NoCheatPlus or a related plugin?](https://github.com/NoCheatPlus/Issues/issues)
+
 [Github Wiki Search]: https://github.com/linyows/github-wiki-search 
