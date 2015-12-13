@@ -12,9 +12,11 @@ For a changes history see: http://ci.md-5.net/job/NoCheatPlus/changes
 TODO: Link roadmap.
 
 ----
-===3.13.5-SNAPSHOT-sMD5NET-b902(cumulative)===
+===3.13.5-SNAPSHOT-sMD5NET-b903(cumulative)===
 * Fixes
 ** Fix selected issues with sprint-jumping and a 2-high ceiling.
+* Internals
+** Prepare storing past moves data in objects.
 
 ===3.13.4-BETA-sMD5NET-b901(cumulative)===
 * BETA release (bug fix release).
