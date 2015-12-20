@@ -4,6 +4,7 @@ Exemption: `MOVING_PASSABLE`
 Better with: `[Combined] Enderpearl`
 
 Passable prevents moving into or inside of blocks (noclip).
+
 | Option                                    | Description |
 | :---------------------------------------- | :---------- |
 | raytracing _active_                       | Activate ray-tracing to prevent to move past/through blocks. |
