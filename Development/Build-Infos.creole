@@ -12,12 +12,14 @@ For a changes history see: http://ci.md-5.net/job/NoCheatPlus/changes
 TODO: Link roadmap.
 
 ----
-===3.13.5-SNAPSHOT-sMD5NET-b904(cumulative)===
+===3.13.5-SNAPSHOT-sMD5NET-b905(cumulative)===
 * Fixes
 ** Fix selected issues with sprint-jumping and a 2-high ceiling.
 ** Workaround slowness + sprint + jump (not confined to jumping yet).
+** Don't allow using items on blockinteract.speed violations.
 * Internals
-** Prepare storing past moves data in objects.
+** Adjust several thresholds for bunny hopping.
+** Better coverage of past moves data.
 
 ===3.13.4-BETA-sMD5NET-b901(cumulative)===
 * BETA release (bug fix release).
