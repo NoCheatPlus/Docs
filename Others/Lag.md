@@ -49,14 +49,16 @@ A small list to explain which hardware is responsible for a curtain type of late
  - RAM (MC keeps a lot of data in your random access memory before it garbage collects it. Garbage collection could have an impact, low ram might crash the server or lead to more intense disk-io).
 
 - **FPS**
- - GPU (Additionally to the TPS list you will also need a good GPU to keep up with the game renderer and display enough frames for a smooth game experience)
+ - GPU/GPU drivers (Additionally to the TPS list you will also need a good GPU to keep up with the game renderer and display enough frames for a smooth game experience)
+ - CPU
+ - RAM (If your client runs out of memory bad things will happen such as: GarbageCollection going crazy, everything gets moved from your RAM to your hard drive, might trigger a OOME-Out Of Memory Error which could crash your computer or make your operating system forcefully close programs, ...)
  
 - **Network**
  - Network card
  - CPU (Yes processing packets requires a CPU).
  - Router (On good ones you can tweak a lot of settings to manage your network traffic properly, quality of service).
- - Ethernet cable (Try to not host on WiFi if you can avoid it).
- - Internet provider (If you do home hosting: You might need to look up business plans of your internet provider for the best results, you do need uplink and downlink).
+ - Internet connection (Try to not host on WiFi if you can avoid it).
+ - Internet provider (If you do home hosting: You might need to look up business plans of your internet provider for the best results, you do need good uplink and downlink).
  
 [Monitor & TV Refresh Rates as Fast As Possible]:https://www.youtube.com/watch?v=YCWZ_kWTB9w
 [FreeSync and VSync explanation]:https://www.youtube.com/watch?v=5Ey-KObDABI
