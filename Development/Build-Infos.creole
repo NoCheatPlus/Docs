@@ -12,11 +12,13 @@ For a changes history see: http://ci.md-5.net/job/NoCheatPlus/changes
 TODO: Link roadmap.
 
 ----
-===3.13.5-SNAPSHOT-sMD5NET-b905(cumulative)===
+===3.13.5-SNAPSHOT-sMD5NET-b906(cumulative)===
 * Fixes
 ** Fix selected issues with sprint-jumping and a 2-high ceiling.
 ** Workaround slowness + sprint + jump (not confined to jumping yet).
 ** Don't allow using items on blockinteract.speed violations.
+* Other changes
+** Exempt players by metadata 'nocheat.exempt' (wildcard).
 * Internals
 ** Adjust several thresholds for bunny hopping.
 ** Better coverage of past moves data.
