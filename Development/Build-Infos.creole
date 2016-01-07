@@ -12,7 +12,11 @@ For a changes history see: http://ci.md-5.net/job/NoCheatPlus/changes
 TODO: Link roadmap.
 
 ----
-===3.13.5-SNAPSHOT-sMD5NET-b913(cumulative)===
+===3.13.5-BETA-sMD5NET-b914(cumulative)===
+* BETA release (bug fix release).
+** MD5: 23ae92274bd28b947cabbf9cade76823
+** SHA512: 781375ccaa43b48faf87a0bcaca3eed7d2936e63879c7756ea50b38e9b3290cc5690fc68a45a78f30cbf00d487f560019e0a9ae321fe919eeafe7fd22a77aaab
+** File size: 1006298
 * Fixes
 ** Fix selected issues with sprint-jumping and a 2-high ceiling.
 ** Workaround slowness + sprint + jump (not confined to jumping yet).
@@ -30,6 +34,7 @@ TODO: Link roadmap.
 ** Adjust several thresholds for bunny hopping.
 ** More robust teleport handling.
 ** Move some static code to a Magic class.
+** Pull request 37.
 
 ===3.13.4-BETA-sMD5NET-b901(cumulative)===
 * BETA release (bug fix release).
