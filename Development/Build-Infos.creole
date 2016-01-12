@@ -12,6 +12,11 @@ For a changes history see: http://ci.md-5.net/job/NoCheatPlus/changes
 TODO: Link roadmap.
 
 ----
+===3.13.6-SNAPSHOT-sMD5NET-b915(cumulative)===
+
+* Internals
+** Reset fall distance and NoFall data on fly-nofly transitions.
+
 ===3.13.5-BETA-sMD5NET-b914(cumulative)===
 * BETA release (bug fix release).
 ** MD5: 23ae92274bd28b947cabbf9cade76823
