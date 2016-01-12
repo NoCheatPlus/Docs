@@ -25,6 +25,7 @@ Those commands are used to basically manage NoCheatPlus on your server. Argument
 |/ncp unexempt (player) [check_type]| Remove any exemption you given to a specified player. "*" Is supported here.|
 |/ncp exemptions (player)| Gives back a list of all check that a specific player has been exempted from.|
 |/ncp commands| List all commands, more than shown here. The other commands are mainly for use with actions, such as delaying other commands, kicking with a message, telling players messages in colour, deny login for a players, allow it again and other.|
+|/ncp top [(num_entries)] (check type) [...sort order...]| Show the 'top' players by violation history. Default sort order is '-n -sumvl' . Sort priority can be specified using -n for number of violations, -sumvl for the sum of all added vl, -avgvl for the average added vl, -maxvl for the maximum of all added vl and -time for sorting by the last violation time. |
 |/ncp version| Show version information about the server, plugin, compatibility modules and registered hooks.|
 
 # Auxiliary commands
