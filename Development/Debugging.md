@@ -26,6 +26,8 @@ The debug logging may reset with the player logging out. In order to turn on-the
 
 For more confined output you can set the log file to a folder name, such as "logs". Then you can use _/ncp reload_ before and after debugging players, and the output will be confined to one log file. DrawBack is that this call is slightly heavier, due to affecting all players data and also due to reloading the configuration.
 
+With using _/ncp reload_ repeatedly, e.g. for recording individual sequences to individual files, you'd have to repeat _/ncp debug player (player)_, because on-the-fly debugging will reset with reloading the configuration.
+
 ### Debug level (Legacy)
 For the most detailed output use a development build of NCP (or manually edit BuildParameters.properties in the jar and set DEBUG_LEVEL to something like 10000).
 
