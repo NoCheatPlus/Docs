@@ -17,7 +17,7 @@ TODO: Link roadmap.
 * Internals
 ** Reset fall distance and NoFall data on fly-nofly transitions.
 
-===3.13.5-BETA-sMD5NET-b917(cumulative)===
+===3.13.5-BETA-sMD5NET-b918(cumulative)===
 * BETA release (bug fix release).
 ** MD5: 23ae92274bd28b947cabbf9cade76823
 ** SHA512: 781375ccaa43b48faf87a0bcaca3eed7d2936e63879c7756ea50b38e9b3290cc5690fc68a45a78f30cbf00d487f560019e0a9ae321fe919eeafe7fd22a77aaab
