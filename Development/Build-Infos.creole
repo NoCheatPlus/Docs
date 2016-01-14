@@ -17,7 +17,7 @@ TODO: Link roadmap.
 * Internals
 ** Reset fall distance and NoFall data on fly-nofly transitions.
 
-===3.13.5-BETA-sMD5NET-b914(cumulative)===
+===3.13.5-BETA-sMD5NET-b916(cumulative)===
 * BETA release (bug fix release).
 ** MD5: 23ae92274bd28b947cabbf9cade76823
 ** SHA512: 781375ccaa43b48faf87a0bcaca3eed7d2936e63879c7756ea50b38e9b3290cc5690fc68a45a78f30cbf00d487f560019e0a9ae321fe919eeafe7fd22a77aaab
@@ -34,12 +34,14 @@ TODO: Link roadmap.
 ** Exempt players by metadata 'nocheat.exempt' (wildcard).
 ** Add related plugins versions to the output of '/ncp version'.
 ** Confine 'step' detection.
+** Reset fall distance with fly-no-fly transitions. 
 * Internals
 ** Rework past move data keeping (lots of impact).
 ** Adjust several thresholds for bunny hopping.
 ** More robust teleport handling.
 ** Move some static code to a Magic class.
 ** Pull request 37.
+** Log improper API access with more details.
 
 ===3.13.4-BETA-sMD5NET-b901(cumulative)===
 * BETA release (bug fix release).
