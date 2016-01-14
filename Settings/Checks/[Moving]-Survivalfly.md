@@ -8,12 +8,25 @@ SurvivalFly aims to control pretty much everything related to moving such as fly
 | Option                              | Description |
 | :---------------------------------- | :---------- |
 | extended _vertical-accounting_      | Monitor how the players speed varies in-air. Enforces gravity for a minimum amount. |
-| falldamage                          | Deal fall-damage according to fall-distance on survivalfly violations. Meant to make exploiting the set-back to last ground location more expensive. |
+| stepheight                          | The height a player can from ground upwards to ground, without jumping. This is set to 'default' by default, so NCP will adjust it automatically with the Minecraft version. In case NCP can't detect the version properly, e.g. with custom builds, setting an explicit value might help. Used to be 0.5 before MC 1.8 and 0.6 from then on. |
+| setbackpolicy _falldamage_          | Deal fall-damage according to fall-distance on survivalfly violations. Meant to make exploiting the set-back to last ground location more expensive. |
+| setbackpolicy _voidtovoid_          | Attempt to set-back into the void, if already there. |
 | hover _step_                        | Tick-period for which to perform hover checking. |
 | hover _ticks_                       | Ticks after which a player is assumed to hover if still in-air and not moving. |
 | hover _logingticks_                 | Extra ticks added to hoverticks directly after login, to give more leniency. Set this on problems with hover + loging in. |
 | hover _falldamage_                  | Deal fall-damage according to fall-distance, to make avoiding fall-damage harder. |
 | hover _sfviolation_                 | A hover violation is counted as a survivalfly violations with this amount of violation level. |
+
+There are also hidden options, which give more access to internals. Use with care, as these might allow different kinds of cheats or lead to other false positives, if changed. Ask back if in doubt or test changes made.
+
+|Hidden Option                    | Description |
+| :------------------------------ | :---------- |
+| walkingspeed | Multiplier for the horizontal walking speed. Value is per-cent, 100 means no change (default), 200 doubles the allowed walking speed. Does not apply with sprinting! |
+| sprintingspeed | Multiplier for the horizontal sprinting speed. Value is per-cent, 100 means no change (default) , 200 doubles the allowed sprinting speed. Does only apply with sprinting! Due to the sprinting state on server side not always reflecting the client side, NCP will assume the player to be sprinting whenever technically possible (setting: _assumesprint_) - this means that this setting will take effect when the player isn't too hungry. |
+| blockingspeed | Multiplier for the horizontal walking speed, when blocking. Value is per-cent, 100 means no change (default), 200 doubles the allowed blocking speed. Overrides the modifiers above. |
+| sneakingspeed | Multiplier for the horizontal walking speed, when sneaking. Value is per-cent, 100 means no change (default), 200 doubles the allowed sneaking speed. Overrides the modifiers above. |
+| swimmingspeed | Multiplier for the horizontal swimming speed. Value is per-cent, 100 means no change (default), 200 doubles the allowed swimming speed. Overrides the modifiers above. |
+| speedingspeed | Multiplier for the horizontal speed. Value is per-cent, 100 means no change, 200 doubles the allowed horizontal speed (default). This always applies extra to other modifiers, regardless of the side conditions, provided a player has the permission _nocheatplus.checks.moving.survivalfly.speeding_. |
 
 **Notes**
 * Hover is a sub-check of SurvivalFly which prevents players from hovering around in mid-air.
