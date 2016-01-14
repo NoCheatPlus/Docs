@@ -20,7 +20,8 @@ This page explains configuration options which affect or support multiple moving
 There are also hidden options, which give more access to internals. Use with care, as these might allow different kinds of cheats or lead to other false positives, if changed. Ask back if in doubt or test changes made.
 
 |Hidden Option                    | Description |
-|yonground| Control the distance to blocks, at which NCP will assume the player to touch ground. This affect any moving-related checks, dealing fall damage etc. Capped at a maximum value of 0.0625, and a minimum of 0.00001. The default value may be around 0.016. Adjusting this to something higher might allow moving slightly above cactus without taking damage, but it might also help on certain false positives. Changes should be tested with issues that can be reproduced at will. |
+| :------------------------------ | :---------- |
+| yonground                       | Control the distance to blocks, at which NCP will assume the player to touch ground. This affect any moving-related checks, dealing fall damage etc. Capped at a maximum value of 0.0625, and a minimum of 0.00001. The default value may be around 0.016. Adjusting this to something higher might allow moving slightly above cactus without taking damage, but it might also help on certain false positives. Changes should be tested with issues that can be reproduced at will. |
 
 **Notes**
 * Players could do a illegal movements which would crash the server, so we made a check against it that would tempban a player for 24 hours if they exploit that. However some users wanted to just kick such players and for that reason we put boolean to activate/deactivate temporary banning called `tempkickillegal`.
