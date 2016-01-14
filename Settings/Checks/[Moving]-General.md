@@ -18,6 +18,7 @@ This page explains configuration options which affect or support multiple moving
 | enforcelocation                 | Track if the player has somehow managed to get to ridiculous places without a moving event firing. Fixed the vehicle-teleport exploit. Legacy option for some time before Spigot 1.7.10. Setting to default will activate/deactivate based on the detected Minecraft version. Force set with true/false.|
 
 There are also hidden options, which give more access to internals. Use with care, as these might allow different kinds of cheats or lead to other false positives, if changed. Ask back if in doubt or test changes made.
+
 |Hidden Option                    | Description |
 |yonground| Control the distance to blocks, at which NCP will assume the player to touch ground. This affect any moving-related checks, dealing fall damage etc. Capped at a maximum value of 0.0625, and a minimum of 0.00001. The default value may be around 0.016. Adjusting this to something higher might allow moving slightly above cactus without taking damage, but it might also help on certain false positives. Changes should be tested with issues that can be reproduced at will. |
 
