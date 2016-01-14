@@ -30,7 +30,7 @@ There are also hidden options, which give more access to internals. Use with car
 
 **Notes**
 * If you alter the actions in the configuration to not always cancel, you might be allowing glide-like cheats. Issues with horizontal speed are easier to work a around by configuration, than issues with the vertical part of a move (display [tags] for reference, ask back).
-* A powerful tool for issues with moving is a on-the-fly debug log, significantly improving the odds for a quick fix: https://github.com/NoCheatPlus/Docs/wiki/Debugging#on-the-fly-debug-output-for-individual-players
+* A powerful tool for issues with moving is provided with the _on-the-fly debug logging feature_, significantly improving the odds for a quick fix: https://github.com/NoCheatPlus/Docs/wiki/Debugging#on-the-fly-debug-output-for-individual-players
 * Hover is a sub-check of SurvivalFly which prevents players from hovering around in mid-air.
 
 **Related**  
