@@ -12,15 +12,12 @@ For a changes history see: http://ci.md-5.net/job/NoCheatPlus/changes
 TODO: Link roadmap.
 
 ----
-===3.13.6-SNAPSHOT-sMD5NET-b915(cumulative)===
 
-* Internals
-** Reset fall distance and NoFall data on fly-nofly transitions.
-
-===3.13.6-SNAPSHOT-sMD5NET-b918(cumulative)===
+===3.13.6-SNAPSHOT-sMD5NET-b920(cumulative)===
 * Fixes
-** Reset fall distance with fly-no-fly transitions.
-** Confine abusing certain workarounds (more following).
+** CreativeFly: Allow friction based horizontal speed. 
+** Reset fall distance and NoFall data with creativefly-survivalfly transitions.
+** Confine use of certain workarounds further (more to follow).
 * Internals
 ** Add a framework for workaround confinement.
 ** Log improper API access with more details.
