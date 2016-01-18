@@ -20,7 +20,9 @@ TODO: Link roadmap.
 ** Confine use of certain workarounds further (more to follow).
 * Internals
 ** Add a framework for workaround confinement.
+** Optimize/Simplify random parts of SurvivalFly.
 ** Log improper API access with more details.
+** Log "untracked" outgoing position.
 
 ===3.13.5-BETA-sMD5NET-b914(cumulative)===
 * BETA release (bug fix release).
