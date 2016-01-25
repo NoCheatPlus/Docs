@@ -1,6 +1,6 @@
 Strings is our elegant solution to prevent insanely long actions for every check. You can basically imagine it as redirection or alias kinda.
 
-The template:
+The template:  
 ![StringsExplenation](Resources/StringsExplenation.gif)
 
 For this to execute you would adjust your actions like this:  
