@@ -13,16 +13,19 @@ TODO: Link roadmap.
 
 ----
 
-===3.13.6-SNAPSHOT-sMD5NET-b920(cumulative)===
+===3.13.6-SNAPSHOT-sMD5NET-b921(cumulative)===
 * Fixes
 ** CreativeFly: Allow friction based horizontal speed. 
 ** Reset fall distance and NoFall data with creativefly-survivalfly transitions.
 ** Confine use of certain workarounds further (more to follow).
+** For GitHub: Change version to use ~ instead of ( and ).
 * Internals
 ** Add a framework for workaround confinement.
 ** Optimize/Simplify random parts of SurvivalFly.
 ** Log improper API access with more details.
 ** Log "untracked" outgoing position.
+** Allow hooks to test if anything would be logged in a convenient way.
+** More consistent debug log message format.
 
 ===3.13.5-BETA-sMD5NET-b914(cumulative)===
 * BETA release (bug fix release).
