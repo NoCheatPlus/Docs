@@ -13,12 +13,13 @@ TODO: Link roadmap.
 
 ----
 
-===3.13.6-SNAPSHOT-sMD5NET-b921(cumulative)===
+===3.13.6-SNAPSHOT-sMD5NET-b922(cumulative)===
 * Fixes
 ** CreativeFly: Allow friction based horizontal speed. 
 ** Reset fall distance and NoFall data with creativefly-survivalfly transitions.
 ** Confine use of certain workarounds further (more to follow).
 ** For GitHub: Change version to use ~ instead of ( and ).
+** Reduce false positives with blockinteract.visible (ProtocolLib, experimental).
 * Internals
 ** Add a framework for workaround confinement.
 ** Optimize/Simplify random parts of SurvivalFly.
