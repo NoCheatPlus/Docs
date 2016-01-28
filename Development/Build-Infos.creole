@@ -13,14 +13,19 @@ TODO: Link roadmap.
 
 ----
 
-===3.13.6-SNAPSHOT-sMD5NET-b923(cumulative)===
+===3.13.6-BETA-sMD5NET-b924(cumulative)===
+* BETA release (bug fix release).
+** MD5: 1304836258112f28f274f2716256498a
+** SHA512: 68af0db1e76c94725b96cb320125fc322641e5543d0c4fb51a9f8827c71f19fda4cabf929168d4b73a7a421cc45f22e7701b65f629851ba827a2109a99430678
+** File size: 1032503
 * Fixes
-** Fix stepping onto boats.
+** Detect if the head is hitting the ceiling in a more reliable way.
+** Adjustments for low ceilings.
+** Stepping onto boats.
 ** Fly -> no fly: Fix several false positives (fall damage and speed).
 ** Reduce false positives with blockinteract.visible (ProtocolLib, experimental).
-** Head obstruction detection.
 ** Confine use of certain workarounds further (more to follow).
-** For GitHub: Change version to use ~ instead of ( and ).
+** For GitHub: Change version to use '~' instead of '(' and ')'.
 * Internals
 ** Add a framework for workaround confinement.
 ** Optimize/Simplify random parts of SurvivalFly.
@@ -28,6 +33,7 @@ TODO: Link roadmap.
 ** Log "untracked" outgoing position.
 ** Allow hooks to test if anything would be logged in a convenient way.
 ** More consistent debug log message format.
+** Prepare changes to data storage handling.
 
 ===3.13.5-BETA-sMD5NET-b914(cumulative)===
 * BETA release (bug fix release).
