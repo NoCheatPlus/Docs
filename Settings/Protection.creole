@@ -1,19 +1,26 @@
 =Plugins=
 Here you can hide your plugins from being sniffed out using some simple tricks.
-==No permission==
 
-|message|| 
-|commands||
+==No permission==
+Add commands to have the configured message be sent to players, who try to use this command, but who don't have permission to use it.
+In order to protect commands that don't have a permission set, NCP will set a filter permission 'nocheatplus.filter.command.lc-command', with lc-command being the lower case command name.
+
+|message| The message to display, instead of the 'no permission' message. | 
+|commands| List of commands. NoCheatPlus tries to detect aliases, but you should test them to be sure, including aliases like 'minecraft:op' and 'otherplugin.chathistory'. Currently sub-commands like 'cs reload' can not be detected.|
 
 ==Unknown Command==
-|message|
-|commands|
+Add commands to have the configured message be sent to players, who try to use this command, but who don't have permission to use it.
+In order to protect commands that don't have a permission set, NCP will set a filter permission 'nocheatplus.filter.command.lc-command', with lc-command being the lower case command name.
+
+|message| The message to display, instead of the 'no permission' message. |
+|commands| List of commands. NoCheatPlus tries to detect aliases, but you should test them to be sure, including aliases like 'minecraft:op' and 'otherplugin.chathistory'. Currently sub-commands like 'cs reload' can not be detected.|
 
 =Commands=
 
 ==Console only==
-|message|| 
-|commands|| 
+
+|message| Message to display, if a player tries to use this command. This will display, regardless of the player having permissions or not. | 
+|commands| Commands to not be run from in-game. NoCheatPlus will attempt to fetch the original command label, but you should test aliases for the commands to be sure, e.g. 'minecraft:op' or 'otherplugin:reload fromhttp. |
 
 =Clients=
 ==Motd==
