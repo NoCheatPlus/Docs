@@ -20,7 +20,7 @@ In order to protect commands that don't have a permission set, NCP will set a fi
 ==Console only==
 
 |message| Message to display, if a player tries to use this command in-game. This will display, regardless of the player having permissions or not. | 
-|commands| Commands to not be run from in-game. NoCheatPlus will attempt to fetch the original command label, but you should test aliases for the commands to be sure, e.g. 'minecraft:op' \\or 'otherplugin:reload fromhttp. |
+|commands| Commands to not be run from in-game. NoCheatPlus will attempt to fetch the original command label, but you should test aliases for the commands to be sure, e.g. 'minecraft:op' \\or 'otherplugin:reload fromhttp'. |
 
 =Clients=
 ==Motd==
