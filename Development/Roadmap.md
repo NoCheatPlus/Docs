@@ -5,9 +5,9 @@ This page provides a short and likely not entirely accurate selection of topics 
 For a more detailed explanation or discussion of future design issues see the Design (TODO: link) page.
 
 # Current focus
-* Minimum piston compatibility and other bug fixes.
-* Planning and preparation (fight checks, horizontal speeding, 1.9, interact ray-tracing, other bug fixes). Likely there will be a couple of releases with mixed content.
-* Milestone: Refine fight checks (false positives, precision): 2015-11-28 [Postponed or split into several iterations due to bugs, possibly 1.9.]
+* Fight checks (implement penalty actions, allow use in fight checks, redo LocationTrace + pvp vs. pve config for loop checks).
+* Minimum piston compatibility, onground checks (spider vs. stuck with bounding box).
+* Milestone: Refine fight checks (false positives, precision): 2016-02-14 [Postponed or split into several iterations due to bugs, possibly 1.9.]
 
 # Scheduled
 Topics that will be tackled soon, no guarantee on order.

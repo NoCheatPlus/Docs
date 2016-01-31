@@ -7,6 +7,29 @@ Possibly top headlines should be ordered alphabetically?
 
 # Mostly decided
 
+## Fight checks penalties
+
+Implement penalties as an alternative to cancelling. This allows having less false positives, but also allows to have more strict limits, starting with penalties that only apply with a certain probability.
+
+* Add a PenaltyAction like 'penalty:penaltyid'.
+* Add a config section for penalties. e.g. 'penaltyid:dividedamage=1.5'.
+* Alter Actions processing to handle cancel differently, so penalties are able to cancel too.
+* Staged execution of penalties (Action.execute vs. context specific methods e.g. with using damage events).
+* Now or later: Allow combining penalties 'a+b', allow first-match lists with probability to apply '50%devidedamage=2.0 -> 25%cancel -> attackert.ndt-5'.
+
+## Redo LocationTrace
+
+* Switch to expire by time instead of number of elements (except for extreme cases).
+* Never merge entries with differing position, possibly not even if yaw/pitch differ.
+* Might use MoveData.to/from directly (then with a global pool of objects).
+* Include bounding box hints in the trace (width, height from PlayerLocation).
+
+## Fight / loop checks (using LocationTrace)
+
+* Distinguish pvp vs. pve settings, as the checks with trace allow much more precision.
+* Possibly change implementation further, to be optimal for the loop checks (the first approach had been a quick adaption).
+* Might already maintain a latency window/estimate.
+
 ## InteractRayTracing (blocinteract.visible)
 
 * Switch to extend PassableRayTracing + maybe slight alterations.
@@ -119,6 +142,9 @@ Initial focus would be detecting grinders and similar, in order to reduce false 
 ### Detect criticals on/with packet level
 
 Monitor jumping/patterns and tip off the fight checks, so they can guess stuff (not entirely straight forward to get something better than just the pattern detection, because moving and fight events might be totally out of order or queued still, and the craftbukkit moving event threshold will also complicated things, could use mid-term probabilities).
+
+#### Progress
+A couple of past packets are kept in a list, so these could be used for checking in the primary thread, though it'd be good to be able to associate packets with moving events and the order of things.
 
 ### Location trace with bounding box
 
