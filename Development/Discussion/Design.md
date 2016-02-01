@@ -38,6 +38,21 @@ Implement penalties as an alternative to cancelling. This allows having less fal
 * Add examples to wiki.
 * May add a named sets configuration for  (name -> active, flags, blocks) for doors and the like, disabled by default.
 
+## Detect abusing vanilla fall damage
+
+Clients can force vanilla fall damage by accumulating fall distance and faking the onground flag.
+
+Thinkable solutions:
+1. Check and correct the onground flag. [Problem: asynchronous handlers don't have Bukkit API access for blocks, plugins might change stuff on base of events.]
+2. Always override the onground flag and let NCP deal with the effects. [Problem: Might change processing on server side, in terms of nasty side effects. Still might be feasible, if we can add-in a heuristic, e.g. updating a per-player block cache for off-primary thread access, or if there are no relevant side effects.]
+3. Fall damage dealt by the server is mostly easy to detect, because it's not NCP dealing it, so it's possible to set-back in such a case. Of course there can be further checks:
+ * Track repetition of letting Bukkit deal fall damage.
+ * Track difference of height vs. accumulated fall distance.
+ * Use tracked/queued flying packet data to check if the player is really on ground but told otherwise.
+4. Cancel fall damage in such a case and undo effects.
+
+3. and 4. look good and might give rise for further checks (detect accumulating fall damage using micro moves, e.g. inspecting flying packets).
+
 ## 1.9 support
 
 ### Let CreativeFly handle ELYTRA and LEVITATION
