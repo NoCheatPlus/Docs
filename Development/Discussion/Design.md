@@ -30,6 +30,16 @@ Implement penalties as an alternative to cancelling. This allows having less fal
 * Possibly change implementation further, to be optimal for the loop checks (the first approach had been a quick adaption).
 * Might already maintain a latency window/estimate.
 
+## Evaluate: Adjust on-ground checking to return more details.
+
+It should be possible to return, if a player is on rock solid ground, or if a player is just on ground with blocks above (, or not on ground at all).
+
+The necessary code changes might affect many places, a quick adaption should be comparably simple.
+
+Having something like ON_GROUND_SPIDER extra to ON_GROUND and NOT_ON_GROUND will allow more specific judgment.
+* Detect spider directly. Also implicates specific tags for violations. Should alter default messages to show tags ingame, instead of locations (or setbackloc rather than from+to, possibly distances).
+* Workarounds for false positives with being stuck inside of blocks with a part of the bounding box, without the center being on ground.
+
 ## InteractRayTracing (blocinteract.visible)
 
 * Switch to extend PassableRayTracing + maybe slight alterations.
@@ -38,8 +48,11 @@ Implement penalties as an alternative to cancelling. This allows having less fal
 * Add examples to wiki.
 * May add a named sets configuration for  (name -> active, flags, blocks) for doors and the like, disabled by default.
 
-## Detect abusing vanilla fall damage
+## Prevent abusing vanilla to deal damage
 
+Cheat clients may use various ways to let vanilla deal fall damage.
+
+### Fall damage
 Clients can force vanilla fall damage by accumulating fall distance and faking the onground flag.
 
 Thinkable solutions:
@@ -52,6 +65,13 @@ Thinkable solutions:
 4. Cancel fall damage in such a case and undo effects.
 
 3. and 4. look good and might give rise for further checks (detect accumulating fall damage using micro moves, e.g. inspecting flying packets).
+
+### Velocity resulting from damage.
+
+Simple means of dealing with velocity resulting of fall damage proactively could be:
+* Randomly cancel velocity, if within smaller bounds.
+* Set a negative y-component if in-air. Might randomize too.
+* Track this, in addition to accumulating fall damage and similar methods. Might add a heuristic for the fallen distance vs. velocity (coarse accounting), could revive the vertical accounting, possibly adding more buckets.
 
 ## 1.9 support
 
@@ -89,9 +109,11 @@ Start with something rough.
 
 ### Criticals (Bukkit API)
 
-The existing check should reduce the damage (1.5), instead cancelling. Possibly configurable.
+[CURRENT] The existing check should reduce the damage (1.5), instead cancelling, configurable.
 
 ### More sensible generic penalties for fight checks
+
+[CURRENT] An experimental version is being implemented right now (see above).
 
 Having penalty time hard-cancel all attacks clearly is problematic with false positives. It's been a technique to make auto-fighting less effective, e.g. after turning very fast, but it interferes too much with legit players.
 
@@ -118,9 +140,9 @@ Penalties could consist of several types of penalties, which maintain a probabil
  * Could allow increasing probability for penalty type chosen at random.
 
 Configuration complexity (penalties).
-* Hard to imagine an elegant way to define all these things.
-* Penalties could have ids likes strings and be defined in a special section or even a special configuration file (global only).
-* Checks reference the penalty ids where appropriate (hard coded config path, or actions, like penalty:ridiculouspenalty). 
+* (Hard to imagine an elegant way to define all these things.)
+* Penalties have ids likes strings and be defined in a special section or even a special configuration file (global only).
+* actions, like penalty:ridiculouspenalty. 
 
 ### Latency window
 
@@ -169,7 +191,11 @@ The location traces (don't mix up with on-ground data stored for several moves) 
 
 An entry should probably always contain the creation time. The latest one always includes "now", and the following one shows the duration covered by its creation time. With iteration potentially going random directions with a latency window to maintain, one might also just store both creation and last update time.
 
+With the latest entry, there'll be need to consider the period from creation to now, in order to judge a thinkable latency window.
+
 ### More coarse location trace
+
+[DECLINED] We work with an exact location trace.
 
 A location trace with lower resolution could be interesting, in order to track mid-term moving behavior. Could also be generated/updated on-demand, using the default trace as input. 
 
@@ -245,9 +271,13 @@ Counter measures could include:
 * Minimizing vertical speed could also be detected like selective y-direction use.
 * Do use latency estimates to check if the delays between moves somehow match the velocity use. Detect shifting the window all the time.
 * Track sending too few packets.
+* See 'Prevent abusing vanilla to deal damage'.
 
 
 ## Block change tracking (pistons, redstone, digging, other).
+
+[CURRENT] Evaluate use of per-player block caches for fake entries. Idea: Set blocks to ign_passable+ground_height+ground+...
+
 To reduce false positives with pistons and to allow making doors much more safe we need to introduce some concept to track changed blocks and somehow account for them during all types of on-ground checking and passability checking, including ray-tracing.
 
 What we might track:
@@ -267,6 +297,8 @@ Key issues are:
 * Prevent false positives with timing bounds.
 
 ### Already Implemented/Tested
+
+[CURRENT] Evaluation to use per-player block caches for fake entries (also enabling invisible walls).
 
 #### Still simple: push entries up/down.
 
