@@ -180,13 +180,6 @@ Y collision first, then x or z, then the remaining one (currently a workaround c
 
 In addition we could/should check that way using the full bounding box of the player, which is more simple due to regarding the move along one axis at a time.
 
-## Vertical friction issues
-
-With vertical friction, moving out of water, usually the next move still has water friction, but it may happen that it's air friction. This is already an in-air move, but it might also happen on the second in-air move.
-
-Solution:
-* Track more fine grained on-ground/resetcond/etc. states with objects. Keep 3 moves at least. Such will allow simpler workarounds for a range of oddities and transitions. Uncertain: could track more than three, even on-demand.
-
 ## Track sequences of (continuous) violations.
 
 Reduce false positives by tracking continuous violations.
