@@ -17,4 +17,3 @@
 
 [DBO]:http://dev.bukkit.org/bukkit-plugins/nocheatplus/files/
 [Jenkins]:http://ci.md-5.net/job/NoCheatPlus/lastSuccessfulBuild/artifact/target/NoCheatPlus.jar
-[Compatibility]
