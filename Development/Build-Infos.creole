@@ -13,6 +13,14 @@ TODO: Link roadmap.
 
 ----
 
+===3.13.8-SNAPSHOT-sMD5NET-b926(cumulative)===
+
+* Changes
+* Portal events: only clear data if a location is present, add debug log.
+* Handle system time running backwards differently.
+* Adjust log message for ProtocolLib.
+
+
 ===3.13.7-RC-sMD5NET-b925===
 * Recommended Release (milestone release).
 ** MD5: d27d11a413b1ef0f6875959f9af806e7
