@@ -17,6 +17,6 @@ Here you can configure the different logging aspects of NoCheatPlus.\\
 * NoCheatPlus will log in a folder if you change {{{filename: nocheatplus}}} (a new folder "nocheatplus" will be created and logs will be stored in there instead of the single nocheatplus.log file)
 
 **References**\\ 
-* [[Active|Global#active]]\\
+* [[Active|General#active]]\\
 * [[Asynchronous|Backgrounds#asynchronous]]\\
 * Color codes
