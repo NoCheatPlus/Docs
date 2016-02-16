@@ -13,14 +13,19 @@ TODO: Link roadmap.
 
 ----
 
-===3.13.8-SNAPSHOT-sMD5NET-b928(cumulative)===
-
-* Changes
+===3.13.8-SNAPSHOT-sMD5NET-b929(cumulative)===
+* New
+ * A quick check for extreme moves.
+* Fixes
  * Portal events: only clear data if a location is present, add debug log.
+ * FastClick: Don't add violation twice for display.
+  * Fix HashMapLow (bucket position).
+* Changes
  * Handle system time running backwards differently.
  * Adjust log message for ProtocolLib.
 * Internals
- * Fix HashMapLow (bucket position).
+ * [BREAKING] Add a penalty framework. Breaks internal API, see commit messages and diffs.
+ * Catch unintended input somewhere.
 
 
 ===3.13.7-RC-sMD5NET-b925===
