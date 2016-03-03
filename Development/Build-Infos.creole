@@ -13,13 +13,11 @@ TODO: Link roadmap.
 
 ----
 
-===3.14.0-SNAPSHOT-sMD5NET-b932(cumulative)===
-* New
- * Testing with MC 1.9 (quick workarounds).
-* Fixes
- * Disable split-move handling on MC 1.9.
+===3.14.0-SNAPSHOT-sMD5NET-b933(cumulative)===
+* MC 1.9
+ * Dedicated MCAccess module.
  * Allow ProtocolLib 3.7 with MC 1.9 (currently disable SoundDistance).
- 
+
 ===3.13.8-SNAPSHOT-sMD5NET-b930(cumulative)===
 * New
  * A quick check for extreme moves.
