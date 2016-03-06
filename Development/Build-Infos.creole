@@ -13,11 +13,13 @@ TODO: Link roadmap.
 
 ----
 
-===3.14.0-SNAPSHOT-sMD5NET-b937(cumulative)===
+===3.14.0-SNAPSHOT-sMD5NET-b938(cumulative)===
 * MC 1.9
  * Blocks break data and flags.
  * Dedicated MCAccess module for CB with MC 1.9.
  * Allow standing on shulkers.
+ * Rough levitation support.
+ * Very coarse elytra support, capped at some random speed, hardly safe vs. abuse.
  * Allow ProtocolLib 3.7 with MC 1.9 (currently disable SoundDistance).
 
 ===3.13.8-SNAPSHOT-sMD5NET-b930(cumulative)===
