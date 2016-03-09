@@ -13,6 +13,10 @@ TODO: Link roadmap.
 
 ----
 
+===3.14.0-SNAPSHOT-sMD5NET-b940(cumulative)===
+* MC 1.9
+ * Experimental: Disable the pvp-knockback workaround.
+
 ===3.14.0-SNAPSHOT-sMD5NET-b939(cumulative)===
 * MC 1.9
  * Blocks break data and flags.
