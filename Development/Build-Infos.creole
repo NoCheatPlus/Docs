@@ -13,7 +13,7 @@ TODO: Link roadmap.
 
 ----
 
-===3.14.0-SNAPSHOT-sMD5NET-b949(cumulative)===
+===3.14.0-SNAPSHOT-sMD5NET-b950(cumulative)===
 * MC 1.9
  * Blocks break data and flags.
  * Dedicated MCAccess module for CB with MC 1.9.
@@ -21,7 +21,8 @@ TODO: Link roadmap.
  * Rough levitation support.
  * Very coarse elytra support, capped at some random speed, hardly safe vs. abuse.
  * Allow ProtocolLib 3.7 and 3.7.0 with MC 1.9 (currently disable SoundDistance).
- * Disable the pvp-knockback workaround with 1.9.
+ * Disable the pvp-knockback workaround with MC 1.9.
+ * Disable FastHeal with MC 1.9.
 * Fixes
  * More cases with splashing through water.
 * Internals
