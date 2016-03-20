@@ -13,22 +13,31 @@ TODO: Link roadmap.
 
 ----
 
-===3.14.0-SNAPSHOT-sMD5NET-b951(cumulative)===
+===3.14.0-SNAPSHOT-sMD5NET-b952(cumulative)===
 * MC 1.9
 ** Blocks break data and flags.
 ** Dedicated MCAccess module for CB with MC 1.9.
 ** Allow standing on shulkers.
 ** Rough levitation support.
-** Very coarse elytra support, capped at some random speed, hardly safe vs. abuse.
-** Allow ProtocolLib 3.7 and 3.7.0 with MC 1.9 (currently disable SoundDistance).
+** Very coarse elytra support, capped at some random speed, hardly safe vs. abuse. _Note recent configuration overrides (not advertised!)._
+** Allow versions of ProtocolLib with MC 1.9 (currently disable SoundDistance): 3.7, 3.7.0, 4.0.0 or later.
 ** Ignore sweep attack follow up damage.
 ** Disable the pvp-knockback workaround with MC 1.9.
 ** Disable FastHeal with MC 1.9.
+* Configuration
+** Change creativefly model configurations (default speeds for elytra and spectator).
+** Increase hover login ticks to 60 (previously 0).
 * Fixes
 ** More cases with splashing through water.
+** creativefly
+*** Fix violation skipping/cooldown mechanics. This might increase violation levels.
+*** Fix set back handling (maxheight).
+*** Fly-nofly transition: Reduce possibility of horizontal velocity abuse.
+** Player instances stored wrongly.
 * Internals
 ** Add more minimized build profiles to pinpoint Spigot 1.8.8/1.9.
 ** Organize some workaround code better.
+** Extend/alter debug logging.
 
 ===3.13.8-SNAPSHOT-sMD5NET-b930(cumulative)===
 * New
