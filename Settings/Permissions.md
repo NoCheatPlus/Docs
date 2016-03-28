@@ -19,9 +19,9 @@
 `nocheatplus.checks.<Check category here>.<Check name here>` Exempts group of this check. Example: nocheatplus.checks.moving.creativefly will exempt from creativefly.
 
 ## Specific
-`nocheatplus.bypass.denylogin` Exempts from login denial
-`nocheatplus.checks.blockplace.boatsanywhere` Allows to place boats on the ground (not just in water).
-`nocheatplus.checks.blockbreak.break.liquid` Allows to break water/lava 
+`nocheatplus.bypass.denylogin` Exempts from login denial  
+`nocheatplus.checks.blockplace.boatsanywhere` Allows to place boats on the ground (not just in water).  
+`nocheatplus.checks.blockbreak.break.liquid` Allows to break water/lava  
 
 # Commands
 `nocheatplus.command.commands` Can view all NC+ commands with _/ncp commands_  
