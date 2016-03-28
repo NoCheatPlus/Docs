@@ -1,8 +1,7 @@
 **Table of context**
 * [Shortcuts](Permissions#shortcuts)
 * [Checks](Permissions#checks)
- * [Blockbreak](Permissions#blockbreak)
- * [Bypass](Permissions#bypass)
+ * [Specific](Permissions#specific)
 * [Commands](Permissions#commands)
  * [Auxiliary commands](Permissions#auxiliary-commands)
 * [Client modifications](Permissions#client-modifications)
@@ -15,15 +14,14 @@
 `nocheatplus.shortcut.bypass` Gives permissions to bypass all checks.  
 
 # Checks
-`nocheatplus.checks` Will be exempted from all checks  
+`nocheatplus.checks` Exempts from all checks  
 `nocheatplus.checks.<Check category here>` Exempts from all checks of a given check category  
 `nocheatplus.checks.<Check category here>.<Check name here>` Exempts group of this check. Example: nocheatplus.checks.moving.creativefly will exempt from creativefly.
 
-## Blockbreak
-`nocheatplus.checks.blockbreak.break.liquid` Is allowed to break water/lava 
-
-## Bypass
+## Specific
 `nocheatplus.bypass.denylogin` Exempts from login denial
+`nocheatplus.checks.blockplace.boatsanywhere` Allows to place boats on the ground (not just in water).
+`nocheatplus.checks.blockbreak.break.liquid` Allows to break water/lava 
 
 # Commands
 `nocheatplus.command.commands` Can view all NC+ commands with _/ncp commands_  
