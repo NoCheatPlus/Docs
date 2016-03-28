@@ -101,6 +101,7 @@ Commands for which the permission got set by the protection features (hide plugi
 * [Client Modifications](Client-Modifications)
 * [Checks](Checks)
 * [Commands](Commands)
+* [Debugging](Debugging)
 
 [CJB Mods]:http://cjbmods.com/
 [Rei's Minimap]:http://www.minecraftforum.net/forums/mapping-and-modding/minecraft-mods/1275219-jul-08-reis-minimap-v3-4_01
