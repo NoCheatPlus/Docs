@@ -20,7 +20,7 @@ NoCheatPlus allows to set debug flags for almost all check groups. The flag in t
 This is not meant for production servers with many players on, due to the amount of logging done with each move for each player. For production servers we recommend using on-the-fly debugging rather.
 
 ### On-the-fly debug output for individual players
-Using the command _/ncp debug player (player)_ (Permission: nocheatplus.command.debug)allows you to start debug logging for a player. The output is written to the log file specified in the configuration (not to the console).
+Using the command _/ncp debug player (player)_ (Permission: nocheatplus.command.debug) allows you to start debug logging for a player. The output is written to the log file specified in the configuration (not to the console).
 
 The debug logging may reset with the player logging out. In order to turn on-the-fly debugging off, you can either use _/ncp remove (player)_ (Permission: nocheatplus.command.remove) or _/ncp reload_ , with the latter removing all data for all players.
 
