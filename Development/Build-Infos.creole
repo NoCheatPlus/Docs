@@ -13,7 +13,7 @@ TODO: Link roadmap.
 
 ----
 
-===3.14.0-SNAPSHOT-sMD5NET-b957(cumulative)===
+===3.14.0-SNAPSHOT-sMD5NET-b960(cumulative)===
 * MC 1.9
 ** Blocks break data and flags.
 ** Dedicated MCAccess module for CB with MC 1.9.
@@ -25,8 +25,8 @@ TODO: Link roadmap.
 ** "Noob tower": jumping upwards, building underneath.
 ** Ignore multi-block place of bedrock and ender crystals.
 ** Block place: check the placed material instead of what's in main hand, if available.
-** Disable the pvp-knockback workaround with MC 1.9.
 ** Disable FastHeal with MC 1.9.
+** (Still enable the pvp-knockback workaround with MC 1.9.)
 * Configuration
 ** Change creativefly model configurations (default speeds for elytra and spectator).
 ** Increase hover login ticks to 60 (previously 0).
@@ -35,12 +35,13 @@ TODO: Link roadmap.
 ** creativefly
 *** Fix violation skipping/cooldown mechanics. This might increase violation levels.
 *** Fix set back handling (maxheight).
-*** Fly-nofly transition: Reduce possibility of horizontal velocity abuse.
+*** Fly-nofly transition: Reduce possibilvelocityity of horizontal velocity abuse.
 ** Player instances stored wrongly.
 * Internals
 ** Add more minimized build profiles to pinpoint Spigot 1.8.8/1.9.
 ** Organize some workaround code better.
 ** Extend/alter debug logging.
+** Work towards moving checks for vehicles.
 
 ===3.13.8-SNAPSHOT-sMD5NET-b930(cumulative)===
 * New
