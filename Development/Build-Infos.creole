@@ -13,6 +13,20 @@ TODO: Link roadmap.
 
 ----
 
+===3.14.0-SNAPSHOT-sMD5NET-b961(cumulative)===
+* New
+** TO BE TESTED + UNFINISHED: Boat fly check.
+* Configuration
+** Create a new vehicle section, change related paths.
+* Fixes
+** Prevent another variant of packet-based speeding.
+** Vehicles: set-back handling.
+** Improve vertical piston support (not finished, not yet officially activated).
+** TO BE TESTED: Allow vertical velocity on ladders and vines (once).
+* Internals
+** Extend/alter debug logging.
+** [BREAKING] Work towards moving checks for vehicles (mostly changes for location and set-back handling).
+
 ===3.14.0-SNAPSHOT-sMD5NET-b960(cumulative)===
 * MC 1.9
 ** Blocks break data and flags.
@@ -41,7 +55,6 @@ TODO: Link roadmap.
 ** Add more minimized build profiles to pinpoint Spigot 1.8.8/1.9.
 ** Organize some workaround code better.
 ** Extend/alter debug logging.
-** Work towards moving checks for vehicles.
 
 ===3.13.8-SNAPSHOT-sMD5NET-b930(cumulative)===
 * New
