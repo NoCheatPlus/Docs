@@ -22,6 +22,7 @@ TODO: Link roadmap.
 ** The temporary login denial message is now configurable (strings.msgtempdenylogin).
 * Fixes
 ** Prevent another variant of packet-based speeding.
+** Vehicles: Fix vehicle detection for missing vehicle events.
 ** Vehicles: set-back handling.
 ** Improve vertical piston support (not finished, not yet officially activated).
 ** TO BE TESTED: Allow vertical velocity on ladders and vines (once).
