@@ -28,7 +28,7 @@ TODO: Link roadmap.
 ** Extend/alter debug logging.
 ** [BREAKING] Work towards moving checks for vehicles (mostly changes for location and set-back handling).
 
-===3.14.0-SNAPSHOT-sMD5NET-b960(cumulative)===
+===3.14.0-SNAPSHOT-sMD5NET-b960("mostly stable", cumulative)===
 * MC 1.9
 ** Blocks break data and flags.
 ** Dedicated MCAccess module for CB with MC 1.9.
@@ -50,7 +50,7 @@ TODO: Link roadmap.
 ** creativefly
 *** Fix violation skipping/cooldown mechanics. This might increase violation levels.
 *** Fix set back handling (maxheight).
-*** Fly-nofly transition: Reduce possibilvelocityity of horizontal velocity abuse.
+*** Fly-nofly transition: Reduce [ERROR].
 ** Player instances stored wrongly.
 * Internals
 ** Add more minimized build profiles to pinpoint Spigot 1.8.8/1.9.
