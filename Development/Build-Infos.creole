@@ -13,7 +13,7 @@ TODO: Link roadmap.
 
 ----
 
-===3.14.0-SNAPSHOT-sMD5NET-b967(cumulative)===
+===3.14.0-SNAPSHOT-sMD5NET-b968(cumulative)===
 * New
 ** MC 1.9.4 compatibility.
 ** TO BE TESTED + UNFINISHED: Boat fly check.
@@ -21,6 +21,7 @@ TODO: Link roadmap.
 ** Create a new vehicle section, change related paths.
 ** The temporary login denial message is now configurable (strings.msgtempdenylogin).
 * Fixes
+** StackOverflowError with inventory open and a blacklist kick by WorldGuard.
 ** Prevent another variant of packet-based speeding.
 ** Vehicles: Fix vehicle detection for missing vehicle events.
 ** Vehicles: set-back handling.
@@ -29,6 +30,7 @@ TODO: Link roadmap.
 * Internals
 ** Extend/alter debug logging.
 ** [BREAKING] Work towards moving checks for vehicles (mostly changes for location and set-back handling).
+** Part-unify location and property handling for moving of players and vehicles with players inside.
 
 ===3.14.0-SNAPSHOT-sMD5NET-b960("mostly stable", cumulative)===
 * MC 1.9
