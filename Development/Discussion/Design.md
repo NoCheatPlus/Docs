@@ -7,6 +7,54 @@ Possibly top headlines should be ordered alphabetically?
 
 # Mostly decided
 
+## Configuration system
+
+There is some motivation to bring in a new configuration system earlier than expected.
+
+* Allow easy (more object oriented, but also more flexible) setup.
+ * Specify defaults and paths and moved/deprecated paths within one kind of class. Allow classes instead of annotations or replace right away.
+ * Allow setting up per-check configuration within the check class, specifying all necessary details there. Possibly needs an early "register me on enable, but do the configuration now" thing.
+ * (Future: this also could enable adding comments and descriptions for help or even wiki pages to configuration setup.)
+* Split configuration into several files to allow people to focus on their topic (root settings, check settings, modeling/magic at least).
+* Per world folders and/or specify worlds for which a configuration applies within the/a config file.
+* Enable checks to add/check their configuration "late", i.e. have stages+flexibility, be able to not touch values/sections. This includes referencing the standard file setup, no need for extra files for checks added by other plugins.
+* Reliable abstraction above whatever is supported in Spigot/Bukkit.
+* Possibly an asynchronous config reading (/writing?) stage. This is more or less marginal for one-file setup, but it might become relevant with reloading the configuration, with having multiple files.
+* Capability to specify entries/sections having moved from file A path X to file B path Y.
+* Custom handlers might be supported somehow.
+
+Much striking reasons for doing it rather earlier than later:
+* Enable splitting off language stuff (while keeping per-world capabilities).
+* Much easier for developers to get a check/thing integrated into the ncp configuration.
+* Reduce amount of settings to care about in the first place.
+* Enable users and testers to contribute more easily, by making all sorts of things available via configuration.
+
+Uncertainties:
+* What to split off at start. More or less certain is:
+ * Global core configuration file. The essentials, possibly without any checks.
+ * Core check configuration. Activation, possibly also actions and most basic settings.
+ * Modeling/magic. Parameters that should only be touched in case of emergency or in case of helping with testing.
+* Possibly best ask server owners, what settings they change most (actions + activation?). 
+* There will always be some overlap between 'essential core check settings' and 'magic'. Possibly hard distinguish accuracy+leniency vs. modeling parameters. 
+* Probably better have an extra file for compatibility (think of some configurable compatibility hooks built into NCP in future).
+* Split check activation vs. actions and other (possibly activation -> root config).
+* Later maybe have per check section files, very uncertain.
+* Possibly much later allow different formats for backend, but also for setup.
+
+Rough plan:
+* Phases:
+ * Determine which files to read/check.
+ * Raw read, having a header inserted/altered raw/custom, with lines starting with '#', this likely is concurrent.
+ * level0: Some basic parsing into paths and simple objects (possibly yaml at first).
+  * Concurrent phase.
+  * Possibly a primary thread phase if needed.
+ * level1: Having the basic abstraction layer, not using bukkit-yaml anymore. This is passed to checks.
+ * (level2: configurations with derived types, such as current CheckConfig instances.)
+ * Reiteration: Late check addition should not make it necessary to actually reload things, due to storing results. However there may be scheduled saves. In order to prevent saving 10 times in the same tick, saves will be scheduled (onLoad -> onEnable, onEnable and later -> task ... -> onDisable ... -> directly).
+* Concurrent handling means that several workers are processing multiple files.
+* The abstraction and implementation layer above yaml will give us certainty about what we can do concurrently (asyncXY events, config creation), the built in stuff used to have bugs like seemingly 'static'-like behaviour (mcmmo config header appeared in other plugin configs), and we don't want to have to worry about such during asynchronous processing. Further we are certain how exactly runtime changes behave and we can specify comments etc in value nodes as well. It'll also allow to switch to a different kind of configuration much easier.
+* Headers with lines starting with '#' are always read and split off raw, so we can have special information in there, like the configuration format.
+
 ## Fight checks penalties
 
 Implement penalties as an alternative to cancelling. This allows having less false positives, but also allows to have more strict limits, starting with penalties that only apply with a certain probability.
@@ -302,10 +350,10 @@ Key issues are:
 
 #### Still simple: push entries up/down.
 
-Pistons moving one time up might already be "ok", can't call that "playable" yet.
+Pistons moving one time up might already be "ok", can't call that "playable" yet. Lots improved around build 967, allowing to reuse an id until having left that block.
 
 Pointers: 
-* Even on a local test server the player would stand in-air on top of an already retracted block.
+* Even on a local test server the player would stand in-air on top of an already retracted block. Thus on-ground judgment needs to account for this case.
 
 Conclusions:
 * We do need on-ground tracking as well. Following problems:
@@ -316,6 +364,7 @@ Conclusions:
  * The methods in BlockProperties that determine on-ground properties will lazily query data from BlockCache, thus we might need to implement BlockCache using the tracker, also considering the policy for a specific query (prefer blocks to be there or not, latency estimate).
   * Solution could be to always query data, thus add it as argument to all the methods. This will be simple but change many places.
   * Another Solution could be to change BlockCache to have one node-like entry per block, the node entry has access methods and keeps a reference of the block cache (...). Advantage being any past-state can be encapsulated somehow, this block state object will be passed to all the methods in BlockProperties instead of id/shape/data.
+ * Potential abuse could happen with allowing on-ground for past-changed-blocks disregarding if blocks are above. This might be necessary but is different to the current method which doesn't count that as ground, under certain circumstances.
 
 ### Core data structures
 A linked CoordMap variation will likely be used, in order to sort entries to front/back once updated, so periodic checking for expiration will be easy.
