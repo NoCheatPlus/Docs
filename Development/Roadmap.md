@@ -5,15 +5,16 @@ This page provides a short and likely not entirely accurate selection of topics 
 For a more detailed explanation or discussion of future design issues see the Design (TODO: link) page.
 
 # Current focus
-* Fight checks (implement penalty actions, allow use in fight checks, redo LocationTrace + pvp vs. pve config for loop checks).
-* Minimum piston compatibility, onground checks (spider vs. stuck with bounding box).
-* Milestone: Refine fight checks (false positives, precision): 2016-02-14 [Postponed or split into several iterations due to bugs, possibly 1.9.]
+* 1.9.4 potential recovery / bug fixing.
+* Vehicle fly checks via VehicleUpdate/PlayerMove.
+* Considerations for order of topics, regarding limited development resources.
+* [POSTPONED] Fight checks (implement penalty actions, allow use in fight checks, redo LocationTrace + pvp vs. pve config for loop checks).
+* [POSTPONED] Minimum piston compatibility, onground checks (spider vs. stuck with bounding box).
 
 # Scheduled
 Topics that will be tackled soon, no guarantee on order.
 * Keep track of pistons moving blocks in order to reduce false positives (First the minimum for pistons with survivalfly, later block change tracking for survivalfly and passable in general).
 * Horizontal speeding.
-* 1.9 support (mostly allow creativefly model configs to confine ascend/descend and allow fall-damage, let it handle levitation and elytra, off-hand to mcAccess).
 * Interact ray-tracing: Use passable ray-tracing, possibly make it ray-tracing per block.
 * (Stabilize changes vs. features for a fully recommended release.)
 
