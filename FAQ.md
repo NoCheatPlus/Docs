@@ -27,7 +27,7 @@ It is up to you! NoCheatPlus puts emphasis on configurability allowing you to ch
 You probably have OP or permissions (administrator or owner rank) on your server which let you bypass all the NoCheatPlus checks. So if you want to test then deop yourself and set your rank to default. Also make sure your Minecraft version matches the version NoCheatPlus has been compiled for, it can be seen on the download pages of BukkitDev or simply using /version NoCheatPlus or /nocheatplus version
 
 ### I gave my friend permissions for a mod but he stills get blocked by NoCheatPlus?
-After giving permissions to a player, he/she has to relog to activate there mods they got permissions for. Be warned: `nocheatplus.mods.zombe.fly` for example only gives the permission to enable zombes fly mod, you will also need the `nocheatplus.checks.moving.survivalfly` permission to make it work right.
+After giving permissions to a player, he/she has to relog to activate their mods they got permissions for. Be warned: `nocheatplus.mods.zombe.fly` for example only gives the permission to enable zombes fly mod, you will also need the `nocheatplus.checks.moving.survivalfly` permission to make it work right.
 
 ### Will NoCheatPlus support plugins like mcMMO and Citizens out of the box?
 NoCheatPlus does not have any special plugin dependencies built in, because they delay the update process of our plugin. Instead we provide you with a compatibility bridge called [CompatNoCheatPlus].  
