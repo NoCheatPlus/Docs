@@ -13,7 +13,7 @@ TODO: Link roadmap.
 
 ----
 
-===3.14.0-SNAPSHOT-sMD5NET-b971(cumulative)===
+===3.14.0-SNAPSHOT-sMD5NET-b972(cumulative)===
 * New
 ** MC 1.9.4 compatibility.
 ** TO BE TESTED: Boat fly check.
@@ -28,6 +28,7 @@ TODO: Link roadmap.
 ** Improve vertical piston support (not finished, not yet officially activated).
 ** TO BE TESTED: Allow vertical velocity on ladders and vines (once).
 * Internals
+** Hard teleport on vehicle set-backs by default, from within other event handling.
 ** Extend/alter debug logging.
 ** [BREAKING] Larger refactoring and changes for vehicle fly checks (mostly unify/change location and set-back handling).
 
