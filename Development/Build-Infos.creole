@@ -13,10 +13,10 @@ TODO: Link roadmap.
 
 ----
 
-===3.14.0-SNAPSHOT-sMD5NET-b973(cumulative)===
+===3.14.0-SNAPSHOT-sMD5NET-b975(cumulative)===
 * New
 ** MC 1.9.4 compatibility.
-** TO BE TESTED: Boat fly check.
+** A basic boat fly check.
 * Configuration
 ** Create a new vehicle section, change related paths.
 ** The temporary login denial message is now configurable (strings.msgtempdenylogin).
