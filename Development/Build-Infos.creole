@@ -13,7 +13,7 @@ TODO: Link roadmap.
 
 ----
 
-===3.14.0-SNAPSHOT-sMD5NET-b975(cumulative)===
+===3.14.0-SNAPSHOT-sMD5NET-b976(cumulative)===
 * New
 ** MC 1.9.4 compatibility.
 ** A basic boat fly check.
@@ -29,9 +29,9 @@ TODO: Link roadmap.
 ** TO BE TESTED: Allow vertical velocity on ladders and vines (once).
 ** Also recognize ProtocolLib versions just with build number prefix.
 * Internals
+** [BREAKING] Larger refactoring and changes for vehicle fly checks (mostly unify/change location and set-back handling).
 ** Hard teleport on vehicle set-backs by default, from within other event handling.
 ** Extend/alter debug logging.
-** [BREAKING] Larger refactoring and changes for vehicle fly checks (mostly unify/change location and set-back handling).
 
 ===3.14.0-SNAPSHOT-sMD5NET-b960("mostly stable", cumulative)===
 * MC 1.9
