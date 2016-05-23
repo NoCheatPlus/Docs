@@ -31,7 +31,7 @@ The absolutely most important point is, that there is need for a decent open sou
 From my side the biggest points are:
 * Dramatically increasing the surface towards contribution by others.
  * Get more developers on the boat.
- * Make the code so inviting that any other developers may feel to prototype their idea, achieve so quickly and efficiently, and may feel inclined to contribute on occasion.
+ * Make the code so inviting that any other developers may feel inclined to prototype their idea, achieve so quickly and efficiently, and may feel inclined to contribute on occasion.
  * Allow non-developers to contribute in even more significant ways.
   * Make new parameters accessible via configuration, so testers can help adjusting them, without need for coding experience. This demands splitting the configuration into multiple files, in order to prevent peaceful users from detonating their server via model/magic config editing. Possibly other changes are necessary as well.
   * Increase the logging capabilities, making use of infrastructure such as past move tracking. A good example is to allow recording incidents (in a smart way :p), so a server owner could somehow review an issue and use a recorded bit of a past move trace to potentially deal with false positives as well as cheating. This could involved logging stored sequences as reports, but it could also involve adding configurable workarounds or cheat detection based on the past-move data. Depending on how smart things are done, this could be used for training of machine learning components, as well as catching stuff directly. The workaround/counter infrastructure will help allowing to confine things to 'once per in-air phase' or potentially other (allow workaround twice per minute, etc. ...).
