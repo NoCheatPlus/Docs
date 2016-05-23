@@ -121,7 +121,7 @@ Examples for things that might make it into old-style checks (likely but slightl
 * Overhaul of the entire actions framework. Coming with counters likely, relates to the already begun penalty-framework, may involve configuration changes, which then again might demand changes in the entire configuration setup (more flat action layout, hide default actions in another file, more complex, thus not 100% likely).
 * Move more stuff from static to non-static (keeping NCPStaticAPIProvider, possibly rename to more simple :p).
 * New (still classic) methods of tracking frequency / phases of intensity. Involves data structures (e.g. a list of phases of similar frequency/intensity). May experiment/use for judging differing types of actions vs. each other, more packets checks, other.
-* Offline data. Might keep set-backs and some other edge/context to see if data should be loaded from disk or not.
+* Offline data. Might keep set-backs and some other edge/context, and judge if data loaded from disk/db is still relevant.
 
 Here examples on what i might not do with old-style checks:
 * Latency aware parameters (generic implementation) for moving checks. Likely i'll keep what about works, and not attempt these, though this is a bigger future point/thing.
