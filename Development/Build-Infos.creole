@@ -13,7 +13,7 @@ TODO: Link roadmap.
 
 ----
 
-===3.14.0-SNAPSHOT-sMD5NET-b980(cumulative)===
+===3.14.0-SNAPSHOT-sMD5NET-b981(cumulative)===
 * New
 ** MC 1.9.4 compatibility.
 ** A basic boat fly check.
@@ -22,6 +22,7 @@ TODO: Link roadmap.
 ** The temporary login denial message is now configurable (strings.msgtempdenylogin).
 * Fixes
 ** StackOverflowError with inventory.open and a blacklist kick by WorldGuard.
+** NoFall: Skip dealing damage to players who are allowed to fly.
 ** Prevent another variant of packet-based speeding.
 ** Vehicles: Fix vehicle detection for missing vehicle events.
 ** Vehicles: set-back handling.
