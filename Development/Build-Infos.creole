@@ -13,13 +13,15 @@ TODO: Link roadmap.
 
 ----
 
-===3.14.0-SNAPSHOT-sMD5NET-b983(cumulative)===
+===3.14.0-SNAPSHOT-sMD5NET-b984(cumulative)===
 * New
 ** MC 1.9.4 compatibility.
 ** A basic boat fly check.
+** Exempt NPCs from all checks by default.
 * Configuration
 ** Create a new vehicle section, change related paths.
 ** The temporary login denial message is now configurable (strings.msgtempdenylogin).
+** Configure exemption by meta data and exemption for NPCs.
 * Fixes
 ** StackOverflowError with inventory.open and a blacklist kick by WorldGuard.
 ** NoFall: Skip dealing damage to players who are allowed to fly.
@@ -31,6 +33,7 @@ TODO: Link roadmap.
 ** Improve vertical piston support (not finished, not yet officially activated).
 ** TO BE TESTED: Allow vertical velocity on ladders and vines (once).
 ** Also recognize ProtocolLib versions just with build number prefix.
+** Do not check for meta data off the primary thread.
 * Internals
 ** [BREAKING] Larger refactoring and changes for vehicle fly checks (mostly unify/change location and set-back handling).
 ** Hard teleport on vehicle set-backs by default, from within other event handling.
