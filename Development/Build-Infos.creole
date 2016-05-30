@@ -13,7 +13,7 @@ TODO: Link roadmap.
 
 ----
 
-===3.14.0-SNAPSHOT-sMD5NET-b984(cumulative)===
+===3.14.0-SNAPSHOT-sMD5NET-b985(cumulative)===
 * New
 ** MC 1.9.4 compatibility.
 ** A basic boat fly check.
@@ -23,6 +23,7 @@ TODO: Link roadmap.
 ** The temporary login denial message is now configurable (strings.msgtempdenylogin).
 ** Configure exemption by meta data and exemption for NPCs.
 * Fixes
+** Sweep attack detection (AoE).
 ** StackOverflowError with inventory.open and a blacklist kick by WorldGuard.
 ** NoFall: Skip dealing damage to players who are allowed to fly.
 ** Prevent another variant of packet-based speeding.
@@ -37,6 +38,7 @@ TODO: Link roadmap.
 * Internals
 ** [BREAKING] Larger refactoring and changes for vehicle fly checks (mostly unify/change location and set-back handling).
 ** Hard teleport on vehicle set-backs by default, from within other event handling.
+** Location trace doesn't merge entries anymore (fight / latency).
 ** Extend/alter debug logging.
 
 ===3.14.0-SNAPSHOT-sMD5NET-b960("mostly stable", cumulative)===
