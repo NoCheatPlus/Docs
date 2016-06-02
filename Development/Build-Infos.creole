@@ -13,7 +13,7 @@ TODO: Link roadmap.
 
 ----
 
-===3.14.0-SNAPSHOT-sMD5NET-b985(cumulative)===
+===3.14.0-SNAPSHOT-sMD5NET-b986(cumulative)===
 * New
 ** MC 1.9.4 compatibility.
 ** A basic boat fly check.
@@ -33,9 +33,11 @@ TODO: Link roadmap.
 ** Support higher levels of the levitation effect.
 ** Improve vertical piston support (not finished, not yet officially activated).
 ** TO BE TESTED: Allow vertical velocity on ladders and vines (once).
+** Account for off hand in (hopefully) all relevant places.
 ** Also recognize ProtocolLib versions just with build number prefix.
 ** Do not check for meta data off the primary thread.
 * Internals
+** Debug only: unused vertical velocity tracking.
 ** [BREAKING] Larger refactoring and changes for vehicle fly checks (mostly unify/change location and set-back handling).
 ** Hard teleport on vehicle set-backs by default, from within other event handling.
 ** Location trace doesn't merge entries anymore (fight / latency).
