@@ -13,7 +13,7 @@ TODO: Link roadmap.
 
 ----
 
-===3.14.0-SNAPSHOT-sMD5NET-b986(cumulative)===
+===3.14.0-SNAPSHOT-sMD5NET-b987(cumulative)===
 * New
 ** MC 1.9.4 compatibility.
 ** A basic boat fly check.
@@ -22,6 +22,7 @@ TODO: Link roadmap.
 ** Create a new vehicle section, change related paths.
 ** The temporary login denial message is now configurable (strings.msgtempdenylogin).
 ** Configure exemption by meta data and exemption for NPCs.
+** Add configuration for boatsanywhere (place on land).
 * Fixes
 ** Sweep attack detection (AoE).
 ** StackOverflowError with inventory.open and a blacklist kick by WorldGuard.
@@ -42,6 +43,7 @@ TODO: Link roadmap.
 ** Hard teleport on vehicle set-backs by default, from within other event handling.
 ** Location trace doesn't merge entries anymore (fight / latency).
 ** Extend/alter debug logging.
+** Added GPLv3 headers to source files.
 
 ===3.14.0-SNAPSHOT-sMD5NET-b960("mostly stable", cumulative)===
 * MC 1.9
