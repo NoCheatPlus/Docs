@@ -6,10 +6,12 @@ The builds marked as //mostly stable// are considered very stable and should be 
 
 Broken builds usually are marked as //broken// or //deficient// or get removed from Jenkins. They should not appear in this list.
 
-For a changes history grouped by build number see: http://ci.md-5.net/job/NoCheatPlus/changes
-\\This page is a somewhat digested or altered version of the Commit History page on GitHub: https://github.com/NoCheatPlus/NoCheatPlus/commits/master
-
-Quick overview over the latest notable builds: https://github.com/NoCheatPlus/Docs/wiki/Notable-Builds
+For a complete list of changes grouped by build number see:
+\\http://ci.md-5.net/job/NoCheatPlus/changes
+\\Complete list of changes on GitHub:
+\\https://github.com/NoCheatPlus/NoCheatPlus/commits/master
+\\**Quick overview over the latest notable builds:**
+\\https://github.com/NoCheatPlus/Docs/wiki/Notable-Builds
 
 ----
 
