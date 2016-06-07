@@ -1,7 +1,5 @@
 Quick overview about notable builds.
 
-For a more complete but still digest list of changes see: https://github.com/NoCheatPlus/Docs/wiki/Build-Infos
-
 =Latest Stable Builds by Minecraft version=
 
 Latest/Most stable builds ordered by the version of Minecraft.
