@@ -7,20 +7,22 @@ For a more complete but still digest list of changes see: https://github.com/NoC
 Latest/Most stable builds ordered by the version of Minecraft.
 \\For links, see the section below this one (Order of Appearance).
 
-|MC (focus)|MC (supported)|NoCheatPlus version|Release type|
+|**MC (focus)**|**MC (supported)**|**NoCheatPlus version**|**Release type**|
 |1.9.4|1.4.5-R1.0 - 1.9.4|3.14.0-SNAPSHOT-sMD5NET-b989|mostly stable|
-
-=Notable Builds in Order of Appearance=
 
 Release types
 * Official releases: **RC release**
 * Beta release (official release or a promoted development build): **BETA release**
 * Mostly stable (a promoted development build): **mostly stable**
 
+=Notable Builds in Order of Appearance=
+
+Builds mentioned above, with download links and hashes for comparison.
+
 ===NoCheatPlus 3.14.0-SNAPSHOT-sMD5NET-b989===
 * Release type: **mostly stable**
 * Supported versions of Minecraft (CraftBukkit/Spigot)
-** Main focus: 1.9.4
+** Focus: 1.9.4
 ** Supported: 1.4.5-R1.0 - 1.9.4
 * Download at Jenkins: http://ci.md-5.net/job/NoCheatPlus/989/
 * Hashes
