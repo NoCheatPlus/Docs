@@ -1,5 +1,6 @@
 Quick overview about notable builds.
 
+For a more complete but still digest list of changes see: https://github.com/NoCheatPlus/Docs/wiki/Build-Infos
 
 =Latest Builds by Minecraft version=
 
@@ -16,7 +17,6 @@ Release types:
 * Mostly stable (a promoted development build): **mostly stable**
 
 ===NoCheatPlus 3.14.0-SNAPSHOT-sMD5NNET-b989===
-
 * Release type: **mostly stable**
 * Supported versions of Minecraft (CraftBukkit/Spigot): 
 ** Main focus: 1.9.4
