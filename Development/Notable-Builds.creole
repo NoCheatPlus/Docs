@@ -1,6 +1,6 @@
 Quick overview about notable builds.
 
-=Latest Stable Builds by Minecraft version=
+==Latest Stable Builds by Minecraft version==
 
 Latest/Most stable builds ordered by the version of Minecraft.
 \\For links, see the section below this one (Order of Appearance).
@@ -13,7 +13,7 @@ Release types
 * **BETA release** - Official beta release or a promoted development build.
 * **mostly stable** - A promoted development build.
 
-=Notable Builds in Order of Appearance=
+==Notable Builds in Order of Appearance==
 
 Builds mentioned above, with download links and hashes for comparison.
 
