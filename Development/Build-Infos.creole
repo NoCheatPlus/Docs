@@ -107,4 +107,4 @@ Quick overview over the latest notable builds: https://github.com/NoCheatPlus/Do
 ** Catch unintended input somewhere.
 
 ----
-For older builds see the [[old-builds.creole|Old Builds page]].
+For older builds see: https://github.com/NoCheatPlus/Docs/wiki/Old-Builds
