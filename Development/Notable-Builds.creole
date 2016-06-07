@@ -2,8 +2,9 @@ Quick overview about notable builds.
 
 For a more complete but still digest list of changes see: https://github.com/NoCheatPlus/Docs/wiki/Build-Infos
 
-=Latest Builds by Minecraft version=
+=Latest Stable Builds by Minecraft version=
 
+Latest/Most stable builds ordered by the version of Minecraft.
 For links, see the section below this one (Order of Appearance).
 
 * **1.9.4 down to 1.4.5-R1.0**
@@ -12,8 +13,8 @@ For links, see the section below this one (Order of Appearance).
 =Notable Builds in Order of Appearance=
 
 Release types
-* Official releases: **release**
-* Beta release (official release or a promoted development build): **beta release**
+* Official releases: **RC release**
+* Beta release (official release or a promoted development build): **BETA release**
 * Mostly stable (a promoted development build): **mostly stable**
 
 ===NoCheatPlus 3.14.0-SNAPSHOT-sMD5NET-b989===
