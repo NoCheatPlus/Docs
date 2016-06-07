@@ -6,23 +6,23 @@ For a more complete but still digest list of changes see: https://github.com/NoC
 
 For links, see the section below this one (Order of Appearance).
 
-* **1.9.4 down to 1.4.5-R1.0**:
-** NoCheatPlus 3.14.0-SNAPSHOT-sMD5NNET-b989 (**mostly stable**)
+* **1.9.4 down to 1.4.5-R1.0**
+** NoCheatPlus 3.14.0-SNAPSHOT-sMD5NET-b989 (**mostly stable**)
 
 =Notable Builds in Order of Appearance=
 
-Release types:
+Release types
 * Official releases: **release**
 * Beta release (official release or a promoted development build): **beta release**
 * Mostly stable (a promoted development build): **mostly stable**
 
-===NoCheatPlus 3.14.0-SNAPSHOT-sMD5NNET-b989===
+===NoCheatPlus 3.14.0-SNAPSHOT-sMD5NET-b989===
 * Release type: **mostly stable**
-* Supported versions of Minecraft (CraftBukkit/Spigot): 
+* Supported versions of Minecraft (CraftBukkit/Spigot)
 ** Main focus: 1.9.4
 ** On request: 1.9.4 down to 1.4.5-R1.0
 * Download at Jenkins: http://ci.md-5.net/job/NoCheatPlus/989/
-* Hashes:
+* Hashes
 ** MD5: f14bcc06f982d4d75750e36897716820
 ** SHA512: 73565272d83ca943118cbd8cea9891dc02fab1a539c26f8cb909ea7b3fefc5e92ea0e2f07901a2209e2f64f47ca6d96da986f4b4c1a9f6aa919eb76ad60c6ce9
 ** File size: 1165971
