@@ -1,5 +1,11 @@
 Older builds are kept here to keep build-infos smaller.
 
+These could be very old builds.
+\\Somewhat digested change list (recent builds):
+\\https://github.com/NoCheatPlus/Docs/wiki/Build-Infos
+\\**Quick overview over the latest notable builds:**
+\\https://github.com/NoCheatPlus/Docs/wiki/Notable-Builds
+
 ----
 ===3.13.7-RC-sMD5NET-b925===
 * Recommended Release (milestone release).
