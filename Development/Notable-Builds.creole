@@ -5,9 +5,15 @@ Quick overview about notable builds.
 
 For links, see the section below this one (Order of Appearance).
 
-* **1.9.4 down to 1.4.5-R1.0**: NoCheatPlus 3.14.0-SNAPSHOT-sMD5NNET-b989
+* **1.9.4 down to 1.4.5-R1.0**:
+** NoCheatPlus 3.14.0-SNAPSHOT-sMD5NNET-b989 (**mostly stable**)
 
 =Notable Builds in Order of Appearance=
+
+Release types:
+* Official releases: **release**
+* Beta release (official release or a promoted development build): **beta release**
+* Mostly stable (a promoted development build): **mostly stable**
 
 ===NoCheatPlus 3.14.0-SNAPSHOT-sMD5NNET-b989===
 
