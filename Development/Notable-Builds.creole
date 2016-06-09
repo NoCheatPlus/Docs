@@ -6,13 +6,14 @@ Latest/Most stable builds ordered by the version of Minecraft.
 \\For links, see the section below this one (Order of Appearance).
 
 |**MC (focus)**|**MC (supported)**|**NoCheatPlus version**|**Release type**|
-|1.10|1.4.5-R1.0 - 1.10|3.15.0-SNAPSHOT-sMD5NET-b992 and later|_development_|
-|1.9.4|1.4.5-R1.0 - 1.9.4|3.14.0-SNAPSHOT-sMD5NET-b989|mostly stable|
+|1.10|1.4.5-R1.0 - 1.10|3.15.0-SNAPSHOT-sMD5NET-b992 and later|//development//|
+|1.9.4|1.4.5-R1.0 - 1.9.4|3.14.0-SNAPSHOT-sMD5NET-b989|**mostly stable**|
 
 Release types
 * **RC release** - Official stable release.
 * **BETA release** - Official beta release or a promoted development build.
 * **mostly stable** - A promoted development build.
+* //development// - A development build, might contain issues.
 
 ==Notable Builds in Order of Appearance==
 
