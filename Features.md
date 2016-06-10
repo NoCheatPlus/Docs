@@ -1,13 +1,25 @@
+## Compatibility
+NoCheatPlus features a range of compatibility features.
+* Compatibility with multiple versions of Minecraft. You can rely on the latest version of NoCheatPlus still running on a range of past versions of Minecraft.
+* Configuration allows working around issues with specific blocks (custom mods, early adopter).
+* A range of API features to allow developers to make their plugins compatible (exemption API, exemption by meta data, hooks for violation processing, other).
+* Default exemption for NCPs, such as with Citizens.
+* Vanilla features. It may not seem worth mentioning, but we can't support all features to arbitrary depths. Still you will find that NoCheatPlus provides a balance between supporting vanilla features, extensions like higher level potion effects and attributes (vanilla too, but usually not encountered without command blocks or adventure maps), and finally protection from abusing those features vs. false positives. Our aim is to support all vanilla features, of course, it's a larger task than you might think.
+
 ## Movement
-* Prevents or limits flying
-* Prevents speeding by sending too many moves
-* Prevents speeding with vehicles by sending too many moves
-* Enforces fall damage
-* Prevents no-clipping
+* Prevents flying.
+* Limits speeding (packets and apparent speed).
+* Prevents speeding by sending too many packets.
+* Enforces fall damage.
+* Prevents no-clipping.
+* Prevent vehicle flying (1.9+)
+* Limit vehicle speeding (packets and extreme distances).
 
 ## Net (Require ProtocolLib)
-* Prevents from spamming flying packets to nail other players down in their tracks or cause other unwanted side effects 
+* Attacking frequency monitoring (not possible otherwise).
+* Prevents from spamming flying packets to nail other players down in their tracks or cause other unwanted side effects
 * Prevents from tracking down other players by abusing a weakness in the Minecraft weather
+* (Further tweaks against false positives.)
  
 ## Fight
 * Enforces sane turning speeds
@@ -44,26 +56,29 @@
 * Prevents projectile spamming
 
 ## Chat
-* Prevents text spam
-* Prevents command spam
-* Implements captcha capabilities
-* Prevents re-logging spam
-* Prevents login spam
+* Prevents a range of text spamming variants.
+* Implements captcha capabilities.
+* Prevents re-logging spam.
+* Prevents login spam.
+
+## Commands
+* Prevents command spam.
+* Allows to treat certain commands as chat.
+* Confine commands like op and deop to be used from the console only.
 
 ## Combined
-* Prevents faking of "bedleave" packets
-* Prevents enderpearl abuse (noclip)
-* Prevents advanced fight cheats by combining multiple fight checks in one
-* Removes invulnerability on login
+* Prevents faking of "bedleave" packets.
+* Prevents enderpearl abuse (noclip).
+* Limits advanced fight cheats by combining multiple fight checks in one.
+* Removes fall damage invulnerability on login selectively (configurable damage types!).
 
 ## Inventory
-* Prevents dropping of too many items at the same time
-* Prevents cheated inventory management
-* Prevents bow and arrow spam
-* Enforces eating speeds
-* Closes inventory in some cases to prevent dupes
+* Prevents dropping of too many items within too short time.
+* Prevents some forms of inventory management.
+* Prevents bow and arrow spam.
+* Enforces eating speeds.
+* Closes inventory in some cases to prevent ever-reappearing duplication bugs.
 
 ## Other
-* Forces commands like /op and /deop to be ran in the console only
-* Can send MOTDs to control some client mods that support it (Reis minimap etc.)
-* Prevents creating books with unlimited pages
+* Can send MOTDs to control some client mods that support it (Reis minimap etc.).
+* Prevents creating books with unlimited pages.
