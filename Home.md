@@ -5,7 +5,7 @@ Welcome to the wiki! This page will explain everything that you need to know abo
 
 NoCheatPlus is a Bukkit (CraftBukkit/Spigot) plugin meant to protect your server from various kinds of cheating. A wide area of cheats is covered, such as player and vehicle moving, interaction, block breaking and placing, fighting, chat and other types of areas including client behavior that might crash the server.
 
-The approach taken with NoCheatPlus is to focus on providing lasting protection, rather than offering detection of 'what others didn't like on youtube'. Have a look at the [Fundamentals page](Fundamentals) for more details on that approach.
+The approach taken with NoCheatPlus is to focus on providing lasting protection, rather than detecting the 'latest cheats' with methods that are going to be bypassed the next moment. Have a look at the [Fundamentals page](Fundamentals) for more details on that approach.
 
 Mind the side bar, usually on the right, which contains a couple of quick links, as well as a search option for wiki page titles.
 
