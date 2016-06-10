@@ -2,7 +2,7 @@ This page page provides information about the latest development versions config
 
 A list by build number is found at the bottom of the page, this page mostly describes the result of the latest dev build(s), for a commit/changes list, see: \\https://github.com/NeatMonster/NoCheatPlus/commits/master
 
-For quick overview over recent builds, see: \\[[build-infos.creole|Important Changes By Build Number]]
+For quick overview over recent builds, see: \\[[Build-Infos.md|Important Changes By Build Number]]
 
 If you have an issue create a ticket or ask on the BukkitDev overview page to get this updated or explained.
 \\Mind the [[issues.creole|issues page]] for information on some typical incompatibilities.
@@ -181,4 +181,4 @@ The following settings are global only and can not be overriden by world configs
 * //Other standard settings such as nomovedtooquickly [ask if in doubt]//
 * //Future: chat engine enable and cache size settings.//
 ==Important Changes by Build Number==
-See: [[build-infos.creole|Important Changes By Build Number]]
+See: [[Build-Infos.md|Important Changes By Build Number]]
