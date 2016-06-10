@@ -1,9 +1,8 @@
 Quick overview about notable builds.
 
-==Latest Stable Builds by Minecraft version==
+## Latest Stable Builds by Minecraft version
 
 Latest/Most stable builds ordered by the version of Minecraft.
-\\For links, see the section below this one (Order of Appearance).
 
 | MC (focus)    | MC (supported) | NoCheatPlus version | Release type |
 | :-------------| :------------- | :------------------ | :----------- |
