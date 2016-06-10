@@ -6,6 +6,7 @@
 * [Features](Features)
 * [Commands](Commands)
 * [Permissions](Permissions)
+* [Notable Builds](Notable-Builds)
 
 ## [Configuration](Configuration)
 * [Multiworld](Multiworld)
@@ -28,5 +29,3 @@
 * [Backgrounds](Backgrounds)
 * [Lag](Lag)
 
-## Archive
-* [Old Builds](Old-Builds)
