@@ -15,13 +15,16 @@ For a complete list of changes grouped by build number see:
 
 ----
 
-===3.15.0-SNAPSHOT-sMD5NET-b992(cumulative)===
+===3.15.0-SNAPSHOT-sMD5NET-b1004(cumulative)===
 * New
 ** MC 1.10 support.
 ** Basic vehicle fly checks for more than boats.
 * Fixes
 ** SurvivalFly: Fix climbing up trap door above ladder.
 ** Block flags for for fence-like blocks.
+* Internals
+** [BREAKING] MCAccess: split off more fine grained providers.
+** Prepare a new collision method for passable.
 
 ===3.14.0-SNAPSHOT-sMD5NET-b989("mostly stable", cumulative)===
 * Release type: **mostly stable**
