@@ -12,5 +12,5 @@ Quickly find the appropriate build for a version of Minecraft: [Notable Builds](
 
 Report an issue, or request support: [Issues](https://github.com/NoCheatPlus/Issues/issues)
 
-If you need a full index search on this wiki, you might have a look at [Github Wiki Search](https://github.com/linyows/github-wiki-search) 
+If you need a full index search on this wiki, have a look at: [Github Wiki Search](https://github.com/linyows/github-wiki-search) 
 
