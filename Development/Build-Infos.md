@@ -7,10 +7,15 @@ The builds marked as _mostly stable_ are considered very stable and should be pr
 Broken builds usually are marked as _broken_ or _deficient_ or get removed from Jenkins. They should not appear in this list.
 
 For a complete list of changes grouped by build number see:
+
 http://ci.md-5.net/job/NoCheatPlus/changes
+
 Complete list of changes on GitHub:
+
 https://github.com/NoCheatPlus/NoCheatPlus/commits/master
+
 **Quick overview over the latest notable builds:**
+
 https://github.com/NoCheatPlus/Docs/wiki/Notable-Builds
 
 ----
@@ -26,7 +31,7 @@ https://github.com/NoCheatPlus/Docs/wiki/Notable-Builds
  * [BREAKING] MCAccess: split off more fine grained providers.
  * Prepare a new collision method for passable.
 
-### 3.14.0-SNAPSHOT-sMD5NET-b989("mostly stable", cumulative)
+### 3.14.0-SNAPSHOT-sMD5NET-b989(mostly stable, cumulative)
 * Release type: **mostly stable**
 * Supported versions of Minecraft (CraftBukkit/Spigot)
  * Focus: 1.9.4
@@ -69,7 +74,7 @@ https://github.com/NoCheatPlus/Docs/wiki/Notable-Builds
  * Extend/alter debug logging.
  * Added GPLv3 headers to source files.
 
-### 3.14.0-SNAPSHOT-sMD5NET-b960("mostly stable", cumulative)
+### 3.14.0-SNAPSHOT-sMD5NET-b960(mostly stable, cumulative)
 * MC 1.9
  * Blocks break data and flags.
  * Dedicated MCAccess module for CB with MC 1.9.
