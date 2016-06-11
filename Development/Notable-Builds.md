@@ -8,6 +8,16 @@ Latest/Most stable builds ordered by the version of Minecraft.
 | :-------------| :------------- | :------------------ | :----------- |
 | 1.10 | 1.4.5-R1.0 - 1.10 | [3.15.0-SNAPSHOT-sMD5NET-b1004 and later] (http://ci.md-5.net/job/NoCheatPlus/changes) | _development_ |
 | 1.9.4 | 1.4.5-R1.0 - 1.9.4 | [3.14.0-SNAPSHOT-sMD5NET-b989] (https://github.com/NoCheatPlus/Docs/wiki/Notable-Builds#nocheatplus-3140-snapshot-smd5net-b989)| mostly stable |
+| 1.8.x | ( ^ ) | ( ^ ) | ( ^ ) |
+| 1.7.x | ( ^ ) | ( ^ ) | ( ^ ) |
+| 1.6.x | ( ^ ) | ( ^ ) | ( ^ ) |
+| 1.5.x | ( ^ ) | ( ^ ) | ( ^ ) |
+| 1.4.7 | ( ^ ) | ( ^ ) | ( ^ ) |
+| 1.4.6 | ( ^ ) | ( ^ ) | ( ^ ) |
+| 1.4.5-R1.0 | ( - ) | ( - ) | ( - ) |
+| _1.4.5_ | _1.4.2 - 1.4.5_ |  _[3.10.9-SNAPSHOT-b666] (http://ci.md-5.net/job/NoCheatPlus/666/)_ | _development_ |
+| _1.3.2_ | _1.3.1 - 1.3.2_ | _[3.7.10-RC-b201] (http://dev.bukkit.org/bukkit-plugins/nocheatplus/files/33-nocheat-plus-3-7-10-rc-b201/)_ | _RC release_ |
+| _1.2.5_ | _1.1 - 1.2.5_ | _[3.6.1] (http://dev.bukkit.org/bukkit-plugins/nocheatplus/files/23-nocheat-plus-v3-6-1-1-1-1-2-5/)_ | _RC release_ |
 
 Release types
 * RC release - Official stable release.

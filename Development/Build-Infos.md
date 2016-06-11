@@ -20,16 +20,18 @@ https://github.com/NoCheatPlus/Docs/wiki/Notable-Builds
 
 ----
 
-### 3.15.0-SNAPSHOT-sMD5NET-b1004(cumulative)
+### 3.15.0-SNAPSHOT-sMD5NET-b1005(cumulative)
 * New
  * MC 1.10 support.
  * Basic vehicle fly checks for more than boats.
+* Configuration
+ * Remove compatibility.blocks.ignorepassable (use overrideflags instead).
 * Fixes
  * SurvivalFly: Fix climbing up trap door above ladder.
- * Block flags for for fence-like blocks.
+ * Fix block flags for for fence-like blocks.
 * Internals
  * [BREAKING] MCAccess: split off more fine grained providers.
- * Prepare a new collision method for passable.
+ * Use a different collision method for passable.
 
 ### 3.14.0-SNAPSHOT-sMD5NET-b989(mostly stable, cumulative)
 * Release type: **mostly stable**
