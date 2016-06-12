@@ -20,10 +20,12 @@ https://github.com/NoCheatPlus/Docs/wiki/Notable-Builds
 
 ----
 
-### 3.15.0-SNAPSHOT-sMD5NET-b1005(cumulative)
+### 3.15.0-SNAPSHOT-sMD5NET-b1006(cumulative)
 * New
  * MC 1.10 support.
  * Basic vehicle fly checks for more than boats.
+ * Ability and configuration for loading chunks for moving, teleport and world change.
+ * Hot fix for 1.9/1.10 falling block duplication with end portals.
 * Configuration
  * Remove compatibility.blocks.ignorepassable (use overrideflags instead).
 * Fixes
