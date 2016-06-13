@@ -20,12 +20,13 @@ https://github.com/NoCheatPlus/Docs/wiki/Notable-Builds
 
 ----
 
-### 3.15.0-SNAPSHOT-sMD5NET-b1010(cumulative)
+### 3.15.0-SNAPSHOT-sMD5NET-b1011(cumulative)
 * New
  * MC 1.10 support.
  * Basic vehicle fly checks for more than boats.
  * Ability and configuration for loading chunks for moving, teleport and world change.
  * Hot fix for 1.9/1.10 falling block duplication with end portals.
+ * The moving.passable check now accounts for the full bounds of a player.
 * Configuration
  * Remove compatibility.blocks.ignorepassable (use overrideflags instead).
 * Fixes
@@ -35,7 +36,7 @@ https://github.com/NoCheatPlus/Docs/wiki/Notable-Builds
 * Internals
  * [BREAKING] Change build profiles: ncp_base must be active always.
  * [BREAKING] MCAccess: split off more fine grained providers.
- * Use a different collision method for passable.
+ * Extend debug logging for blockinteract (rate-limited).
 
 ### 3.14.0-SNAPSHOT-sMD5NET-b989(mostly stable, cumulative)
 * Release type: **mostly stable**
