@@ -20,7 +20,7 @@ https://github.com/NoCheatPlus/Docs/wiki/Notable-Builds
 
 ----
 
-### 3.15.0-SNAPSHOT-sMD5NET-b1008(cumulative)
+### 3.15.0-SNAPSHOT-sMD5NET-b1010(cumulative)
 * New
  * MC 1.10 support.
  * Basic vehicle fly checks for more than boats.
@@ -33,6 +33,7 @@ https://github.com/NoCheatPlus/Docs/wiki/Notable-Builds
  * Fix block flags for for fence-like blocks.
  * Reactivate net.sounddistance for 1.9 and later.
 * Internals
+ * [BREAKING] Change build profiles: ncp_base must be active always.
  * [BREAKING] MCAccess: split off more fine grained providers.
  * Use a different collision method for passable.
 
