@@ -20,7 +20,7 @@ https://github.com/NoCheatPlus/Docs/wiki/Notable-Builds
 
 ----
 
-### 3.15.0-SNAPSHOT-sMD5NET-b1007(cumulative)
+### 3.15.0-SNAPSHOT-sMD5NET-b1008(cumulative)
 * New
  * MC 1.10 support.
  * Basic vehicle fly checks for more than boats.
@@ -31,6 +31,7 @@ https://github.com/NoCheatPlus/Docs/wiki/Notable-Builds
 * Fixes
  * SurvivalFly: Fix climbing up trap door above ladder.
  * Fix block flags for for fence-like blocks.
+ * Reactivate net.sounddistance for 1.9 and later.
 * Internals
  * [BREAKING] MCAccess: split off more fine grained providers.
  * Use a different collision method for passable.
