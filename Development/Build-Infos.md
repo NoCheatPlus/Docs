@@ -20,7 +20,7 @@ https://github.com/NoCheatPlus/Docs/wiki/Notable-Builds
 
 ----
 
-### 3.15.0-SNAPSHOT-sMD5NET-b1013(cumulative)
+### 3.15.0-SNAPSHOT-sMD5NET-b1014(cumulative)
 * New
  * MC 1.10 support.
  * Basic vehicle fly checks for more than boats.
@@ -29,17 +29,23 @@ https://github.com/NoCheatPlus/Docs/wiki/Notable-Builds
  * The moving.passable check now accounts for the full bounds of a player.
 * Configuration
  * Remove compatibility.blocks.ignorepassable (use overrideflags instead).
+ * Add default entry for piston_moving_piece (overrideflags).
 * Fixes
  * SurvivalFly: Fix climbing up trap door above ladder.
  * Fix block flags for for fence-like blocks.
  * Reactivate net.sounddistance for 1.9 and later.
  * Fix low food level sprinting with players who are allowed to toggle flight.
  * Update the CB-Reflect module for past 1.9.
+ * Attempt to fix issues with fake players with fight checks.
  * (Attempt to improve ladder/vine + velocity.)
+* Other changes
+ * Remove compatibility module for Glowstone (legacy).
 * Internals
  * [BREAKING] Change build profiles: ncp_base must be active always.
+ * [BREAKING] Moving classes/interfaces around.
  * [BREAKING] MCAccess: split off more fine grained providers.
  * Extend debug logging for blockinteract (rate-limited).
+ * Add build profile for 1.7_r4 (MC 1.7.10).
 
 ### 3.14.0-SNAPSHOT-sMD5NET-b989(mostly stable, cumulative)
 * Release type: **mostly stable**
