@@ -20,7 +20,7 @@ https://github.com/NoCheatPlus/Docs/wiki/Notable-Builds
 
 ----
 
-### 3.15.0-SNAPSHOT-sMD5NET-b1014(cumulative)
+### 3.15.0-SNAPSHOT-sMD5NET-b1015(cumulative)
 * New
  * MC 1.10 support.
  * Basic vehicle fly checks for more than boats.
@@ -30,6 +30,7 @@ https://github.com/NoCheatPlus/Docs/wiki/Notable-Builds
 * Configuration
  * Remove compatibility.blocks.ignorepassable (use overrideflags instead).
  * Add default entry for piston_moving_piece (overrideflags).
+ * Kick messages for illegal player and vehicle moves are configurable.
 * Fixes
  * SurvivalFly: Fix climbing up trap door above ladder.
  * Fix block flags for for fence-like blocks.
