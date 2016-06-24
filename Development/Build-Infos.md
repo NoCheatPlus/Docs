@@ -20,7 +20,7 @@ https://github.com/NoCheatPlus/Docs/wiki/Notable-Builds
 
 ----
 
-### 3.15.0-SNAPSHOT-sMD5NET-b1016(cumulative)
+### 3.15.0-SNAPSHOT-sMD5NET-b1017(cumulative)
 * New
  * MC 1.10 support.
  * Basic vehicle fly checks for more than boats.
@@ -35,8 +35,10 @@ https://github.com/NoCheatPlus/Docs/wiki/Notable-Builds
  * Passable: Fix moving on soil (1.10.x).
  * SurvivalFly: Fix climbing up trap door above ladder.
  * Fix block flags for for fence-like blocks.
- * Reactivate net.sounddistance for 1.9 and later.
  * Fix low food level sprinting with players who are allowed to toggle flight.
+ * Vehicles: falling with minecarts.
+ * Confine climbing speed more.
+ * Reactivate net.sounddistance for 1.9 and later.
  * Update the CB-Reflect module for past 1.9.
  * Attempt to fix issues with fake players with fight checks.
  * (Attempt to improve ladder/vine + velocity.)
