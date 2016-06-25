@@ -5,8 +5,7 @@ This page provides a short and likely not entirely accurate selection of topics 
 For a more detailed explanation or discussion of future design issues see the Design (TODO: link) page.
 
 # Current focus
-* 1.9.4 potential recovery / bug fixing.
-* Vehicle fly checks via VehicleUpdate/PlayerMove.
+* Vehicle fly checks: 1.10 changes and roundup.
 * Considerations for order of topics, regarding limited development resources.
 * [POSTPONED] Fight checks (implement penalty actions, allow use in fight checks, redo LocationTrace + pvp vs. pve config for loop checks).
 * [POSTPONED] Minimum piston compatibility, onground checks (spider vs. stuck with bounding box).
@@ -17,13 +16,13 @@ Topics that will be tackled soon, no guarantee on order.
 * Horizontal speeding.
 * Interact ray-tracing: Use passable ray-tracing, possibly make it ray-tracing per block.
 * (Stabilize changes vs. features for a fully recommended release.)
+* Packet inversion problem: interact before look.
 
 ## Planned
 Topics that likely will follow up, no guarantee on order, might slip further away.
-* Block compatibility config and defaults: remove default blocks, add named sets of blocks to set the same flags for many, with activation flag. Add a disabled by default entry for all blocks changing shape with redstone signals.
+* Block compatibility config and defaults: remove default blocks, add named sets of blocks to set the same flags for many, with activation flag.
 * Data expiration - add minimized "offline" data, to be able to remove lots of stored data on logout.
 * Better horizontal velocity handling.
-* Moving checks data refinement. Keep track of edge data for 3 or more moves (better for special case false positives).
 * More packet level checks (tab-complete, nasty data, strip content from books, items).
 * Checks for creative mode exploits (enchantments, clickable text).
 * Checks against unwanted content exposure (prevent sending content of books, item names, other).

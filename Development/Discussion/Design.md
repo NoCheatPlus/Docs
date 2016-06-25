@@ -7,6 +7,16 @@ Possibly top headlines should be ordered alphabetically?
 
 # Mostly decided
 
+## Packet inversion problem.
+
+It looks like some packets are processed in reversed order sometimes, possibly they're even sent in reversed order.
+
+This mostly concerns the looking direction vs. interaction (interact is processed before look).
+
+Conclusion is to make some checks more abstract and let them adjust some kind of minimum violation context, rather than firing violations directly. Similar to current LocationTrace checks, we'd determine thinkable looking directions to run checks for, somehow synchronizing PlayerMoveEventS and current position with flying packet data.
+
+This means that for fight checks there'll be checks that don't use any looping (speed), use only the LocationTrace (reach) use only the flying packet data (visible, to be added), or that use both the location trace and the flying packet data (direction). For block-related checks there will be flying queue checks.
+
 ## Configuration system
 
 There is some motivation to bring in a new configuration system earlier than expected.
@@ -65,14 +75,7 @@ Implement penalties as an alternative to cancelling. This allows having less fal
 * Staged execution of penalties (Action.execute vs. context specific methods e.g. with using damage events).
 * Now or later: Allow combining penalties 'a+b', allow first-match lists with probability to apply '50%devidedamage=2.0 -> 25%cancel -> attackert.ndt-5'.
 
-## Redo LocationTrace
-
-* Switch to expire by time instead of number of elements (except for extreme cases).
-* Never merge entries with differing position, possibly not even if yaw/pitch differ.
-* Might use MoveData.to/from directly (then with a global pool of objects).
-* Include bounding box hints in the trace (width, height from PlayerLocation).
-
-## Fight / loop checks (using LocationTrace)
+## Fight / LocationTrace checks
 
 * Distinguish pvp vs. pve settings, as the checks with trace allow much more precision.
 * Possibly change implementation further, to be optimal for the loop checks (the first approach had been a quick adaption).
