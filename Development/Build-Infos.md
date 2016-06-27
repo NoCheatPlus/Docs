@@ -20,7 +20,7 @@ https://github.com/NoCheatPlus/Docs/wiki/Notable-Builds
 
 ----
 
-### 3.15.0-SNAPSHOT-sMD5NET-b1019(cumulative)
+### 3.15.0-SNAPSHOT-sMD5NET-b1020(cumulative)
 * New
  * MC 1.10 support.
  * Basic vehicle fly checks for more than boats.
