@@ -89,7 +89,7 @@ With those permissions you can decide which mods should not be disabled on login
 
 # Miscellaneous and parent permissions
 
-`nocheat.admin` Gives access to all [NoCheatPlus commands](https://github.com/MyPictures/NoCheatPlus/wiki/Commands) including Auxiliary ones  
+`nocheatplus.admin` Gives access to all [NoCheatPlus commands](https://github.com/MyPictures/NoCheatPlus/wiki/Commands) including Auxiliary ones  
 `nocheatplus.notify` Will receive hack notifications over in-game chat
 
 Commands for which the permission got set by the protection features (hide plugins), might have altered default permissions or NoCheatPlus may have set a filter permission 'nocheatplus.filter.command.COMMAND_NAME', for the case the command was allowed to be run by everyone.
