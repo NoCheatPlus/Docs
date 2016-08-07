@@ -20,6 +20,11 @@ https://github.com/NoCheatPlus/Docs/wiki/Notable-Builds
 
 ----
 
+### 3.15.0-SNAPSHOT-sMD5NET-b1023(cumulative)
+* Fixes
+** Passable: Ignore sneaking for bounding box height.
+** SurvivalFly: allow vertical friction on ladder without velocity being present.
+
 ### 3.15.0-SNAPSHOT-sMD5NET-b1022(mostly stable, cumulative)
 * Release type: **mostly stable**
 * Supported versions of Minecraft (CraftBukkit/Spigot)
