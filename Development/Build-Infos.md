@@ -20,7 +20,16 @@ https://github.com/NoCheatPlus/Docs/wiki/Notable-Builds
 
 ----
 
-### 3.15.0-SNAPSHOT-sMD5NET-b1020(cumulative)
+### 3.15.0-SNAPSHOT-sMD5NET-b1022(mostly stable, cumulative)
+* Release type: **mostly stable**
+* Supported versions of Minecraft (CraftBukkit/Spigot)
+ * Focus: 1.10.2
+ * Supported: 1.4.5-R1.0 - 1.10.2
+* Download at Jenkins: http://ci.md-5.net/job/NoCheatPlus/1022/
+* Hashes
+ * MD5: 8da1ffcf13158496d6eca0c9d04cc51e
+ * SHA512: 59e794efb529399cf8433c8cacf58bf25a7fac05421e4ff9fad72f6a4dee92a3f75e6603b5ff2b899ee5bc131580491d021da3fc95fdc81213beddef80163870
+ * File size: 1271668
 * New
  * MC 1.10 support.
  * Basic vehicle fly checks for more than boats.
@@ -39,10 +48,12 @@ https://github.com/NoCheatPlus/Docs/wiki/Notable-Builds
  * Fix low food level sprinting with players who are allowed to toggle flight.
  * Vehicles: falling with minecarts.
  * Confine climbing speed more.
+ * Fix off-hand issue with blockplace.
  * Reactivate net.sounddistance for 1.9 and later.
  * Update the CB-Reflect module for past 1.9.
  * Attempt to fix issues with fake players with fight checks.
  * (Attempt to improve ladder/vine + velocity.)
+ * Allow higher ProtocolLib versions on MC 1.10.
 * Other changes
  * Remove compatibility module for Glowstone (legacy).
 * Internals
