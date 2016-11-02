@@ -22,13 +22,13 @@ https://github.com/NoCheatPlus/Docs/wiki/Notable-Builds
 
 ### 3.15.0-SNAPSHOT-sMD5NET-b1027(cumulative)
 * New
-** More effective horizontal speed limiting (hacc).
-** New block flag to make water_lily compatible with 1.8.8 clients (water_lily: default+ign_passable+ground_height+height8_1). This is not set by default.
+ * More effective horizontal speed limiting (hacc).
+ * New block flag to make water_lily compatible with 1.8.8 clients (water_lily: default+ign_passable+ground_height+height8_1). This is not set by default.
 * Fixes
-** Passable: 2-high ceiling on 1.10.2.
-** Passable: Ignore sneaking for bounding box height.
-** SurvivalFly: allow vertical friction on ladder without velocity being present.
-** Adjusted configuration of supported ProtocolLib versions.
+ * Passable: 2-high ceiling on 1.10.2.
+ * Passable: Ignore sneaking for bounding box height.
+ * SurvivalFly: allow vertical friction on ladder without velocity being present.
+ * Adjusted configuration of supported ProtocolLib versions.
 
 ### 3.15.0-SNAPSHOT-sMD5NET-b1022(mostly stable, cumulative)
 * Release type: **mostly stable**
