@@ -6,8 +6,9 @@ Latest/Most stable builds ordered by the version of Minecraft.
 
 | MC (focus)    | MC (supported) | NoCheatPlus version | Release type |
 | :-------------| :------------- | :------------------ | :----------- |
-| 1.10.2 | 1.4.5-R1.0 - 1.10.2 | [3.15.0-SNAPSHOT-sMD5NET-b1022] (https://github.com/NoCheatPlus/Docs/wiki/Notable-Builds#nocheatplus-3150-snapshot-smd5net-b1022) | _development_ |
-| 1.9.4 | 1.4.5-R1.0 - 1.9.4 | [3.14.0-SNAPSHOT-sMD5NET-b989] (https://github.com/NoCheatPlus/Docs/wiki/Notable-Builds#nocheatplus-3140-snapshot-smd5net-b989)| mostly stable |
+| 1.10.2 | 1.4.5-R1.0 - 1.10.2 | [3.15.0-SNAPSHOT-sMD5NET-b1027 and later] (http://ci.md-5.net/job/NoCheatPlus/) | _development_ |
+| 1.10.2 | 1.4.5-R1.0 - 1.10.2 | [3.15.0-SNAPSHOT-sMD5NET-b1022] (https://github.com/NoCheatPlus/Docs/wiki/Notable-Builds#nocheatplus-3150-snapshot-smd5net-b1022) | mostly stable |
+| 1.9.x | ( ^ ) | ( ^ ) | ( ^ ) |
 | 1.8.x | ( ^ ) | ( ^ ) | ( ^ ) |
 | 1.7.x | ( ^ ) | ( ^ ) | ( ^ ) |
 | 1.6.x | ( ^ ) | ( ^ ) | ( ^ ) |
@@ -39,14 +40,3 @@ Builds mentioned above, with download links and hashes for comparison.
  * MD5: 8da1ffcf13158496d6eca0c9d04cc51e
  * SHA512: 59e794efb529399cf8433c8cacf58bf25a7fac05421e4ff9fad72f6a4dee92a3f75e6603b5ff2b899ee5bc131580491d021da3fc95fdc81213beddef80163870
  * File size: 1271668
-
-### NoCheatPlus 3.14.0-SNAPSHOT-sMD5NET-b989
-* Release type: **mostly stable**
-* Supported versions of Minecraft (CraftBukkit/Spigot)
- * Focus: 1.9.4
- * Supported: 1.4.5-R1.0 - 1.9.4
-* Download at Jenkins: http://ci.md-5.net/job/NoCheatPlus/989/
-* Hashes
- * MD5: f14bcc06f982d4d75750e36897716820
- * SHA512: 73565272d83ca943118cbd8cea9891dc02fab1a539c26f8cb909ea7b3fefc5e92ea0e2f07901a2209e2f64f47ca6d96da986f4b4c1a9f6aa919eb76ad60c6ce9
- * File size: 1165971
