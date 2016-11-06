@@ -20,7 +20,7 @@ https://github.com/NoCheatPlus/Docs/wiki/Notable-Builds
 
 ----
 
-### 3.15.0-SNAPSHOT-sMD5NET-b1027(cumulative)
+### 3.15.0-SNAPSHOT-sMD5NET-b1030(cumulative)
 * New
  * More effective horizontal speed limiting (hacc).
  * New block flag to make water_lily compatible with 1.8.8 clients (water_lily: default+ign_passable+ground_height+height8_1). This is not set by default.
@@ -29,6 +29,10 @@ https://github.com/NoCheatPlus/Docs/wiki/Notable-Builds
  * Passable: Ignore sneaking for bounding box height.
  * SurvivalFly: allow vertical friction on ladder without velocity being present.
  * Adjusted configuration of supported ProtocolLib versions.
+ * Use stored world names for packet frequency if world is null.
+ * Attempt to work around a bug where the player position is not updated on teleporting to the end (on some server/s versions).
+* Internals
+ * Minor optimization (NET: if none are enabled).
 
 ### 3.15.0-SNAPSHOT-sMD5NET-b1022(mostly stable, cumulative)
 * Release type: **mostly stable**
