@@ -266,11 +266,6 @@ Applications:
 * More precise counting in of server-side lag thinkable.
 * Detect phases of similar speed. Helps with detecting speeding, judging pvp/chasing, other.
 
-## Passable (moving): adjust to client side
-
-Y collision first, then x or z, then the remaining one (currently a workaround checks for y first, then xz in one go). Using the exact order which the client is also using, should reduce false positives further, be it configurable or not.
-
-In addition we could/should check that way using the full bounding box of the player, which is more simple due to regarding the move along one axis at a time.
 
 ## Track sequences of (continuous) violations.
 
