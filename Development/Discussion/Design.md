@@ -377,7 +377,7 @@ CURRENT DIRECTION:
 * Mostly keep as-is.
 * Possibly use the tick when the change happened for invalidation rather than the counter that advances with each block update call.
 * For efficiency of opportunistic checking, a coarse overview map could be maintained to know where to check at all (world, fixed size rectangles or cuboids). World is almost for free (last update timing can be stored there too), but more coarse rectangles or cuboids will need more code.
-* Block shapes and properties need to be stored as well. This could get slightly tricky, as we usually only get the state before changes are applied, for efficiency block property storage objects should be referenced internally (old state, new state from previous block). A little care is needed, as we can't rely on multi block changes being reported in perfect order (!), thus we'll probably reference coordinates and lazily fill in references of block property storage objects once accessed, just all states must be stored inside of the machine somehow.
+* Block shapes and properties need to be stored as well. (Correction: only needs storing the old state that is overridden.)
 
 ### Nature of queries to the tracking system
 
