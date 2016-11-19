@@ -373,6 +373,12 @@ Inside such an entry/node, it'll probably simply be linked lists:
 
 The push entries and the block entries will also have a time value and possibly a counter value, to be able to tell the order of events. Blocks might have a time-span of validity. Expiration starts for the previous state on changing it.
 
+CURRENT DIRECTION:
+* Mostly keep as-is.
+* Possibly use the tick when the change happened for invalidation rather than the counter that advances with each block update call.
+* For efficiency of opportunistic checking, a coarse overview map could be maintained to know where to check at all (world, fixed size rectangles or cuboids). World is almost for free (last update timing can be stored there too), but more coarse rectangles or cuboids will need more code.
+* Block shapes and properties need to be stored as well. This could get slightly tricky, as we usually only get the state before changes are applied, for efficiency block property storage objects should be referenced internally (old state, new state from previous block). A little care is needed, as we can't rely on multi block changes being reported in perfect order (!), thus we'll probably reference coordinates and lazily fill in references of block property storage objects once accessed, just all states must be stored inside of the machine somehow.
+
 ### Nature of queries to the tracking system
 
 Queries for changed blocks might need to hint at the "desired" result, complicating things.
@@ -392,11 +398,20 @@ With the last example, passable should allow the move (invalidating entries olde
 
 Focus is "can the player move like this?", so we try to find a block configuration that works for the player to pass through. This dosn't seem to be particularly difficult, as we can just query the tracking system in case of a block colliding with the player.
 
+CURRENT DIRECTION:
+* Opportunistic passable checking will be implemented, such that we somehow retry on collision, just for the moving.passable check.
+
 ### Adjustments to on-ground checks
 
 This is slightly tricky, as we need an estimate if the move demands or might want to go onto ground (or otherwise have touched it). With a lot of random pistons, we could otherwise get an arbitrary result for checking the distance to ground (0, 1, 2, 3...). 
 
 In essence, the player wants to be on ground usually where the x0,y1,y0 point is (vertical move only), but maybe the player doesn't want to be on ground there, if they are just falling. A latency estimate should be used, in order to be able to skip unwanted states. For a rather simple case, a too short move will either need velocity or moving onto ground (with uncertain margins).
+
+CURRENT DIRECTION:
+* Opportunistic on-ground checking will be attempted (simple).
+** Check for too short descending (vdistrel after failure, or a heuristic check earlier on).
+** For ascending >(=) 0, almost always check when not moving onto ground, might apply some heuristics for when to check, e.g. when moving up too shortly or within step-up envelope but outside of ordinary jump-envelope (possibly also vdistrel after failure).
+** The order of horizontal vs. vertical checks may be altered dynamically (!), because horizontal speed violations can often result from judging on-ground wrongly (either way). This also leads to the question, if to do some heuristic checks early on, rather than only relying on after-failure - an alternative is to re-run checks with piston-ground-checking enabled.
 
 ### Abuse of latency 
 
@@ -409,6 +424,11 @@ For players "using" an already moved block too long, things may also get more co
 With high latency, players may have a couple of moves on a block just removed by a piston. The duration of allowing ground should not be (much) longer than the time until the block has been removed.
 
 To keep the map size more confined, one could confine tracking to be near players, e.g. maintain tracked chunks, relate to if/how the player is moving.
+
+CURRENT DIRECTION:
+* Later there may be more checks necessary concerning latency, e.g. if to decide for calling it ground or not (not only abuse).
+** An easier choice would be, when the player moves to the exact block level, e.g. during falling, without leaving the ordinary envelopes. In this case we could decide (only if we always check for pistons, when changes are nearby), based on some (global) latency estimate.
+** A client might attempt to abuse leniency, e.g. trying to always fall through pistons (while that mode is activated client side), in which case we'd need to re-consider latency on after-failure piston checking in passable.
 
 ### Initial minimum or pistons.
 
