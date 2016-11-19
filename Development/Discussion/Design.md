@@ -377,6 +377,7 @@ CURRENT DIRECTION:
 * Possibly use the tick when the change happened for invalidation rather than the counter that advances with each block update call.
 * For efficiency of opportunistic checking, a coarse overview map could be maintained to know where to check at all (world, fixed size rectangles or cuboids). World is almost for free (last update timing can be stored there too), but more coarse rectangles or cuboids will need more code.
 * Block shapes and properties need to be stored as well. (Correction: only needs storing the old state that is overridden.)
+* In case of using block change entries, we might need some light weight broker objects to pass to various methods/functionality, so we can keep consistency with invalidation mechanics.
 * For efficiency, we could consider per-player block caches, where used states are stored, to avoid constant re-evaluation. However this doesn't seem to carry too far, as we still need invalidation by timing and how the player is moving.
 
 ### Nature of queries to the tracking system
