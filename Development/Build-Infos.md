@@ -20,7 +20,7 @@ https://github.com/NoCheatPlus/Docs/wiki/Notable-Builds
 
 ----
 
-### 3.15.0-SNAPSHOT-sMD5NET-b1033(cumulative)
+### 3.15.0-SNAPSHOT-sMD5NET-b1035(cumulative)
 * New
  * More effective horizontal speed limiting (hacc).
  * New block flag to make water_lily compatible with 1.8.8 clients and 1.11 (water_lily: ground+ign_passable+ground_height+height8_1). This is not set by default.
@@ -34,6 +34,7 @@ https://github.com/NoCheatPlus/Docs/wiki/Notable-Builds
  * Attempt to work around a bug where the player position is not updated on teleporting to the end (on some server/s versions).
  * Allow ProtocolLib 4.2.0 for MC 1.11.
  * Extend the CB-Reflect module to access entity height/width/box, fix block shape access on 1.11.
+ * Internal registry fixes.
 * Internals
  * Minor optimization (NET: if none are enabled).
  * Work towards block change compatibility further (pistons).
