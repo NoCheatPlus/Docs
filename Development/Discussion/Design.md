@@ -7,7 +7,7 @@ Possibly top headlines should be ordered alphabetically?
 
 # Mostly decided
 
-## Packet inversion problem.
+## Packet order inversion problem.
 
 It looks like some packets are processed in reversed order sometimes, possibly they're even sent in reversed order.
 
@@ -290,12 +290,24 @@ Tracking the average speed mid-term seems quite promising, because it allows che
 
 Technicalities:
 * It would probably need tracking the allowed "normal" speed vs. the used speed. Recording the ratio and number of events may be best, using ActionAccumulator. Resetting and skipping conditions might be intricate, thinking of the player sending small moves in-between [could give rise to using another data structure]. Tracking distance vs. real time is problematic, due to congestion/lag considerations. Having morepackets for that, we should have a good start on chases with going per-packet.
-* Tracking the speed above average might be prone to false positives under some curcumstances, so some care is necessary (velocity, cascading in generic cases).
+* Tracking the speed above average might be prone to false positives under some circumstances, so some care is necessary (velocity, cascading in generic cases).
 * Preventing the impact of false positives with tracking sequences of (continuous) violations, see above.
 * Friction envelopes after receiving velocity or switching state from somewhere (elytra, flying, whatever) need to be distinguishable from speeding.
  * Probably already useful if we confine it only to the rough bunny envelopes (where we allow to move faster than normal without velocity).
  * Tracking mid-term speed change by regarding shorter intervals will help to distinguish.
 * Hard to tell where to set back to. Possibly needs keeping an extra mid-term set-back location like for morepakets, or we freeze the player in-place more or less.
+
+### Already implemented
+
+A simple average speed tracking has been implemented.
+* Roughly monitor 30 moves.
+* For state transitions, LiftOffEnvelope is used, because it indicates some types of contexts we need and is already maintained (effieciency):
+ * Ground+air.
+ * Water+air.
+ * No special moving (web, ladder?).
+* We add up max(1.0, actual speed / base speed). Both speeds are maintained already, thus this is quite efficient.
+
+This implementation appears to have some effect, but we don't have much feedback yet, lack of set-back policies might make this less effective - so we do need reports and debug traces for comparison of vanilla vs. certain cheat implementations.
 
 # Uncertain
 
@@ -322,8 +334,6 @@ Counter measures could include:
 
 ## Block change tracking (pistons, redstone, digging, other).
 
-[CURRENT] Evaluate use of per-player block caches for fake entries. Idea: Set blocks to ign_passable+ground_height+ground+...
-
 To reduce false positives with pistons and to allow making doors much more safe we need to introduce some concept to track changed blocks and somehow account for them during all types of on-ground checking and passability checking, including ray-tracing.
 
 What we might track:
@@ -335,49 +345,35 @@ What we might track:
 
 Key issues are:
 * The old state of a changed block is what we need to track.
-* The onground and passability checks need to be adapted to use the block change tracking.
+* The on-ground and passability checks need to be adapted to use the block change tracking.
 * Redstone-driven changes may be itchy to follow. 
 * Plugins changing blocks might not fire events.
+* Events may fire redundant (piston + multi block change?).
 * Need to keep an eye on abuse of redstone circuitry with pistons or doors.
-* Prevent abuse of timing bounds.
-* Prevent false positives with timing bounds.
+* Issues with timing bounds.
+ * Opportunistic checking may at most keep track of max and min time/id of used entries, thus both abusing mangled/multiple past states and false positives due to not checking far enough into the past are possible.
+ * (Prevent false positives with timing bounds.)
+ * (Prevent abuse of timing bounds.)
+ * (Confine further by relating to a global latency estimate for a player.)
+ 
+CURRENT DIRECTION:
+* Implement a fast-forward opportunistic variant (opportunistic passable checking and opportunistic on-ground checking). This will hardly include any consistency checking, if several block change entries are used (other than only using valid entries that somehow match the timing boundaries set in data).
+* Later one could consider to demand finding a consistent past state, such that checking only with a certain timing window is done on (possibly multiple times of) reiteration.
+ * Check opportunistic first - re-run with the past state, i.e. force using BlockChangeTracker entries within the timing window, attempt to find a point of time, where that state is consistent.
+ * Do have efficient ways to exclude cases, such as 'no block change entries within some cuboid that encloses the move'.
 
 ### Already Implemented/Tested
 
-
-#### Still simple: push entries up/down.
-
-Pistons moving one time up might already be "ok", can't call that "playable" yet. Lots improved around build 967, allowing to reuse an id until having left that block.
-
-Pointers: 
-* Even on a local test server the player would stand in-air on top of an already retracted block. Thus on-ground judgment needs to account for this case.
-
-Conclusions:
-* We do need on-ground tracking as well. Following problems:
- * Need to keep track of block shapes and data.
- * The state after having moved the block can't be known at the time of the piston event.
-  * Queuing an update request for TickTask might be ok, as packets have to travel to the client anyway (could blow up on server side lag spikes).
-  * Otherwise the state resulting of the piston event will be the one checked against first (it's 'actual'). Possibly no entries are needed, just states of all involved blocks at the time of the event.
- * The methods in BlockProperties that determine on-ground properties will lazily query data from BlockCache, thus we might need to implement BlockCache using the tracker, also considering the policy for a specific query (prefer blocks to be there or not, latency estimate).
-  * Solution could be to always query data, thus add it as argument to all the methods. This will be simple but change many places.
-  * Another Solution could be to change BlockCache to have one node-like entry per block, the node entry has access methods and keeps a reference of the block cache (...). Advantage being any past-state can be encapsulated somehow, this block state object will be passed to all the methods in BlockProperties instead of id/shape/data.
- * Potential abuse could happen with allowing on-ground for past-changed-blocks disregarding if blocks are above. This might be necessary but is different to the current method which doesn't count that as ground, under certain circumstances.
-
-### Core data structures
-A linked CoordMap variation will likely be used, in order to sort entries to front/back once updated, so periodic checking for expiration will be easy.
-
-Inside such an entry/node, it'll probably simply be linked lists:
-* Block tracking (shape, id, etc.). 
-* Push tracking (for pistons, entry contains the direction, allow moving to the full block border by getting pushed, types for slime blocks vs. normal).
-
-The push entries and the block entries will also have a time value and possibly a counter value, to be able to tell the order of events. Blocks might have a time-span of validity. Expiration starts for the previous state on changing it.
+* Switch BlockCache to use BlockCacheNodeS to store states, so we can pass a stored node to methods like BlockProperties.isPassableBox.
+* Keep track of blocks moved by pistons within the BlockChangeTracler, including direction of moving and old state of the block (store an IBlockCacheNode). Entries also include an id and the tick, for invalidation. A LinkedCoordHashMap is used to allow expiring old entries in an efficient way, as well as sorting entries to back/front on updating.
+* A method in RichBoundsLocation for (simple) querying of pushing.
+* A simple implementation of allowing the y-part of a move resulting from piston pushing/pulling.
+    (Currently fails too much due to not having on-ground and passable covered.)
 
 CURRENT DIRECTION:
 * Mostly keep as-is.
 * Possibly use the tick when the change happened for invalidation rather than the counter that advances with each block update call.
 * For efficiency of opportunistic checking, a coarse overview map could be maintained to know where to check at all (world, fixed size rectangles or cuboids). World is almost for free (last update timing can be stored there too), but more coarse rectangles or cuboids will need more code.
-* Block shapes and properties need to be stored as well. (Correction: only needs storing the old state that is overridden.)
-* In case of using block change entries, we might need some light weight broker objects to pass to various methods/functionality, so we can keep consistency with invalidation mechanics.
 * For efficiency, we could consider per-player block caches, where used states are stored, to avoid constant re-evaluation. However this doesn't seem to carry too far, as we still need invalidation by timing and how the player is moving.
 
 ### Nature of queries to the tracking system
@@ -401,6 +397,7 @@ Focus is "can the player move like this?", so we try to find a block configurati
 
 CURRENT DIRECTION:
 * Opportunistic passable checking will be implemented, such that we somehow retry on collision, just for the moving.passable check.
+* One edge case to consider might be the ignoreInitiallyColliding part, considering differing past states.
 
 ### Adjustments to on-ground checks
 
@@ -430,43 +427,6 @@ CURRENT DIRECTION:
 * Later there may be more checks necessary concerning latency, e.g. if to decide for calling it ground or not (not only abuse).
 ** An easier choice would be, when the player moves to the exact block level, e.g. during falling, without leaving the ordinary envelopes. In this case we could decide (only if we always check for pistons, when changes are nearby), based on some (global) latency estimate.
 ** A client might attempt to abuse leniency, e.g. trying to always fall through pistons (while that mode is activated client side), in which case we'd need to re-consider latency on after-failure piston checking in passable.
-
-### Initial minimum or pistons.
-
-For starters we do need to make ordinary pistons work with survivalfly, at least vertically, because the new y-axis handling should prevent any move with pistons.
-
-"Quick" approach:
-* Implement per-world block change tracking for pistons only at first.
- * Track time+direction+id for the position of the end-block for extending pistons.
- * The id is an always increasing counter, player data contains a counter (and possibly a time), to be able to prevent using past entries.
- * Invalidation mechanics by time, use the LinkedCoordMap, use a mixture of lazy + TickTask.
- * Block Change entries contain a list with each extension for the piston (at least). Possibly the change direction is enough to know it's been a piston, the state of the block before extending needs to be present too.
- * Use the oldest block change entry for the player, preferably.
-* For pistons: Allow moving to the edge of the block, at least vertically upwards.
- * Might want to check other conditions, full bounding box available.
- * Locations to check cover the whole bounding box (for the from location at least).
-* Configurability if to use this feature at all, plus maybe max. age and number of entries.
-* Not yet:
- * Maybe not yet horizontal, though that could be possible as well.
- * Full on-ground compatibility (jumping on shifty piston setups, no fall edge cases, possibly other).
- * Latency estimates.
-
-### Initial minimum for non-pistons.
-
-Maybe a quick thing for passable can be done here after doing the minimum for survivalfly.
-
-* Trigger block change entries:
- * Moving onto a block or even having (to be added) flags present in the bounding box entries or along the move.
- * Maybe: Interaction with said types of blocks.
- * Maybe: redstone changing blocks (performance questions).
-* Use the same block change infrastructure as for pistons, create entries with no direction (player is not going to get pushed).
-* Add exemption for passable checking (passing block tracker as extra argument), possibly need a different return type there (AlmostBoolean?), or just risk some other tests for passability not using the block change tracking.
- * Passable ~ opportunistic version of the test: assume passing through is wanted, so look for states that allow it.
-* Do remove config workarounds.
-* Configurability if to use this sub-feature.
-* Not yet:
- * Full NoFall compatibility.
- * Latency estimates.
 
 ## Global latency estimate
 
