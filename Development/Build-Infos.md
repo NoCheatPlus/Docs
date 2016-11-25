@@ -25,6 +25,7 @@ https://github.com/NoCheatPlus/Docs/wiki/Notable-Builds
  * More effective horizontal speed limiting (hacc).
  * New block flag to make water_lily compatible with 1.8.8 clients (water_lily: ground+ign_passable+ground_height+height8_1). This is not set by default.
 * Fixes
+ * 1.11 blocks.
  * Detect horses correctly on 1.11.
  * Allow ProtocolLib 4.2.0 for MC 1.11.
  * Extend the CB-Reflect module to access entity height/width/box, fix block shape access on 1.11.
