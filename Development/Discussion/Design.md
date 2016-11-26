@@ -364,40 +364,32 @@ CURRENT DIRECTION:
 
 ### Already Implemented/Tested
 
+Technically
 * Switch BlockCache to use BlockCacheNodeS to store states, so we can pass a stored node to methods like BlockProperties.isPassableBox.
 * Keep track of blocks moved by pistons within the BlockChangeTracler, including direction of moving and old state of the block (store an IBlockCacheNode). Entries also include an id and the tick, for invalidation. A LinkedCoordHashMap is used to allow expiring old entries in an efficient way, as well as sorting entries to back/front on updating.
+* Currently the tick is used for invalidation, we do allow the same tick as long as the block is still colliding with the bounding box of the player [only for the block with the highest tick, so far].
 * A method in RichBoundsLocation for (simple) querying of pushing.
+
+Moves (distances) resulting from pistons moving blocks.
 * A simple implementation of allowing the y-part of a move resulting from piston pushing/pulling.
     (Currently fails too much due to not having on-ground and passable covered.)
 
+Passable
+* A first simple version of opportunistic passable checking has been implemented.
+
 CURRENT DIRECTION:
 * Mostly keep as-is.
-* Possibly use the tick when the change happened for invalidation rather than the counter that advances with each block update call.
 * For efficiency of opportunistic checking, a coarse overview map could be maintained to know where to check at all (world, fixed size rectangles or cuboids). World is almost for free (last update timing can be stored there too), but more coarse rectangles or cuboids will need more code.
 * For efficiency, we could consider per-player block caches, where used states are stored, to avoid constant re-evaluation. However this doesn't seem to carry too far, as we still need invalidation by timing and how the player is moving.
-
-### Nature of queries to the tracking system
-
-Queries for changed blocks might need to hint at the "desired" result, complicating things.
-
-Example:
-* The player wants to move in a legitimate way :), thus we need velocity or (with some more or less complicated query thing) we need to have touched ground somewhere.
-
-Further we might encounter odd client behavior on edge cases, where we might have to check the last or second last move for if it has been on ground [heuristic estimation, not entirely sure]. Design-wise it would be interesting to be able to just re-run all checks over the last N moves on-demand. 
-
-Another example:
-* Think of the ground opening to let you fall into water instead of onto stone. [various ways our system could behave, depending on the implementation.]
-
-With the last example, passable should allow the move (invalidating entries older than from retracting).
-
 
 ### Adjustments to passability checks and ray-tracing
 
 Focus is "can the player move like this?", so we try to find a block configuration that works for the player to pass through. This dosn't seem to be particularly difficult, as we can just query the tracking system in case of a block colliding with the player.
 
 CURRENT DIRECTION:
-* Opportunistic passable checking will be implemented, such that we somehow retry on collision, just for the moving.passable check.
 * One edge case to consider might be the ignoreInitiallyColliding part, considering differing past states.
+* Opportunistic checking (FCFS, no consistency for multiple blocks or full states) is implemented.
+* Improvements may cover global latency estimates, and consistency (various heuristics/detail-levels thinkable).
 
 ### Adjustments to on-ground checks
 
@@ -427,6 +419,13 @@ CURRENT DIRECTION:
 * Later there may be more checks necessary concerning latency, e.g. if to decide for calling it ground or not (not only abuse).
 ** An easier choice would be, when the player moves to the exact block level, e.g. during falling, without leaving the ordinary envelopes. In this case we could decide (only if we always check for pistons, when changes are nearby), based on some (global) latency estimate.
 ** A client might attempt to abuse leniency, e.g. trying to always fall through pistons (while that mode is activated client side), in which case we'd need to re-consider latency on after-failure piston checking in passable.
+
+### More/Random issues
+
+* Unused velocity tracking with accounting for past states. 
+* Further we might encounter odd client behavior on edge cases, where we might have to check the last or second last move for if it has been on ground [heuristic estimation, not entirely sure]. Design-wise it would be interesting to be able to just re-run all checks over the last N moves on-demand. 
+* Think of the ground opening to let you fall into water instead of onto stone. With stone being there, typically fall damage would get applied if you happen to just move close enough towards the surface (not underneath) - a global latency estimate could help here, it also could work to assume "not on ground" with detecting moved blocks while still being within the ordinary falling envelope, or we switch on-ground to AlmostBoolean (maybe = depends on further moves). If the player moves inside of the stone, opportunistic passable tracking would simply let them, while they should be "not on ground" in that case.
+
 
 ## Global latency estimate
 
