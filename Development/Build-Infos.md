@@ -20,7 +20,7 @@ https://github.com/NoCheatPlus/Docs/wiki/Notable-Builds
 
 ----
 
-### 3.15.0-SNAPSHOT-sMD5NET-b1037(cumulative)
+### 3.15.0-SNAPSHOT-sMD5NET-b1038(cumulative)
 * New
  * Opportunistic passable checking, accounting for past block changes (pistons only, so far).
  * More effective horizontal speed limiting (hacc).
@@ -31,6 +31,7 @@ https://github.com/NoCheatPlus/Docs/wiki/Notable-Builds
  * 1.11 blocks.
  * Detect horses correctly on 1.11.
  * Allow ProtocolLib 4.2.0 for MC 1.11.
+ * Go easier on long messages (chat.text / 1.11).
  * Extend the CB-Reflect module to access entity height/width/box, fix block shape access on 1.11.
  * Internal registry fixes.
  * FastConsume: also disable instanteat after reloading the configuration.

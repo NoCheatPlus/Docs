@@ -377,11 +377,6 @@ Moves (distances) resulting from pistons moving blocks.
 Passable
 * A first simple version of opportunistic passable checking has been implemented.
 
-CURRENT DIRECTION:
-* Mostly keep as-is.
-* For efficiency of opportunistic checking, a coarse overview map could be maintained to know where to check at all (world, fixed size rectangles or cuboids). World is almost for free (last update timing can be stored there too), but more coarse rectangles or cuboids will need more code.
-* For efficiency, we could consider per-player block caches, where used states are stored, to avoid constant re-evaluation. However this doesn't seem to carry too far, as we still need invalidation by timing and how the player is moving.
-
 ### Adjustments to passability checks and ray-tracing
 
 Focus is "can the player move like this?", so we try to find a block configuration that works for the player to pass through. This dosn't seem to be particularly difficult, as we can just query the tracking system in case of a block colliding with the player.
@@ -413,18 +408,21 @@ For players "using" an already moved block too long, things may also get more co
 
 With high latency, players may have a couple of moves on a block just removed by a piston. The duration of allowing ground should not be (much) longer than the time until the block has been removed.
 
-To keep the map size more confined, one could confine tracking to be near players, e.g. maintain tracked chunks, relate to if/how the player is moving.
-
-CURRENT DIRECTION:
+* A client might attempt to abuse leniency, e.g. trying to always fall through pistons (while that mode is activated client side), in which case we'd need to re-consider latency on after-failure piston checking in passable.
 * Later there may be more checks necessary concerning latency, e.g. if to decide for calling it ground or not (not only abuse).
-** An easier choice would be, when the player moves to the exact block level, e.g. during falling, without leaving the ordinary envelopes. In this case we could decide (only if we always check for pistons, when changes are nearby), based on some (global) latency estimate.
-** A client might attempt to abuse leniency, e.g. trying to always fall through pistons (while that mode is activated client side), in which case we'd need to re-consider latency on after-failure piston checking in passable.
+* An easier choice would be, when the player moves to the exact block level, e.g. during falling, without leaving the ordinary envelopes. In this case we could decide (only if we always check for pistons, when changes are nearby), based on some (global) latency estimate.
 
-### More/Random issues
+### More/Random issues/topics
 
 * Unused velocity tracking with accounting for past states. 
 * Further we might encounter odd client behavior on edge cases, where we might have to check the last or second last move for if it has been on ground [heuristic estimation, not entirely sure]. Design-wise it would be interesting to be able to just re-run all checks over the last N moves on-demand. 
 * Think of the ground opening to let you fall into water instead of onto stone. With stone being there, typically fall damage would get applied if you happen to just move close enough towards the surface (not underneath) - a global latency estimate could help here, it also could work to assume "not on ground" with detecting moved blocks while still being within the ordinary falling envelope, or we switch on-ground to AlmostBoolean (maybe = depends on further moves). If the player moves inside of the stone, opportunistic passable tracking would simply let them, while they should be "not on ground" in that case.
+* For efficiency of opportunistic checking, a coarse overview map could be maintained to know where to check at all (world, fixed size rectangles or cuboids). World is almost for free (last update timing can be stored there too), but more coarse rectangles or cuboids will need more code.
+* For efficiency, we could consider per-player block caches, where used states are stored, to avoid constant re-evaluation. However this doesn't seem to carry too far, as we still need invalidation by timing and how the player is moving.
+* Invalidation mechanics
+ * It might be needed to use the first span entry rather than the last to update last used with.
+ * Validity of the latest used block change entry could 'span' further ... until overridden (!), max age. Invalidation mechanics may become more complex this way, but it might be needed due to false positives with more than one piston, e.g. think of "doors" with a) multiple blocks thickness and b) blocks moved by pistons from more than one side. Working around this could be to not invalidate by using entries, but instead using a latency estimate + window only.
+ * In the end we might need to maintain a special kind of map/data-structure, where we fill in blocks/conditions with side conditions, so a simplified re-iteration over those blocks is possible. E.g. during checking used blocks could become invalidated, because some used entries are newer than the valid interval for an the entry that got overridden later on. In this case that individual block needs a re-check with adapted timing boundaries. So in the end all validity intervals must overlap, initially check lastSpanEntry vs. all validity durations. The problem with that is, that on ground is checked with a bounding box, not with a couple of blocks. Passable would not pose a problem, but the order of (future?) checks using a BlockChangeReference needs to be kept in mind.
 
 
 ## Global latency estimate
