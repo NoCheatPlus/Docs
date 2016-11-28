@@ -20,7 +20,7 @@ https://github.com/NoCheatPlus/Docs/wiki/Notable-Builds
 
 ----
 
-### 3.15.0-SNAPSHOT-sMD5NET-b1038(cumulative)
+### 3.15.0-SNAPSHOT-sMD5NET-b1039(cumulative)
 * New
  * Opportunistic passable checking, accounting for past block changes (pistons only, so far).
  * More effective horizontal speed limiting (hacc).
@@ -35,6 +35,7 @@ https://github.com/NoCheatPlus/Docs/wiki/Notable-Builds
  * Extend the CB-Reflect module to access entity height/width/box, fix block shape access on 1.11.
  * Internal registry fixes.
  * FastConsume: also disable instanteat after reloading the configuration.
+ * Fix Double.MAX_VALUE violations with fight.direction.
  * Passable: 2-high ceiling on 1.10.2.
  * Passable: Ignore sneaking for bounding box height.
  * SurvivalFly: allow vertical friction on ladder without velocity being present.
