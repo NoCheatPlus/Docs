@@ -17,7 +17,7 @@ _Italic_
 http://google.com  
 [Google](http://google.com)
 
-![NoLogo](Resources/Icons/NoLogo.gif)
+![NoLogo](/Resources/Icons/NoLogo.gif)
 
 # References
 
