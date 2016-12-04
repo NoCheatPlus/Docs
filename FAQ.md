@@ -52,6 +52,6 @@ It has been removed for the time being. We might re-add it once we are in need o
 **Related**  
 * [Known Issues](Known-Issues).
 
-[CompatNoCheatPlus]:http://dev.bukkit.org/bukkit-plugins/compatnocheatplus-cncp/
-[mcMMO]:http://dev.bukkit.org/bukkit-plugins/mcmmo/
-[Citizens]:http://dev.bukkit.org/bukkit-plugins/citizens/
+[CompatNoCheatPlus]:https://dev.bukkit.org/bukkit-plugins/compatnocheatplus-cncp/
+[mcMMO]:https://dev.bukkit.org/bukkit-plugins/mcmmo/
+[Citizens]:https://dev.bukkit.org/bukkit-plugins/citizens/

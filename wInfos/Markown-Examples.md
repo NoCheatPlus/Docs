@@ -17,7 +17,7 @@ _Italic_
 http://google.com  
 [Google](http://google.com)
 
-![NoLogo](http://dev.bukkit.org/media/images/74/374/NoLogo.gif)
+![NoLogo](https://dev.bukkit.org/media/images/74/374/NoLogo.gif)
 
 # References
 

@@ -10,8 +10,8 @@ Here are all plugins which either use the NC+ API or specially account for NC+ t
 * [BungeeNCPNotify] hooks into NoCheatPlus and reports violations (configurable) of certain checks to staff members on other servers.
 * [DoubleJump4NCP] Lets you double jump.
 
-[mcMMO]:http://dev.bukkit.org/bukkit-plugins/mcmmo/
-[Citizens 2]:http://dev.bukkit.org/bukkit-plugins/citizens/
+[mcMMO]:https://dev.bukkit.org/bukkit-plugins/mcmmo/
+[Citizens 2]:https://dev.bukkit.org/bukkit-plugins/citizens/
 
-[DoubleJump4NCP]:http://www.spigotmc.org/resources/doublejump4ncp.1519/
-[BungeeNCPNotify]:http://dev.bukkit.org/bukkit-plugins/bungeencpnotify/
+[DoubleJump4NCP]:https://www.spigotmc.org/resources/doublejump4ncp.1519/
+[BungeeNCPNotify]:https://dev.bukkit.org/bukkit-plugins/bungeencpnotify/
