@@ -20,9 +20,12 @@ https://github.com/NoCheatPlus/Docs/wiki/Notable-Builds
 
 ----
 
-### 3.15.0-SNAPSHOT-sMD5NET-b1041(cumulative)
+### 3.15.0-SNAPSHOT-sMD5NET-b1044(cumulative)
 * New
- * Opportunistic passable checking, accounting for past block changes (pistons, redstone for door-like, not for interaction nor directly next to button/lever).
+ * Block change tracking [BLEEDING].
+  * Opportunistic passable checking, accounting for past block changes (pistons, redstone driven blocks: door-like, not for interaction nor directly next to button/lever).
+  * Standing/moving on blocks that have just been changed.
+  * Slime blocks + pistons (ongoing).
  * More effective horizontal speed limiting (hacc).
  * New block flag to make water_lily compatible with 1.8.8 clients (water_lily: ground+ign_passable+ground_height+height8_1). This is not set by default.
 * Configuration
@@ -42,9 +45,10 @@ https://github.com/NoCheatPlus/Docs/wiki/Notable-Builds
  * Adjusted configuration of supported ProtocolLib versions.
  * Attempt to work around a bug where the player position is not updated on teleporting to the end (on some server/s versions).
  * Fixes for the on-ground logic (variable/fences, potential abuse).
+ * Vehicle enter: fix nested vehicle check.
 * Internals
  * Minor optimization (NET: if none are enabled).
- * Work towards block change compatibility further (pistons).
+ * Work towards block change compatibility further.
  * Use stored world names for packet frequency if world is null.
 
 ### 3.15.0-SNAPSHOT-sMD5NET-b1022(mostly stable, cumulative)
