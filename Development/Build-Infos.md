@@ -20,18 +20,20 @@ https://github.com/NoCheatPlus/Docs/wiki/Notable-Builds
 
 ----
 
-### 3.15.0-SNAPSHOT-sMD5NET-b1044(cumulative)
+### 3.15.0-SNAPSHOT-sMD5NET-b1050(cumulative)
 * New
  * Block change tracking [BLEEDING].
   * Opportunistic passable checking, accounting for past block changes (pistons, redstone driven blocks: door-like, not for interaction nor directly next to button/lever).
   * Standing/moving on blocks that have just been changed.
   * Slime blocks + pistons (ongoing).
+  * Horizontal push by pistons.
  * More effective horizontal speed limiting (hacc).
  * New block flag to make water_lily compatible with 1.8.8 clients (water_lily: ground+ign_passable+ground_height+height8_1). This is not set by default.
 * Configuration
  * Per-configuration entry warnings, in case a new default value is set.
 * Fixes
- * 1.11 blocks.
+ * Prevent letting Minecraft deal fall damage for micro moves (self damage, speeding).
+ * 1.11 blocks, native access module.
  * Detect horses correctly on 1.11.
  * Allow ProtocolLib 4.2.0 for MC 1.11.
  * Go easier on long messages (chat.text / 1.11).
@@ -46,6 +48,9 @@ https://github.com/NoCheatPlus/Docs/wiki/Notable-Builds
  * Attempt to work around a bug where the player position is not updated on teleporting to the end (on some server/s versions).
  * Fixes for the on-ground logic (variable/fences, potential abuse).
  * Vehicle enter: fix nested vehicle check.
+ * Improve compatibility (net: UnsupportedOperationException).
+ * Don't use short cuts for dealing with NaN and infinity.
+ * Register .silent check permissions. Add nocheatplus.checks.inventory.open to plugin.yml.
 * Internals
  * Minor optimization (NET: if none are enabled).
  * Work towards block change compatibility further.
