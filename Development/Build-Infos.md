@@ -20,7 +20,7 @@ https://github.com/NoCheatPlus/Docs/wiki/Notable-Builds
 
 ----
 
-### 3.15.0-SNAPSHOT-sMD5NET-b1050(cumulative)
+### 3.15.0-SNAPSHOT-sMD5NET-b1057(cumulative)
 * New
  * Block change tracking [BLEEDING].
   * Opportunistic passable checking, accounting for past block changes (pistons, redstone driven blocks: door-like, not for interaction nor directly next to button/lever).
@@ -51,6 +51,7 @@ https://github.com/NoCheatPlus/Docs/wiki/Notable-Builds
  * Improve compatibility (net: UnsupportedOperationException).
  * Don't use short cuts for dealing with NaN and infinity.
  * Register .silent check permissions. Add nocheatplus.checks.inventory.open to plugin.yml.
+ * NullPointerException with BlockProperties.isSameShape.
 * Internals
  * Minor optimization (NET: if none are enabled).
  * Work towards block change compatibility further.
