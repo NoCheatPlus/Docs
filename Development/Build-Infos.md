@@ -20,19 +20,30 @@ https://github.com/NoCheatPlus/Docs/wiki/Notable-Builds
 
 ----
 
-### 3.15.0-SNAPSHOT-sMD5NET-b1057(cumulative)
+### 3.15.0-SNAPSHOT-sMD5NET-b1071(cumulative)
+* Release type: [BLEEDING]
+* Fixes
+ * Set back handling (moving checks): use a scheduled teleport, leaving a gap between move and teleport, in order to ensure TeleportCause.UNKNOWNM for setting back players.
+ * Attempt to fix (selected) issues concerning vehicles with multiple passengers.
+* Internals
+ * Optimizations. Skip sweep attack detection with latest 1.11.2. Use Bukkit methods once available.
+
+### 3.15.0-SNAPSHOT-sMD5NET-b1066(cumulative)
 * New
- * Block change tracking [BLEEDING].
+ * Block change tracking.
   * Opportunistic passable checking, accounting for past block changes (pistons, redstone driven blocks: door-like, not for interaction nor directly next to button/lever).
   * Standing/moving on blocks that have just been changed.
   * Slime blocks + pistons (ongoing).
   * Horizontal push by pistons.
+ * Elytra boost support.
  * More effective horizontal speed limiting (hacc).
  * New block flag to make water_lily compatible with 1.8.8 clients (water_lily: ground+ign_passable+ground_height+height8_1). This is not set by default.
+ * Support plugins injecting and removing fake block changes (global only).
 * Configuration
  * Per-configuration entry warnings, in case a new default value is set.
 * Fixes
  * Prevent letting Minecraft deal fall damage for micro moves (self damage, speeding).
+ * Elytra in creative mode, when not flying.
  * 1.11 blocks, native access module.
  * Detect horses correctly on 1.11.
  * Allow ProtocolLib 4.2.0 for MC 1.11.
