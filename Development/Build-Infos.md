@@ -20,10 +20,10 @@ https://github.com/NoCheatPlus/Docs/wiki/Notable-Builds
 
 ----
 
-### 3.15.0-SNAPSHOT-sMD5NET-b1073(cumulative)
+### 3.15.0-SNAPSHOT-sMD5NET-b1074(cumulative)
 * Release type: [BLEEDING]
 * Fixes
- * Set back handling (moving checks): hybrid approach (schedule + attempt immediate), to avoid TeleportCause.PLUGIN for setting back players.
+ * Set back handling (moving checks): hybrid approach (schedule + attempt immediate), to avoid TeleportCause.PLUGIN for setting back players. Avoid unnecessary teleporting.
  * Attempt to fix (selected) issues concerning vehicles with multiple passengers.
 * Internals
  * Optimizations. Skip sweep attack detection with latest 1.11.2. Use Bukkit methods once available.
