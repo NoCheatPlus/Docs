@@ -20,15 +20,28 @@ https://github.com/NoCheatPlus/Docs/wiki/Notable-Builds
 
 ----
 
-### 3.15.0-SNAPSHOT-sMD5NET-b1074(cumulative)
+### 3.15.0-SNAPSHOT-sMD5NET-b1077(cumulative)
 * Release type: [BLEEDING]
+ * NOTE: Internal data storage overhaul (ongoing). Uncertain impact.
+* Internals
+ * Work towards a more unified player specific data storage.
+ * PlayerData holds access for player specific on-tick tasks.
+
+### 3.15.0-SNAPSHOT-sMD5NET-b1075(cumulative)
+* Release type: development, somewhat tested.
+ * INFO: New set-back method, recommended for 1.11.2 and later (post-2017-03-24).
 * Fixes
+ * Ignore arrow types for vehicle checks (can be overridden with hidden settings).
  * Set back handling (moving checks): hybrid approach (schedule + attempt immediate), to avoid TeleportCause.PLUGIN for setting back players. Avoid unnecessary teleporting.
  * Attempt to fix (selected) issues concerning vehicles with multiple passengers.
+ * Fix or work around an exquisite selection of random issues.
 * Internals
- * Optimizations. Skip sweep attack detection with latest 1.11.2. Use Bukkit methods once available.
+ * Skip sweep attack detection, when the DamageCause is present.
+ * Use Bukkit methods once available (Entity.getHeight|getWidth).
 
 ### 3.15.0-SNAPSHOT-sMD5NET-b1066(cumulative)
+* Release type: development, sitting duck.
+ * INFO: Use to avoid bleeding edge for pre-1.11.2 (pre-2017-03-24).
 * New
  * Block change tracking.
   * Opportunistic passable checking, accounting for past block changes (pistons, redstone driven blocks: door-like, not for interaction nor directly next to button/lever).
