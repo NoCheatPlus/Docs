@@ -8,7 +8,7 @@ Broken builds usually are marked as _broken_ or _deficient_ or get removed from 
 
 For a complete list of changes grouped by build number see:
 
-http://ci.md-5.net/job/NoCheatPlus/changes
+https://ci.md-5.net/job/NoCheatPlus/changes
 
 Complete list of changes on GitHub:
 
@@ -20,9 +20,11 @@ https://github.com/NoCheatPlus/Docs/wiki/Notable-Builds
 
 ----
 
-### 3.15.0-SNAPSHOT-sMD5NET-b1077(cumulative)
+### 3.15.0-SNAPSHOT-sMD5NET-b1078(cumulative)
 * Release type: [BLEEDING]
- * NOTE: Internal data storage overhaul (ongoing). Uncertain impact.
+ * INFO: Internal data storage overhaul (ongoing). Uncertain impact.
+* Fixes
+ * Distinguish set-back options by Minecraft version by default.
 * Internals
  * Work towards a more unified player specific data storage.
  * PlayerData holds access for player specific on-tick tasks.
@@ -86,7 +88,7 @@ https://github.com/NoCheatPlus/Docs/wiki/Notable-Builds
 * Supported versions of Minecraft (CraftBukkit/Spigot)
  * Focus: 1.10.2
  * Supported: 1.4.5-R1.0 - 1.10.2
-* Download at Jenkins: http://ci.md-5.net/job/NoCheatPlus/1022/
+* Download at Jenkins: https://ci.md-5.net/job/NoCheatPlus/1022/
 * Hashes
  * MD5: 8da1ffcf13158496d6eca0c9d04cc51e
  * SHA512: 59e794efb529399cf8433c8cacf58bf25a7fac05421e4ff9fad72f6a4dee92a3f75e6603b5ff2b899ee5bc131580491d021da3fc95fdc81213beddef80163870
@@ -129,7 +131,7 @@ https://github.com/NoCheatPlus/Docs/wiki/Notable-Builds
 * Supported versions of Minecraft (CraftBukkit/Spigot)
  * Focus: 1.9.4
  * Supported: 1.4.5-R1.0 - 1.9.4
-* Download at Jenkins: http://ci.md-5.net/job/NoCheatPlus/989/
+* Download at Jenkins: https://ci.md-5.net/job/NoCheatPlus/989/
 * Hashes
  * MD5: f14bcc06f982d4d75750e36897716820
  * SHA512: 73565272d83ca943118cbd8cea9891dc02fab1a539c26f8cb909ea7b3fefc5e92ea0e2f07901a2209e2f64f47ca6d96da986f4b4c1a9f6aa919eb76ad60c6ce9

@@ -16,7 +16,7 @@
 6. [Study the Commands](Commands)
 
 [DBO]:https://dev.bukkit.org/bukkit-plugins/nocheatplus/files/
-[Jenkins]:http://ci.md-5.net/job/NoCheatPlus/lastSuccessfulBuild/artifact/target/NoCheatPlus.jar
+[Jenkins]:https://ci.md-5.net/job/NoCheatPlus/lastSuccessfulBuild/artifact/target/NoCheatPlus.jar
 
 # Odds and Ends
 
