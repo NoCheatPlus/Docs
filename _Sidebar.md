@@ -15,7 +15,7 @@
 * [Protection](Protection)
 * [Checks](Checks)
  * [General](General)
- * [Strings] (Strings)
+ * [Strings](Strings)
  * [Miscellaneous](Miscellaneous)
 * [Compatibility](Compatibility)
 

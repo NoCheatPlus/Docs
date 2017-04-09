@@ -4,7 +4,7 @@
 
 ## [Checks](Checks)
  * [General](General)
- * [Strings] (Strings)
+ * [Strings](Strings)
  * [Miscellaneous](Miscellaneous)
 
 ## [Blockbreak]
