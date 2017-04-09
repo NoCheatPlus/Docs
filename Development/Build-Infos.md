@@ -30,7 +30,8 @@ https://github.com/NoCheatPlus/Docs/wiki/Notable-Builds
  * PlayerData holds access for player specific on-tick tasks.
 
 ### 3.15.0-SNAPSHOT-sMD5NET-b1075(cumulative)
-* Release type: development, somewhat tested.
+* Release type: development, somewhat tested. 
+ * INFO: For MC before 1.9 set _checks.moving.setback.method_ to "set_to", to force legacy behavior - only b1075 and before, fixed in build 1078.
  * INFO: New set-back method, recommended for 1.11.2 and later (post-2017-03-24).
 * Fixes
  * Ignore arrow types for vehicle checks (can be overridden with hidden settings).
