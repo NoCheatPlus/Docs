@@ -1,28 +1,30 @@
-Somewhat digested version of a changes history.
+Somewhat digested version of a changes history. 
 
-This section is probably not complete ever, but it can give a quick overview what parts to adapt or regenerate.
+| Release type | Explanation |
+| :------------| :---------- |
+| **Release** | Official full release, the developer is somewhat convinced, that we can't do much better within short term. |
+| **Release candidate** | Meant for becoming a release soon, typically last minute fixes inside. |
+| **Beta Release** | Official beta release, possibly some areas remain uncovered, or it's not been time to test further. A _mostly stable_ development build might also be released as beta (marked as recommended on Jenkins). |
+| **mostly stable** | A development build that has been tested a lot and appears to be good to use, or at least the best option for a specific Minecraft version. |
+| development | Ordinary development builds. |
+| [BLEEDING] | Bleeding edge development builds that contain changes, which need a lot of testing to consolidate, consequently running into issues with these can't be excluded. |
 
-The builds marked as _mostly stable_ are considered very stable and should be preferred over all previous development builds. Usually development builds get marked as _mostly stable_ after having been around for a while, and possibly before a more shifty phase with new additions or changes with uncertain stability. Some builds marked "mostly stable" are also marked as 'recommended' (star) on Jenkins, which means something like they're actually pretty good and can be considered worth a beta release at least. 
-
-Broken builds usually are marked as _broken_ or _deficient_ or get removed from Jenkins. They should not appear in this list.
+Broken builds usually are marked as _broken_ or _deficient_ or get removed from Jenkins. They should not appear in this list, unless to indicate that people should update.
 
 For a complete list of changes grouped by build number see:
-
 https://ci.md-5.net/job/NoCheatPlus/changes
 
 Complete list of changes on GitHub:
-
 https://github.com/NoCheatPlus/NoCheatPlus/commits/master
 
 **Quick overview over the latest notable builds:**
-
 https://github.com/NoCheatPlus/Docs/wiki/Notable-Builds
 
 ----
 
 ### 3.15.0-SNAPSHOT-sMD5NET-b1079(cumulative)
 * Release type: [BLEEDING]
-    * INFO: Internal data storage overhaul (ongoing). Uncertain impact.
+* Topic: Internal data storage overhaul (ongoing) of uncertain impact. Fixes.
 * Fixes
     * Distinguish set-back options by Minecraft version by default.
     * Fix handling of PlayerMoveEvent cancelled by other plugins.
@@ -31,9 +33,11 @@ https://github.com/NoCheatPlus/Docs/wiki/Notable-Builds
     * PlayerData holds access for player specific on-tick tasks.
 
 ### 3.15.0-SNAPSHOT-sMD5NET-b1075(cumulative)
-* Release type: development, somewhat tested. 
-    * INFO: For MC before 1.9 set _checks.moving.setback.method_ to "set_to", to force legacy behavior - only b1075 and before, fixed in build 1078.
-    * INFO: New set-back method, recommended for 1.11.2 and later (post-2017-03-24).
+* Release type: development, somewhat tested.
+* Topic: New set-back method, recommended for 1.11.2 and later (post-2017-03-24).
+* BUGS:
+    * Flying exploits: For MC before 1.9 set _checks.moving.setback.method_ to "set_to", to force legacy behavior - only b1075 and before. For builds from 1078 on, the configuration value can be removed.
+    * PlayerMoveEvent cancelled by other plugins: Fixed in build 1079.
 * Fixes
     * Ignore arrow types for vehicle checks (can be overridden with hidden settings).
     * Set back handling (moving checks): hybrid approach (schedule + attempt immediate), to avoid TeleportCause.PLUGIN for setting back players. Avoid unnecessary teleporting.
