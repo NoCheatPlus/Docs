@@ -2,12 +2,12 @@ Somewhat digested version of a changes history.
 
 | Release type | Explanation |
 | :------------| :---------- |
-| **Release** | Official full release, the developer is somewhat convinced, that we can't do much better within short term. |
-| **Release candidate** | Meant for becoming a release soon, typically last minute fixes inside. |
-| **Beta Release** | Official beta release, possibly some areas remain uncovered, or it's not been time to test further. A _mostly stable_ development build might also be released as beta (marked as recommended on Jenkins). |
+| **RC release** | Official stable release, the developer is somewhat convinced, that we can't do much better within short term. |
+| **release candidate** | Meant for becoming a release soon, typically last minute fixes inside. |
+| **BETA Release** | Official beta release, possibly some areas remain uncovered, or it's not been time to test further. A _mostly stable_ development build might also be released as beta (marked as recommended on Jenkins). |
 | **mostly stable** | A development build that has been tested a lot and appears to be good to use, or at least the best option for a specific Minecraft version. |
 | development | Ordinary development builds. |
-| [BLEEDING] | Bleeding edge development builds that contain changes, which need a lot of testing to consolidate, consequently running into issues with these can't be excluded. |
+| [BLEEDING] | Bleeding edge development builds that contain changes, which need a lot of testing to consolidate, or which are of experimental nature, consequently running into issues with these can't be excluded. |
 
 Broken builds usually are marked as _broken_ or _deficient_ or get removed from Jenkins. They should not appear in this list, unless to indicate that people should update.
 
@@ -22,20 +22,24 @@ https://github.com/NoCheatPlus/Docs/wiki/Notable-Builds
 
 ----
 
-### 3.15.0-SNAPSHOT-sMD5NET-b1079(cumulative)
+### 3.15.0-SNAPSHOT-sMD5NET-b1080(cumulative)
 * Release type: [BLEEDING]
 * Topic: Internal data storage overhaul (ongoing) of uncertain impact. Fixes.
 * Fixes
+    * Fix creativefly and survivalfly actions.
+    * Fix configuration notifications.
     * Distinguish set-back options by Minecraft version by default.
     * Fix handling of PlayerMoveEvent cancelled by other plugins.
 * Internals
     * Work towards a more unified player specific data storage.
     * PlayerData holds access for player specific on-tick tasks.
+    * (Allow overriding the set-back method via hidden settings.)
 
 ### 3.15.0-SNAPSHOT-sMD5NET-b1075(cumulative)
-* Release type: development, somewhat tested.
+* Release type: _deficient_
 * Topic: New set-back method, recommended for 1.11.2 and later (post-2017-03-24).
 * BUGS:
+    * Actions for survivalfly and creativefly: spaces missing with 'cancelvl' which should be 'cancel vl'.
     * Flying exploits: For MC before 1.9 set _checks.moving.setback.method_ to "set_to", to force legacy behavior - only b1075 and before. For builds from 1078 on, the configuration value can be removed.
     * PlayerMoveEvent cancelled by other plugins: Fixed in build 1079.
 * Fixes
