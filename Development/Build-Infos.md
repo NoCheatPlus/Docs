@@ -22,9 +22,12 @@ https://github.com/NoCheatPlus/Docs/wiki/Notable-Builds
 
 ----
 
-### 3.15.0-SNAPSHOT-sMD5NET-b1081(cumulative)
+### 3.15.0-SNAPSHOT-sMD5NET-b1082(cumulative)
 * Release type: [BLEEDING]
 * Topic: Internal data storage overhaul (ongoing) of uncertain impact. Fixes.
+* New
+    * Data removal can be done for sub checks (So far: FIGHT, COMBINED, MOVING).
+    * COMBINED_YAWRATE allows exemption and precise data removal.
 * Fixes
     * Fix creativefly and survivalfly actions.
     * Fix configuration notifications.
