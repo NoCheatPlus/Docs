@@ -22,7 +22,7 @@ https://github.com/NoCheatPlus/Docs/wiki/Notable-Builds
 
 ----
 
-### 3.15.0-SNAPSHOT-sMD5NET-b1082(cumulative)
+### 3.15.0-SNAPSHOT-sMD5NET-b1083(cumulative)
 * Release type: [BLEEDING]
 * Topic: Internal data storage overhaul (ongoing) of uncertain impact. Fixes.
 * New
@@ -33,6 +33,7 @@ https://github.com/NoCheatPlus/Docs/wiki/Notable-Builds
     * Fix configuration notifications.
     * Distinguish set-back options by Minecraft version by default.
     * Fix handling of PlayerMoveEvent cancelled by other plugins.
+    * BlockInteract: null blocks.
 * Internals
     * Work towards a more unified player specific data storage.
     * PlayerData holds access for player specific on-tick tasks.
