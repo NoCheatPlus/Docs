@@ -14,8 +14,8 @@ Broken builds usually are marked as _broken_ or _deficient_ or get removed from 
 Related links:
 * [A complete list of changes grouped by build number: Jenkins.](https://ci.md-5.net/job/NoCheatPlus/changes)
 * [Complete list of changes on GitHub.](https://github.com/NoCheatPlus/NoCheatPlus/commits/master)
-* [**Quick overview over the latest notable builds by Minecraft versions.**](https://github.com/NoCheatPlus/Docs/wiki/Notable-Builds)
-* [What's next/now: development roadmap.](Roadmap)
+* [**Quick overview over the latest notable builds by Minecraft version.**](https://github.com/NoCheatPlus/Docs/wiki/Notable-Builds)
+* [What's next: development roadmap.](Roadmap)
 
 ----
 

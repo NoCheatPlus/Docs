@@ -26,6 +26,7 @@ Topics that will be tackled soon, no guarantee on order.
     *Possibly  redo LocationTrace + pvp vs. pve config for loop checks
 * Horizontal piston moving with players.
 * SurvivalFly: sprint+jump and special case refinement. Possibly recode with new style workaround class use.
+* Change the Build-Infos page: Make sub pages by XX.YY NCP version and link those, for more _permanent_ links.
 
 ## Planned
 Topics that likely will follow up, no guarantee on order, might slip further away.
