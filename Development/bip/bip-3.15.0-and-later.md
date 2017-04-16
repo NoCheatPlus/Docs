@@ -1,4 +1,4 @@
-Build Infos Page - NoCheatPlus 3.13.7 and later.
+## Build Infos Page - NoCheatPlus 3.15.0 and later.
 
 [Back to the Build-Infos overview.](https://github.com/NoCheatPlus/Docs/wiki/Build-Infos)
 
@@ -121,3 +121,4 @@ Build Infos Page - NoCheatPlus 3.13.7 and later.
     * [BREAKING] MCAccess: split off more fine grained providers.
     * Extend debug logging for blockinteract (rate-limited).
     * Add build profile for 1.7_r4 (MC 1.7.10).
+

@@ -1,4 +1,4 @@
-Build Infos Page - NoCheatPlus 3.13.7 _**and earlier**_.
+## Build Infos Page - NoCheatPlus 3.13.7 _**and earlier**_.
 
 **These builds are outdated.**
 
@@ -1180,3 +1180,4 @@ Build Infos Page - NoCheatPlus 3.13.7 _**and earlier**_.
 * globalchat.engine.active: false
 * globalchat.engine.glcompressedwords.active: false
 \\//Reloading resets chat violation data, now.//
+
