@@ -1,4 +1,4 @@
-## Build Infos Page - NoCheatPlus 3.13.7 _**and earlier**_.
+## Build Infos Page - NoCheatPlus 3.13.6 _**and earlier**_.
 
 **These builds are outdated.**
 
