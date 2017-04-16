@@ -11,6 +11,9 @@ NoCheatPlus also supports [Bukkit aliases](http://wiki.bukkit.org/Bukkit.yml#ali
 You can give a player access to a specific command by giving them the sub-node with the commands default name, like `nocheatplus.admin.info`.
 For further information about permissions in NoCheatPlus, we recommend looking at the [Permissions](https://github.com/MyPictures/NoCheatPlus/wiki/Permissions#commands).
 
+**Related**
+* [Permissions](Permissions)
+
 # Administrative commands
 Those commands are used to basically manage NoCheatPlus on your server. Arguments in **( )** are needed, while arguments in **[ ]** are optional.
 
@@ -29,7 +32,7 @@ Those commands are used to basically manage NoCheatPlus on your server. Argument
 |/ncp version| Show version information about the server, plugin, compatibility modules and registered hooks.|
 
 # Auxiliary commands
-Those commands are mainly used by NoCheatPlut itself to execute strings or commands over actions on violating players but you can also make use of them if you wish to do so. Most of them have no difference compared to the vanilla commands apart from the delay otion.
+Those commands are mainly used by NoCheatPlus itself to execute strings or commands over actions on violating players but you can also make use of them if you wish to do so. Most of them have no difference compared to the vanilla commands apart from the delay option. Some might be confined to console use.
 Arguments in **( )** are needed, while arguments in **[ ]** are optional.
 
 | Command                 | Explanation |
@@ -41,5 +44,12 @@ Arguments in **( )** are needed, while arguments in **[ ]** are optional.
 |/ncp tell \[delay=(ticks)] (player) (message)|Send a private message to a specified player.|
 |/ncp delay \[delay=(ticks)] (command)|Execute a command in delayed time.|
 
-**Related**
-* [Permissions](Permissions)
+# Stop watch
+Especially with measuring distances and/or time, these might be useful. The 'stopwatch' command allows abbreviation with 'sw', only for players. The precision of the distance-related variants is determined by on-tick execution of checking, so it may not be as precise in environments with larger lag/delay spikes (client or server). Typically a distance of 100 blocks straight without height difference is a good measure for comparison (1.11.2 and before about 14 seconds without effects). Speed cheats should be compared to continuous sprint+jump ("bunny-hopping"), unless it's a low-food-level comparison, because the sprinting state isn't always correctly reported on server side, so we assume sprinting whenever technically possible.
+
+| Command                 | Explanation |
+| :---------------------- | :---------- |
+| /ncp stopwatch start | Simply start a stop watch. The time for an already running watch would be shown in chat. |
+| /ncp stopwatch stop | Stop a running stop watch and show time in chat. |
+| /ncp stopwatch distance (distance) | Start a stop watch, automatically stop when the player has reached the given distance (blocks). This is not 100% precise (on-tick), but it does use the euclidean distance. |
+| /ncp stopwatch return (margin) | Simply start a stop watch, automatically stop when the player returns to the position where the watch had been started, with the given margin (blocks, euclidean, on-tick). |
