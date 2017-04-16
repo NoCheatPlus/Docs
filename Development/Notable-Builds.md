@@ -6,7 +6,7 @@ Latest/Most stable builds ordered by the version of Minecraft.
 
 | MC (focus)    | MC (supported) | NoCheatPlus version | Release type |
 | :-------------| :------------- | :------------------ | :----------- |
-| 1.11.2 | 1.4.5-R1.0 - 1.11.2 | [3.15.1-RC-sMD5NET-b1087](https://github.com/NoCheatPlus/Docs/wiki/Notable-Builds#3151-rc-smd5net-b1084) | mostly stable |
+| 1.11.2 | 1.4.5-R1.0 - 1.11.2 | [3.15.1-RC-sMD5NET-b1084](https://github.com/NoCheatPlus/Docs/wiki/Notable-Builds#3151-rc-smd5net-b1084) | mostly stable |
 | 1.9.x | ( ^ ) | ( ^ ) | ( ^ ) |
 | 1.8.x | ( ^ ) | ( ^ ) | ( ^ ) |
 | 1.7.x | ( ^ ) | ( ^ ) | ( ^ ) |
