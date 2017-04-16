@@ -93,7 +93,7 @@
     * Catch unintended input somewhere.
 
 ### 3.13.7-RC-sMD5NET-b925
-* Recommended Release (milestone release).
+* RC Release (milestone release).
     * MD5: d27d11a413b1ef0f6875959f9af806e7
     * SHA512: 9382f7d2dc8edc05104a5f56998c42803678de45ea32768015609e638d1d783febd56d7912766dabe0ae802c2fbd3cc152f686876599f8af6bd12276c54e46d9
     * File size: 1032874

@@ -2,19 +2,11 @@ Quick overview about notable builds.
 
 ## Latest Stable Builds by Minecraft version
 
-Latest/Most stable builds ordered by the version of Minecraft.
+Latest/Most stable builds ordered by the version of Minecraft. For a given range of versions, not all versions between may be supported - in general the most popular ones are (e.g. 1.7.2 and 1.7.10, but not 1.7.5).
 
 | MC (focus)    | MC (supported) | NoCheatPlus version | Release type |
 | :-------------| :------------- | :------------------ | :----------- |
-| 1.11.2 | 1.4.5-R1.0 - 1.11.2 | [3.15.1-RC-sMD5NET-b1084](https://github.com/NoCheatPlus/Docs/wiki/Notable-Builds#3151-rc-smd5net-b1084) | mostly stable |
-| 1.9.x | ( ^ ) | ( ^ ) | ( ^ ) |
-| 1.8.x | ( ^ ) | ( ^ ) | ( ^ ) |
-| 1.7.x | ( ^ ) | ( ^ ) | ( ^ ) |
-| 1.6.x | ( ^ ) | ( ^ ) | ( ^ ) |
-| 1.5.x | ( ^ ) | ( ^ ) | ( ^ ) |
-| 1.4.7 | ( ^ ) | ( ^ ) | ( ^ ) |
-| 1.4.6 | ( ^ ) | ( ^ ) | ( ^ ) |
-| 1.4.5-R1.0 | ( ^ ) | ( ^ ) | ( ^ ) |
+| 1.11.2 | 1.4.5-R1.0 - 1.11.2 | [3.15.1-RC-sMD5NET-b1084](https://github.com/NoCheatPlus/Docs/wiki/Notable-Builds#3151-rc-smd5net-b1084) | release candidate |
 | _1.4.5_ | _1.4.2 - 1.4.5_ |  _[3.10.9-SNAPSHOT-b666](https://ci.md-5.net/job/NoCheatPlus/666/)_ | _development_ |
 | _1.3.2_ | _1.3.1 - 1.3.2_ | _[3.7.10-RC-b201](https://dev.bukkit.org/bukkit-plugins/nocheatplus/files/33-nocheat-plus-3-7-10-rc-b201/)_ | _RC release_ |
 | _1.2.5_ | _1.1 - 1.2.5_ | _[3.6.1](https://dev.bukkit.org/bukkit-plugins/nocheatplus/files/23-nocheat-plus-v3-6-1-1-1-1-2-5/)_ | _RC release_ |
