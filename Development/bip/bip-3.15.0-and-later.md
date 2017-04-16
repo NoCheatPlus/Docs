@@ -5,7 +5,7 @@ Build Infos Page - NoCheatPlus 3.13.7 and later.
 ----
 
 ### 3.15.0-SNAPSHOT-sMD5NET-b1083(cumulative)
-* Release type: [BLEEDING]
+* Release type: development
 * Topic: Internal data storage overhaul (ongoing) of uncertain impact. Fixes.
 * New
     * Data removal can be done for sub checks (So far: FIGHT, COMBINED, MOVING).
