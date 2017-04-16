@@ -4,6 +4,17 @@
 
 ----
 
+### 3.15.1-RC-sMD5NET-b1084(release candidate)
+* Release type: **release candidate**
+* Supported versions of Minecraft (CraftBukkit/Spigot)
+    * Focus: 1.11.2
+    * Supported: 1.4.5-R1.0 - 1.11.2
+* Download at Jenkins: https://ci.md-5.net/job/NoCheatPlus/1084/
+* Hashes
+    * MD5: b795f989bd8d4eb0e4e4e3bffeca5c01
+    * SHA512: 94d3d548d4eaeac6aa3ee2deda958de931d62fcb7510450145c4c6eedc9aacc67df905dd822aa634595b72a61215a548a7cb6b6d25dcf3d7c02c44b629564dc5
+    * File size: 1358310
+
 ### 3.15.0-SNAPSHOT-sMD5NET-b1083(cumulative)
 * Release type: development
 * Topic: Internal data storage overhaul (ongoing) of uncertain impact. Fixes.

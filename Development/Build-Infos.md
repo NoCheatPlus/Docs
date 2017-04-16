@@ -5,8 +5,8 @@ Somewhat digested version of a changes history.
 # Release types
 | Release type | Explanation |
 | :------------| :---------- |
-| **RC release** | Official stable release, the developer is somewhat convinced, that we can't do much better within short term. |
-| **release candidate** | Meant for becoming a release soon, typically last minute fixes inside. |
+| **Recommended release** | Official stable release, the developer is somewhat convinced, that we can't do much better within short term. |
+| **release candidate** | Meant for becoming a recommended release soon, waiting for last minute feedback. |
 | **BETA Release** | Official beta release, possibly some areas remain uncovered, or it's not been time to test further. A _mostly stable_ development build might also be released as beta (marked as recommended on Jenkins). |
 | **mostly stable** | A development build that has been tested a lot and appears to be good to use, or at least the best option for a specific Minecraft version. |
 | development | Ordinary development builds. |
