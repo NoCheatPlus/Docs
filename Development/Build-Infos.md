@@ -11,14 +11,11 @@ Somewhat digested version of a changes history.
 
 Broken builds usually are marked as _broken_ or _deficient_ or get removed from Jenkins. They should not appear in this list, unless to indicate that people should update.
 
-For a complete list of changes grouped by build number see:
-https://ci.md-5.net/job/NoCheatPlus/changes
-
-Complete list of changes on GitHub:
-https://github.com/NoCheatPlus/NoCheatPlus/commits/master
-
-**Quick overview over the latest notable builds:**
-https://github.com/NoCheatPlus/Docs/wiki/Notable-Builds
+Related links:
+* [A complete list of changes grouped by build number: Jenkins.](https://ci.md-5.net/job/NoCheatPlus/changes)
+* [Complete list of changes on GitHub.](https://github.com/NoCheatPlus/NoCheatPlus/commits/master)
+* [**Quick overview over the latest notable builds by Minecraft versions.**](https://github.com/NoCheatPlus/Docs/wiki/Notable-Builds)
+* [What's next/now: development roadmap.](Roadmap)
 
 ----
 
