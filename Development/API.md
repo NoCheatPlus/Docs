@@ -1,5 +1,10 @@
 # History of API changes
-* Build 520: Some static methods have been changed to not static.
+* Not sure we can keep double-bookkeeping here.
+
+# Official API
+The static access starting point can be: `NCPAPIProvider.getNocheatPlusAPI()`
+
+This is largely incomplete, but contains some useful functionality, such as getting handles for registrations with the IGenericInstanceRegistry.
 
 # Hooking into NoCheatPlus
 The hooks package of NCPCore contains two "managers" for different concepts to exempt players from checks.
