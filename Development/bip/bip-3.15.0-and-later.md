@@ -5,7 +5,7 @@
 ----
 
 ### 3.15.1-RC-sMD5NET-b1084
-* Release type: **release candidate**
+* Release type: **RC Release**
 * Supported versions of Minecraft (CraftBukkit/Spigot)
     * Focus: 1.11.2
     * Supported: 1.4.5-R1.0 - 1.11.2

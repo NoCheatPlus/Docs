@@ -6,7 +6,7 @@ Latest/Most stable builds ordered by the version of Minecraft. For a given range
 
 | MC (focus)    | MC (supported) | NoCheatPlus version | Release type |
 | :-------------| :------------- | :------------------ | :----------- |
-| 1.11.2 | 1.4.5-R1.0 - 1.11.2 | [3.15.1-RC-sMD5NET-b1084](https://github.com/NoCheatPlus/Docs/wiki/Notable-Builds#3151-rc-smd5net-b1084) | release candidate |
+| 1.11.2 | 1.4.5-R1.0 - 1.11.2 | [3.15.1-RC-sMD5NET-b1084](https://github.com/NoCheatPlus/Docs/wiki/Notable-Builds#3151-rc-smd5net-b1084) | RC release |
 | _1.4.5_ | _1.4.2 - 1.4.5_ |  _[3.10.9-SNAPSHOT-b666](https://ci.md-5.net/job/NoCheatPlus/666/)_ | _development_ |
 | _1.3.2_ | _1.3.1 - 1.3.2_ | _[3.7.10-RC-b201](https://dev.bukkit.org/bukkit-plugins/nocheatplus/files/33-nocheat-plus-3-7-10-rc-b201/)_ | _RC release_ |
 | _1.2.5_ | _1.1 - 1.2.5_ | _[3.6.1](https://dev.bukkit.org/bukkit-plugins/nocheatplus/files/23-nocheat-plus-v3-6-1-1-1-1-2-5/)_ | _RC release_ |
@@ -22,7 +22,7 @@ Release types
 Builds mentioned above, with download links and hashes for comparison.
 
 ### 3.15.1-RC-sMD5NET-b1084
-* Release type: **release candidate**
+* Release type: **RC release**
 * Supported versions of Minecraft (CraftBukkit/Spigot)
     * Focus: 1.11.2
     * Supported: 1.4.5-R1.0 - 1.11.2
