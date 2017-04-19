@@ -19,6 +19,8 @@ Release types
 * mostly stable - A promoted development build.
 * _development_ - A development build, might contain issues.
 
+_(Italic entries indicate potentially unstable development builds or versions that are not supported anymore, in terms of developing fixes or features. In general there are no back-ports for old releases.)_
+
 ## Notable Builds in Order of Appearance
 
 Builds mentioned above, with download links and hashes for comparison.
