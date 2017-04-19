@@ -8,30 +8,34 @@ For a more detailed explanation or discussion of future design issues see the De
 * Follow up release with bug fixes, expecting more feedback due to releasing both on dbo and spigotmc.
 * Possibly quick-fix false positives with survivalfly (sprint+jump) and passable. Issues around 2017-04-XX.
 * Decision for next topic between:
-    * set back policy
-    * Data storage overhaul
-    * Fight checks (internals first).
+    * Fight checks (multiple iterations pending).
+    * Data storage overhaul (multiple iterations pending).
+    * set back policy (a) better cross-plugin compatibility b) new policies)
 
 # Scheduled
 Topics that will be tackled soon, no guarantee on order.
+* Fight checks, penalty actions: implement more penalty actions, allow use in fight checks.
+* Check data access: Implement (more) fine grained data removal for the remaining check types.
+* Fight checks, loop checks design.
+    * Implement generic loop methods, not depending on certain checks.
+    * Have multiple rounds with differing checks (1. fastest checks + determine latency window 2.-X. Further checks to refine window Last: checks that just use the latency window + best guess).
+    * Possibly  redo LocationTrace + pvp vs. pve config for loop checks.
+* Data storage overhaul: Concentrate relevant data inside of PlayerData (check data - possibly also permission cache, exemption, ...).
+    * Internal change (breaking): Store all per-player check data inside of PlayerData, alters interfaces and factories for CheckData factory (a real factory is needed, PlayerData will implement something like I(Generic)DataStore or similar).
+    * Might implement permission caching, possibly first just for survivalfly, to see if/how it pays off.
 * Moving checks: set back policy refinements.
     * suggestSetBack instead of setting it within LOWEST event priority. Really set on MONITOR, only if not cancelled.
     * Unified handling of specialties with set back locations for all moving checks (not within survivalfly).
     * One spot to decide how to alter scheduled set back locations (voidtovoid, forcefall, downtoground).
     * Actually implement at least one new set back policy (forcefall or downtoground).
     * (Let checks and config select which alterations are allowed.)
-* Data storage overhaul: Concentrate relevant data inside of PlayerData (check data - possibly also permission cache, exemption, ...).
-    * Internal change (breaking): Store all per-player check data inside of PlayerData, alters interfaces and factories for CheckData factory (a real factory is needed, PlayerData will implement something like I(Generic)DataStore or similar).
-    * Might implement permission caching, possibly first just for survivalfly, to see if/how it pays off.
-* Fight checks, penalty actions: implement more penalty actions, allow use in fight checks.
-* Fight checks, loop checks design.
-    * Consider to implement generic loop checks, that run as many sub checks as are passed.
-    * Consider running two rounds of loop checks, where the first one will confine the latency window in a rather efficient way.
-    *Possibly  redo LocationTrace + pvp vs. pve config for loop checks
+* Fight checks / latency:
+    * Refine / implement-at-all: Make more use of a latency window - cross check with other checks and data sources (!).
+    * Have a sequence of past latency estimates+windows and compare that of the attacker to the LocationTrace (latency _at that time_).
+    * Update the LocationTrace on MONITOR (ensure), include the latest possible time stamp.
 * Fight checks: Refine and implement new.
     * Refine loop checks (if not already done), to make full use of capabilities of the loop.
     * Implement new (planned) checks, like targeting/difficulty.
-    * Refine / implement-at-all: Make more use of a latency window - cross check with other checks and data sources (!).
     * Test + sketch out further directions (no joke :p).
 * Horizontal piston moving with players.
 * SurvivalFly: sprint+jump and special case refinement. Possibly recode with new style workaround class use.

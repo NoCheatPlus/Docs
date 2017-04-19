@@ -2,7 +2,8 @@ Quick overview about notable builds.
 
 ## Latest Stable Builds by Minecraft version
 
-Latest/Most stable builds ordered by the version of Minecraft. For a given range of versions, not all versions between may be supported - in general the most popular ones are (e.g. 1.7.2 and 1.7.10, but not 1.7.5).
+Latest/Most stable builds ordered by the version of Minecraft. In general the most significant or popular versions are supported, italic for _hardly ever tested_: 1.11.2, _1.10.2_, _1.9.4_, 1.8.8, 1.7.10, _1.7.2_, _1.6.4_, _1.5.2_, _1.4.5-R1.0_
+For requests please use [GitHub Issues](https://github.com/NoCheatPlus/Issues/issues).
 
 | MC (focus)    | MC (supported) | NoCheatPlus version | Release type |
 | :-------------| :------------- | :------------------ | :----------- |

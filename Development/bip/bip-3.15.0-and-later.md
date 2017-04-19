@@ -4,13 +4,18 @@
 
 ----
 
-### 3.15.2-SNAPSHOT-sMD5NET-b1086(cumulative)
+### 3.15.2-SNAPSHOT-sMD5NET-b1087(cumulative)
 * Release type: [BLEEDING]
 * Configuration
     * For inventory.instantbow you can control how it uses the improbable check (feed/weight/turn off with 0.0 weight).
+    * Notification changes for default values: print a maximum of 5 paths to chat by default, configurable.
 * Fixes
     * Potential fix: Model the '(noob) tower up' with lost-ground checks instead of the odd/optimistic set-back-y adjustment.
     * Fix for a friction envelope check (uncertain impact, might render a workaround functional, or allow flying :p... perhaps not).
+    * Fix the build number displayed in a hint for setting configversion.created to.
+    * Fix AttackFrequency on MC 1.7.10 and 1.7.2 (interpret packets).
+* Internals
+    * Build against ProtocolLib 4.2.1.
 
 ### 3.15.1-RC-sMD5NET-b1084
 * Release type: **RC Release**
