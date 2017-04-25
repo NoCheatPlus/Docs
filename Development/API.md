@@ -31,7 +31,7 @@ The plugin class itself does have some methods some of which could be of use, ho
 ## Adjusting the set-back location.
 Until NCP supports all thinkable set-back-policies, have a look here: https://gist.github.com/asofold/b05c0a17c605e7c69bb30ee5e79a6e7b
 
-(Essentially MovingData.setTeleported from within a hook does the job - it willl be handled as the location to set "back" to, nothing else is necessary, except perhaps to ensure not to let players colide with or pass through blocks with this (flying, ...).)
+(Essentially MovingData.setTeleported from within a hook does the job - it will be handled as the location to set "back" to, only do this if IViolationData.willCancel() returns ture, otherwise nothing else should be done, except perhaps to ensure not to let players collide with or pass through blocks with this (and don't allow flying, ...).)
 
 # Related
 * [Debugging](Debugging)
