@@ -6,7 +6,10 @@ For a more detailed explanation or discussion of future design issues see the De
 
 # Current focus
 * Follow up release with bug fixes, expecting more feedback due to releasing both on dbo and spigotmc.
-* Possibly quick-fix false positives with survivalfly (sprint+jump) and passable. Issues around 2017-04-XX.
+* Possibly quick-fix false positives. Issues around 2017-04-XX.
+    * survivalfly: sprint+jump
+    * passable: uncertain, possibly retry with other axis order under certain conditions, such as moving down.
+* Evaluate: hacc with another slightly longer term tracking with extra limit - might allow a lower limit.
 * Decision for next topic between:
     * Fight checks (multiple iterations pending).
     * Data storage overhaul (multiple iterations pending).
@@ -40,7 +43,8 @@ Topics that will be tackled soon, no guarantee on order.
 * Horizontal piston moving with players.
 * SurvivalFly: sprint+jump and special case refinement. Possibly recode with new style workaround class use.
 * Further examine role of UNKNOWN (vanilla) server teleport. Consider to always cancel them if setting into blocks, and cancel the teleport and _schedule_ a set-back for on-tick execution (+ config). Could touch questions with passable/phase, if those questions exist with the default configuration at all.
-
+* Evaluate: command driven state machines (feed/trigger via actions, machines and further data queries via config).
+* Evaluate: model configs (reference other configurations to override selected areas of the configuration, without altering the configurations, just apply model with id 'abc' from 'modelconfigs/xyz.yml').
 
 ## Planned
 Topics that likely will follow up, no guarantee on order, might slip further away.
