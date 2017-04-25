@@ -29,9 +29,9 @@ The plugin class itself does have some methods some of which could be of use, ho
 # Examples
 
 ## Adjusting the set-back location.
-Until it's supported or not necessary to be done externally anymore, have a look here: https://gist.github.com/asofold/b05c0a17c605e7c69bb30ee5e79a6e7b
+Until NCP supports all thinkable set-back-policies, have a look here: https://gist.github.com/asofold/b05c0a17c605e7c69bb30ee5e79a6e7b
 
-(The most important part is not to set back into blocks, and to not use the second part of a split move for reference.)
+(Essentially MovingData.setTeleported from within a hook does the job - it willl be handled as the location to set "back" to, nothing else is necessary, except perhaps to ensure not to let players colide with or pass through blocks with this (flying, ...).)
 
 # Related
 * [Debugging](Debugging)
