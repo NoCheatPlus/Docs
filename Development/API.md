@@ -26,5 +26,12 @@ Reloading the configuration can also be registered for:
 
 The plugin class itself does have some methods some of which could be of use, however we prefer you to use NCPAPIProvider.getNoCheatPlusAPI(), since we might separate some API from the plugin class itself, keeping the static API provider as long as possible (since 3.9.2-RC-b520 some static API has been moved to not-static, still implemented in the plugin class, should use NoCheatPlusAPI, though).
 
-**Related**
+# Examples
+
+## Adjusting the set-back location.
+Until it's supported or not necessary to be done externally anymore, have a look here: https://gist.github.com/asofold/b05c0a17c605e7c69bb30ee5e79a6e7b
+
+(The most important part is not to set back into blocks, and to not use the second part of a split move for reference.)
+
+# Related
 * [Debugging](Debugging)
