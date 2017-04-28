@@ -4,22 +4,26 @@
 
 ----
 
-### 3.15.2-SNAPSHOT-sMD5NET-b1088(cumulative)
+### 3.15.2-SNAPSHOT-sMD5NET-b1089(cumulative)
 * Release type: [BLEEDING]
 * Configuration
     * For inventory.instantbow you can control how it uses the improbable check (feed/weight/turn off with 0.0 weight).
     * Notification changes for default values: print a maximum of 5 paths to chat by default, configurable.
-* New
-    * Moving checks: other plugins can override a set-back much easier now see [commit](https://github.com/NoCheatPlus/NoCheatPlus/commit/34e3548ec5c0ab73ad8c46a1b9198362a0840b8a).
 * Fixes
+    * Fix blockinteract.direction: account for 'packet inversion'.
+    * The structure void block is instantly breakable and otherwise like air.
     * Potential fix: Let lost-ground deal with the '(noob-) tower' (instead of the odd/optimistic set-back-y adjustment).
     * Fix for a friction envelope check (uncertain impact, might render a workaround functional, or allow flying :p... perhaps not).
     * Fix the build number displayed in a hint for setting configversion.created to.
     * Fix AttackFrequency on MC 1.7.10 and 1.7.2 (interpret packets).
+    * Potentially reduce probability of morepackets set back loops happening.
+    * Attempt to improve issues with outdated moves being processed (Only when 'confirm teleport' packets are available.)
 * Internals
     * Build against ProtocolLib 4.2.1.
     * Work towards generic support for flexible order with registered objects.
     * Change split move indication (boolean -> int).
+    * Moving checks: other plugins can override a set-back much easier now see [commit](https://github.com/NoCheatPlus/NoCheatPlus/commit/34e3548ec5c0ab73ad8c46a1b9198362a0840b8a).
+    * Adjust MovingFlying to log packet mismatch more often and keep retrying interpretation.
 
 ### 3.15.1-RC-sMD5NET-b1084
 * Release type: **RC Release**
