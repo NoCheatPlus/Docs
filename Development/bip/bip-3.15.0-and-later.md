@@ -4,7 +4,7 @@
 
 ----
 
-### 3.15.2-SNAPSHOT-sMD5NET-b1092(cumulative)
+### 3.15.2-SNAPSHOT-sMD5NET-b1093(cumulative)
 * Release type: [BLEEDING]
 * Configuration
     * For inventory.instantbow you can control how it uses the improbable check (feed/weight/turn off with 0.0 weight).
