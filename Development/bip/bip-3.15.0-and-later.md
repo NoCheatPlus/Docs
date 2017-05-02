@@ -4,7 +4,7 @@
 
 ----
 
-### 3.15.2-SNAPSHOT-sMD5NET-b1091(cumulative)
+### 3.15.2-SNAPSHOT-sMD5NET-b1092(cumulative)
 * Release type: [BLEEDING]
 * Configuration
     * For inventory.instantbow you can control how it uses the improbable check (feed/weight/turn off with 0.0 weight).
@@ -15,6 +15,7 @@
 * Fixes
     * Fix blockinteract.direction: account for 'packet inversion'.
     * The structure void block is instantly breakable and otherwise like air.
+    * VehicleEnvelope: falling in-air with boat.
     * Let lost-ground deal with the '(noob-) tower' (instead of the odd/optimistic set-back-y adjustment).
     * MorePackets (player): Re-add configurable set back age.
     * Fix for a friction envelope check (uncertain impact, might render a workaround functional, or allow flying :p... perhaps not).
