@@ -18,6 +18,7 @@
     * VehicleEnvelope: falling in-air with boat.
     * Let lost-ground deal with the '(noob-) tower' (instead of the odd/optimistic set-back-y adjustment).
     * MorePackets (player): Re-add configurable set back age.
+    * Fix CreativeFly + elytra.
     * Fix for a friction envelope check (uncertain impact, might render a workaround functional, or allow flying :p... perhaps not).
     * Fix the build number displayed in a hint for setting configversion.created to.
     * Fix AttackFrequency on MC 1.7.10 and 1.7.2 (interpret packets).
@@ -31,6 +32,7 @@
     * Change split move indication (boolean -> int).
     * Moving checks: other plugins can override a set-back much easier now see [commit](https://github.com/NoCheatPlus/NoCheatPlus/commit/34e3548ec5c0ab73ad8c46a1b9198362a0840b8a).
     * Adjust MovingFlying to log packet mismatch more often and keep retrying interpretation.
+    * Skip redundant checks that already have been passed within BlockInteract.
 
 ### 3.15.1-RC-sMD5NET-b1084
 * Release type: **RC Release**
