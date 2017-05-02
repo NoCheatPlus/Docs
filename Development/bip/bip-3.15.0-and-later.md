@@ -4,12 +4,13 @@
 
 ----
 
-### 3.15.2-SNAPSHOT-sMD5NET-b1093(cumulative)
+### 3.15.2-SNAPSHOT-sMD5NET-b1094(cumulative)
 * Release type: [BLEEDING]
 * Configuration
     * For inventory.instantbow you can control how it uses the improbable check (feed/weight/turn off with 0.0 weight).
     * Notification changes for default values: print a maximum of 5 paths to chat by default, configurable.
     * Allow debug logging command actions.
+    * Block direction checks are now identical (concerns actions for interact/place/break).
 * Other
     * Add protocol support plugins and NCP extension plugins to the related plugins section.
 * Fixes
@@ -26,7 +27,7 @@
     * Attempt to improve issues with outdated moves being processed (Only when 'confirm teleport' packets are available.)
     * Patch WATER_LILY if either of ViaVersion or ProtocolSupport is present.
 * Internals
-    * Build against ProtocolLib 4.2.1.
+    * Build against ProtocolLib-API 4.2.1.
     * Work towards generic support for flexible order for internal registries.
     * Work towards BlockInteractData being the data source for (block-) interaction - might need ordered listeners.
     * Change split move indication (boolean -> int).
