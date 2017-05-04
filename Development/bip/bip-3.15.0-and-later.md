@@ -4,7 +4,7 @@
 
 ----
 
-### 3.15.2-SNAPSHOT-sMD5NET-b1098(cumulative)
+### 3.15.2-SNAPSHOT-sMD5NET-b1099(cumulative)
 * Release type: [BLEEDING]
 * Configuration
     * For inventory.instantbow you can control how it uses the improbable check (feed/weight/turn off with 0.0 weight).
@@ -18,6 +18,7 @@
     * The structure void block is instantly breakable and otherwise like air.
     * VehicleEnvelope: falling in-air with boat.
     * Let lost-ground deal with the '(noob-) tower' (instead of the odd/optimistic set-back-y adjustment).
+    * Add a workaround for blocking-after-respawn with shield in hand.
     * MorePackets (player): Re-add configurable set back age.
     * Fix CreativeFly + elytra.
     * Fix for a friction envelope check (uncertain impact, might render a workaround functional, or allow flying :p... perhaps not).
@@ -32,7 +33,7 @@
     * Work towards generic support for flexible order for internal registries.
     * Work towards BlockInteractData being the data source for (block-) interaction - might need ordered listeners.
     * Change split move indication (boolean -> int).
-    * Moving checks: other plugins can override a set-back much easier now see [commit](https://github.com/NoCheatPlus/NoCheatPlus/commit/34e3548ec5c0ab73ad8c46a1b9198362a0840b8a).
+    * Moving checks: other plugins can override a set-back much easier now see [API page in the wiki.](https://github.com/NoCheatPlus/Docs/wiki/API#adjusting-the-set-back-location).
     * Adjust MovingFlying to log packet mismatch more often and keep retrying interpretation.
     * Skip redundant checks that already have been passed within BlockInteract.
 
