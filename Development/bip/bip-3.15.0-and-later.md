@@ -4,17 +4,17 @@
 
 ----
 
-### 3.15.2-SNAPSHOT-sMD5NET-b1096(cumulative)
+### 3.15.2-SNAPSHOT-sMD5NET-b1098(cumulative)
 * Release type: [BLEEDING]
 * Configuration
     * For inventory.instantbow you can control how it uses the improbable check (feed/weight/turn off with 0.0 weight).
     * Notification changes for default values: print a maximum of 5 paths to chat by default, configurable.
     * Allow debug logging command actions.
     * Block direction checks are now identical (concerns actions for interact/place/break).
-* Other
-    * Add protocol support plugins and NCP extension plugins to the related plugins section.
+    * Options to turn off or reduce ray-tracing for the passable check have been removed.
 * Fixes
     * Fix blockinteract.direction: account for 'packet inversion'.
+    * Passable: reduce false positives by re-checking with alternate order of axes.
     * The structure void block is instantly breakable and otherwise like air.
     * VehicleEnvelope: falling in-air with boat.
     * Let lost-ground deal with the '(noob-) tower' (instead of the odd/optimistic set-back-y adjustment).
@@ -28,6 +28,7 @@
     * Patch WATER_LILY if either of ViaVersion or ProtocolSupport is present.
 * Internals
     * Build against ProtocolLib-API 4.2.1.
+    * Add protocol support plugins and NCP extension plugins to the related plugins section.
     * Work towards generic support for flexible order for internal registries.
     * Work towards BlockInteractData being the data source for (block-) interaction - might need ordered listeners.
     * Change split move indication (boolean -> int).
