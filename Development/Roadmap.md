@@ -13,7 +13,9 @@ For a more detailed explanation or discussion of future design issues see the De
         * Jumping onto/around the eye of an ender frame with eye (medium easy to reproduce on 1.11.2).
     * SurvivalFly: piston + slime block push up.
     * CreativeFly: Spectator mode issue (ascend speed)?
-    * (CreativeFly/SurvivalFly: Edge cases with elytra - rather after this release.) 
+
+* Rather next release:
+    * Levitation still allows moving down, set-backs not effective. Consider only to update the set back with going up / head blocked (very low margin).
 
 # Scheduled
 Topics that will be tackled soon, no guarantee on order.

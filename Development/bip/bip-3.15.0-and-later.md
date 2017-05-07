@@ -4,7 +4,7 @@
 
 ----
 
-### 3.15.2-SNAPSHOT-sMD5NET-b1100(cumulative)
+### 3.15.2-SNAPSHOT-sMD5NET-b1101(cumulative)
 * Release type: [BLEEDING]
 * Configuration
     * For inventory.instantbow you can control how it uses the improbable check (feed/weight/turn off with 0.0 weight).
@@ -13,15 +13,15 @@
     * Block direction checks are now identical (concerns actions for interact/place/break).
     * Options to turn off or reduce ray-tracing for the passable check have been removed.
 * Fixes
-    * Fix blockinteract.direction: account for 'packet inversion'.
-    * Passable: reduce false positives by re-checking with alternate order of axes.
-    * The structure void block is instantly breakable and otherwise like air.
+    * Fix block-interact/break/place-direction: account for 'packet inversion'.
+    * Fixes related to elytra (player height, lift-off vs. glide, gliding through other than air, creative mode, elytra before levitation).
     * VehicleEnvelope: falling in-air with boat.
+    * Passable: reduce false positives by re-checking with alternate order of axes.
+    * Hot fix: allow fall damage in lava.
     * Let lost-ground deal with the '(noob-) tower' (instead of the odd/optimistic set-back-y adjustment).
     * Add a workaround for blocking-after-respawn with shield in hand.
     * MorePackets (player): Re-add configurable set back age.
-    * Hot fix: allow fall damage in lava.
-    * Fix jetpack.elytra not being used in creative mode.
+    * The structure void block is instantly breakable and otherwise like air.
     * Fix for a friction envelope check (uncertain impact, might render a workaround functional, or allow flying :p... perhaps not).
     * Fix the build number displayed in a hint for setting configversion.created to.
     * Fix AttackFrequency on MC 1.7.10 and 1.7.2 (interpret packets).
