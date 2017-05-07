@@ -4,7 +4,7 @@
 
 ----
 
-### 3.15.2-SNAPSHOT-sMD5NET-b1101(cumulative)
+### 3.15.2-SNAPSHOT-sMD5NET-b1102(cumulative)
 * Release type: [BLEEDING]
 * Configuration
     * For inventory.instantbow you can control how it uses the improbable check (feed/weight/turn off with 0.0 weight).
@@ -22,6 +22,7 @@
     * Add a workaround for blocking-after-respawn with shield in hand.
     * MorePackets (player): Re-add configurable set back age.
     * The structure void block is instantly breakable and otherwise like air.
+    * Increase the default horizontal speed maximum for spectator mode.
     * Fix for a friction envelope check (uncertain impact, might render a workaround functional, or allow flying :p... perhaps not).
     * Fix the build number displayed in a hint for setting configversion.created to.
     * Fix AttackFrequency on MC 1.7.10 and 1.7.2 (interpret packets).
