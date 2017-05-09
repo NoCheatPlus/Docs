@@ -4,7 +4,7 @@
 
 ----
 
-### 3.15.2-SNAPSHOT-sMD5NET-b1103(cumulative)
+### 3.15.2-SNAPSHOT-sMD5NET-b1104(cumulative)
 * Release type: [BLEEDING]
 * Configuration
     * For inventory.instantbow you can control how it uses the improbable check (feed/weight/turn off with 0.0 weight).
@@ -14,7 +14,7 @@
     * Options to turn off or reduce ray-tracing for the passable check have been removed.
 * Fixes
     * Fix block-interact/break/place-direction: account for 'packet inversion'.
-    * Fixes related to elytra (player height, lift-off vs. glide, gliding through other than air, creative mode, elytra before levitation).
+    * Fixes related to elytra (player height, lift-off vs. glide, gliding through other than air, creative mode, elytra before levitation, use the correct eye height for block interact/break/place).
     * VehicleEnvelope: falling in-air with boat.
     * Passable: reduce false positives by re-checking with alternate order of axes.
     * Hot fix: allow fall damage in lava.

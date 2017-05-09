@@ -5,27 +5,27 @@ This page provides a short and likely not entirely accurate selection of topics 
 For a more detailed explanation or discussion of future design issues see the Design (TODO: link) page.
 
 # Current focus
-* Follow up release with bug fixes, planned for: 2017-05-07 (feature freeze, harmless fixes only.)
+* Follow up release(s) with bug fixes, planned for latest: 2017-05-14 (feature freeze, harmless fixes only.)
 * Attempt to fix false positives:
     * SurvivalFly: sprint+jump on flat ground (low speed up, bunny condition loss makes use of buffer).
     * SurvivalFly: below micro move threshold issues (0.0625):
         * < 0.025 above ground after respawn (possibly other cases, like stepping to roughly this amount onto layered snow).
         * Jumping onto/around the eye of an ender frame with eye (medium easy to reproduce on 1.11.2).
     * SurvivalFly: piston + slime block push up.
-* Rather next release:
-    * Levitation still allows moving down, set-backs not effective. Consider only to update the set back with going up / head blocked (very low margin).
+    * SurvivalFly: Move onto block level but not on ground (likely an h-collision with step up ~ layered snow, speed + 0.5 shoes).
 
 # Scheduled
 Topics that will be tackled soon, no guarantee on order.
+* Decision for next topic between:
+    * Fight checks (multiple iterations pending).
+    * Data storage overhaul (multiple iterations pending).
+    * set back policy (a) suggest set back (b) new policy: force fall.
 * False positives, attempt fixes:
     * Vehicles: piston + slime block push up.
     * Horizontal pushing of pistons.
 * Evaluate: hacc with another slightly longer term tracking with extra limit - might allow a lower limit.
 * Evaluate: Get rid of horizontal buffer (would yield a lot of reports).
-* Decision for next topic between:
-    * Fight checks (multiple iterations pending).
-    * Data storage overhaul (multiple iterations pending).
-    * set back policy (a) better cross-plugin compatibility b) new policies)
+* CreativeFly models, levitation: (Deny) descend speed concept + demand ascend. Make behavior fully dependent on the model (no elytra checking within the check, use some kind of special flag to model ~ glideStyleNoOne idk). Possibly allow glide-style ascend even if deny ascend is set (or ascend speed 0).
 * Fight checks, penalty actions: implement more penalty actions, allow use in fight checks.
 * Check data access: Implement (more) fine grained data removal for the remaining check types.
 * Fight checks, loop checks design.
