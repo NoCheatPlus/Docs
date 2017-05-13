@@ -31,6 +31,7 @@ Those commands are used to basically manage NoCheatPlus on your server. Argument
 | /ncp commands | List all commands, more than shown here. The other commands are mainly for use with actions, such as delaying other commands, kicking with a message, telling players messages in colour, deny login for a players, allow it again and other. |
 | /ncp top [num_entries] _(check type/s)_ [sort order] | Show the 'top' players by violation history. Default sort order is '-n -sumvl' . Sort priority can be specified using -n for number of violations, -sumvl for the sum of all added vl, -avgvl for the average added vl, -maxvl for the maximum of all added vl and -time for sorting by the last violation time. |
 | /ncp version | Show version information about the server, plugin, compatibility modules and registered hooks. |
+| /ncp log counters| Log special statistics. |
 
 # Auxiliary commands
 Those commands are mainly used by NoCheatPlus itself to execute strings or commands over actions on violating players but you can also make use of them if you wish to do so. Most of them have no difference compared to the vanilla commands apart from the delay option. Some might be confined to console use.
@@ -44,6 +45,7 @@ Arguments in **( )** are needed, while arguments in **[ ]** are optional.
 | /ncp kicklist | Lists all players that have been tempkicked/tempbanned on your server by NoCheatPlus actions. |
 | /ncp tell \[delay=(ticks)] (player) (message) | Send a private message to a specified player, using color codes with '&'. |
 | /ncp delay \[delay=(ticks)] (command) | Execute a command delayed by the given number of ticks. **Commands are executed with OP privileges (console).** |
+| /ncp log stream stream_id[@level] (message) | Log to the logging stream system of NoCheatPlus. Shortcuts for stream_id are: notify (ingame notification), debug (debug to file), init (only for setup) and status (runtime status/errors). Level for errors is @severe, @info is default, @fine for debugging. If no level is set the debug shortcut will use the level @fine. Default levels and numbers (Java) are supported. All registered stream ids (case sensitive) are supported. This command does not replace color codes by itself, replacing colors would be done for calling this from within command actions. |
 
 # stopwatch
 Especially with measuring distances and/or time, these might be useful. The 'stopwatch' command allows abbreviation with 'sw', only for players. The precision of the distance-related variants is determined by on-tick execution of checking, so it may not be as precise in environments with larger lag/delay spikes (client or server). Typically a distance of 100 blocks straight without height difference is a good measure for comparison (1.11.2 and before about 14 seconds without effects). Speed cheats should be compared to continuous sprint+jump ("bunny-hopping"), unless it's a low-food-level comparison, because the sprinting state isn't always correctly reported on server side, so we assume sprinting whenever technically possible.
