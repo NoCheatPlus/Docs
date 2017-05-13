@@ -4,9 +4,10 @@
 
 ----
 
-### 3.15.2-SNAPSHOT-sMD5NET-b1106(cumulative)
+### 3.15.2-SNAPSHOT-sMD5NET-b1107(cumulative)
 * Release type: [BLEEDING]
 * New
+    * An action to execute commands with replacing color codes: cmdc
     * 'ncp log stream notify ...' to log to the (ingame) notification channel. Console only.
 * Configuration
     * For inventory.instantbow you can control how it uses the improbable check (feed/weight/turn off with 0.0 weight).
@@ -20,7 +21,7 @@
     * VehicleEnvelope: falling in-air with boat.
     * Passable: reduce false positives by re-checking with alternate order of axes.
     * Hot fix: allow fall damage in lava.
-    * Attempt to fix 1.11.2 fall damage bypass.
+    * Fix fall damage bypass for MC 1.11.2.
     * Let lost-ground deal with the '(noob-) tower' (instead of the odd/optimistic set-back-y adjustment).
     * Add a workaround for blocking-after-respawn with shield in hand.
     * MorePackets (player): Re-add configurable set back age.
