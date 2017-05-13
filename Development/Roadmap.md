@@ -54,6 +54,7 @@ Topics that will be tackled soon, no guarantee on order.
 * Further examine role of UNKNOWN (vanilla) server teleport. Consider to always cancel them if setting into blocks, and cancel the teleport and _schedule_ a set-back for on-tick execution (+ config). Could touch questions with passable/phase, if those questions exist with the default configuration at all.
 * Evaluate: command driven state machines (feed/trigger via actions, machines and further data queries via config).
 * Evaluate: model configs (reference other configurations to override selected areas of the configuration, without altering the configurations, just apply model with id 'abc' from 'modelconfigs/xyz.yml').
+* NoFall: model lava correctly - cleanup to use extra block flags.
 
 ## Planned
 Topics that likely will follow up, no guarantee on order, might slip further away.
@@ -70,6 +71,7 @@ Topics that likely will follow up, no guarantee on order, might slip further awa
 * Detect "more inventory".
 * Detect sending too few packets.
 * More long term event frequency tracking.
+* Single conditional action support (might also add generic access to violation levels via those).
 
 ## Planned (at some distance)
 Pretty hard targets, but too far off the schedule to give any ETA.
