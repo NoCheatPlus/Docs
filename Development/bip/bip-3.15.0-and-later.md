@@ -4,12 +4,12 @@
 
 ----
 
-### 3.15.2-SNAPSHOT-sMD5NET-b1108(cumulative)
+### 3.15.2-SNAPSHOT-sMD5NET-b1109(cumulative)
 * Release type: development
 * New
     * Preliminary 1.12 support: version detection, blocks, allow ProtocolLib.
     * An action to execute commands with replacing color codes: cmdc
-    * 'ncp log stream notify ...' to log to the (ingame) notification channel. Console only.
+    * 'ncp log stream ...' to access the NCP logging system via a command (supports log levels, replace/remove colors). Console only.
 * Configuration
     * For inventory.instantbow you can control how it uses the improbable check (feed/weight/turn off with 0.0 weight).
     * Notification changes for default values: print a maximum of 5 paths to chat by default, configurable.
