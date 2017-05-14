@@ -4,7 +4,7 @@
 
 ----
 
-### 3.15.2-SNAPSHOT-sMD5NET-b1109(cumulative)
+### 3.15.2-SNAPSHOT-sMD5NET-b1111(cumulative)
 * Release type: development
 * New
     * Preliminary 1.12 support: version detection, blocks, allow ProtocolLib.

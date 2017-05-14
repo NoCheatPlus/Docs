@@ -8,7 +8,7 @@ For requests please use [GitHub Issues](https://github.com/NoCheatPlus/Issues/is
 
 | MC (focus)    | MC (supported) | NoCheatPlus version | Release type |
 | :-------------| :------------- | :------------------ | :----------- |
-| _1.12_ | _1.4.5-R1.0 - 1.12_ | _[3.15.2-RC-sMD5NET-b1109](https://ci.md-5.net/job/NoCheatPlus) and later_ | _development_ |
+| _1.12_ | _1.4.5-R1.0 - 1.12_ | _[3.15.2-RC-sMD5NET-b1111](https://ci.md-5.net/job/NoCheatPlus) and later_ | _development_ |
 | 1.11.2 | 1.4.5-R1.0 - 1.11.2 | [3.15.1-RC-sMD5NET-b1084](https://github.com/NoCheatPlus/Docs/wiki/Notable-Builds#3151-rc-smd5net-b1084) | RC release |
 | _1.4.5_ | _1.4.2 - 1.4.5_ |  _[3.10.9-SNAPSHOT-b666](https://ci.md-5.net/job/NoCheatPlus/666/)_ | _development_ |
 | _1.3.2_ | _1.3.1 - 1.3.2_ | _[3.7.10-RC-b201](https://dev.bukkit.org/bukkit-plugins/nocheatplus/files/33-nocheat-plus-3-7-10-rc-b201/)_ | _RC release_ |
