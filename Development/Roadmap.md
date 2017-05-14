@@ -5,7 +5,7 @@ This page provides a short and likely not entirely accurate selection of topics 
 For a more detailed explanation or discussion of future design issues see the Design (TODO: link) page.
 
 # Current focus
-* Follow up release(s) with bug fixes, planned for latest: 2017-05-14 (feature freeze, harmless fixes only.)
+* 1.12-pre support and bug fixes.
 * Attempt to fix false positives:
     * SurvivalFly: sprint+jump on flat ground (low speed up, bunny condition loss makes use of buffer).
     * SurvivalFly: below micro move threshold issues (0.0625):

@@ -4,9 +4,10 @@
 
 ----
 
-### 3.15.2-SNAPSHOT-sMD5NET-b1107(cumulative)
-* Release type: [BLEEDING]
+### 3.15.2-SNAPSHOT-sMD5NET-b1108(cumulative)
+* Release type: development
 * New
+    * Preliminary 1.12 support: version detection, blocks, allow ProtocolLib.
     * An action to execute commands with replacing color codes: cmdc
     * 'ncp log stream notify ...' to log to the (ingame) notification channel. Console only.
 * Configuration
