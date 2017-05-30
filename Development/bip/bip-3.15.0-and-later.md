@@ -4,7 +4,7 @@
 
 ----
 
-### 3.15.2-SNAPSHOT-sMD5NET-b1111(cumulative)
+### 3.15.2-SNAPSHOT-sMD5NET-b1112(cumulative)
 * Release type: development
 * New
     * Preliminary 1.12 support: version detection, blocks, allow ProtocolLib.
@@ -17,6 +17,7 @@
     * Block direction checks are now identical (concerns actions for interact/place/break).
     * Options to turn off or reduce ray-tracing for the passable check have been removed.
 * Fixes
+    * Allow placing boats on ground with 1.12.
     * Fix block-interact/break/place-direction: account for 'packet inversion'.
     * Fixes related to elytra (player height, lift-off vs. glide, gliding through other than air, creative mode, elytra before levitation, use the correct eye height for block interact/break/place).
     * VehicleEnvelope: falling in-air with boat.
@@ -25,8 +26,10 @@
     * Fix fall damage bypass for MC 1.11.2.
     * Let lost-ground deal with the '(noob-) tower' (instead of the odd/optimistic set-back-y adjustment).
     * Add a workaround for blocking-after-respawn with shield in hand.
+    * Fix boatsanywhere not blocking other than oak boats placed on ground.
     * MorePackets (player): Re-add configurable set back age.
     * The structure void block is instantly breakable and otherwise like air.
+    * FastBreak grace can be set to something lower than 2000 ms (regardless of making sense or not).
     * Adjust horizontal speed and vertical ascend default setting for the spectator model.
     * Fix for a friction envelope check (uncertain impact, might render a workaround functional, or allow flying :p... perhaps not).
     * Fix the build number displayed in a hint for setting configversion.created to.
