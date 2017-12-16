@@ -4,7 +4,15 @@
 
 ----
 
-### 3.15.2-SNAPSHOT-sMD5NET-b1112(cumulative)
+### 3.15.2-SNAPSHOT-sMD5NET-b1114(cumulative)
+* Release type: development
+    * No dedicated modules contained, until transformed. The reflection based module is available.
+* Fixes
+    * Attempt to get the Minecraft version from the nms Server, if other attempts fail.
+* Internals
+    * Transform internals towards using Material / String ids (ongoing).
+
+### 3.15.2-SNAPSHOT-sMD5NET-b1113(cumulative)
 * Release type: development
 * New
     * Preliminary 1.12 support: version detection, blocks, allow ProtocolLib.
@@ -17,7 +25,7 @@
     * Block direction checks are now identical (concerns actions for interact/place/break).
     * Options to turn off or reduce ray-tracing for the passable check have been removed.
 * Fixes
-    * Allow placing boats on ground with 1.12.
+    * TODO: Check effect: Cancel interacting with blocks for players who are not online.
     * Fix block-interact/break/place-direction: account for 'packet inversion'.
     * Fixes related to elytra (player height, lift-off vs. glide, gliding through other than air, creative mode, elytra before levitation, use the correct eye height for block interact/break/place).
     * VehicleEnvelope: falling in-air with boat.

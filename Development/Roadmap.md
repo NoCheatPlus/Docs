@@ -5,7 +5,21 @@ This page provides a short and likely not entirely accurate selection of topics 
 For a more detailed explanation or discussion of future design issues see the Design (TODO: link) page.
 
 # Current focus
-* 1.12-pre support and bug fixes.
+* 1.12.2 with alterations towards block id removal.
+* Release (long overdue).
+
+# Scheduled
+Topics that will be tackled soon, no guarantee on order.
+* Internals
+    * Block id removal (~ 1.13): Alter things so NCP will still work.
+    * Work towards another type of internal abstraction layer for blocks (shapes, mining, special).
+* Project structure
+    * Detach the native compatibility modules to another project, possibly as an extra jar file.
+* Vehicle envelope: Account for boat speed and acceleration: water/ground/ice (1.12).
+* Fight: Detect mobs crammed into narrow space (possibly similar) adapt or skip certain checks.
+* Force chunk load: Change to prevent moving within unloaded chunks, adapt data lazily where possible. Use a scheduler-like thing to still load chunks to ensure more smooth operation in average.
+* NDT-skip-fly (bow/velocity-optimized).
+* Boat placement (1.12 on ground, before on water): deny if ... at least if colliding with other boats.
 * Attempt to fix false positives:
     * SurvivalFly: sprint+jump on flat ground (low speed up, bunny condition loss makes use of buffer).
     * SurvivalFly: below micro move threshold issues (0.0625):
@@ -13,16 +27,14 @@ For a more detailed explanation or discussion of future design issues see the De
         * Jumping onto/around the eye of an ender frame with eye (medium easy to reproduce on 1.11.2).
     * SurvivalFly: piston + slime block push up.
     * SurvivalFly: Move onto block level but not on ground (likely an h-collision with step up ~ layered snow, speed + 0.5 shoes).
-
-# Scheduled
-Topics that will be tackled soon, no guarantee on order.
+    * Stuck in hoppers?
+    * Vehicles: piston + slime block push up.
+    * Horizontal pushing of pistons.
 * Decision for next topic between:
     * Fight checks (multiple iterations pending).
     * Data storage overhaul (multiple iterations pending).
     * set back policy (a) suggest set back (b) new policy: force fall.
-* False positives, attempt fixes:
-    * Vehicles: piston + slime block push up.
-    * Horizontal pushing of pistons.
+* Improve fastbreak to catch bulk breaking of fast-breaking blocks faster.
 * Evaluate: hacc with another slightly longer term tracking with extra limit - might allow a lower limit.
 * Evaluate: Get rid of horizontal buffer (would yield a lot of reports).
 * CreativeFly models, levitation: (Deny) descend speed concept + demand ascend. Make behavior fully dependent on the model (no elytra checking within the check, use some kind of special flag to model ~ glideStyleNoOne idk). Possibly allow glide-style ascend even if deny ascend is set (or ascend speed 0).
