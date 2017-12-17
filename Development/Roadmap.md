@@ -12,9 +12,13 @@ For a more detailed explanation or discussion of future design issues see the De
 Topics that will be tackled soon, no guarantee on order.
 * Internals
     * Block id removal (~ 1.13): Alter things so NCP will still work.
-    * Work towards another type of internal abstraction layer for blocks (shapes, mining, special).
+    * Work towards another type of internal abstraction layer for blocks (shapes, mining, moving, ...).
+    * From native access BlockCache to NCPBlock (NMSBlock, ConfigBlock).
+    * Include preset shapes (static + dynamic) from config.
 * Project structure
-    * Detach the native compatibility modules to another project, possibly as an extra jar file.
+    * Detach the native compatibility modules to another project. Currently undecided:
+        * Just another Jenkins project, but NCP will include the jar.
+        * Include in CompatNoCheatPlus.
 * Vehicle envelope: Account for boat speed and acceleration: water/ground/ice (1.12).
 * Fight: Detect mobs crammed into narrow space (possibly similar) adapt or skip certain checks.
 * Force chunk load: Change to prevent moving within unloaded chunks, adapt data lazily where possible. Use a scheduler-like thing to still load chunks to ensure more smooth operation in average.
