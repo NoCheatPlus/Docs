@@ -4,13 +4,16 @@
 
 ----
 
-### 3.15.2-SNAPSHOT-sMD5NET-b1114(cumulative)
+### 3.15.2-SNAPSHOT-sMD5NET-b1120(cumulative)
 * Release type: development
-    * No dedicated modules contained, until transformed. The reflection based module is available.
+* News
+  * New block flags: F_MIN_HEIGHT16_1 and F_MIN_HEIGHT16_15 - confine passability by setting a minimum height explicitly, together with ground_height.
+  * Native access module for 1.12.2.
 * Fixes
     * Attempt to get the Minecraft version from the nms Server, if other attempts fail.
 * Internals
-    * Transform internals towards using Material / String ids (ongoing).
+    * BREAKING: Transform internals towards using Material rather than block ids (ongoing).
+    * Dedicated native compat module for 1.11.x.
 
 ### 3.15.2-SNAPSHOT-sMD5NET-b1113(cumulative)
 * Release type: development
