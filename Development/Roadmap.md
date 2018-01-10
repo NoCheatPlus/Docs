@@ -5,8 +5,7 @@ This page provides a short and likely not entirely accurate selection of topics 
 For a more detailed explanation or discussion of future design issues see the Design (TODO: link) page.
 
 # Current focus
-* Release (long overdue).
-    * Jenkins needs 1.12 CraftBukkit in order for us to build there.
+* Pondering / next steps.
 
 # Scheduled
 Topics that will be tackled soon, no guarantee on order.

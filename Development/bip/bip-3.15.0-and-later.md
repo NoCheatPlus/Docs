@@ -4,7 +4,18 @@
 
 ----
 
-### 3.16.0-SNAPSHOT-sMD5NET-b1123(cumulative)
+### 3.16.0-RC-sMD5NET-b1134
+* Release type: **RC Release**
+* Supported versions of Minecraft (CraftBukkit/Spigot)
+    * Focus: 1.12.2
+    * Supported: 1.4.5-R1.0 - 1.12.2
+* Download at Jenkins: https://ci.md-5.net/job/NoCheatPlus/1134/
+* Hashes
+    * MD5: b034f5d318eebc057bd331c1fe06f6c9
+    * SHA512: 2ae947d7ef3d6c4ba2aecd7aae68c70ea64514df1b78bbaeaeef919c14d1d09fa941e1b0c253e90633a43044dd7e439a23243cba6ec601201dbe875cc8348983
+    * File size: 1489360
+
+### 3.16.0-SNAPSHOT-sMD5NET-b1133(cumulative)
 * Release type: development
 * News
     * New block flags: F_MIN_HEIGHT16_1 and F_MIN_HEIGHT16_15 - confine passability where the GROUND_HEIGHT flag is set, setting a minimum height explicitly.
