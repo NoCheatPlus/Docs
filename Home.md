@@ -16,7 +16,7 @@ Report an issue, or request support: [Issues](https://github.com/NoCheatPlus/Iss
 
 Download and further project links:
 * [NoCheatPlus on BukkitDev - with downloads for releases approved by their staff.](https://dev.bukkit.org/projects/nocheatplus)
-* [NoCheatPlus on SpigotMC - also with downloads for releases.](https://www.spigotmc.org/threads/nocheatplus2015-07-25.1428/)
+* [NoCheatPlus on SpigotMC - also with downloads for releases.](https://www.spigotmc.org/resources/nocheatplus2015-07-25.26/)
 * [NoCheatPlus Jenkins on ci.md-5.net - all builds including development builds.](https://ci.md-5.net/job/NoCheatPlus/)
 * [NoCheatPlus Build-Infos: Orientation for development builds and releases.](https://github.com/NoCheatPlus/Docs/wiki/Build-Infos)
 * [CompatNoCheatPlus (phasing out) on BukkitDev - use with mcMMO, MagicSpells, ...](https://dev.bukkit.org/projects/compatnocheatplus-cncp)
