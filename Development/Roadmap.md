@@ -5,8 +5,8 @@ This page provides a short and likely not entirely accurate selection of topics 
 For a more detailed explanation or discussion of future design issues see the Design (TODO: link) page.
 
 # Current focus
-* 1.12.2 with alterations towards block id removal.
 * Release (long overdue).
+    * Jenkins needs 1.12 CraftBukkit in order for us to build there.
 
 # Scheduled
 Topics that will be tackled soon, no guarantee on order.
@@ -15,10 +15,7 @@ Topics that will be tackled soon, no guarantee on order.
     * Work towards another type of internal abstraction layer for blocks (shapes, mining, moving, ...).
     * From native access BlockCache to NCPBlock (NMSBlock, ConfigBlock).
     * Include preset shapes (static + dynamic) from config.
-* Project structure
-    * Detach the native compatibility modules to another project. Currently undecided:
-        * Just another Jenkins project, but NCP will include the jar.
-        * Include in CompatNoCheatPlus.
+* Project structure: Include CompatNoCheatPlus via reflection (?).
 * Vehicle envelope: Account for boat speed and acceleration: water/ground/ice (1.12).
 * Fight: Detect mobs crammed into narrow space (possibly similar) adapt or skip certain checks.
 * Force chunk load: Change to prevent moving within unloaded chunks, adapt data lazily where possible. Use a scheduler-like thing to still load chunks to ensure more smooth operation in average.

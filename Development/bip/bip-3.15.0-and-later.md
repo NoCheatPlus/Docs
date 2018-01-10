@@ -4,16 +4,21 @@
 
 ----
 
-### 3.15.2-SNAPSHOT-sMD5NET-b1120(cumulative)
+### 3.16.0-SNAPSHOT-sMD5NET-b1123(cumulative)
 * Release type: development
 * News
-  * New block flags: F_MIN_HEIGHT16_1 and F_MIN_HEIGHT16_15 - confine passability by setting a minimum height explicitly, together with ground_height.
-  * Native access module for 1.12.2.
+    * New block flags: F_MIN_HEIGHT16_1 and F_MIN_HEIGHT16_15 - confine passability where the GROUND_HEIGHT flag is set, setting a minimum height explicitly.
+    * Native access module for 1.12.2.
 * Fixes
     * Attempt to get the Minecraft version from the nms Server, if other attempts fail.
 * Internals
-    * BREAKING: Transform internals towards using Material rather than block ids (ongoing).
-    * Dedicated native compat module for 1.11.x.
+    * [BREAKING] Transform internals towards using Material rather than block ids (ongoing).
+    * Dedicated native compat module for 1.11.x (R1), update NCPCompatCBDev to 1.12.x (R1).
+    * Alter project/Maven setup.
+        * Simplify maven profile selection (remove parameters, remove ncp_base): profiles are used to activate extras.
+        * Move "non free" compatibility modules to NCPCompatNonFree.
+        * Include a pre-built jar with the "non free" modules inside: `-P nonfree_include`
+        * Build "non free" modules yourself: `-P nonfree_build` must be in use, further activate the actual modules to build via the already introduced profiles, such as `-P cbdev` .
 
 ### 3.15.2-SNAPSHOT-sMD5NET-b1113(cumulative)
 * Release type: development
