@@ -4,6 +4,9 @@
 
 ----
 
+### 3.16.1-SNAPSHOT-sMD5NET-b1135(cumulative)
+* Release type: development
+
 ### 3.16.0-RC-sMD5NET-b1134
 * Release type: **RC Release**
 * Supported versions of Minecraft (CraftBukkit/Spigot)

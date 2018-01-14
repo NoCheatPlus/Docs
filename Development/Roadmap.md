@@ -5,7 +5,32 @@ This page provides a short and likely not entirely accurate selection of topics 
 For a more detailed explanation or discussion of future design issues see the Design (TODO: link) page.
 
 # Current focus
-* Pondering / next steps.
+* Primary
+    * Topic
+        * Unify NCP and cncp.
+        * More consistent and easier to use exemption framework (prevent interference, register auto-removal and other side conditions for easier setting up).
+        * Work towards centralized data/config access and storage (one PlayerData object to hold them all).
+        * Simplify velocity based exceptions for special moving perks.
+    * Pondering / next steps.
+    * Keep most important stuff working/fixes.
+        * Estimate necessary changes/modeling for a) fixing standing on fences at 1.0 height and related issues, such as b) 
+    * Restructure NCP towards a) combining NCP and cncp in one plugin b) work towards a unified PlayerData structure.
+        * Make the not-much used PlayerData un-removable while players are online and/or to be thought up other conditions are met.
+        * New non-static implementation of exemption, accessible via PlayerData.
+            * Introduce something like TaggingContext (/ RegistrationContext) in order to remove a set of exemption entries in a simple way. This way plugins don't need to interfere with each others exemption entries (, not even with their own), so external implementations become easier to achieve/manage.
+            * Introduce things like RemovalContext, in order to allow some easy to overview default behavior without need of hooking into too many events, just to remove exemption entries. Might include player-independent auto-trigger.
+            * Add something like RegistrationContext (add-with), e.g. to allow exempting an offline player by name, so name-uuid conversions may be done. Should get generic support ((Offline)PlayerData -> apply once online).
+            * Add configuration for default behavior and make the former ExemptionManager a (deprecated) stub relaying to PlayerData.
+            * (Potentially thread-safe (read)).
+        * Either re-implement cncp hooks with reflection (allow easy replacing, if someone wants to write a better hook), or include as NCPCompatExt inside of NCP.
+        * Prefer to force-enable the MiniListener event framework that had once been sketched out for NC4. This way registering (and unregistering) listeners with sub-priorities and order will be possible. This would allow to add generic event wrapping for external compatibility stuff easily (register before/after anything from nocheatplus.feature / just before any of the nocheatplus.feature.moving listeners, as opposed to nocheatplus.system/data).
+* Secondary
+    * Identify spots to fix.
+        * More false positives, such as slime bouncing.
+* Tertiary
+    * Flags, think of flags.
+        * Extend velocity by flags or general RemovalContextS that allow other plugins to control better, when velocity is to be removed or not to be removed - also include notion of delay/latency. Plugins being able to delay removal of entries they themselves add, and/or to ensure friction does work after removal, will help other plugins to use velocity rather than exemption for moving related stuff.
+        * RemovalContextS could be made a somewhat general thing to be used with velocity an exemptions and possibly other. 
 
 # Scheduled
 Topics that will be tackled soon, no guarantee on order.
