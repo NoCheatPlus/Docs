@@ -13,9 +13,8 @@ For a more detailed explanation or discussion of future design issues see the De
         * Simplify velocity based exceptions for special moving perks.
     * Pondering / next steps.
     * Keep most important stuff working/fixes.
-        * Estimate necessary changes/modeling for a) fixing standing on fences at 1.0 height and related issues, such as b) 
+        * Estimate necessary changes/modeling for a) fixing standing on fences at 1.0 height and related issues, such as b) spider/climbing related questions (efficiency, side conditions, specific detection).
     * Restructure NCP towards a) combining NCP and cncp in one plugin b) work towards a unified PlayerData structure.
-        * Make the not-much used PlayerData un-removable while players are online and/or to be thought up other conditions are met.
         * New non-static implementation of exemption, accessible via PlayerData.
             * Introduce something like TaggingContext (/ RegistrationContext) in order to remove a set of exemption entries in a simple way. This way plugins don't need to interfere with each others exemption entries (, not even with their own), so external implementations become easier to achieve/manage.
             * Introduce things like RemovalContext, in order to allow some easy to overview default behavior without need of hooking into too many events, just to remove exemption entries. Might include player-independent auto-trigger.

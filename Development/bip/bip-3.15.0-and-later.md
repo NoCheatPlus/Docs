@@ -6,6 +6,10 @@
 
 ### 3.16.1-SNAPSHOT-sMD5NET-b1135(cumulative)
 * Release type: development
+* Fixes
+    * Attempt to skip Inventory.Open for NPCs in general.
+* Internals
+    * Don't allow removal of PlayerData for online players.
 
 ### 3.16.0-RC-sMD5NET-b1134
 * Release type: **RC Release**
