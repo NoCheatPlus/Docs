@@ -4,7 +4,7 @@
 
 ----
 
-### 3.16.1-SNAPSHOT-sMD5NET-b1136(cumulative)
+### 3.16.1-SNAPSHOT-sMD5NET-b1137(cumulative)
 * Release type: [BLEEDING] development
 * Fixes
     * Attempt to skip Inventory.Open for NPCs in general.
