@@ -1,6 +1,6 @@
 | [Blockbreak]                            | [Blockinteract]                         | [Blockplace]                          | [Chat]                                | [Combined]                                |
 |-----------------------------------------|-----------------------------------------|---------------------------------------|---------------------------------------|-------------------------------------------|
-| [[Direction|[Blockbreak]-Direction]]    | [[Direction|[Blockinteract]-Direction]] | [[Against|[Blockplace]-Against]]      | [[Captcha|[Chat]-Captcha]]            | [[Bedleave|[Combined]-Bedleave]]          |
+| [Direction]([Blockbreak]-Direction)    | [Direction]([Blockinteract]-Direction) | [[Against|[Blockplace]-Against]]      | [[Captcha|[Chat]-Captcha]]            | [[Bedleave|[Combined]-Bedleave]]          |
 | [[Fastbreak|[Blockbreak]-Fastbreak]]    | [[Reach|[Blockinteract]-Reach]]         | [[Autosign|[Blockplace]-Autosign]]    | [[Color|[Chat]-Color]]                | [[Enderpearl|[Combined]-Enderpearl]]      |
 | [[Frequency|[Blockbreak]-Frequency]]    | [[Speed|[Blockinteract]-Speed]]         | [[Direction|[Blockplace]-Direction]]  | [[Commands|[Chat]-Commands]]          | [[Improbable|[Combined]-Improbable]]      |
 | [[Noswing|[Blockbreak]-Noswing]]        | [[Visible|[Blockinteract]-Visible]]     | [[Fastplace|[Blockplace]-Fastplace]]  | [[Logins|[Chat]-Logins]]              | [[Invulnerable|[Combined]-Invulnerable]]  |
