@@ -3,6 +3,10 @@ This section of the configuration file provides you with additional settings to 
 |bukkitapionly|Setting this to true will force NoCheatPlus to only run with the BukkitAPI instead of also using internals.|
 
 =Blocks=
+
+To reference block types, you need to use the proper Bukkit Material names from here: https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Material.html
+\\(At a later stage also minecraft names may get supported.)
+
 |allowinstabreak|The Fastbreak check will ignore every block you put on this list which means that players can mine them faster then possible.|
 
 ==breakingtime==
@@ -17,15 +21,11 @@ Definitions for side conditions can be:
  SAND:AXE:DIAMOND:0: 10000\\
  (Changes the breaking time for sand with a diamond axe with no efficiency enchantment to 10 seconds, thus fastbreak will trigger.)
  
- BLOCK_TYPE: Bukkit block names. Currently no extras are possible, such as data values/variants.
- TOOL_TYPE: NONE, SWORD, SHEARS, SPADE, AXE, PICKAXE
- TOOL_MATERIAL_BASE: NONE, WOOD, STONE, IRON, DIAMOND, GOLD
- EFFICIENCY_LEVEL: Level of the efficiency enchantment.
+ \\BLOCK_TYPE: Bukkit block names. Currently no extras are possible, such as data values/variants.
+ \\TOOL_TYPE: NONE, SWORD, SHEARS, SPADE, AXE, PICKAXE
+ \\TOOL_MATERIAL_BASE: NONE, WOOD, STONE, IRON, DIAMOND, GOLD
+ \\EFFICIENCY_LEVEL: Level of the efficiency enchantment.
  
-
-**Notes**
-* For ignorepassable and allowinstabreak you need to use the proper Material name from here: https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Material.html
-
 ==Overrideflags==
 This section allows you to tell NCP how to interpret blocks, concerning shape, if you can walk on them, walk through them and the like. The section represents a mapping from blocks to "flags". Blocks can be input by id (if it doesn't recognize numbers, use strings, e.g. "49" instead of 49) or by the Bukkit name (TODO: java doc link to bukkit + maybe latest spigot?).
 
@@ -35,8 +35,8 @@ Full blocks like stone: TODO\\
 Blocks to both walk on and through (e.g. with complex yet unseen shape): TODO\\
 
 There is one flag called "default", which you can use for using the already set flags, which NCP might already have initialized, e.g. if you want to just add a flag. (Only use where you know what it means, set checks.blockbreak.debug to true, in order to dump the flags that NCP is using internally to the log-file).
-
-TODO: Better descriptions, stress the useful ones, more on the actual mechanics, more on workarounds (if still present. Also shuffle the entries in the table below.
+\\Example to both pass through and stand on: default+ign_passable+ground_height
+\\(It's recommended to set dimensions too, if possible.)
 
 |**Flag (dimensions)**|**Meaning**|
 |f_full|The block has full bounds (0..1), inaccurate!|
