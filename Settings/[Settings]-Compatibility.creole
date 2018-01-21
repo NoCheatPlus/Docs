@@ -53,7 +53,7 @@ TODO: Better descriptions, stress the useful ones, more on the actual mechanics,
 |ground|The player can stand on these, sneaking or not.|
 |ign_passable|Compatibility flag: regard this block as passable always.|
 |passable_x4|Fence gate style with 0x04 being fully passable.|
-f_ground_height|This flag indicates that even though a passable workaround, everything above passable height is still ground.|
+|f_ground_height|This flag indicates that even though a passable workaround, everything above passable height is still ground.|
 |min_height16_1|0.0625 minimum height for use with ground_height, in order to prevent complete passability of the bock.|
 |min_height16_15|1 - 0.0625 minimum height for use with ground_height, in order to prevent complete passability of the bock.|
 
@@ -74,6 +74,7 @@ f_ground_height|This flag indicates that even though a passable workaround, ever
 |ice|Ice - for sliding on it.|
 |climbable|Climbable like ladder and vine (allow to land on without taking damage).|
 |bounce_25|Allow slime-like bouncing. Only makes sense for slime currently, unless a client mod allows other blocks to behave exactly alike.|
+|falldist_half|lLiquid only: fall distance halfs with each move that goes (fully) through this medium.|
 |allow_lowjump|Special flag for moving checks. Prevent the lowjump detection with this block somehow.|
 |rails|All rail types a minecart can move on.|
 |leaves|Just an indicator.|

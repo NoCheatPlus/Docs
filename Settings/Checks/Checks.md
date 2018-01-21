@@ -1,3 +1,5 @@
+TODO: Update checks and links. **Until then have a look at the sidebar!**
+
 | [Blockbreak]                            | [Blockinteract]                         | [Blockplace]                          | [Chat]                                | [Combined]                                |
 |-----------------------------------------|-----------------------------------------|---------------------------------------|---------------------------------------|-------------------------------------------|
 | [Direction]([Blockbreak]-Direction)    | [Direction]([Blockinteract]-Direction) | [[Against|[Blockplace]-Against]]      | [[Captcha|[Chat]-Captcha]]            | [[Bedleave|[Combined]-Bedleave]]          |
