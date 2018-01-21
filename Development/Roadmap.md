@@ -10,29 +10,30 @@ For a more detailed explanation or discussion of future design issues see the De
         * Unify NCP and cncp.
         * More consistent and easier to use exemption framework (prevent interference, register auto-removal and other side conditions for easier setting up).
         * Work towards centralized data/config access and storage (one PlayerData object to hold them all).
-        * Simplify velocity based exceptions for special moving perks.
-    * Pondering / next steps.
-    * Keep most important stuff working/fixes.
-        * Estimate necessary changes/modeling for a) fixing standing on fences at 1.0 height and related issues, such as b) spider/climbing related questions (efficiency, side conditions, specific detection).
     * Restructure NCP towards a) combining NCP and cncp in one plugin b) work towards a unified PlayerData structure.
-        * Add a CheckTypeTree instance to PlayerData. This provides some kind of milestone, as per check type data will be stored here, allowing to easily set up thread-safe reading at least. Contained will be at some point in the future:
-            * Violation history.
-            * Exemption entries.
-            * Debug flag(s) (more fine grained to be put here).
-            * Generic per player per check type data (e.g. abstract counters).
-            * (Specific references, linking to the appropriate instance ~ dynamically / per player per check type / per player / per world / global / ... - think )
-            * (Benefit from easier removal of data.)
+        * Add a CheckTypeTree instance to PlayerData. This provides some kind of milestone, as per check type data will be stored here, allowing to easily set up thread-safe reading at least. 
         * New non-static implementation of exemption, accessible via PlayerData.
-            * Introduce something like TaggingContext (/ RegistrationContext) in order to remove a set of exemption entries in a simple way. This way plugins don't need to interfere with each others exemption entries (, not even with their own), so external implementations become easier to achieve/manage.
-            * Introduce things like RemovalContext, in order to allow some easy to overview default behavior without need of hooking into too many events, just to remove exemption entries. Might include player-independent auto-trigger.
-            * Add something like RegistrationContext (add-with), e.g. to allow exempting an offline player by name, so name-uuid conversions may be done. Should get generic support ((Offline)PlayerData -> apply once online).
-            * Add configuration for default behavior and make the former ExemptionManager a (deprecated) stub relaying to PlayerData.
-            * (Potentially thread-safe (read)).
+            * Reliable for cross-plugin use, reference multiple exemption entries by registered ids, less ambiguous.
+            * Built-in features, such as automatic event wrapping (compare to cncp std. hooks for block break and the like), automatically evaluated conditions for unregistering (ends with tick, event soandso at MONITOR level, player leaves the server, world change, ...). Essentially the generic features of cncp plus extensions on top of the new event registry are added to NCP directly, without even breaking compatibility with older versions of cncp.
         * Either re-implement cncp hooks with reflection (allow easy replacing, if someone wants to write a better hook), or include as NCPCompatExt inside of NCP.
+        * Evaluate: Use a generic instance registry per player data (due to this being somewhat tested) to hold all types of check data.
+            * Access: Generic fetching method and getGenericInstanceRegistry() for PlayerData.
+            * Add a DefaultCheckData object with  getXYZData methods relaying to IHandleS for efficient access of default coarse data types. Possibly PlayerData.defaultData().getBlockBreakData().
+            * Needs relaying some stuff like ICanHandleTimeRanBackwards to PlayerData with another internal registry thing.
+    * Planned fixes:
+        * 1.0 high fence (at least evaluate, related to spider / wall climbing).
+        * Make FastConsume vs. instant-eat dependent on class/method presence rather than detected Minecraft version.
 * Secondary
-    * Identify spots to fix.
+    * Identify more spots to fix, that don't demand excessive testing/changes.
         * More false positives, such as slime bouncing.
+    * Add a registry.log log file, which relays to STATUS only with logging/status.extended set. 
+        * This way we can always request the registry.log file, having all sorts of information about which checks and classes are registered at all, and how registry items and event listeners are ordered internally.
+        * The output of 'ncp version' will be more compact (only the most often needed stuff inside).
 * Tertiary
+    * Add a first (rather internal) sketch of auto registry features. RegistrationItem...
+        * Trigger with (enable,) reload, plugin enable/disable (class/name) (, and by method call)
+        * Further activation conditions (e.g. classes present, arbitrary)
+        * Add a ProtocolLib based check for fight.noswing (and possibly other) - use auto registry to enable either the classic or the ProtocolLib based check. IFF, this is about 'packet inversion'.
     * Flags, think of flags.
         * Extend velocity by flags or general RemovalContextS that allow other plugins to control better, when velocity is to be removed or not to be removed - also include notion of delay/latency. Plugins being able to delay removal of entries they themselves add, and/or to ensure friction does work after removal, will help other plugins to use velocity rather than exemption for moving related stuff.
         * RemovalContextS could be made a somewhat general thing to be used with velocity an exemptions and possibly other.

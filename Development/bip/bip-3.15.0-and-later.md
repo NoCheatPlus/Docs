@@ -4,11 +4,12 @@
 
 ----
 
-### 3.16.1-SNAPSHOT-sMD5NET-b1137(cumulative)
+### 3.16.1-SNAPSHOT-sMD5NET-b1138(cumulative)
 * Release type: [BLEEDING] development
 * Fixes
     * Attempt to skip Inventory.Open for NPCs in general.
     * Include soil and grass path in the multi client protocol block shape patch (blind, with lily pad).
+    * Fight.NoSwing: Patch up first attack always triggering.
 * Internals
     * [BREAKING] Don't allow removal of PlayerData for online players.
     * Other fixes: Disable multi protocol patch with unit tests. Fix Activation return types.
