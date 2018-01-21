@@ -60,7 +60,7 @@
 * compatibility.managelisteners
 * compatibility.bukkitapionly
 * compatibility.blocks
-* compatibility.blocks.ignorepassable
+* compatibility.blocks.breakingtimes
 * compatibility.blocks.allowinstantbreak
 * compatibility.blocks.overrideflags
 * compatibility.blocks.overrideflags.snow

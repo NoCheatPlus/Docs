@@ -3,8 +3,25 @@ This section of the configuration file provides you with additional settings to 
 |bukkitapionly|Setting this to true will force NoCheatPlus to only run with the BukkitAPI instead of also using internals.|
 
 =Blocks=
-|ignorepassable|The Passable check will ignore every block you put on this list and allow to noclip thought it.|
 |allowinstabreak|The Fastbreak check will ignore every block you put on this list which means that players can mine them faster then possible.|
+
+==breakingtime==
+Enables you to override the breaking time of a block for specific side conditions.\\
+An entry in this section maps a condition definition to the breaking time in milliseconds.
+
+Definitions for side conditions can be:
+* BLOCK_TYPE:TOOL_TYPE:TOOL_MATERIAL_BASE:EFFICIENCY_LEVEL
+** In-air/water/aqua-affinity/haste are not possible to add at this stage. Those will get automatically evaluated. Later specifying these will be possible.
+
+\\ Example:
+ SAND:AXE:DIAMOND:0: 10000\\
+ (Changes the breaking time for sand with a diamond axe with no efficiency enchantment to 10 seconds, thus fastbreak will trigger.)
+ 
+ BLOCK_TYPE: Bukkit block names. Currently no extras are possible, such as data values/variants.
+ TOOL_TYPE: NONE, SWORD, SHEARS, SPADE, AXE, PICKAXE
+ TOOL_MATERIAL_BASE: NONE, WOOD, STONE, IRON, DIAMOND, GOLD
+ EFFICIENCY_LEVEL: Level of the efficiency enchantment.
+ 
 
 **Notes**
 * For ignorepassable and allowinstabreak you need to use the proper Material name from here: https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Material.html

@@ -17,7 +17,7 @@
  * [General](General)
  * [Strings](Strings)
  * [Miscellaneous](Miscellaneous)
-* [Compatibility](Compatibility)
+* [Compatibility]([Settings]-Compatibility)
 
 ## Developers
 * [API](API)
