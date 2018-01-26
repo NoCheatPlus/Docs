@@ -38,7 +38,7 @@ The hooks package of NCPCore contains two "managers" for different concepts to e
 
 `NCPHookManager` This allows to register "hooks" that get called in case of violations and allow to do more complex stuff ("after-failure" hooks: the check is run). Hooks are able to prevent further actions processing, you can also register "stats" hooks that come first or force your hook to be registered before other hooks by implementing an extra interface. Cancelling the actions processing will not reset violation levels(!). For some cases you can reset them manually, though that is not officially supported yet (Example: MovingData.getData(player).clearFlyData() ...clearMorePacketsData() ...survivalFlyVL = 0).
 
-**Moving/flying skills** might work with adding velocity to the player (MovingData) - if not, please provide us with a [debug log](Debugging). Vertical velocity currently supports a few flags (fr.neatmonster.nocheatplus.checks.moving.velocity.VelocityFlags) - this may be extended to control automatic velocity removal better (flags to retain entries, possibly for horizontal velocity to).
+**Moving/flying skills** might work with adding velocity to the player (MovingData) - if not, please provide us with a [debug log](Debugging). Vertical velocity currently supports a few flags (fr.neatmonster.nocheatplus.checks.moving.velocity.VelocityFlags) - this may be extended to control automatic velocity removal better (flags to retain entries, flags for horizontal velocity).
 
 **Event handlers relating to listeners of NoCheatPlus:** Register listeners with the NoCheatPlusAPI, relating to sorting order.
 * NoCheatPlusAPI.addComponent(Bukkit Listener) or NoCheatPlusAPI.getEventRegistry() to add an efficient MiniListener.
