@@ -1,6 +1,6 @@
 # Create Debug Output
 
-**Most of these options are not really meant to be used on (big) live/production servers, they can cause extreme amounts of log file output and result in performance issues.**
+**Most of these options are not really meant to be used on (big) live/production servers, some can cause extreme amounts of log file output and result in performance issues.**
 
 NoCheatPlus allows you to generate debug logs in various ways. With this you can help us tracking issues or cheats, by generating debug output selectively and providing us a paste link, or link/send a compressed file. 
 
@@ -17,7 +17,7 @@ You can manually enable permanent debugging with setting a/the check-group debug
 
 NoCheatPlus allows to set debug flags for almost all check groups. The flag in the logging section can also be set, but it will not lead to more check-related output. Some debugging output is only generated, if the configuration flags are set, e.g. with ProtocolLib.
 
-This is not meant for production servers with many players on, due to the amount of logging done with each move for each player. For production servers we recommend using on-the-fly debugging rather.
+**This is not suitable for production servers with many players on, due to the amount of logging done with each move for each player.** For production servers we recommend using on-the-fly debugging rather.
 
 ### On-the-fly debug output for individual players
 Using the command _/ncp debug player (player)_ (Permission: nocheatplus.command.debug) allows you to start debug logging for a player. The output is written to the log file specified in the configuration (not to the console).
