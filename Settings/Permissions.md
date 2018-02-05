@@ -125,7 +125,7 @@ Policy definition:
 | ----------------- | ------------- |
 | ALWAYS | Always check. |
 | ONCE  | Once until invalidation. |
-| INTERVAL:(seconds) | Only check every (seconds) seconds. |
+| INTERVAL:_(seconds)_ | Only check every _(seconds)_ seconds. |
 | TRUE | Always assume permission to be set to true. |
 | FALSE | Always assume permission to be set to false. |
 
@@ -141,11 +141,12 @@ Rule definition:
 
 | Matching rule | Meaning/usage |
 | ------------- | ------------- |
-| `startswith:(...)` or `(...)*` | All permissions that start with the given letters. |
-| `endswith:(...)` or `*(...)` | All permissions that end with the given letters. |
-| `contains:(...)` or `*(...)*` | All permissions that start with the given letters. |
-| `regex:(regular expression pattern)` | All permissions matching the regular expression pattern (standard java String.matches). |
-(Constructions with *(...)*(...)* don't work, use regular expressions instead.)
+| `_(directly the permission, excluding the variants given below.)_` | Match only that permission |
+| `startswith:_(...)_` or `_(...)_*` | All permissions that start with the given part. |
+| `endswith:_(...)_` or `*_(...)_` | All permissions that end with the given part. |
+| `contains:_(...)_` or `*_(...)_*` | All permissions that contain the given part. |
+| `regex:_(regular expression pattern)_` | All permissions matching the regular expression pattern (standard java String.matches). |
+(Constructions with *_(...)_*_(...)_* don't work, use regular expressions instead.)
 
 ## Default policy
 * Configuration path: permissions.policy.default
