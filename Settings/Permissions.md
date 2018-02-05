@@ -6,7 +6,7 @@
  * [Auxiliary commands](Permissions#auxiliary-commands)
 * [Client modifications](Permissions#client-modifications)
 * [Miscellaneous and parent permissions](Permissions#miscellaneous-and-parent-permissions)
-* [Configure permission caching behavior](Permissions#Configure permission caching behavior)
+* [Configure permission caching behavior](Permissions#Configure-permission-caching-behavior)
 
 # Shortcuts
 `nocheatplus.shortcut.info` Gives permissions to  
@@ -121,6 +121,7 @@ Policy definition:
 * Flags are preceded by the state '+' for true and '-' for false. Default flag states can be omitted, such as `+world` or `+offline`.
 * Flags apply for invalidation, regardless of the fetching policy.
 
+| ----------------- | ------------- |
 | Fetching policies | Meaning/usage |
 | ALWAYS | Always check. |
 | ONCE  | Once until invalidation. |
@@ -128,6 +129,7 @@ Policy definition:
 | TRUE | Always assume permission to be set to true. |
 | FALSE | Always assume permission to be set to false. |
 
+| ----------- | ------------- |
 | Policy flags| Meaning/usage |
 | +offline | Invalidate permissions once the player is offline (default). Strictly this also invalidates with logging on. |
 | -offline | No invalidation with leaving the server, unless +world is set (!). |
@@ -137,11 +139,12 @@ Policy definition:
 Rule definition:
 * Matching rule separated by ' :: ' from a policy definition.
 
+| ------------- | ------------- |
 | Matching rule | Meaning/usage |
-| `startswith: (...)` or `(...)*` | All permissions that start with the given letters. |
-| `endswith: (...)` or `*(...)` | All permissions that end with the given letters. |
-| `contains: (...)` or `*(...)*` | All permissions that start with the given letters. |
-| `regex: (... regular expression pattern ...)` | All permissions matching the regular expression (standard java String.matches). |
+| `startswith:(...)` or `(...)*` | All permissions that start with the given letters. |
+| `endswith:(...)` or `*(...)` | All permissions that end with the given letters. |
+| `contains:(...)` or `*(...)*` | All permissions that start with the given letters. |
+| `regex:(regular expression pattern)` | All permissions matching the regular expression pattern (standard java String.matches). |
 (Constructions with *(...)*(...)* don't work, use regular expressions instead.)
 
 ## Default policy
