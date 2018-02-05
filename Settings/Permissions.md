@@ -146,7 +146,7 @@ Rule definition:
 | endswith:_(...)_ _or_ *_(...)_ | All permissions that end with the given part. |
 | contains:_(...)_ _or_ *_(...)_* | All permissions that contain the given part. |
 | regex:_(regular expression pattern)_ | All permissions matching the regular expression pattern (standard java String.matches). |
-(Constructions with *_(...)_*_(...)_* don't work, use regular expressions instead.)
+(Constructions with * _(...)_ * _(...)_ * don't work, use regular expressions instead.)
 
 ## Default policy
 * Configuration path: permissions.policy.default
