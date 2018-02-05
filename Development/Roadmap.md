@@ -5,47 +5,33 @@ This page provides a short and likely not entirely accurate selection of topics 
 For a more detailed explanation or discussion of future design issues see the Design (TODO: link) page.
 
 # Current focus
-* Primary
-    * Topic
-        * Unify NCP and cncp.
-        * More consistent and easier to use exemption framework (prevent interference, register auto-removal and other side conditions for easier setting up).
-        * Work towards centralized data/config access and storage (one PlayerData object to hold them all).
-    * Restructure NCP towards a) combining NCP and cncp in one plugin b) work towards a unified PlayerData structure.
-        * Add a CheckTypeTree instance to PlayerData. This provides some kind of milestone, as per check type data will be stored here, allowing to easily set up thread-safe reading at least. 
-        * New non-static implementation of exemption, accessible via PlayerData.
-            * Reliable for cross-plugin use, reference multiple exemption entries by registered ids, less ambiguous.
-            * Built-in features, such as automatic event wrapping (compare to cncp std. hooks for block break and the like), automatically evaluated conditions for unregistering (ends with tick, event soandso at MONITOR level, player leaves the server, world change, ...). Essentially the generic features of cncp plus extensions on top of the new event registry are added to NCP directly, without even breaking compatibility with older versions of cncp.
-        * Either re-implement cncp hooks with reflection (allow easy replacing, if someone wants to write a better hook), or include as NCPCompatExt inside of NCP.
-        * Evaluate: Use a generic instance registry per player data (due to this being somewhat tested) to hold all types of check data.
-            * Access: Generic fetching method and getGenericInstanceRegistry() for PlayerData.
-            * Add a DefaultCheckData object with  getXYZData methods relaying to IHandleS for efficient access of default coarse data types. Possibly PlayerData.defaultData().getBlockBreakData().
-            * Needs relaying some stuff like ICanHandleTimeRanBackwards to PlayerData with another internal registry thing.
-    * Planned fixes:
-        * 1.0 high fence (at least evaluate, related to spider / wall climbing).
-        * Make FastConsume vs. instant-eat dependent on class/method presence rather than detected Minecraft version.
-* Secondary
-    * Identify more spots to fix, that don't demand excessive testing/changes.
-        * More false positives, such as slime bouncing.
-    * Add a registry.log log file, which relays to STATUS only with logging/status.extended set. 
-        * This way we can always request the registry.log file, having all sorts of information about which checks and classes are registered at all, and how registry items and event listeners are ordered internally.
-        * The output of 'ncp version' will be more compact (only the most often needed stuff inside).
-* Tertiary
-    * Add a first (rather internal) sketch of auto registry features. RegistrationItem...
-        * Trigger with (enable,) reload, plugin enable/disable (class/name) (, and by method call)
-        * Further activation conditions (e.g. classes present, arbitrary)
-        * Add a ProtocolLib based check for fight.noswing (and possibly other) - use auto registry to enable either the classic or the ProtocolLib based check. IFF, this is about 'packet inversion'.
-    * Flags, think of flags.
-        * Extend velocity by flags or general RemovalContextS that allow other plugins to control better, when velocity is to be removed or not to be removed - also include notion of delay/latency. Plugins being able to delay removal of entries they themselves add, and/or to ensure friction does work after removal, will help other plugins to use velocity rather than exemption for moving related stuff.
-        * RemovalContextS could be made a somewhat general thing to be used with velocity an exemptions and possibly other.
+* 3.16.1-SNAPSHOT
+    * PlayerData (Towards centralized data storage).
+        * Get rid of PlayerMap internals (prefer PlayerData, possibly add a minimized 'parked/offline' variant of PlayerData, aiming at name-uuid and possibly further data references like the set-back location/context).
+         * New implementation and features for exemption mechanisms. (At least breaks how things are processed, API might remain as deprecated.)
+            * Reliable attribution (e.g. via context-ids), enable adding/removing sets of entries.
+            * Thread-safe read.
+            * Default handlers (e.g. clear nofall data on unexempt).
+         * (Check activation flags overhaul: switch to yes/no/maybe (true/false/default), have checks.enabled, checks.moving.enabled, ... MAYBE means to check for the parent type.)
+    * Registry log file: In-depth registry information (sorting order of listeners and other).
+    * (Auto registry features - first round.)
+    * Integrate cncp into NCP (first the generic functionality, possibly all by reflection or inclusion of project).
+    * Small scale fixes / additions:
+        * Standing on 1.0 height inside fence.
+        * Pistons pushing up players who are not having their center over the slime block while walking into it or standing on it (somewhere around MC 1.10 ... 1.12.2).
+        * Autofish - Anything simple can be done?
+* 3.17.0-RC
+    * Release for 3.16.1-SNAPSHOT: Major impact on internals (event registry) and API breakage.
+* 3.17.1
+    * Block breaking overrides completion: Attempt to complete configuration and covered area - complement with better stats and commands to use stats of a player (for certain blocks) as a configured workaround directly.
+    * (More room for fixes, possibly small additions/alterations with fight checks.)
+* 3.17.2
+    * Block shape overhaul. Vastly breaking change, concerning many (internal) block access methods.
+    * Should move most block stuff to non-static. Some functionality might stay static (e.g. the on ground check).
+    * (This may be postponed, if MC 1.13 is too easy to adapt to.)
 
 # Scheduled
 Topics that will be tackled soon, no guarantee on order.
-* Internals
-    * Block id removal (~ 1.13): Alter things so NCP will still work.
-    * Work towards another type of internal abstraction layer for blocks (shapes, mining, moving, ...).
-    * From native access BlockCache to NCPBlock (NMSBlock, ConfigBlock).
-    * Include preset shapes (static + dynamic) from config.
-* Project structure: Include CompatNoCheatPlus via reflection (?).
 * Vehicle envelope: Account for boat speed and acceleration: water/ground/ice (1.12).
 * Fight: Detect mobs crammed into narrow space (possibly similar) adapt or skip certain checks.
 * Force chunk load: Change to prevent moving within unloaded chunks, adapt data lazily where possible. Use a scheduler-like thing to still load chunks to ensure more smooth operation in average.
@@ -97,7 +83,7 @@ Topics that will be tackled soon, no guarantee on order.
 * Further examine role of UNKNOWN (vanilla) server teleport. Consider to always cancel them if setting into blocks, and cancel the teleport and _schedule_ a set-back for on-tick execution (+ config). Could touch questions with passable/phase, if those questions exist with the default configuration at all.
 * Evaluate: command driven state machines (feed/trigger via actions, machines and further data queries via config).
 * Evaluate: model configs (reference other configurations to override selected areas of the configuration, without altering the configurations, just apply model with id 'abc' from 'modelconfigs/xyz.yml').
-* NoFall: model lava correctly - cleanup to use extra block flags.
+* NoFall: model lava correctly - cleanup to use extra block flags. -> Done?
 
 ## Planned
 Topics that likely will follow up, no guarantee on order, might slip further away.

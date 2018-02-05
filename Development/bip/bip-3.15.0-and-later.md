@@ -4,11 +4,13 @@
 
 ----
 
-### 3.16.1-SNAPSHOT-sMD5NET-b1139(cumulative)
+### 3.16.1-SNAPSHOT-sMD5NET-b1140(cumulative)
 * Release type: [BLEEDING] development
 * New
     * Support to override block breaking times for specific side conditions: compatibility.blocks.breakingtime
+    * Support permission caching (configurable).
 * Fixes
+    * Improve slime block + piston support (partial).
     * Fix wooden pick with iron blocks (efficiency 0 - 5).
     * Fight.NoSwing: Patch up first attack always triggering.
     * Include soil and grass path in the multi client protocol block shape patch (blind, with lily pad).

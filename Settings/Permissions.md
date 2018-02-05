@@ -6,6 +6,7 @@
  * [Auxiliary commands](Permissions#auxiliary-commands)
 * [Client modifications](Permissions#client-modifications)
 * [Miscellaneous and parent permissions](Permissions#miscellaneous-and-parent-permissions)
+* [Configure permission checking behavior](Permissions#Configure permission checking behavior)
 
 # Shortcuts
 `nocheatplus.shortcut.info` Gives permissions to  
@@ -108,3 +109,56 @@ Commands for which the permission got set by the protection features (hide plugi
 [Smart Moving]:http://www.minecraftforum.net/forums/mapping-and-modding/minecraft-mods/1274224-smart-moving
 [Zombe's modpack]:http://www.minecraftforum.net/forums/mapping-and-modding/minecraft-mods/mod-packs/1272345-zombes-modpack-26-mods-v8-2-2-upd-11-jul
 [JourneyMap]:http://www.minecraftforum.net/forums/mapping-and-modding/minecraft-mods/1278348-journeymap-5-0-1-realtime-mapping-in-game-or-in-a
+
+# Configure permission caching behavior
+Since NoCheatPlus 3.16.1-SNAPSHOT (since build 1040) / 3.17.0-RC, permission caching has been introduced. This allows for configuration of how to check for permissions, in case permission checks turn out to consume too much performance, or in case you want to override the behavior for other reasons.
+
+You can set a default policy and define further rules for mapping permissions to policies for individual permissions, based on wildcards, or based on regular expressions.
+
+Policy definition:
+* Fetching policy[, flag1 [,flag2]]
+* Separate any parts by ' ' or ',' or ':'.
+* Flags are preceded by the state '+' for true and '-' for false. Default flag states can be omitted, such as `+world` or `+offline`.
+* Flags apply for invalidation, regardless of the fetching policy.
+
+| Fetching policies | Meaning/usage |
+| ALWAYS | Always check. |
+| ONCE  | Once until invalidation. |
+| INTERVAL:(seconds) | Only check every (seconds) seconds. |
+| TRUE | Always assume permission to be set to true. |
+| FALSE | Always assume permission to be set to false. |
+
+| Policy flags| Meaning/usage |
+| +offline | Invalidate permissions once the player is offline (default). Strictly this also invalidates with logging on. |
+| -offline | No invalidation with leaving the server, unless +world is set (!). |
+| +world | Invalidate with world changes and leaving the server (default).|
+| -world | No world based invalidation. Behavior with leaving the server depends on the `offline` flag now. |
+
+Rule definition:
+* Matching rule separated by ' :: ' from a policy definition.
+
+| Matching rule | Meaning/usage |
+| `startswith: (...)` or `(...)*` | All permissions that start with the given letters. |
+| `endswith: (...)` or `*(...)` | All permissions that end with the given letters. |
+| `contains: (...)` or `*(...)*` | All permissions that start with the given letters. |
+| `regex: (... regular expression pattern ...)` | All permissions matching the regular expression (standard java String.matches). |
+(Constructions with *(...)*(...)* don't work, use regular expressions instead.)
+
+## Default policy
+* Configuration path: permissions.policy.default
+* Value: string
+* Content: policy definition
+* Examples: 
+    * `INTERVAL:10, -offline, -world` for checking every 10 seconds, ignoring world changing and leaving the server.
+    * `ONCE` for checking once only, still invalidate with changing the world and with logging on/off.
+
+## Rules
+* Configuration path: permissions.policy.rules
+* Value: String list.
+* Content: matching rule separated by ' :: ' from a policy definition.
+* The first matching rule is applies, testing in the order in which they're defined.
+* Examples:
+    * See default configuration...
+    * `nocheatplus.checks.survivalfly.* :: FALSE, -offline, -world` Never check the sub permissions of survivalfly, assume set to false always.
+    * `startswith:nocheatplus.checks.survivalfly. :: FALSE` Same as above.
+    * `nocheatplus.checks.survivalfly* :: INTERVAL:10` Check the survivalfly permission and sub permission only every 10 seconds (invalidate with logging on/off and with world changing).
