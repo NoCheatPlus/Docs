@@ -141,11 +141,11 @@ Rule definition:
 
 | Matching rule | Meaning/usage |
 | ------------- | ------------- |
-| `_(directly the permission, excluding the variants given below.)_` | Match only that permission |
-| `startswith:_(...)_` or `_(...)_*` | All permissions that start with the given part. |
-| `endswith:_(...)_` or `*_(...)_` | All permissions that end with the given part. |
-| `contains:_(...)_` or `*_(...)_*` | All permissions that contain the given part. |
-| `regex:_(regular expression pattern)_` | All permissions matching the regular expression pattern (standard java String.matches). |
+| _(directly the permission, excluding the variants given below.)_ | Match only that permission |
+| startswith:_(...)_ _or_ _(...)_* | All permissions that start with the given part. |
+| endswith:_(...)_ _or_ *_(...)_ | All permissions that end with the given part. |
+| contains:_(...)_ _or_ *_(...)_* | All permissions that contain the given part. |
+| regex:_(regular expression pattern)_ | All permissions matching the regular expression pattern (standard java String.matches). |
 (Constructions with *_(...)_*_(...)_* don't work, use regular expressions instead.)
 
 ## Default policy
@@ -164,5 +164,5 @@ Rule definition:
 * Examples:
     * See default configuration...
     * `nocheatplus.checks.survivalfly.* :: FALSE, -offline, -world` Never check the sub permissions of survivalfly, assume set to false always.
-    * `startswith:nocheatplus.checks.survivalfly. :: FALSE` Same as above.
+    * `startswith:nocheatplus.checks.survivalfly. :: FALSE, -offline, -world` Same as above.
     * `nocheatplus.checks.survivalfly* :: INTERVAL:10` Check the survivalfly permission and sub permission only every 10 seconds (invalidate with logging on/off and with world changing).
