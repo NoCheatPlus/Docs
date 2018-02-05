@@ -121,16 +121,16 @@ Policy definition:
 * Flags are preceded by the state '+' for true and '-' for false. Default flag states can be omitted, such as `+world` or `+offline`.
 * Flags apply for invalidation, regardless of the fetching policy.
 
-| ----------------- | ------------- |
 | Fetching policies | Meaning/usage |
+| ----------------- | ------------- |
 | ALWAYS | Always check. |
 | ONCE  | Once until invalidation. |
 | INTERVAL:(seconds) | Only check every (seconds) seconds. |
 | TRUE | Always assume permission to be set to true. |
 | FALSE | Always assume permission to be set to false. |
 
-| ----------- | ------------- |
 | Policy flags| Meaning/usage |
+| ----------- | ------------- |
 | +offline | Invalidate permissions once the player is offline (default). Strictly this also invalidates with logging on. |
 | -offline | No invalidation with leaving the server, unless +world is set (!). |
 | +world | Invalidate with world changes and leaving the server (default).|
@@ -139,8 +139,8 @@ Policy definition:
 Rule definition:
 * Matching rule separated by ' :: ' from a policy definition.
 
-| ------------- | ------------- |
 | Matching rule | Meaning/usage |
+| ------------- | ------------- |
 | `startswith:(...)` or `(...)*` | All permissions that start with the given letters. |
 | `endswith:(...)` or `*(...)` | All permissions that end with the given letters. |
 | `contains:(...)` or `*(...)*` | All permissions that start with the given letters. |
