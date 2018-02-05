@@ -144,7 +144,7 @@ Rule definition:
 | _(directly the permission, excluding the variants given below.)_ | Match only that permission |
 | startswith:_(...)_ _or_ _(...)_* | All permissions that start with the given part. |
 | endswith:_(...)_ _or_ *_(...)_ | All permissions that end with the given part. |
-| contains:_(...)_ _or_ *_(...)_* | All permissions that contain the given part. |
+| contains:_(...)_ _or_ \*_(...)_\* | All permissions that contain the given part. |
 | regex:_(regular expression pattern)_ | All permissions matching the regular expression pattern (standard java String.matches). |
 (Constructions with * _(...)_ * _(...)_ * don't work, use regular expressions instead.)
 
