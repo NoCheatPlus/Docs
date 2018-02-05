@@ -6,7 +6,7 @@
  * [Auxiliary commands](Permissions#auxiliary-commands)
 * [Client modifications](Permissions#client-modifications)
 * [Miscellaneous and parent permissions](Permissions#miscellaneous-and-parent-permissions)
-* [Configure permission checking behavior](Permissions#Configure permission checking behavior)
+* [Configure permission caching behavior](Permissions#Configure permission caching behavior)
 
 # Shortcuts
 `nocheatplus.shortcut.info` Gives permissions to  
