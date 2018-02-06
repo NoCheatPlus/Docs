@@ -6,6 +6,7 @@ For a more detailed explanation or discussion of future design issues see the De
 
 # Current focus
 * 3.16.1-SNAPSHOT
+    * An alpha/beta release.
     * PlayerData (Towards centralized data storage).
         * Get rid of PlayerMap internals (prefer PlayerData, possibly add a minimized 'parked/offline' variant of PlayerData, aiming at name-uuid and possibly further data references like the set-back location/context).
          * New implementation and features for exemption mechanisms. (At least breaks how things are processed, API might remain as deprecated.)
@@ -13,15 +14,17 @@ For a more detailed explanation or discussion of future design issues see the De
             * Thread-safe read.
             * Default handlers (e.g. clear nofall data on unexempt).
          * (Check activation flags overhaul: switch to yes/no/maybe (true/false/default), have checks.enabled, checks.moving.enabled, ... MAYBE means to check for the parent type.)
-    * Registry log file: In-depth registry information (sorting order of listeners and other).
+            * Might/should have a swift data storage overhaul iteration as prerequisite, concerning PlayerManager (PlayerData) vs. WorldManager (WorldData) vs. DataManager (GlobalData and perhaps convenience methods).
+    * Registry log file: In-depth registry information (sorting order of listeners and other), remove non-essential info from 'ncp version' and from the ordinary log file. Aiming at server.log, player/violations log (current log file) and registry.log. For the REGISTRY stream only warnings and worse should make it to the INIT log, perhaps only with extended status logging, registry information could make it into the ordinary log file.
+        * Might use another iteration for logging, concerning how to organize files, e.g. group within folders and/or switch all files with any of them needing a switch (each reload, by date, by size).
+* 3.16.2-SNAPSHOT
+    * An alpha/beta release.
     * (Auto registry features - first round.)
     * Integrate cncp into NCP (first the generic functionality, possibly all by reflection or inclusion of project).
     * Small scale fixes / additions:
-        * Standing on 1.0 height inside fence.
-        * Pistons pushing up players who are not having their center over the slime block while walking into it or standing on it (somewhere around MC 1.10 ... 1.12.2).
-        * Autofish - Anything simple can be done?
+        * Autofish - concerning the bot-aspect not much with lasting effect can be done, other than would rather fit into an anti-farming plugin with heat-map based spawn/loot reduction. Anti speed fishing could be something to add easily (always reset to the maximum of delay, i.e. not allow a newly set lower delay to apply). Depends on relevance and available (light weight?) solutions.
 * 3.17.0-RC
-    * Release for 3.16.1-SNAPSHOT: Major impact on internals (event registry) and API breakage.
+    * RC release for 3.16.x-SNAPSHOT: Major impact on internals (event registry) and API breakage.
 * 3.17.1
     * Block breaking overrides completion: Attempt to complete configuration and covered area - complement with better stats and commands to use stats of a player (for certain blocks) as a configured workaround directly.
     * (More room for fixes, possibly small additions/alterations with fight checks.)
