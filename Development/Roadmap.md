@@ -22,13 +22,13 @@ For a more detailed explanation or discussion of future design issues see the De
     * (Auto registry features - first round.)
     * Integrate cncp into NCP (first the generic functionality, possibly all by reflection or inclusion of project).
     * Small scale fixes / additions:
-        * Autofish - concerning the bot-aspect not much with lasting effect can be done, other than would rather fit into an anti-farming plugin with heat-map based spawn/loot reduction. Anti speed fishing could be something to add easily (always reset to the maximum of delay, i.e. not allow a newly set lower delay to apply). Depends on relevance and available (light weight?) solutions.
+        * Autofish - concerning the bot-aspect not much with lasting effect can be done, other than would rather fit into an anti-farming plugin with heat-map based spawn/loot reduction. Anti speed fishing doesn't appear to be possible due to things not being accessible (except for adding more or less static penalties for fast-ish recasting).
 * 3.17.0-RC
     * RC release for 3.16.x-SNAPSHOT: Major impact on internals (event registry) and API breakage.
 * 3.17.1
     * Block breaking overrides completion: Attempt to complete configuration and covered area - complement with better stats and commands to use stats of a player (for certain blocks) as a configured workaround directly.
     * (More room for fixes, possibly small additions/alterations with fight checks.)
-* 3.17.2
+* 3.17.X
     * Block shape overhaul. Vastly breaking change, concerning many (internal) block access methods.
     * Should move most block stuff to non-static. Some functionality might stay static (e.g. the on ground check).
     * (This may be postponed, if MC 1.13 is too easy to adapt to.)
