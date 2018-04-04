@@ -12,6 +12,8 @@
     * Support permission caching (configurable).
     * Fight.WrongTurn: Invalid pitch (experimental).
     * SurvivalFly: Don't allow relaxing the VL in-air (configurable), neither allow horizontal buffer regain, if frozen.
+* Configuration
+    * Activation (_active_), lag adaption (_lag_) and _debug_ flags: starting from _checks_ for all sub checks, the value 'default' now means checking the check/group above in the hierarchy, enabling you to turn on/off activation/lag-adaption/debug for groups of checks with one switch. Note that not all _active_ flags are actual checks with a check type (yet), best compare to the default configuration, where _default_ is set.
 * Fixes
     * Fix dealing too high amounts of damage with jump effect.
     * Fix passable with fences at 1.0 height.
@@ -23,7 +25,7 @@
     * Attempt to skip Inventory.Open for NPCs in general.
     * Define all the default child permissions within plugin.yml (check .silent, command filter).
 * Incompatible
-    * MC 1.6.4 and older: Old versions of ProtocolLib might be incompatible (Temporary players vs. getUniqueId).
+    * MC 1.6.x and older: Old versions of ProtocolLib might be incompatible (Temporary players vs. getUniqueId).
 * Internals
     * [BREAKING] Don't allow removal of PlayerData for online players.
     * Other fixes: Disable multi protocol patch with unit tests. Fix Activation return types.
@@ -34,5 +36,4 @@
     * [BREAKING] (I)WorldDataManager stores all sorts of per-world (-per-check-type) things (to be continued).
     * [BREAKING] (I)PlayerDataManager stores per player data (including config cache, debug flags, exemptions).
     * [BREAKING] (I)PlayerData holds a cache for per player configuration and data.
-
-    
+    * (Other cleanup, fixes related to the more complex recent additions.)
