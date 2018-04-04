@@ -13,7 +13,7 @@
     * Fight.WrongTurn: Invalid pitch (experimental).
     * SurvivalFly: Don't allow relaxing the VL in-air (configurable), neither allow horizontal buffer regain, if frozen.
 * Configuration
-    * Activation (_active_), lag adaption (_lag_) and _debug_ flags: starting from _checks_ for all sub checks, the value 'default' now means checking the check/group above in the hierarchy, enabling you to turn on/off activation/lag-adaption/debug for groups of checks with one switch. Note that not all _active_ flags are actual checks with a check type (yet), best compare to the default configuration, where _default_ is set.
+    * Activation (_active_), lag adaption (_lag_) and _debug_ flags: starting from _checks_ for all sub checks, the value 'default' now means to fetch the flag state from the check/group above in the hierarchy, enabling you to turn on/off activation/lag-adaption/debug for groups of checks with one switch. Note that not all _active_ flags are actual checks with a check type (yet), best compare to the default configuration, where _default_ is set.
 * Fixes
     * Fix dealing too high amounts of damage with jump effect.
     * Fix passable with fences at 1.0 height.
