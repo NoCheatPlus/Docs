@@ -32,6 +32,8 @@ Those commands are used to basically manage NoCheatPlus on your server. Argument
 | /ncp top [num_entries] _(check type/s)_ [sort order] | Show the 'top' players by violation history. Default sort order is '-n -sumvl' . Sort priority can be specified using -n for number of violations, -sumvl for the sum of all added vl, -avgvl for the average added vl, -maxvl for the maximum of all added vl and -time for sorting by the last violation time. |
 | /ncp version | Show version information about the server, plugin, compatibility modules and registered hooks. |
 | /ncp log counters| Log special statistics. |
+| /ncp debug player (player-name-or-uuid) yes/no/default[:checktype1[:checktype2...]] _NCP 3.16.1_| Set/reset debug flags to yes/no/default for check types, including check groups like FIGHT and ALL. |
+| ncp debug player (playername) _LEGACY: NCP 3.16.0 and slightly further_ | Full debug including moving. |
 
 # Auxiliary commands
 Those commands are mainly used by NoCheatPlus itself to execute strings or commands over actions on violating players but you can also make use of them if you wish to do so. Most of them have no difference compared to the vanilla commands apart from the delay option. Some might be confined to console use.

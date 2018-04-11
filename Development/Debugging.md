@@ -20,13 +20,17 @@ NoCheatPlus allows to set debug flags for almost all check groups. The flag in t
 **This is not suitable for production servers with many players on, due to the amount of logging done with each move for each player.** For production servers we recommend using on-the-fly debugging rather.
 
 ### On-the-fly debug output for individual players
-Using the command _/ncp debug player (player)_ (Permission: nocheatplus.command.debug) allows you to start debug logging for a player. The output is written to the log file specified in the configuration (not to the console).
+Using the command _/ncp debug player ... (Permission: nocheatplus.command.debug) allows you to start debug logging for a player. The output is written to the log file specified in the configuration (not to the console).
 
-The debug logging may reset with the player logging out. In order to turn on-the-fly debugging off, you can either use _/ncp remove (player)_ (Permission: nocheatplus.command.remove) or _/ncp reload_ , with the latter removing all data for all players.
+Syntax 3.16.1 / build 1144: /ncp debug player (player-name-or-uuid) yes/no/default[:checktype1[:checktype2...]] - For individual checks as well as groups (ALL, BLOCKBREAK, INVENTORY, FIGHT, ...).
+
+Syntax 3.16.0 and before and slightly later: /ncp debug player (player-name) - No resetting other than 'ncp remove' or 'ncp reload'.
+
+The debug logging may reset with the player logging out. In order to turn on-the-fly debugging off, you can either use _/ncp debug player (player-name-or-uuid) default_ (3.16.1 and later) or more coarse... _/ncp remove (player)_ (Permission: nocheatplus.command.remove) or _/ncp reload_ , with the latter removing all data for all players.
 
 For more confined output you can set the log file to a folder name, such as "logs". Then you can use _/ncp reload_ before and after debugging players, and the output will be confined to one log file. DrawBack is that this call is slightly heavier, due to affecting all players data and also due to reloading the configuration.
 
-With using _/ncp reload_ repeatedly, e.g. for recording individual sequences to individual files, you'd have to repeat _/ncp debug player (player)_, because on-the-fly debugging will reset with reloading the configuration.
+With using _/ncp reload_ repeatedly, e.g. for recording individual sequences to individual files, you'd have to repeat _/ncp debug player (player)_, because on-the-fly debugging will reset with reloading the configuration. The advantage might be more easy to find log sequences, if reproducing the issue is difficult.
 
 ### Debug level (Legacy)
 For the most detailed output use a development build of NCP (or manually edit BuildParameters.properties in the jar and set DEBUG_LEVEL to something like 10000).
