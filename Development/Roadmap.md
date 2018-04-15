@@ -9,7 +9,11 @@ For a more detailed explanation or discussion of future design issues see the De
     * An alpha/beta release. (Main purpose: get feedback on how internal changes work out.)
     * Finish current iteration.
         * Cleanup / fixes.
-        * A [BROKEN] build.
+    * Add the penalties concept (at first for fight checks only).
+        * Configuration. _penalties.penaltyid1: 30%cancel,70%penaltyid123_,150%action:cmd:kropotnikalive:0:0
+        * Factories (similar implementation to actions).
+        * Implement (immediate execution) support for fight checks.
+        * (No stored penalties yet. Later stored penalties allow adding penalties to other checks, and possibly have a duration of validity, such as times, ticks, time.)
 
 * 3.16.2-SNAPSHOT
     * An alpha/beta release.
