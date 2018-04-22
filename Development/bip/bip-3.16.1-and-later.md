@@ -4,7 +4,7 @@
 
 ----
 
-### 3.16.1-SNAPSHOT-sMD5NET-b1146(cumulative)
+### 3.16.1-SNAPSHOT-sMD5NET-b1147(cumulative)
 * Release type: [BLEEDING] development
 * New
     * The void-to-void set back policy now supports dragging players downwards into the void.
@@ -23,8 +23,10 @@
     * Improve slime block + piston support (partial).
     * Fix wooden pick with iron blocks (efficiency 0 - 5).
     * Fight.NoSwing: Patch up first attack always triggering.
+    * Track trampling of soil, due to false positives with  SurvivalFly (and possibly Passable).
     * Include soil and grass path in the multi client protocol block shape patch (blind, with lily pad).
     * FastClick: Fix 'continuous drop' from the player inventory and 'collect to cursor'.
+    * Net checks: cover cases with UnsupportedOperationException better.
     * Attempt to skip Inventory.Open for NPCs in general.
     * Define all the default child permissions within plugin.yml (check .silent, command filter).
 * Incompatibilities
@@ -42,4 +44,5 @@
     * [BREAKING] (I)PlayerData holds a cache for per player configuration and data.
     * [BREAKING] ActionFactoryFactory API changed.
     * BridgeHealth (+use) changed.
+    * Safer IPlayerData getting, pre-create during AsyncPlayerPreLogin.
     * (Other cleanup, fixes related to the more complex recent additions.)
