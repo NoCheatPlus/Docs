@@ -16,6 +16,11 @@ SurvivalFly aims to control pretty much everything related to moving such as fly
 | hover _logingticks_                 | Extra ticks added to hoverticks directly after login, to give more leniency. Set this on problems with hover + loging in. |
 | hover _falldamage_                  | Deal fall-damage according to fall-distance, to make avoiding fall-damage harder. |
 | hover _sfviolation_                 | A hover violation is counted as a survivalfly violations with this amount of violation level. |
+| leniency _hbufmax_ | The cap value for the horizontal buffer. Horizontal moving violations get compensated with emptying the buffer - it fills up with (allowed) moving below the applicable base moving speed (not accounting for special acceleration like with bunny hopping). |
+| leniency _freezecount_ | The number of moves, for which the violation level can't decrease, after a violation has happened. |
+| leniency _freezeinair_ | If set to true, the violation level can't decrease, while the player is moving in-air. 
+
+The _leniency/freeze_ settings mainly aim at configurations that don't cancel for low violation levels. With the freezing option, cheaters can't create repeated small violations as easily.
 
 There are also hidden options, which give more access to internals. Use with care, as these might allow different kinds of cheats or lead to other false positives, if changed. Ask back if in doubt or test changes made.
 
