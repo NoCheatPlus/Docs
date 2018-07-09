@@ -4,7 +4,7 @@
 
 ----
 
-### 3.16.1-SNAPSHOT-sMD5NET-b1147(cumulative)
+### 3.16.1-SNAPSHOT-sMD5NET-b1149(cumulative)
 * Release type: [BLEEDING] development
 * New
     * The void-to-void set back policy now supports dragging players downwards into the void.
@@ -22,6 +22,7 @@
     * Adjust lost-ground case to accommodate for equipped end portal frames.
     * Improve slime block + piston support (partial).
     * Fix wooden pick with iron blocks (efficiency 0 - 5).
+    * Fight.direction (loop check): Skip if hitting from inside the box.
     * Fight.NoSwing: Patch up first attack always triggering.
     * Track trampling of soil, due to false positives with  SurvivalFly (and possibly Passable).
     * Include soil and grass path in the multi client protocol block shape patch (blind, with lily pad).
@@ -29,6 +30,8 @@
     * Net checks: cover cases with UnsupportedOperationException better.
     * Attempt to skip Inventory.Open for NPCs in general.
     * Define all the default child permissions within plugin.yml (check .silent, command filter).
+    * Catch a NullPointerException within the UseEntityAdapter.
+    * Prevent NullPointerException in the "skip paper" workaround.
 * Incompatibilities
     * MC 1.6.x and older: Old versions of ProtocolLib might be incompatible (Temporary players vs. getUniqueId).
     * API breakage (see: Internals, below).

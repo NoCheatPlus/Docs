@@ -9,17 +9,40 @@ For a more detailed explanation or discussion of future design issues see the De
     * An alpha/beta release. (Main purpose: get feedback on how internal changes work out.)
     * Finish current iteration.
         * Cleanup / fixes.
-    * Add the penalties concept (at first for fight checks only).
-        * Configuration. _penalties.penaltyid1: 30%cancel,70%penaltyid123_,150%action:cmd:kropotnikalive:0:0
-        * Factories (similar implementation to actions).
-        * Implement (immediate execution) support for fight checks.
-        * (No stored penalties yet. Later stored penalties allow adding penalties to other checks, and possibly have a duration of validity, such as times, ticks, time.)
+    * Should have.
+        * hacc needs more special cases or invalidates special cases too quickly.
+            * Fly-no-fly, air-water/ice, x-y ...
+         * Simple alteration of data expiration stages.
+            * Remove all non-essential cached data and configuration (keep player data). Configurable timing.
+            * Fully remove data. Configurable timing.
+            * (Configurable: Clear violation history - later only means to reset counters, in case PlayerData is still present. I.e. rename configuration option.)
+            * (Configurable: Clear execution history. Typically this should be more or less automatic.)
+            * (Change configuration accordingly. Time to clear reversible/irrelevant non-essential, time to clear irreversible but non-essential, time to clear essential - options for offline data.)
+    * Nice to have.
+        * Continue penalty implementation: configurable penalties.
+            * Configuration. _penalties.penaltyid1: 30%cancel,70%penaltyid123_,150%action:cmd:kropotnikalive:0:0
+            * Factories (similar implementation to actions).
+            * Implement (immediate execution) support for all fight checks for starters.
+            * (No stored penalties yet. Later stored penalties allow adding penalties to other checks, and possibly have a duration of validity, such as times, ticks, time.)
+        * Down-to-ground set-back policy. (Evaluate and implement if simple enough to do - think of using this, in case the survivalfly set-back is gone, or even as a permanent option, provided it works at all.)
+        * Listener registration overhaul: adapt to current implementation.
+            * Consider to add a self-register method to the MiniListener interface (or another one), to reduce type issues.
+            * Set priorities and tags everywhere in a consistent way.
+            * Prefer to use MiniListener implementations everywhere.
 
 * 3.16.2-SNAPSHOT
     * An alpha/beta release.
     * Fixes / check
-        * Consistency: login/logout/disable... dead? / set back queued? / ...
+        * Consistency: login/logout/disable/shutdown... dead? / set back queued? / ...
+            * Set back, other queued actions.
         * Test totem of un-dings.
+        * NoFall: Fix crop trampling (more complex / interesting than it might look like).
+            * Consider a PacketMapper thing, relating Packets to Bukkit events.
+                * At least Pos/Look vs. PlayerMoveEvent.
+                * Use information to track cheats better (e.g. checking what the client sends for on-ground, or how many 'micro moves' have been used, possibly analyze such further to detect cheats, fix NoFall).
+                * (Performance-wise: Consumed and other contextually irrelevant packets needn't be examined over and over, as might happen with the current FlyingQueue implementation.)
+            * Spin-off: Relate interact/other packets to Position/Look updates directly, in order to have a fast lookup for packet inversion issues (such as interact being processed before move).
+    * Put violation and execution histories into PlayerData.
     * Invalidation of stored data (registered).
         * Invalidate offline, world change, after so and so seconds unused, never.
         * Default invalidation stage (essential, non-essential, directly remove) -> auto . I.e. delete at which stage and/or transfer to offline data or not. 
@@ -36,7 +59,7 @@ For a more detailed explanation or discussion of future design issues see the De
 # Scheduled
 * 3.16.X-SNAPSHOT
     * An alpha/beta release.
-    * New implementation of exemption, advanced features:
+    * New implementation of exemption: advanced features and API.
         * Invalidation conditions (tick based, offline, world, certain event + priority level).
         * Generic event wrapping and standard hooks (e.g. invalidation on certain event monitor).
         * Advanced handlers (clearNoFallData)?
@@ -54,14 +77,6 @@ Topics that will be tackled soon, no guarantee on order.
     * Block shape overhaul. Vastly breaking change, concerning many (internal) block access methods.
     * Should move most block stuff to non-static. Some functionality might stay static (e.g. the on ground check).
     * (This may be postponed, if MC 1.13 is too easy to adapt to.)
-* 3.17.X+1
-    * Possibly dynamic check types.
-* Consider first steps into CheckPipelineRegistry.
-    * I.e. have (non-Bukkit) custom pipeline events where the checks run inside. 
-    * This also allows for introducing abstraction, so the pipeline object provides access to Bukkit internals.
-    * The pipeline objects may stay active during full event handling until monitor (inclusive).
-    * Easy add-in checks, possibly easy API/hooking points for exemption (wrapping lowest-monitor is safest, but there might be cases where pinpointing around NCP listeners with no effect on other plugins is demanded).
-    * The pipeline registry also directs towards auto registering (and unregistering), provided all related listeners are inside somehow.
 * Vehicle envelope: Account for boat speed and acceleration: water/ground/ice (1.12).
 * Fight: Detect mobs crammed into narrow space (possibly similar) adapt or skip certain checks.
 * Force chunk load: Change to prevent moving within unloaded chunks, adapt data lazily where possible. Use a scheduler-like thing to still load chunks to ensure more smooth operation in average.
@@ -89,8 +104,6 @@ Topics that will be tackled soon, no guarantee on order.
     * Implement generic loop methods, not depending on certain checks.
     * Have multiple rounds with differing checks (1. fastest checks + determine latency window 2.-X. Further checks to refine window Last: checks that just use the latency window + best guess).
     * Possibly  redo LocationTrace + pvp vs. pve config for loop checks.
-* Data storage overhaul: Concentrate relevant data inside of PlayerData.
-    * Internal change (breaking): Store all per-player check data inside of PlayerData, alters interfaces and factories for CheckData factory (a real factory is needed, PlayerData will implement something like I(Generic)DataStore or similar).
 * Moving checks: set back policy refinements.
     * suggestSetBack instead of setting it within LOWEST event priority. Really set on MONITOR, only if not cancelled.
     * Unified handling of specialties with set back locations for all moving checks (not within survivalfly).
@@ -112,10 +125,13 @@ Topics that will be tackled soon, no guarantee on order.
 
 ## Planned
 Topics that likely will follow up, no guarantee on order, might slip further away.
-* Multi level data expiration for offline players.
-    * 1. Erase non-essential data from PlayerData.
-    * 2. Transfer essential data (uuid, name, generic/tagged like set back locations/context) to an OfflinePlayerData instance and remove PlayerData (persist parts on disk/db? ~ violations).
-    * 3. Remove offline player data too (persist parts on disk/db? ~ set back location/context).
+* Dynamic check types.
+* Consider first steps into CheckPipelineRegistry.
+    * I.e. have (non-Bukkit) custom pipeline events where the checks run inside. 
+    * This also allows for introducing abstraction, so the pipeline object provides access to Bukkit internals.
+    * The pipeline objects may stay active during full event handling until monitor (inclusive).
+    * Easy add-in checks, possibly easy API/hooking points for exemption (wrapping lowest-monitor is safest, but there might be cases where pinpointing around NCP listeners with no effect on other plugins is demanded).
+    * The pipeline registry also directs towards auto registering (and unregistering), provided all related listeners are inside somehow.
 * Vehicle checks refinements: passable? Which ones to check + configure? Actual speed limiting. Pistons / block changes, at least simplistic.
 * Interact ray-tracing: Use passable ray-tracing, possibly make it ray-tracing per block.
 * Packet inversion problem: interact before look.
